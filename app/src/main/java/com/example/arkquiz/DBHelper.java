@@ -69,7 +69,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.beginTransaction();
 
         String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ " FROM "+TABLE_NAME+
-                " WHERE "+QUIZ_LEVEL+"=1 ORDER BY RANDOM() LIMIT 10";
+                " WHERE "+QUIZ_LEVEL+"=1 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{

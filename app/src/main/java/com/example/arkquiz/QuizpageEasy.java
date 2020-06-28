@@ -54,12 +54,13 @@ public class QuizpageEasy extends AppCompatActivity {
         try {
             Log.d("TAG", "cursor의 개수: "+cursor.getCount());
             cursor.moveToFirst();
+            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getBlob(8));
+
 
 //            Log.d("TAG", "cursor 값: "+cursor.getLong(0)+", "+cursor.getString(1)+","+ cursor.getString(2)+","+ cursor.getString(3)+","+ cursor.getString(4)+","+ cursor.getString(5)+","+ cursor.getString(6));
 //            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
-            while (!cursor.isAfterLast()) {
+//            while (!cursor.isAfterLast()) {
 //                Log.d("TAG", "cursor 값: " + cursor.getLong(0) + ", " + cursor.getString(1) + "," + cursor.getString(2) + "," + cursor.getString(3) + "," + cursor.getString(4) + "," + cursor.getString(5) + "," + cursor.getString(6) + "," + cursor.getString(7));
-                setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getBlob(8));
 
 //                for (int i = 0; i < 4; i++) {
 //                    if (i == quiz_answer) {
@@ -78,8 +79,8 @@ public class QuizpageEasy extends AppCompatActivity {
 //                        });
 //                    }
 //                }
-                cursor.moveToNext();
-            }
+//                cursor.moveToNext();
+//            }
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("TAG", "Exception 발생");
@@ -95,6 +96,8 @@ public class QuizpageEasy extends AppCompatActivity {
             public void onClick(View view) {
                 if(quiz_answer==1) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
         });
 
@@ -103,6 +106,8 @@ public class QuizpageEasy extends AppCompatActivity {
             public void onClick(View view) {
                 if(quiz_answer==2) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
         });
 
@@ -111,6 +116,8 @@ public class QuizpageEasy extends AppCompatActivity {
             public void onClick(View view) {
                 if(quiz_answer==3) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
         });
 
@@ -119,6 +126,8 @@ public class QuizpageEasy extends AppCompatActivity {
             public void onClick(View view) {
                 if(quiz_answer==4) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
         });
 
