@@ -1,8 +1,10 @@
 package com.example.arkquiz;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -96,8 +98,9 @@ public class QuizpageEasy extends AppCompatActivity {
             public void onClick(View view) {
                 if(quiz_answer==1) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
-                finish();
-                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
+                makeDialog();
+//                finish();
+//                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
         });
 
@@ -106,8 +109,9 @@ public class QuizpageEasy extends AppCompatActivity {
             public void onClick(View view) {
                 if(quiz_answer==2) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
-                finish();
-                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
+                makeDialog();
+//                finish();
+//                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
         });
 
@@ -116,8 +120,9 @@ public class QuizpageEasy extends AppCompatActivity {
             public void onClick(View view) {
                 if(quiz_answer==3) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
-                finish();
-                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
+                makeDialog();
+//                finish();
+//                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
         });
 
@@ -126,8 +131,9 @@ public class QuizpageEasy extends AppCompatActivity {
             public void onClick(View view) {
                 if(quiz_answer==4) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
-                finish();
-                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
+                makeDialog();
+//                finish();
+//                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
         });
 
@@ -148,6 +154,26 @@ public class QuizpageEasy extends AppCompatActivity {
     public Bitmap getBitmapImage(byte[] b){
         Bitmap bitmap= BitmapFactory.decodeByteArray(b, 0, b.length);
         return bitmap;
+    }
+
+    public void makeDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("해설").setMessage("나무위키에서 찾아보셈")
+        .setNeutralButton("취소", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        })
+                .setPositiveButton("다음 문제로 넘어가기", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                        startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 //    public void LoadQuiz(){
