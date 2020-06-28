@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("isFirst", true);
             editor.commit();
 
-            mDBHelper.LoadQuiz(db);
+            mDBHelper.LoadQuiz(db, this);
         }
 
         Button button = findViewById(R.id.button);

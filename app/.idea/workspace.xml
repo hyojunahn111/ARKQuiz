@@ -42,7 +42,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3_XL_API_30" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-23T15:07:01.225Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-28T06:48:49.488Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/res/drawable" />
@@ -131,26 +131,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593319732578">
+    <state x="706" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593326981847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593319732578" />
-    <state width="1854" height="205" key="GridCell.Tab.0.bottom" timestamp="1593174194950">
+    <state x="706" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593326981847" />
+    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593326790989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1854" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593174194950" />
-    <state width="1854" height="205" key="GridCell.Tab.0.center" timestamp="1593174194950">
+    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593326790989" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1593327069853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1854" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593174194950" />
-    <state width="1854" height="205" key="GridCell.Tab.0.left" timestamp="1593174194950">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593327069853" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1593327069853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1854" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593174194950" />
-    <state width="1854" height="205" key="GridCell.Tab.0.right" timestamp="1593174194950">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593327069853" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1593327069853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1854" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593174194950" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593327069853" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1593327069853">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593327069853" />
     <state x="751" y="297" key="chooseDestDirectoryDialog" timestamp="1593171517777">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

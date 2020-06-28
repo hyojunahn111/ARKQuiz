@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -37,7 +39,7 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_selection=new Button[4];
 
         TextView_quiz=findViewById(R.id.TextView_quiz);
-//        ImageView_quiz_image=findViewById(R.id.ImageView_quiz_image);
+        ImageView_quiz_image=findViewById(R.id.ImageView_quiz_image);
         btn_selection[0]=findViewById(R.id.button7);
         btn_selection[1]=findViewById(R.id.button8);
         btn_selection[2]=findViewById(R.id.button9);
@@ -52,12 +54,12 @@ public class QuizpageEasy extends AppCompatActivity {
         try {
             Log.d("TAG", "cursor의 개수: "+cursor.getCount());
             cursor.moveToFirst();
+
 //            Log.d("TAG", "cursor 값: "+cursor.getLong(0)+", "+cursor.getString(1)+","+ cursor.getString(2)+","+ cursor.getString(3)+","+ cursor.getString(4)+","+ cursor.getString(5)+","+ cursor.getString(6));
 //            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
             while (!cursor.isAfterLast()) {
-                Log.d("TAG", "cursor 값: " + cursor.getLong(0) + ", " + cursor.getString(1) + "," + cursor.getString(2) + "," + cursor.getString(3) + "," + cursor.getString(4) + "," + cursor.getString(5) + "," + cursor.getString(6) + "," + cursor.getString(7));
-
-                setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
+//                Log.d("TAG", "cursor 값: " + cursor.getLong(0) + ", " + cursor.getString(1) + "," + cursor.getString(2) + "," + cursor.getString(3) + "," + cursor.getString(4) + "," + cursor.getString(5) + "," + cursor.getString(6) + "," + cursor.getString(7));
+                setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getBlob(8));
 
 //                for (int i = 0; i < 4; i++) {
 //                    if (i == quiz_answer) {
@@ -81,11 +83,12 @@ public class QuizpageEasy extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("TAG", "Exception 발생");
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
         }
+//        finally {
+//        if (cursor != null) {
+//            cursor.close();
+//        }
+//    }
 
         btn_selection[0].setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,7 +124,7 @@ public class QuizpageEasy extends AppCompatActivity {
 
     }
 
-    public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4, String answer){
+    public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4, String answer, byte[] image){
         TextView_quiz.setText(quiz);
 //        ImageView_quiz_image.setImageResource(image);
         btn_selection[0].setText(selection1);
@@ -129,7 +132,13 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_selection[2].setText(selection3);
         btn_selection[3].setText(selection4);
         quiz_answer=Integer.parseInt(answer);
+        ImageView_quiz_image.setImageBitmap(getBitmapImage(image));
         Log.d("TAG", "setQuiz 호출");
+    }
+
+    public Bitmap getBitmapImage(byte[] b){
+        Bitmap bitmap= BitmapFactory.decodeByteArray(b, 0, b.length);
+        return bitmap;
     }
 
 //    public void LoadQuiz(){
