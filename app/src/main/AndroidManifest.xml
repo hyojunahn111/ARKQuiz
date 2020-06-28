@@ -9,12 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DinoEgg"></activity>
-        <activity android:name=".Shop" />
-        <activity android:name=".QuizpageTest" />
-        <activity android:name=".QuizpageHard" />
-        <activity android:name=".QuizpageNormal" />
-        <activity android:name=".QuizpageEasy" />
+        <activity android:name=".DinoEgg"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Shop"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizpageTest"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizpageHard"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizpageNormal"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuizpageEasy"
+            android:screenOrientation="portrait"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,30 +2,174 @@ package com.example.arkquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 import java.util.Scanner;
 
 public class QuizpageEasy extends AppCompatActivity {
 
+    private TextView TextView_quiz;
+    private ImageView ImageView_quiz_image;
+    private Button[] btn_selection;
+
+    private SQLiteDatabase db;
+    private DBHelper mDBHelper;
+
+    private Integer quiz_answer=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizpage_easy);
 
-        Button button7 = (Button)findViewById(R.id.button7);
-        button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btn_selection=new Button[4];
 
+        TextView_quiz=findViewById(R.id.TextView_quiz);
+//        ImageView_quiz_image=findViewById(R.id.ImageView_quiz_image);
+        btn_selection[0]=findViewById(R.id.button7);
+        btn_selection[1]=findViewById(R.id.button8);
+        btn_selection[2]=findViewById(R.id.button9);
+        btn_selection[3]=findViewById(R.id.button10);
+
+        mDBHelper=new DBHelper(this);
+        db=mDBHelper.getReadableDatabase();
+
+//        mDBHelper.LoadQuiz();
+
+        final Cursor cursor = mDBHelper.LoadSQLiteDBCursor_easy();
+        try {
+            Log.d("TAG", "cursor의 개수: "+cursor.getCount());
+            cursor.moveToFirst();
+//            Log.d("TAG", "cursor 값: "+cursor.getLong(0)+", "+cursor.getString(1)+","+ cursor.getString(2)+","+ cursor.getString(3)+","+ cursor.getString(4)+","+ cursor.getString(5)+","+ cursor.getString(6));
+//            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
+            while (!cursor.isAfterLast()) {
+                Log.d("TAG", "cursor 값: " + cursor.getLong(0) + ", " + cursor.getString(1) + "," + cursor.getString(2) + "," + cursor.getString(3) + "," + cursor.getString(4) + "," + cursor.getString(5) + "," + cursor.getString(6) + "," + cursor.getString(7));
+
+                setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7));
+
+//                for (int i = 0; i < 4; i++) {
+//                    if (i == quiz_answer) {
+//                        btn_selection[i].setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                                Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//                    } else {
+//                        btn_selection[i].setOnClickListener(new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View v) {
+//                                Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//                    }
+//                }
+                cursor.moveToNext();
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("TAG", "Exception 발생");
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
 
+        btn_selection[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(quiz_answer==1) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+            }
         });
 
+        btn_selection[1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(quiz_answer==2) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_selection[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(quiz_answer==3) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_selection[3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(quiz_answer==4) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4, String answer){
+        TextView_quiz.setText(quiz);
+//        ImageView_quiz_image.setImageResource(image);
+        btn_selection[0].setText(selection1);
+        btn_selection[1].setText(selection2);
+        btn_selection[2].setText(selection3);
+        btn_selection[3].setText(selection4);
+        quiz_answer=Integer.parseInt(answer);
+        Log.d("TAG", "setQuiz 호출");
+    }
+
+//    public void LoadQuiz(){
+//        Log.d("TAG", "loadQuiz 호출");
+//        mDBHelper=new DBHelper(QuizpageEasy.this);
+//        db=mDBHelper.getWritableDatabase();
+//        mDBHelper.onCreate(db);
+//        db.beginTransaction();
+//
+//        try{
+//            db.execSQL("INSERT INTO "+mDBHelper.TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '렉스', '디폴로도쿠스', '파라사우롤로푸스', '파키', '3')");
+//            db.execSQL("INSERT INTO "+mDBHelper.TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '아르젠타비스', '기가노토파우르스', '파키리노사우루스', '파키', '4')");
+//
+//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "렉스", "디폴로도쿠스", "파라사우롤로푸스", "파키", "3");
+//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "알로사우루스", "기가노토사우르스", "아카티나", "마나가르마", "1" );
+//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3");
+//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2");
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }finally{
+//            db.endTransaction();
+//        }
+//    }
+
+//    public void insertQuiz(SQLiteDatabase mdb, String quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, String answer){
+//        ContentValues contentValues=new ContentValues();
+//        contentValues.put(mDBHelper.QUIZ_LEVEL, quiz_level);
+//        contentValues.put(mDBHelper.QUIZ, quiz);
+////        contentValues.put(mDBHelper.IMAGE, image);
+//        contentValues.put(mDBHelper.SELECTION_1, selection1);
+//        contentValues.put(mDBHelper.SELECTION_2, selection2);
+//        contentValues.put(mDBHelper.SELECTION_3, selection3);
+//        contentValues.put(mDBHelper.SELECTION_4, selection4);
+//        contentValues.put(mDBHelper.ANSWER, answer);
+//        mdb.insert(DBHelper.TABLE_NAME, null, contentValues);
+//        Log.d("TAG", "insertQuiz 호출 / "+selection1);
+//    }
+}
+
+/*
         String[] Q = new String[5];
         Q[1] = "다음 공룡의 이름은?";
         Q[2] = "다음 소리를 내는 공룡의 이름은?";
@@ -184,11 +328,4 @@ public class QuizpageEasy extends AppCompatActivity {
         ran = rd.nextInt(ans.length);
 
         System.out.println("얻은 공룡알 : " + DE);
-
-
-
-
-
-
-    }
-}
+*/
