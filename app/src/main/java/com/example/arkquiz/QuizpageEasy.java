@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,32 +25,61 @@ import java.util.Scanner;
 
 public class QuizpageEasy extends AppCompatActivity {
 
-    private TextView TextView_quiz;
+    private TextView TextView_quiz, TextView_dino_egg;
     private ImageView ImageView_quiz_image;
     private Button[] btn_selection;
+    private Button btn_hint_by_dino_egg, btn_hint_by_ad;
 
     private SQLiteDatabase db;
     private DBHelper mDBHelper;
 
     private Integer quiz_answer=0;
+    private int numberOfQuiz=1;
+    private int current_dino_egg;
+    private int correct_answer;
+    private boolean isCorrect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizpage_easy);
 
+        final SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
+
+        Intent gIntent=getIntent();
+        numberOfQuiz=gIntent.getIntExtra("numberOfQuiz", 1);
+        correct_answer=gIntent.getIntExtra("correctAnswer", 0);
+
+        isCorrect=false;
+
+        if(numberOfQuiz%3==0) {
+//        광고 삽입
+        }
+        if(numberOfQuiz>=10){
+//            결과 페이지 로드
+            Toast.makeText(this, "정답: "+correct_answer+"/10", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
         btn_selection=new Button[4];
 
         TextView_quiz=findViewById(R.id.TextView_quiz);
+        TextView_dino_egg=findViewById(R.id.TextView_dino_egg);
         ImageView_quiz_image=findViewById(R.id.ImageView_quiz_image);
         btn_selection[0]=findViewById(R.id.button7);
         btn_selection[1]=findViewById(R.id.button8);
         btn_selection[2]=findViewById(R.id.button9);
         btn_selection[3]=findViewById(R.id.button10);
+        btn_hint_by_ad=findViewById(R.id.btn_hint_by_ad);
+        btn_hint_by_dino_egg=findViewById(R.id.btn_hint_by_dinoegg);
+
 
         mDBHelper=new DBHelper(this);
         db=mDBHelper.getReadableDatabase();
 
+        current_dino_egg=sharedPreferences_dino_egg.getInt("dino_egg", 0);
+
+        TextView_dino_egg.setText(String.valueOf(current_dino_egg));
 //        mDBHelper.LoadQuiz();
 
         final Cursor cursor = mDBHelper.LoadSQLiteDBCursor_easy();
@@ -96,7 +126,10 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_selection[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(quiz_answer==1) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                if(quiz_answer==1) {
+                    Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                    isCorrect=true;
+                }
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
                 makeDialog();
 //                finish();
@@ -107,7 +140,10 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_selection[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(quiz_answer==2) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                if(quiz_answer==2) {
+                    Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                    isCorrect=true;
+                }
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
                 makeDialog();
 //                finish();
@@ -118,7 +154,10 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_selection[2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(quiz_answer==3) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                if(quiz_answer==3) {
+                    Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                    isCorrect=true;
+                }
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
                 makeDialog();
 //                finish();
@@ -129,11 +168,47 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_selection[3].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(quiz_answer==4) Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                if(quiz_answer==4) {
+                    Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                    isCorrect=true;
+                }
                 else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
                 makeDialog();
 //                finish();
 //                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
+            }
+        });
+
+        btn_hint_by_dino_egg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
+                editor.putInt("dino_egg", current_dino_egg-20);
+                editor.commit();
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(QuizpageEasy.this);
+                builder.setTitle("힌트").setMessage("힌트")
+                        .setNeutralButton("취소", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        })
+                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
+
+        btn_hint_by_ad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
@@ -148,7 +223,7 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_selection[3].setText(selection4);
         quiz_answer=Integer.parseInt(answer);
         ImageView_quiz_image.setImageBitmap(getBitmapImage(image));
-        Log.d("TAG", "setQuiz 호출");
+        Log.d("TAG", "setQuiz 호출 / 퀴즈 넘버: "+numberOfQuiz);
     }
 
     public Bitmap getBitmapImage(byte[] b){
@@ -169,7 +244,11 @@ public class QuizpageEasy extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         finish();
-                        startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
+                        Intent intent=new Intent(QuizpageEasy.this, QuizpageEasy.class);
+                        intent.putExtra("numberOfQuiz", numberOfQuiz+1);
+                        if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
+                        else intent.putExtra("correctAnswer", correct_answer);
+                        startActivity(intent);
                     }
                 });
         AlertDialog alertDialog = builder.create();

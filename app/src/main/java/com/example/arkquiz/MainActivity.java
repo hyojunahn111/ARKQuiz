@@ -19,7 +19,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SQLiteDatabase db;
+    private SQLiteDatabase db, db_user_info;
     private DBHelper mDBHelper;
 
     @Override
@@ -30,12 +30,17 @@ public class MainActivity extends AppCompatActivity {
         mDBHelper=new DBHelper(this);
         db=mDBHelper.getWritableDatabase();
 
+        SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
         SharedPreferences sharedPreferences=getSharedPreferences("IsFirst", MODE_PRIVATE);
         boolean isFirst = sharedPreferences.getBoolean("isFirst", false);
         if(!isFirst){ //최초 실행시 true 저장
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("isFirst", true);
             editor.commit();
+
+            SharedPreferences.Editor editor2=sharedPreferences_dino_egg.edit();
+            editor2.putInt("dino_egg", 100);
+            editor2.commit();
 
             mDBHelper.LoadQuiz(db, this);
         }

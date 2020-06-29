@@ -13,15 +13,17 @@
         app:layout_constraintLeft_toRightOf="@id/TextView_quiz"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginRight="100dp">
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ark_dodo_egg"></ImageView>
         <TextView
+            android:id="@+id/TextView_dino_egg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100"
+            android:text="00000"
             android:textSize="30dp"></TextView>
     </LinearLayout>
 
@@ -124,7 +126,7 @@
             android:layout_marginHorizontal="20dp"
             android:text="힌트(공룡알 소모)"></Button>
         <Button
-            android:id="@+id/btn_hint_by_add"
+            android:id="@+id/btn_hint_by_ad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

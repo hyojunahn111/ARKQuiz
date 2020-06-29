@@ -91,8 +91,8 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
 
-        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+" FROM "+TABLE_NAME+
-                " WHERE "+QUIZ_LEVEL+"=2 ORDER BY RANDOM() LIMIT 10";
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ " FROM "+TABLE_NAME+
+                " WHERE "+QUIZ_LEVEL+"=2 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{
@@ -110,8 +110,8 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
 
-        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+" FROM "+TABLE_NAME+
-                " WHERE "+QUIZ_LEVEL+"=3 ORDER BY RANDOM() LIMIT 10";
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ " FROM "+TABLE_NAME+
+                " WHERE "+QUIZ_LEVEL+"=3 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{

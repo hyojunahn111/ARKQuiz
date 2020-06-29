@@ -6,8 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="tag" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -139,26 +138,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593327931594" />
-    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593326790989">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593396800365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593326790989" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1593327069853">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593396800365" />
+    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593397017527">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593327069853" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1593327069853">
+    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593397017527" />
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1593397976111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593327069853" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1593327069853">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593397976111" />
+    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1593397976110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593327069853" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1593327069853">
+    <state width="1877" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593397976110" />
+    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1593397976110">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593327069853" />
+    <state width="1877" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593397976110" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1593397976110">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593397976110" />
     <state x="751" y="297" key="chooseDestDirectoryDialog" timestamp="1593171517777">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
