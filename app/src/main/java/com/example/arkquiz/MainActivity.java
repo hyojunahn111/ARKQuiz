@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), QuizpageNormal.class);
-                startActivityForResult(intent, 101);
+                startActivity(intent);
+//                startActivityForResult(intent, 101);
 // 중수페이지
 
             }
@@ -97,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), QuizpageHard.class);
-                startActivityForResult(intent, 101);
+                startActivity(intent);
+//                startActivityForResult(intent, 101);
 //고인물페이지
 
             }
@@ -109,31 +111,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), QuizpageTest.class);
-                startActivityForResult(intent, 101);
+                startActivity(intent);
+//                startActivityForResult(intent, 101);
 //ark모의고사
 
             }
 
         });
 
-//        Button button5 = (Button)findViewById(R.id.button5);
-//        button5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), DinoEgg.class);
+        Button button5 = (Button)findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), DinoEgg.class);
+                startActivity(intent);
 //                startActivityForResult(intent, 101);
-//
-////공룡알
-//            }
-//
-//        });
+
+//공룡알
+            }
+
+        });
 
         Button button6 = (Button)findViewById(R.id.button6);
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Shop.class);
-                startActivityForResult(intent, 101);
+                startActivity(intent);
+//                startActivityForResult(intent, 101);
 
 //상점
             }
