@@ -28,6 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String SELECTION_3="selection_3";
     public static final String SELECTION_4="selection_4";
     public static final String ANSWER="answer";
+    public static final String HINT="hint";
 
     private static final String createQuery="CREATE TABLE IF NOT EXISTS "+ TABLE_NAME
             +"("
@@ -39,7 +40,8 @@ public class DBHelper extends SQLiteOpenHelper {
             +SELECTION_3+" TEXT, "
             +SELECTION_4+" TEXT, "
             +ANSWER+" TEXT NOT NULL, "
-            +IMAGE+" BLOB)";
+            +IMAGE+" BLOB, "
+            +HINT+" TEXT NOT NULL)";
 
     public static final int DATABASE_VERSION=1;
 
@@ -68,7 +70,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
 
-        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ " FROM "+TABLE_NAME+
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ ", "+HINT+" FROM "+TABLE_NAME+
                 " WHERE "+QUIZ_LEVEL+"=1 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
@@ -91,7 +93,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
 
-        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ " FROM "+TABLE_NAME+
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ ", "+HINT+" FROM "+TABLE_NAME+
                 " WHERE "+QUIZ_LEVEL+"=2 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
@@ -110,7 +112,7 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
 
-        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ " FROM "+TABLE_NAME+
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4+", "+ANSWER+", "+IMAGE+ ", "+HINT+" FROM "+TABLE_NAME+
                 " WHERE "+QUIZ_LEVEL+"=3 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
@@ -138,10 +140,10 @@ public class DBHelper extends SQLiteOpenHelper {
 //            db.execSQL("INSERT INTO "+TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '렉스', '디폴로도쿠스', '파라사우롤로푸스', '펄모노스콜피온', '3')");
 //            db.execSQL("INSERT INTO "+TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '아르젠타비스', '기가노토파우르스', '파키리노사우루스', '파키', '4')");
 
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "렉스", "디폴로도쿠스", "파라사우롤로푸스", "파키", "3", R.drawable.ark_parasaur, context);
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "알로사우루스", "기가노토사우르스", "아카티나", "마나가르마", "1", R.drawable.ark_allosaurus, context );
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3", R.drawable.ark_ankylosaurus, context);
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2", R.drawable.ark_baryonyx, context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "렉스", "디폴로도쿠스", "파라사우롤로푸스", "파키", "3", R.drawable.ark_parasaur, "이 공룡의 이름은 '파'로 시작합니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "알로사우루스", "기가노토사우르스", "아카티나", "마나가르마", "1", R.drawable.ark_allosaurus, "이 공룡의 이름은 '알'로 시작합니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3", R.drawable.ark_ankylosaurus, "이 공룡의 이름은 '안'으로 시작합니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2", R.drawable.ark_baryonyx, "이 공룡의 이름은 '바'로 시작합니다", context);
         }catch(Exception e){
             e.printStackTrace();
         }finally{
@@ -149,7 +151,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void insertQuiz(SQLiteDatabase mdb, String quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, String answer, int image, Context context){
+    public void insertQuiz(SQLiteDatabase mdb, String quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, String answer, int image, String hint, Context context){
         ContentValues contentValues=new ContentValues();
         contentValues.put(QUIZ_LEVEL, quiz_level);
         contentValues.put(QUIZ, quiz);
@@ -158,6 +160,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(SELECTION_3, selection3);
         contentValues.put(SELECTION_4, selection4);
         contentValues.put(ANSWER, answer);
+        contentValues.put(HINT, hint);
         Drawable imageIntToDrawable= ResourcesCompat.getDrawable(context.getResources(), image, null);
         contentValues.put(IMAGE, getByteArrayFromDrawable(imageIntToDrawable));
         long newID=mdb.insert(DBHelper.TABLE_NAME, null, contentValues);

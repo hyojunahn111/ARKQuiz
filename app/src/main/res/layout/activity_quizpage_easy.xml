@@ -13,8 +13,7 @@
         app:layout_constraintLeft_toRightOf="@id/TextView_quiz"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal"
-        android:layout_marginRight="100dp">
+        android:orientation="horizontal">
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"

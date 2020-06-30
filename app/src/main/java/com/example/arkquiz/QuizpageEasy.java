@@ -38,6 +38,7 @@ public class QuizpageEasy extends AppCompatActivity {
     private int current_dino_egg;
     private int correct_answer;
     private boolean isCorrect;
+    private String current_hint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class QuizpageEasy extends AppCompatActivity {
         correct_answer=gIntent.getIntExtra("correctAnswer", 0);
 
         isCorrect=false;
+        current_hint="";
 
         if(numberOfQuiz%3==0) {
 //        광고 삽입
@@ -86,7 +88,7 @@ public class QuizpageEasy extends AppCompatActivity {
         try {
             Log.d("TAG", "cursor의 개수: "+cursor.getCount());
             cursor.moveToFirst();
-            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getBlob(8));
+            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getBlob(8), cursor.getString(9));
 
 
 //            Log.d("TAG", "cursor 값: "+cursor.getLong(0)+", "+cursor.getString(1)+","+ cursor.getString(2)+","+ cursor.getString(3)+","+ cursor.getString(4)+","+ cursor.getString(5)+","+ cursor.getString(6));
@@ -187,7 +189,7 @@ public class QuizpageEasy extends AppCompatActivity {
                 editor.commit();
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(QuizpageEasy.this);
-                builder.setTitle("힌트").setMessage("힌트")
+                builder.setTitle("힌트").setMessage(current_hint)
                         .setNeutralButton("취소", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -214,7 +216,7 @@ public class QuizpageEasy extends AppCompatActivity {
 
     }
 
-    public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4, String answer, byte[] image){
+    public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4, String answer, byte[] image, String hint){
         TextView_quiz.setText(quiz);
 //        ImageView_quiz_image.setImageResource(image);
         btn_selection[0].setText(selection1);
@@ -223,6 +225,7 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_selection[3].setText(selection4);
         quiz_answer=Integer.parseInt(answer);
         ImageView_quiz_image.setImageBitmap(getBitmapImage(image));
+        current_hint=hint;
         Log.d("TAG", "setQuiz 호출 / 퀴즈 넘버: "+numberOfQuiz);
     }
 
@@ -233,7 +236,7 @@ public class QuizpageEasy extends AppCompatActivity {
 
     public void makeDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("해설").setMessage("나무위키에서 찾아보셈")
+        builder.setTitle("정답").setMessage("정답은 "+quiz_answer+"번입니다.")
         .setNeutralButton("취소", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
