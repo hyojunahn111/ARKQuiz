@@ -7,19 +7,17 @@
     android:background="#2E2E2A"
     tools:context=".QuizpageEasy">
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView_quiz_easy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id"
         ads:layout_constraintBottom_toBottomOf="parent"
         ads:layout_constraintLeft_toLeftOf="parent"
-        ads:layout_constraintRight_toRightOf="parent"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_id">
-    </com.google.android.gms.ads.AdView>
+        ads:layout_constraintRight_toRightOf="parent"></com.google.android.gms.ads.AdView>
 
     <TextView
         android:id="@+id/textView5"
@@ -88,10 +86,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="문제"
-        android:textSize="30dp"
-        android:textColor="#FFFFFF"
         android:fontFamily="@font/gmarketsansttfmedium"
+        android:text="문제"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@id/ImageView_quiz_image"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -101,7 +99,7 @@
         android:id="@+id/ImageView_quiz_image"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:src="@drawable/ark_parasaur"
+        android:src="@drawable/ankylosaurus"
         app:layout_constraintBottom_toTopOf="@id/button7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -110,61 +108,57 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginLeft="66dp"
-        android:layout_marginTop="407dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="71dp"
+        android:layout_width="105dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/quizpage_button"
+        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="보기1"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="407dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginRight="75dp"
-        android:layout_marginBottom="71dp"
+        android:layout_width="105dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:layout_marginBottom="268dp"
+        android:background="@drawable/quizpage_button"
+        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="보기2"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="66dp"
-        android:layout_marginLeft="66dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="125dp"
-        android:text="보기3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginRight="75dp"
-        android:layout_marginBottom="125dp"
+        android:layout_width="105dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/quizpage_button"
+        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="보기4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toEndOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintTop_toBottomOf="@+id/button8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="105dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/quizpage_button"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:text="보기3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -173,26 +167,28 @@
         android:weightSum="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button10">
+        app:layout_constraintTop_toBottomOf="@id/button10"
+        app:layout_constraintVertical_bias="0.487">
 
         <Button
             android:id="@+id/btn_hint_by_dinoegg"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_weight="1"
-            android:text="힌트(공룡알 소모)"></Button>
+            android:text="Hint🔍 \n (Use dinobone)"></Button>
 
         <Button
             android:id="@+id/btn_hint_by_ad"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_weight="1"
-            android:text="힌트(영상 시청)"></Button>
+            android:text="Hint 🎞 \n <Watch AD>"></Button>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
