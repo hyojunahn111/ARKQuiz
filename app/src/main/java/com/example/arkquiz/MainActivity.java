@@ -11,6 +11,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     private SQLiteDatabase db, db_user_info;
     private DBHelper mDBHelper;
+    private TextView TextView_main_dino_egg;
+    private int current_dino_egg;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
         mDBHelper=new DBHelper(this);
         db=mDBHelper.getWritableDatabase();
+        TextView_main_dino_egg=findViewById(R.id.TextView_main_dino_egg);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adView_main);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
         SharedPreferences sharedPreferences=getSharedPreferences("IsFirst", MODE_PRIVATE);
@@ -44,6 +64,9 @@ public class MainActivity extends AppCompatActivity {
 
             mDBHelper.LoadQuiz(db, this);
         }
+
+        current_dino_egg=sharedPreferences_dino_egg.getInt("dino_egg", 0);
+        TextView_main_dino_egg.setText(String.valueOf(current_dino_egg));
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {

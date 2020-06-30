@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ARK Quiz</string>
+    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
+
+
+<!--test용 배너 아이디: ca-app-pub-3940256099942544/6300978111-->
+<!--배포용 배너 아이디: ca-app-pub-3081286779348377/9928754580-->
+<!--test용 전면 광고 아이디: ca-app-pub-3940256099942544/1033173712-->
+<!--배포용 전면 광고 아이디: ca-app-pub-3081286779348377/5940218742-->

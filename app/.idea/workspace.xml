@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
@@ -41,7 +41,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3_XL_API_30" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-28T06:48:49.488Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-30T09:20:54.114Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/res/drawable" />
@@ -142,30 +142,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593396800365" />
-    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593480363749">
+    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593504564029">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593480363749" />
-    <state width="1877" height="192" key="GridCell.Tab.0.bottom" timestamp="1593499281107">
+    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593504564029" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1593509572339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593499281107" />
-    <state width="1877" height="192" key="GridCell.Tab.0.center" timestamp="1593499281107">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593509572339" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1593509572339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="192" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593499281107" />
-    <state width="1877" height="192" key="GridCell.Tab.0.left" timestamp="1593499281107">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593509572339" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1593509572339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="192" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593499281107" />
-    <state width="1877" height="192" key="GridCell.Tab.0.right" timestamp="1593499281107">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593509572339" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1593509572339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="192" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593499281107" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593509572339" />
     <state x="751" y="297" key="chooseDestDirectoryDialog" timestamp="1593171517777">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="751" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593171517777" />
+    <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1593508800200">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593508800200" />
     <state x="649" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1593477820048">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
