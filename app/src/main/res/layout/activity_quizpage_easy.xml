@@ -4,27 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizpageEasy"
-    android:layout_marginHorizontal="20dp">
+    android:background="#2E2E2A"
+    tools:context=".QuizpageEasy">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="35dp"
+        android:layout_height="9dp"
+        android:layout_marginTop="54dp"
+        android:gravity="center_horizontal"
+        android:text="Quiz"
+        android:textColor="#E8D3D3"
+        android:textSize="5sp"
+        app:layout_constraintEnd_toEndOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="@+id/button5"
+        app:layout_constraintTop_toTopOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="60dp"
+        android:layout_height="63dp"
+        android:background="@drawable/ARKLOGO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="122dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/stroke"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:gravity="center"
+        android:text="공룡알을 모은 수치"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginLeft="252dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018"
+        app:srcCompat="@drawable/dinohead" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintLeft_toRightOf="@id/TextView_quiz"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ark_dodo_egg"></ImageView>
-        <TextView
-            android:id="@+id/TextView_dino_egg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00000"
-            android:textSize="30dp"></TextView>
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TextView_quiz"
@@ -33,21 +76,22 @@
         android:layout_marginTop="30dp"
         android:text="문제"
         android:textSize="30dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        app:layout_constraintBottom_toTopOf="@id/ImageView_quiz_image"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/ImageView_quiz_image"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ImageView_quiz_image"
         android:layout_width="250dp"
         android:layout_height="250dp"
+        android:src="@drawable/ark_parasaur"
+        app:layout_constraintBottom_toTopOf="@id/button7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextView_quiz"
-        app:layout_constraintBottom_toTopOf="@id/button7"
-        android:src="@drawable/ark_parasaur"
-        ></ImageView>
+        app:layout_constraintTop_toBottomOf="@id/TextView_quiz"></ImageView>
 
 
     <Button
@@ -111,25 +155,29 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button10"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:weightSum="2"
-        android:orientation="horizontal">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button10">
+
         <Button
             android:id="@+id/btn_hint_by_dinoegg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
             android:text="힌트(공룡알 소모)"></Button>
+
         <Button
             android:id="@+id/btn_hint_by_ad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
             android:text="힌트(영상 시청)"></Button>
     </LinearLayout>
 
