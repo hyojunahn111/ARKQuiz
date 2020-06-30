@@ -45,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ExamTimer1/app" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
@@ -142,26 +142,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593396800365" />
-    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593397017527">
+    <state x="737" y="275" key="FileChooserDialogImpl" timestamp="1593480363749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593397017527" />
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1593397976111">
+    <state x="737" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593480363749" />
+    <state width="1877" height="192" key="GridCell.Tab.0.bottom" timestamp="1593499281107">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593397976111" />
-    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1593397976110">
+    <state width="1877" height="192" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593499281107" />
+    <state width="1877" height="192" key="GridCell.Tab.0.center" timestamp="1593499281107">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593397976110" />
-    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1593397976110">
+    <state width="1877" height="192" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593499281107" />
+    <state width="1877" height="192" key="GridCell.Tab.0.left" timestamp="1593499281107">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593397976110" />
-    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1593397976110">
+    <state width="1877" height="192" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593499281107" />
+    <state width="1877" height="192" key="GridCell.Tab.0.right" timestamp="1593499281107">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593397976110" />
+    <state width="1877" height="192" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593499281107" />
     <state x="751" y="297" key="chooseDestDirectoryDialog" timestamp="1593171517777">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

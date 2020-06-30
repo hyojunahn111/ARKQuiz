@@ -187,7 +187,7 @@
         android:id="@+id/button20"
         android:layout_width="60dp"
         android:layout_height="63dp"
-        android:background="@drawable/ARKLOGO"
+        android:background="@drawable/ark_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.014"
