@@ -144,6 +144,7 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "알로사우루스", "기가노토사우르스", "아카티나", "마나가르마", "1", R.drawable.ark_allosaurus, "이 공룡의 이름은 '알'로 시작합니다.", context);
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3", R.drawable.ark_ankylosaurus, "이 공룡의 이름은 '안'으로 시작합니다.", context);
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2", R.drawable.ark_baryonyx, "이 공룡의 이름은 '바'로 시작합니다", context);
+            insertQuiz(db,"1", "다음 공룡의 소리는 누구일까요?", "안킬로사우르스", "펄로비아", "바위골렘", "샤이니혼", "2", R.drawable.ankylosaurus, "이 공룡의 이름은 '도'로 시작합니다", context);
         }catch(Exception e){
             e.printStackTrace();
         }finally{
