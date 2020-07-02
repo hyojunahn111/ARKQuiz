@@ -23,6 +23,8 @@ public class Shop extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dino_egg);
 
+        this.getSupportActionBar().hide();
+
         TextView_shop_dino_egg=findViewById(R.id.TextView_shop_dino_egg);
 
         final SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);

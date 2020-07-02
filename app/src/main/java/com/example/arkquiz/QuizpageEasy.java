@@ -56,6 +56,8 @@ public class QuizpageEasy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizpage_easy);
 
+        this.getSupportActionBar().hide();
+
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/10331737121");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
