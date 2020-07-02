@@ -14,9 +14,8 @@
         >
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3081286779348377~8715745269"/>
-        <activity android:name=".DinoEgg"
-            android:screenOrientation="portrait"></activity>
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
         <activity android:name=".Shop"
             android:screenOrientation="portrait"/>
         <activity android:name=".QuizpageTest"

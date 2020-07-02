@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -77,12 +78,23 @@ public class QuizpageEasy extends AppCompatActivity {
         current_hint="";
 
         if(numberOfQuiz%3==0) {
-//        전명 광고 삽입
+//        전면 광고 삽입
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
-            } else {
-                Log.d("TAG", "The interstitial wasn't loaded yet.");
             }
+            mInterstitialAd.setAdListener(new AdListener(){
+                @Override
+                public void onAdFailedToLoad(int i) {
+                    super.onAdFailedToLoad(i);
+                    Log.d("Tag_Ad", "전면 광고 로드 실패 / 에러코드:"+i);
+                }
+
+                @Override
+                public void onAdLoaded() {
+                    super.onAdLoaded();
+                    Log.d("Tag_Ad", "전면 광고 로드 완료");
+                }
+            });
         }
         if(numberOfQuiz>=10){
 //            결과 페이지 로드
