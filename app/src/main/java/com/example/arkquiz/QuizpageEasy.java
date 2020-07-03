@@ -14,6 +14,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -59,6 +60,8 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizpage_easy);
 
+        this.getSupportActionBar().hide();
+
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/10331737121");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
@@ -68,6 +71,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
+
         mAdView = findViewById(R.id.adView_quiz_easy);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);

@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.getSupportActionBar().hide();
+
         mDBHelper=new DBHelper(this);
         db=mDBHelper.getWritableDatabase();
         TextView_main_dino_egg=findViewById(R.id.TextView_main_dino_egg);

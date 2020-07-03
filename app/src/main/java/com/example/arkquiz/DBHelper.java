@@ -139,12 +139,51 @@ public class DBHelper extends SQLiteOpenHelper {
         try{
 //            db.execSQL("INSERT INTO "+TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '렉스', '디폴로도쿠스', '파라사우롤로푸스', '펄모노스콜피온', '3')");
 //            db.execSQL("INSERT INTO "+TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '아르젠타비스', '기가노토파우르스', '파키리노사우루스', '파키', '4')");
-
+//          공룡 이름 문제
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "렉스", "디폴로도쿠스", "파라사우롤로푸스", "파키", "3", R.drawable.ark_parasaur, "이 공룡의 이름은 '파'로 시작합니다.", context);
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "알로사우루스", "기가노토사우르스", "아카티나", "마나가르마", "1", R.drawable.ark_allosaurus, "이 공룡의 이름은 '알'로 시작합니다.", context);
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3", R.drawable.ark_ankylosaurus, "이 공룡의 이름은 '안'으로 시작합니다.", context);
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2", R.drawable.ark_baryonyx, "이 공룡의 이름은 '바'로 시작합니다", context);
-            insertQuiz(db,"1", "다음 공룡의 소리는 누구일까요?", "안킬로사우르스", "펄로비아", "바위골렘", "샤이니혼", "2", R.drawable.ankylosaurus, "이 공룡의 이름은 '도'로 시작합니다", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "티타노보아", "씨커", "울리라이노", "유니콘", "3", R.drawable.woollyrhino, "이 공룡은 게이지를 모을 수 있습니다", context);
+//          유물 문제
+            insertQuiz(db,"1", "아일랜드 현명함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "41.1,48.8", "80.0, 53.6", "50.0, 52.3", "71.4, 86.4", "1", R.drawable.ark_logo, "자원산 근처 입니다.", context);
+            insertQuiz(db,"1", "아일랜드 사냥꾼의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "68.7, 56.5", "41.1, 53.6", "80.0, 53.6", "22.2, 88.9", "3", R.drawable.ark_logo, "남쪽에 있습니다.", context);
+            insertQuiz(db,"1", "아일랜드 교활함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "35.2,48.8", "74.3, 36.6", "45.3, 91.9", "32.4, 14.2", "3", R.drawable.ark_logo, "죽음의 섬과 초식섬 사이 입니다.", context);
+            insertQuiz(db,"1", "아일랜드 강함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "29.5,32.1", "87.2, 52.3", "29.3, 60.2", "10.3, 55.6", "1", R.drawable.ark_logo, "입구는 작지만 내부는 큰 동굴에 있습니다.", context);
+            insertQuiz(db,"1", "아일랜드 탐닉의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "14.3, 78.5", "14.6, 85.6", "98.1, 33.1", "41.1, 65.6", "2", R.drawable.ark_logo, "카르노 동굴로 불리고 있습니다.", context);
+//          보스 공물 문제
+            insertQuiz(db,"1", "다음 중 보스의 공물을 주지 않는 공룡을 고르시오.", "아르젠타비스", "사르코쿠스", "메갈라니아", "프로콥토돈", "4", R.drawable.ark_logo, "이 공룡은 점프를 제일 높게 뜁니다.", context);
+            insertQuiz(db,"1", "다음 중 보스의 공물을 주지 않는 공룡을 고르시오.", "카르노테우스", "카이루쿠", "기가노토사우르스", "메갈로돈", "2", R.drawable.ark_logo, "이 공룡은 유기 폴리머를 줍니다.", context);
+            insertQuiz(db,"1", "다음 중 보스의 공물을 주지 않는 공룡을 고르시오.", "바실로사우르스", "틸라콜레오", "알로사우르스", "메가테리움", "4", R.drawable.ark_logo, "이 공룡은 곤충류를 잡으면 버프를 받습니다.", context);
+            insertQuiz(db,"1", "다음 중 보스의 공물을 주지 않는 공룡을 고르시오.", "브론토사우르스", "스피노사우르스", "랩터", "디폴로도쿠스", "3", R.drawable.ark_logo, "이 공룡은 두발로 뛰어 다니고 잡기 기술이 있습니다.", context);
+            insertQuiz(db,"1", "다음 중 보스의 공물을 주지 않는 공룡을 고르시오.", "티라노사우루스", "티티노보아", "울리 라이노", "레비저", "4", R.drawable.ark_logo, "이 공룡은 4족보행이며 무게를 줄여줍니다.", context);
+//          알파공룡 문제
+            insertQuiz(db,"1", "다음 중 알파 공룡이 아닌 것은?", "알파 리드시크", "알파 랩터", "리퍼퀸", "알파 카스토로이데스", "4", R.drawable.ark_logo, "이 공룡은 시멘트폴, 나무, 희귀꽃, 희귀 버섯, 실리카 진주를 모읍니다", context);
+            insertQuiz(db,"1", "다음 중 알파 공룡이 아닌 것은?", "알파 메갈로돈", "알파 모사사우르스", "알파 메갈라니아", "알파 투소테우스", "3", R.drawable.ark_logo, "이런 공룡은 없죠. 주로 동굴에서 천장에서 생활하며 라그나로크 맵에서는 화산섬에 아일랜드에서는 희귀한 공룡입니다", context);
+//          자원문제
+            insertQuiz(db,"1", "카르토로이데스가 모으는 자원이 아닌 것은?", "목재", "실리카 진주", "희귀 버섯", "짚", "4", R.drawable.castoroides, "노랑색입니다.", context);
+            insertQuiz(db,"1", "삼엽충을 죽이면 나오는 자원이 아닌 것은?", "흑진주", "실리카 진주", "오일", "가죽", "4", R.drawable.trilobite, "'갑각류'라는 점을 기억하세요.", context);
+            insertQuiz(db,"1", "오비스을 죽이면 나오는 자원이 아닌 것은?", "양고기", "생고기", "가죽", "털가죽", "2", R.drawable.ovis, "'양'은 '양'이죠.", context);
+            insertQuiz(db,"1", "마나가르마을 죽이면 나오는 자원이 아닌 것은?", "키틴", "케라틴", "가죽", "고품질 생고기", "1", R.drawable.managarma, "마나가르마는 곤충이 아니랍니다.", context);
+            insertQuiz(db,"1", "물병벌래을 죽이면 나오는 자원이 아닌 것은?", "키틴", "생고기", "시멘트폴", "비단", "4", R.drawable.jugbug, "옷을 못 만듭니다.", context);
+//          보스 문제
+            insertQuiz(db,"1", "감마 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.ovis, "이 건 너무 어려울 수도 있겠네요. 둘 이서 풀면 쉬울지도..", context);
+            insertQuiz(db,"1", "베타 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.ovis, "감마랑 똑같습니다.", context);
+//          키블 문제
+            insertQuiz(db,"1", "기본 기블의 재료가 아닌 것은?", "딜로포사우르스 알", "아마르베리", "프테라노돈 알", "섬유", "3", R.drawable.basic_kibble, "제일 작은 알만 씁니다.", context);
+            insertQuiz(db,"1", "간단한 키블의 재료가 아닌 것은?", "랩터 알", "구운 고기", "당근", "메조베리", "2", R.drawable.simple_kibble, "물고기로 만들어야죠.", context);
+            insertQuiz(db,"1", "평범한 키블의 재료가 아닌 것은?", "디플로도쿠스 알", "이크티오르니스 알", "감자", "고품질 육포", "4", R.drawable.regular_kibble, "이 중 얻는데 제일 오래걸립니다.", context);
+            insertQuiz(db,"1", "우수한 키블의 재료가 아닌 것은?", "고품질 육포", "시트론", "섬유", "희귀꽃", "4", R.drawable.superior_kibble, "크리스탈, 비버댐, 라그나로크 블루오벨 근처에서 자주 보이죠.", context);
+            insertQuiz(db,"1", "특별한 키블의 재료가 아닌 것은?", "포칼 칠리", "차가운 카레", "섬유", "메조베리", "2", R.drawable.exceptional_kibble, "갈색이예요.", context);
+            insertQuiz(db,"1", "최상급 키블의 재료가 아닌 것은?", "벌꿀", "와이번 알", "나자로 차우더", "에너지 브루", "4", R.drawable.exceptional_kibble, "여기서 힐을...?", context);
+
+
+
+
+
+//            insertQuiz(db,"1", "다음 중 브루드마더의 유물이 아닌 것은?", "현명함의 유물", "거대함의 유물", "사냥꾼의 유물", "하늘군주의 유물", "2", R.drawable.ark_logo, R.drawable.skylord, context);  --> 힌트를 사진으로 주기
+//            insertQuiz(db,"1", "다음 공룡의 소리는 누구일까요?", "안킬로사우르스", "펄로비아", "바위골렘", "샤이니혼", "2", R.drawable.ankylosaurus, "이 공룡의 이름은 '도'로 시작합니다", context);
+
         }catch(Exception e){
             e.printStackTrace();
         }finally{

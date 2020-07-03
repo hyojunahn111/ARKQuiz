@@ -63,8 +63,11 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dino_egg);
 
+
         TextView_shop_dino_egg = findViewById(R.id.TextView_shop_dino_egg);
         btn_ad=findViewById(R.id.button11);
+
+        this.getSupportActionBar().hide();
 
         final SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
         current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
