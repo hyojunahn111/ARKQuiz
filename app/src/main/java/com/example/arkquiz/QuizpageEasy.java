@@ -27,11 +27,14 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class QuizpageEasy extends AppCompatActivity {
+public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdListener {
 
     private TextView TextView_quiz, TextView_dino_egg;
     private ImageView ImageView_quiz_image;
@@ -49,6 +52,7 @@ public class QuizpageEasy extends AppCompatActivity {
     private String current_hint;
     private AdView mAdView;
     private InterstitialAd mInterstitialAd;
+    private RewardedVideoAd mRewardedVideoAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +71,10 @@ public class QuizpageEasy extends AppCompatActivity {
         mAdView = findViewById(R.id.adView_quiz_easy);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+        mRewardedVideoAd.setRewardedVideoAdListener(this);
+        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
 
         final SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
 
@@ -223,7 +231,9 @@ public class QuizpageEasy extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
-                editor.putInt("dino_egg", current_dino_egg-20);
+                if(sharedPreferences_dino_egg.getInt("dino_egg", 0)>=20) editor.putInt("dino_egg", current_dino_egg-20);
+                else Toast.makeText(QuizpageEasy.this, "공룡 알이 부족합니다.", Toast.LENGTH_SHORT).show();
+
                 editor.commit();
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(QuizpageEasy.this);
@@ -294,6 +304,61 @@ public class QuizpageEasy extends AppCompatActivity {
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    @Override
+    public void onRewardedVideoAdLoaded() {
+        Log.d("tag_ad", "보상형 광고 로드 성공!");
+    }
+
+    @Override
+    public void onRewardedVideoAdOpened() {
+
+    }
+
+    @Override
+    public void onRewardedVideoStarted() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdClosed() {
+
+    }
+
+    @Override
+    public void onRewarded(RewardItem rewardItem) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(QuizpageEasy.this);
+        builder.setTitle("힌트").setMessage(current_hint)
+                .setNeutralButton("취소", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
+                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    @Override
+    public void onRewardedVideoAdLeftApplication() {
+
+    }
+
+    @Override
+    public void onRewardedVideoAdFailedToLoad(int i) {
+        Log.d("tag_ad", "보상형 광고 로드 실패 / 에러 코드: "+i);
+    }
+
+    @Override
+    public void onRewardedVideoCompleted() {
+
     }
 
 //    public void LoadQuiz(){

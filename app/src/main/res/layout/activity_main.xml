@@ -59,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ark_logo" />
+        android:src="@drawable/ark_logo" />
 
     <TextView
         android:id="@+id/textView3"
