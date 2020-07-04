@@ -40,7 +40,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
     private TextView TextView_quiz, TextView_dino_egg;
     private ImageView ImageView_quiz_image;
     private Button[] btn_selection;
-    private Button btn_hint_by_dino_egg, btn_hint_by_ad;
+    private Button btn_hint_by_dino_egg, btn_hint_by_ad, btn_home;
 
     private SQLiteDatabase db;
     private DBHelper mDBHelper;
@@ -125,13 +125,13 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         btn_selection[3]=findViewById(R.id.button10);
         btn_hint_by_ad=findViewById(R.id.btn_hint_by_ad);
         btn_hint_by_dino_egg=findViewById(R.id.btn_hint_by_dinoegg);
-
+        btn_home=findViewById(R.id.button5);
 
         mDBHelper=new DBHelper(this);
         db=mDBHelper.getReadableDatabase();
 
         current_dino_egg=sharedPreferences_dino_egg.getInt("dino_egg", 0);
-
+        TextView_dino_egg.setText(String.valueOf(current_dino_egg));
 //        mDBHelper.LoadQuiz();
 
         final Cursor cursor = mDBHelper.LoadSQLiteDBCursor_easy();
@@ -262,7 +262,16 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         btn_hint_by_ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (mRewardedVideoAd.isLoaded()) {
+                    mRewardedVideoAd.show();
+                }
+            }
+        });
 
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                QuizpageEasy.super.onBackPressed();
             }
         });
 
