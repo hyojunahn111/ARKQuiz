@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2E2E2A"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
@@ -55,11 +56,14 @@
         android:id="@+id/imageView"
         android:layout_width="329dp"
         android:layout_height="317dp"
-        android:layout_marginTop="60dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ark_logo" />
+        app:layout_constraintVertical_bias="0.149"
+        android:src="@drawable/ark_logo" />
 
     <TextView
         android:id="@+id/textView3"

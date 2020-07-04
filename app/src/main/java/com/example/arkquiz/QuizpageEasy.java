@@ -256,6 +256,15 @@ public class QuizpageEasy extends AppCompatActivity {
             }
         });
 
+        Button button5 = (Button)findViewById(R.id.button5);
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4, String answer, byte[] image, String hint){
@@ -279,7 +288,7 @@ public class QuizpageEasy extends AppCompatActivity {
     public void makeDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("정답").setMessage("정답은 "+quiz_answer+"번입니다.")
-        .setNeutralButton("취소", new DialogInterface.OnClickListener() {
+        .setNeutralButton("", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
@@ -299,6 +308,7 @@ public class QuizpageEasy extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
 
 //    public void LoadQuiz(){
 //        Log.d("TAG", "loadQuiz 호출");
