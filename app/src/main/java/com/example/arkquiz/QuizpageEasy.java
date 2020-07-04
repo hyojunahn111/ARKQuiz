@@ -135,11 +135,17 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         TextView_dino_egg.setText(String.valueOf(current_dino_egg));
 //        mDBHelper.LoadQuiz();
 
+//        Random random = new Random();
+//        random_number=random.nextInt(mDBHelper.getRowCount(db));
         final Cursor cursor = mDBHelper.LoadSQLiteDBCursor_easy();
         try {
             Log.d("TAG", "cursor의 개수: "+cursor.getCount());
             cursor.moveToFirst();
-            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6), cursor.getString(7), cursor.getBlob(8), cursor.getString(9), cursor.getBlob(10));
+//            mDBHelper.isQuizShown[(int)cursor.getLong(0)]=true;
+            SQLiteDatabase db2;
+            db2=mDBHelper.getWritableDatabase();
+            setQuiz(db2, cursor.getLong(0), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+                    cursor.getString(7), cursor.getBlob(8), cursor.getString(9), cursor.getBlob(10));
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("TAG", "Exception 발생");
@@ -235,19 +241,10 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
                 QuizpageEasy.super.onBackPressed();
             }
         });
-
-        Button button5 = (Button)findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
-    public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4, String answer, byte[] image, String hint, byte[] hint_image){
+    public void setQuiz(SQLiteDatabase db, long id, String quiz, String selection1, String selection2, String selection3, String selection4,
+                        String answer, byte[] image, String hint, byte[] hint_image){
         TextView_quiz.setText(quiz);
 //        ImageView_quiz_image.setImageResource(image);
         btn_selection[0].setText(selection1);
@@ -263,6 +260,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         current_hint=hint;
         current_hint_image=getBitmapImage(hint_image);
         Log.d("TAG", "setQuiz 호출 / 퀴즈 넘버: "+numberOfQuiz);
+        mDBHelper.updateFalseToTrue(db, (int)id);
     }
 
     public Bitmap getBitmapImage(byte[] b){
@@ -274,26 +272,27 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String answerInString=selectionInString[quiz_answer-1];
         builder.setTitle("정답입니다!").setMessage("정답은 "+answerInString+"입니다.")
-        .setNeutralButton("", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        })
+//        .setNeutralButton("", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                dialogInterface.cancel();
+//            }
+//        })
                 .setPositiveButton("다음 문제로 넘어가기", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                        Intent intent=new Intent(QuizpageEasy.this, QuizpageEasy.class);
-                        intent.putExtra("numberOfQuiz", numberOfQuiz+1);
                         if(numberOfQuiz>=10){
 //            결과 페이지 로드
                             makeDialog_finish();
-                            return;
                         }
-                        if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
-                        else intent.putExtra("correctAnswer", correct_answer);
-                        startActivity(intent);
+                        else{
+                            Intent intent=new Intent(QuizpageEasy.this, QuizpageEasy.class);
+                            intent.putExtra("numberOfQuiz", numberOfQuiz+1);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                            if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
+                            else intent.putExtra("correctAnswer", correct_answer);
+                            startActivity(intent);
+                        }
                     }
                 });
         AlertDialog alertDialog = builder.create();
@@ -304,21 +303,27 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String answerInString=selectionInString[quiz_answer-1];
         builder.setTitle("오답입니다!").setMessage("정답은 "+answerInString+"입니다.")
-                .setNeutralButton("", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                })
+//                .setNeutralButton("", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        dialogInterface.cancel();
+//                    }
+//                })
                 .setPositiveButton("다음 문제로 넘어가기", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                        Intent intent=new Intent(QuizpageEasy.this, QuizpageEasy.class);
-                        intent.putExtra("numberOfQuiz", numberOfQuiz+1);
-                        if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
-                        else intent.putExtra("correctAnswer", correct_answer);
-                        startActivity(intent);
+                        if(numberOfQuiz>=10){
+//            결과 페이지 로드
+                            makeDialog_finish();
+                        }
+                        else{
+                            Intent intent=new Intent(QuizpageEasy.this, QuizpageEasy.class);
+                            intent.putExtra("numberOfQuiz", numberOfQuiz+1);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                            if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
+                            else intent.putExtra("correctAnswer", correct_answer);
+                            startActivity(intent);
+                        }
                     }
                 });
         AlertDialog alertDialog = builder.create();
@@ -333,6 +338,11 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 finish();
+                Intent intent2=new Intent(QuizpageEasy.this, MainActivity.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent2);
+                mDBHelper.updateTruetoFalse(db);
             }
         });
         AlertDialog alertDialog = builder.create();
