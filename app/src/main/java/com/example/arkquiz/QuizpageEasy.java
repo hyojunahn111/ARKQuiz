@@ -54,6 +54,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
     private AdView mAdView;
     private InterstitialAd mInterstitialAd;
     private RewardedVideoAd mRewardedVideoAd;
+    private String[] selectionInString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,8 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         setContentView(R.layout.activity_quizpage_easy);
 
         this.getSupportActionBar().hide();
+
+        selectionInString=new String[4];
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/10331737121");
@@ -179,11 +182,11 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
             @Override
             public void onClick(View view) {
                 if(quiz_answer==1) {
-                    Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                    makeDialog_correct();
                     isCorrect=true;
                 }
-                else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
-                makeDialog();
+                else makeDialog_wrong();
+
 //                finish();
 //                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
@@ -193,11 +196,10 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
             @Override
             public void onClick(View view) {
                 if(quiz_answer==2) {
-                    Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                    makeDialog_correct();
                     isCorrect=true;
                 }
-                else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
-                makeDialog();
+                else makeDialog_wrong();
 //                finish();
 //                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
@@ -207,11 +209,10 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
             @Override
             public void onClick(View view) {
                 if(quiz_answer==3) {
-                    Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                    makeDialog_correct();
                     isCorrect=true;
                 }
-                else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
-                makeDialog();
+                else makeDialog_wrong();
 //                finish();
 //                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
@@ -221,11 +222,10 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
             @Override
             public void onClick(View view) {
                 if(quiz_answer==4) {
-                    Toast.makeText(getApplicationContext(), "정답입니다.", Toast.LENGTH_SHORT).show();
+                    makeDialog_correct();
                     isCorrect=true;
                 }
-                else Toast.makeText(getApplicationContext(), "오답입니다.", Toast.LENGTH_SHORT).show();
-                makeDialog();
+                else makeDialog_wrong();
 //                finish();
 //                startActivity(new Intent(QuizpageEasy.this, QuizpageEasy.class));
             }
@@ -293,6 +293,10 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         btn_selection[1].setText(selection2);
         btn_selection[2].setText(selection3);
         btn_selection[3].setText(selection4);
+        selectionInString[0]=selection1;
+        selectionInString[1]=selection2;
+        selectionInString[2]=selection3;
+        selectionInString[3]=selection4;
         quiz_answer=Integer.parseInt(answer);
         ImageView_quiz_image.setImageBitmap(getBitmapImage(image));
         current_hint=hint;
@@ -304,15 +308,41 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         return bitmap;
     }
 
-    public void makeDialog(){
+    public void makeDialog_correct(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("정답").setMessage("정답은 "+quiz_answer+"번입니다.")
+        String answerInString=selectionInString[quiz_answer-1];
+        builder.setTitle("정답입니다!").setMessage("정답은 "+answerInString+"입니다.")
         .setNeutralButton("", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.cancel();
             }
         })
+                .setPositiveButton("다음 문제로 넘어가기", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                        Intent intent=new Intent(QuizpageEasy.this, QuizpageEasy.class);
+                        intent.putExtra("numberOfQuiz", numberOfQuiz+1);
+                        if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
+                        else intent.putExtra("correctAnswer", correct_answer);
+                        startActivity(intent);
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    public void makeDialog_wrong(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        String answerInString=selectionInString[quiz_answer-1];
+        builder.setTitle("오답입니다!").setMessage("정답은 "+answerInString+"입니다.")
+                .setNeutralButton("", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                })
                 .setPositiveButton("다음 문제로 넘어가기", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
