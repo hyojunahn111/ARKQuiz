@@ -7,18 +7,6 @@
     android:background="#2E2E2A"
     tools:context=".QuizpageEasy">
 
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView_quiz_easy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_id"
-        ads:layout_constraintBottom_toBottomOf="parent"
-        ads:layout_constraintLeft_toLeftOf="parent"
-        ads:layout_constraintRight_toRightOf="parent"></com.google.android.gms.ads.AdView>
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="35dp"
@@ -99,7 +87,6 @@
         android:id="@+id/ImageView_quiz_image"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:src="@drawable/ankylosaurus"
         app:layout_constraintBottom_toTopOf="@id/button7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -188,5 +175,17 @@
             android:layout_weight="1"
             android:text="Hint 🎞 \n (Watch AD)"></Button>
     </LinearLayout>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_quiz_easy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"></com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
