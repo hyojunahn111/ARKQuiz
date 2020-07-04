@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -25,13 +26,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnBackPressedListener{
 
     private SQLiteDatabase db, db_user_info;
     private DBHelper mDBHelper;
     private TextView TextView_main_dino_egg;
     private int current_dino_egg;
     private AdView mAdView;
+    private long backKeyPressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,37 +164,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    public void LoadQuiz(){
-//        Log.d("TAG", "loadQuiz 호출");
-//        mDBHelper=new DBHelper(MainActivity.this);
-//        db=mDBHelper.getWritableDatabase();
-//        mDBHelper.onCreate(db);
-//        db.beginTransaction();
-//
-//        try{
-//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "렉스", "디폴로도쿠스", "파라사우롤로푸스", "파키", "3");
-//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "알로사우루스", "기가노토사우르스", "아카티나", "마나가르마", "1" );
-//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3");
-//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2");
-//        }catch(Exception e){
-//            e.printStackTrace();
-//        }finally{
-//            db.endTransaction();
-//        }
-//    }
-//
-//    public void insertQuiz(SQLiteDatabase mdb, String quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, String answer){
-//        ContentValues contentValues=new ContentValues();
-//        contentValues.put(mDBHelper.QUIZ_LEVEL, quiz_level);
-//        contentValues.put(mDBHelper.QUIZ, quiz);
-////        contentValues.put(mDBHelper.IMAGE, image);
-//        contentValues.put(mDBHelper.SELECTION_1, selection1);
-//        contentValues.put(mDBHelper.SELECTION_2, selection2);
-//        contentValues.put(mDBHelper.SELECTION_3, selection3);
-//        contentValues.put(mDBHelper.SELECTION_4, selection4);
-//        contentValues.put(mDBHelper.ANSWER, answer);
-//        mdb.insert(mDBHelper.TABLE_NAME, null, contentValues);
-//        Log.d("TAG", "insertQuiz 호출 / "+selection1);
-//    }
+//    두 번 누르면 앱 종료
+    @Override
+    public void onBackPressed() {
+        Toast toast=Toast.makeText(MainActivity.this, "한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT);
+        if(System.currentTimeMillis() > backKeyPressedTime + 2000){
+            backKeyPressedTime = System.currentTimeMillis();
+            toast.show();
+            return;
+        }
+        if(System.currentTimeMillis() <= backKeyPressedTime + 2000){
+            finish();
+            toast.cancel();
+        }
+    }
 
 }

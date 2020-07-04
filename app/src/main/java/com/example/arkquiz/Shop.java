@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 // import com.android.vending.billing.IInAppBillingService;
+import com.android.vending.billing.IInAppBillingService;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -41,7 +42,9 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
     private TextView TextView_shop_dino_egg;
     private int current_dino_egg;
     private AdView mAdView;
-    private Button btn_ad;
+    private Button btn_ad, btn_home;
+    IInAppBillingService mService;
+
 //    IInAppBillingService mService;
     String dino_egg_100, dino_egg_500, dino_egg_1000;
     private RewardedVideoAd mRewardedVideoAd;
@@ -69,6 +72,7 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
 
         TextView_shop_dino_egg = findViewById(R.id.TextView_shop_dino_egg);
         btn_ad=findViewById(R.id.button11);
+        btn_home=findViewById(R.id.button20);
 
         this.getSupportActionBar().hide();
 
@@ -104,6 +108,13 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
                 if (mRewardedVideoAd.isLoaded()) {
                     mRewardedVideoAd.show();
                 }
+            }
+        });
+
+        btn_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Shop.super.onBackPressed();
             }
         });
 /*
