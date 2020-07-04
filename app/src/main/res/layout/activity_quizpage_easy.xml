@@ -95,57 +95,55 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="105dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="268dp"
-        android:background="@drawable/quizpage_button"
+        android:layout_width="274dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/click"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="보기1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
-        app:layout_constraintHorizontal_bias="0.541"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="105dp"
-        android:layout_height="64dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
-        android:layout_marginBottom="268dp"
-        android:background="@drawable/quizpage_button"
+        android:layout_width="274dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/click"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="보기2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button10"
-        android:layout_width="105dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/quizpage_button"
+        android:layout_width="274dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/click"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="보기4"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/adView_quiz_easy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toEndOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button9"
-        android:layout_width="105dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/quizpage_button"
+        android:layout_width="274dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/click"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:text="보기3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -154,26 +152,28 @@
         android:weightSum="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button10"
-        app:layout_constraintVertical_bias="0.487">
+        app:layout_constraintVertical_bias="0.202">
+
         <Button
             android:id="@+id/btn_hint_by_dinoegg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_weight="1"
-            tools:text="Hint🔍 \n (Use dinobone)"></Button>
+            android:text="Hint🔍 \n (Use dinobone)"></Button>
+
         <Button
             android:id="@+id/btn_hint_by_ad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_weight="1"
-            tools:text="Hint 🎞 \n (Watch AD)"></Button>
+            android:text="Hint 🎞 \n (Watch AD)"></Button>
     </LinearLayout>
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"

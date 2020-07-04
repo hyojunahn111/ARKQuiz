@@ -2,6 +2,9 @@ package com.example.arkquiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
@@ -18,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+// import com.android.vending.billing.IInAppBillingService;
 import com.android.vending.billing.IInAppBillingService;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -40,6 +44,8 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
     private AdView mAdView;
     private Button btn_ad, btn_home;
     IInAppBillingService mService;
+
+//    IInAppBillingService mService;
     String dino_egg_100, dino_egg_500, dino_egg_1000;
     private RewardedVideoAd mRewardedVideoAd;
 
@@ -84,6 +90,14 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+        Button button20 = (Button)findViewById(R.id.button20);
+        button20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
         mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());

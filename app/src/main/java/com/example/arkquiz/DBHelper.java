@@ -140,17 +140,27 @@ public class DBHelper extends SQLiteOpenHelper {
 //            db.execSQL("INSERT INTO "+TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '렉스', '디폴로도쿠스', '파라사우롤로푸스', '펄모노스콜피온', '3')");
 //            db.execSQL("INSERT INTO "+TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '아르젠타비스', '기가노토파우르스', '파키리노사우루스', '파키', '4')");
 //          공룡 이름 문제
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "렉스", "디폴로도쿠스", "파라사우롤로푸스", "파키", "3", R.drawable.ark_parasaur, "이 공룡의 이름은 '파'로 시작합니다.", context);
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "알로사우루스", "기가노토사우르스", "아카티나", "마나가르마", "1", R.drawable.ark_allosaurus, "이 공룡의 이름은 '알'로 시작합니다.", context);
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3", R.drawable.ark_ankylosaurus, "이 공룡의 이름은 '안'으로 시작합니다.", context);
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2", R.drawable.ark_baryonyx, "이 공룡의 이름은 '바'로 시작합니다", context);
-            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "티타노보아", "씨커", "울리라이노", "유니콘", "3", R.drawable.woollyrhino, "이 공룡은 게이지를 모을 수 있습니다", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "렉스", "디폴로도쿠스", "파라사우롤로푸스", "파키", "3", R.drawable.ark_parasaur, "이 공룡은 적을 감지하는 능력이 있습니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3", R.drawable.ark_ankylosaurus, "철을 잘 캐는 공룡입니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2", R.drawable.ark_baryonyx, "이 공료은 산소 게이지가 없습니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "벌브독", "렉스", "울리라이노", "유니콘", "3", R.drawable.woollyrhino, "이 공룡은 게이지를 모을 수 있습니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "티타노보아", "씨커", "다에오돈", "기가노토사우르스", "4", R.drawable.giganotosaurus, "이 공룡은 광폭 게이지가 있습니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "쇠똥구리", "오비랍토르", "페고메틱스", "알로사우르스", "4", R.drawable.allosaurus, "이 공룡은 무리버프, 출혈데미지가 있습니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "콤피", "모렐로톱스", "칼리코테리움", "가차", "1", R.drawable.compy, "이 공룡은 작고 무리 버프가 있습니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "디펜스 유닛", "카르노사우르스", "마그마사우르스", "켄트로사우르스", "2", R.drawable.carnotaurus, "이 공룡은 손이 짧고 머리 위에 작은 뿔 두개가 나와 있습니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "스피노사우르스", "예티", "브론토사우르스", "유티라누스", "3", R.drawable.brontosaurus, "이 공룡은 거대하고 꼬리로 공격합니다.", context);
+            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "이크티오사우르스", "데스웜", "랩터", "벨로나사우르스", "3", R.drawable.raptor, "이 공룡은 기수를 잡아서 공격할 수 있습니다.", context);
 //          유물 문제
-            insertQuiz(db,"1", "아일랜드 현명함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "41.1,48.8", "80.0, 53.6", "50.0, 52.3", "71.4, 86.4", "1", R.drawable.ark_logo, "자원산 근처 입니다.", context);
-            insertQuiz(db,"1", "아일랜드 사냥꾼의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "68.7, 56.5", "41.1, 53.6", "80.0, 53.6", "22.2, 88.9", "3", R.drawable.ark_logo, "남쪽에 있습니다.", context);
-            insertQuiz(db,"1", "아일랜드 교활함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "35.2,48.8", "74.3, 36.6", "45.3, 91.9", "32.4, 14.2", "3", R.drawable.ark_logo, "죽음의 섬과 초식섬 사이 입니다.", context);
-            insertQuiz(db,"1", "아일랜드 강함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "29.5,32.1", "87.2, 52.3", "29.3, 60.2", "10.3, 55.6", "1", R.drawable.ark_logo, "입구는 작지만 내부는 큰 동굴에 있습니다.", context);
-            insertQuiz(db,"1", "아일랜드 탐닉의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "14.3, 78.5", "14.6, 85.6", "98.1, 33.1", "41.1, 65.6", "2", R.drawable.ark_logo, "카르노 동굴로 불리고 있습니다.", context);
+            insertQuiz(db,"1", "아일랜드 현명함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "41.1,48.8", "80.0, 53.6", "50.0, 52.3", "71.4, 86.4", "1", R.drawable.artifact_of_the_clever, "자원산 근처 입니다.", context);
+            insertQuiz(db,"1", "아일랜드 사냥꾼의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "68.7, 56.5", "41.1, 53.6", "80.0, 53.6", "22.2, 88.9", "3", R.drawable.artifact_of_the_hunter, "남쪽에 있습니다.", context);
+            insertQuiz(db,"1", "아일랜드 교활함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "35.2,48.8", "74.3, 36.6", "45.3, 91.9", "32.4, 14.2", "3", R.drawable.artifact_of_the_cunning, "죽음의 섬과 초식섬 사이 입니다.", context);
+            insertQuiz(db,"1", "아일랜드 강함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "29.5,32.1", "87.2, 52.3", "29.3, 60.2", "10.3, 55.6", "1", R.drawable.artifact_of_the_strong, "입구는 작지만 내부는 큰 동굴에 있습니다.", context);
+            insertQuiz(db,"1", "아일랜드 탐닉의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "14.3, 78.5", "14.6, 85.6", "98.1, 33.1", "41.1, 65.6", "2", R.drawable.artifact_of_the_devourer, "카르노 동굴로 불리고 있습니다.", context);
+            insertQuiz(db,"1", "아일랜드 거대함의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "46.3, 85.3", "90.2, 8.1", "78.2, 14.8", "71.4, 86.4", "4", R.drawable.artifact_of_the_massive, "초식섬 근처입니다.", context);
+            insertQuiz(db,"1", "아일랜드 무리의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "32.2, 88.1", "8.1, 82.1", "59.2, 61.3", "68.7, 56.5", "4", R.drawable.artifact_of_the_pack, "물 안에 있고 레드오벨과 설산의 사이입니다.", context);
+            insertQuiz(db,"1", "아일랜드 짐승의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "34.3, 11.2", "61.2, 32.4", "82.1, 35.7", "52.4, 10.3", "4", R.drawable.artifact_of_the_brute, "레드우드와 SW2 부활지역 사이에 있습니다.", context);
+            insertQuiz(db,"1", "아일랜드 먼역의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "95.4, 14.4", "96.2, 14.6", "62.7, 37.1", "13.8, 49.7", "3", R.drawable.artifact_of_the_immune, "독 동굴로 불리고 있습니다.", context);
+            insertQuiz(db,"1", "아일랜드 하늘군주의 유물 위치는 어디일까요? \n (개개인의 오차가 있을 수 있습니다)", "91.6,81.7", "19.1, 19.0", "23.5,71.9", "15.2,38.9", "2", R.drawable.artifact_of_the_skylord, "펭귄섬 근처에 있습니다.", context);
 //          보스 공물 문제
             insertQuiz(db,"1", "다음 중 보스의 공물을 주지 않는 공룡을 고르시오.", "아르젠타비스", "사르코쿠스", "메갈라니아", "프로콥토돈", "4", R.drawable.ark_logo, "이 공룡은 점프를 제일 높게 뜁니다.", context);
             insertQuiz(db,"1", "다음 중 보스의 공물을 주지 않는 공룡을 고르시오.", "카르노테우스", "카이루쿠", "기가노토사우르스", "메갈로돈", "2", R.drawable.ark_logo, "이 공룡은 유기 폴리머를 줍니다.", context);
@@ -167,15 +177,15 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,"1", "마나가르마을 죽이면 나오는 자원이 아닌 것은?", "키틴", "케라틴", "가죽", "고품질 생고기", "1", R.drawable.managarma, "마나가르마는 곤충이 아니랍니다.", context);
             insertQuiz(db,"1", "물병벌래을 죽이면 나오는 자원이 아닌 것은?", "키틴", "생고기", "시멘트폴", "비단", "4", R.drawable.jugbug, "옷을 못 만듭니다.", context);
 //          보스 문제
-            insertQuiz(db,"1", "감마 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.ovis, "이 건 너무 어려울 수도 있겠네요. 둘 이서 풀면 쉬울지도..", context);
-            insertQuiz(db,"1", "베타 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.ovis, "감마랑 똑같습니다.", context);
+            insertQuiz(db,"1", "감마 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.boss_megapithecus, "이 건 너무 어려울 수도 있겠네요. 둘 이서 풀면 쉬울지도..", context);
+            insertQuiz(db,"1", "베타 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.boss_megapithecus, "감마랑 똑같습니다.", context);
 //          키블 문제
             insertQuiz(db,"1", "기본 기블의 재료가 아닌 것은?", "딜로포사우르스 알", "아마르베리", "프테라노돈 알", "섬유", "3", R.drawable.basic_kibble, "제일 작은 알만 씁니다.", context);
             insertQuiz(db,"1", "간단한 키블의 재료가 아닌 것은?", "랩터 알", "구운 고기", "당근", "메조베리", "2", R.drawable.simple_kibble, "물고기로 만들어야죠.", context);
             insertQuiz(db,"1", "평범한 키블의 재료가 아닌 것은?", "디플로도쿠스 알", "이크티오르니스 알", "감자", "고품질 육포", "4", R.drawable.regular_kibble, "이 중 얻는데 제일 오래걸립니다.", context);
             insertQuiz(db,"1", "우수한 키블의 재료가 아닌 것은?", "고품질 육포", "시트론", "섬유", "희귀꽃", "4", R.drawable.superior_kibble, "크리스탈, 비버댐, 라그나로크 블루오벨 근처에서 자주 보이죠.", context);
             insertQuiz(db,"1", "특별한 키블의 재료가 아닌 것은?", "포칼 칠리", "차가운 카레", "섬유", "메조베리", "2", R.drawable.exceptional_kibble, "갈색이예요.", context);
-            insertQuiz(db,"1", "최상급 키블의 재료가 아닌 것은?", "벌꿀", "와이번 알", "나자로 차우더", "에너지 브루", "4", R.drawable.exceptional_kibble, "여기서 힐을...?", context);
+            insertQuiz(db,"1", "최상급 키블의 재료가 아닌 것은?", "벌꿀", "와이번 알", "나자로 차우더", "에너지 브루", "4", R.drawable.extraordinary_kibble, "여기서 힐을...?", context);
 
 
 
