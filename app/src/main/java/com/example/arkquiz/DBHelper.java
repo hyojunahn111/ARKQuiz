@@ -131,13 +131,17 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
 
-        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+" FROM "+TABLE_NAME+
-                " WHERE "+QUIZ_LEVEL+"=2 ORDER BY RANDOM() LIMIT 1";
+//        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+//                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+" FROM "+TABLE_NAME+
+//                " WHERE "+QUIZ_LEVEL+"=2 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{
+            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
+                    " WHERE "+QUIZ_LEVEL+"=2 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
             cursor=db.rawQuery(selectQuery, null);
+            Log.d("TAG", "selectQuery="+selectQuery);
             db.setTransactionSuccessful();
         }catch(Exception e){
             e.printStackTrace();
@@ -151,13 +155,37 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
 
-        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE +" FROM "+TABLE_NAME+
-                " WHERE "+QUIZ_LEVEL+"=3 ORDER BY RANDOM() LIMIT 1";
+//        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+//                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE +" FROM "+TABLE_NAME+
+//                " WHERE "+QUIZ_LEVEL+"=3 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{
+            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
+                    " WHERE "+QUIZ_LEVEL+"=3 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
             cursor=db.rawQuery(selectQuery, null);
+            Log.d("TAG", "selectQuery="+selectQuery);
+            db.setTransactionSuccessful();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            db.endTransaction();
+        }
+        return cursor;
+    }
+
+    public Cursor LoadSQLiteDBCursor_test(){
+        SQLiteDatabase db=this.getReadableDatabase();
+        db.beginTransaction();
+        Cursor cursor=null;
+
+        try{
+            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
+                    " WHERE "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
+            cursor=db.rawQuery(selectQuery, null);
+            Log.d("TAG", "selectQuery="+selectQuery);
             db.setTransactionSuccessful();
         }catch(Exception e){
             e.printStackTrace();
