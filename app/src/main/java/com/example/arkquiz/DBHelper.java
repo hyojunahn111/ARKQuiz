@@ -74,11 +74,17 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     public void updateFalseToTrue(SQLiteDatabase db, int id){
-        db.execSQL("UPDATE "+TABLE_NAME+" SET "+IS_SHOWN+"=1 WHERE "+ID+"="+id);
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(IS_SHOWN, 1);
+        db.update(TABLE_NAME, contentValues, ID+"="+id, null);
+//        db.execSQL("UPDATE "+TABLE_NAME+" SET "+IS_SHOWN+"=1 WHERE "+ID+"="+id);
+//        Log.d("tag", "updateFalseToTrue: "+"UPDATE "+TABLE_NAME+" SET "+IS_SHOWN+"=1 WHERE "+ID+"="+id);
+        Log.d("TAG", "updateFalseToTrue 호출");
     }
 
     public void updateTruetoFalse(SQLiteDatabase db){
         db.execSQL("UPDATE "+TABLE_NAME+" SET "+IS_SHOWN+"=0 WHERE "+IS_SHOWN+"=1");
+        Log.d("TAG", "updateTrueToFalse 호출");
     }
 
     public Cursor LoadSQLiteDBCursor_easy(){
@@ -110,6 +116,7 @@ public class DBHelper extends SQLiteOpenHelper {
                     +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
                     " WHERE "+QUIZ_LEVEL+"=1 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
             cursor=db.rawQuery(selectQuery, null);
+            Log.d("TAG", "selectQuery="+selectQuery);
             db.setTransactionSuccessful();
         }catch(Exception e){
             Log.d("TAG", "DBHelper에서 Exception 발생");
@@ -208,9 +215,9 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,"1", "삼엽충을 죽이면 나오는 자원이 아닌 것은?", "흑진주", "실리카 진주", "오일", "가죽", "4", R.drawable.trilobite, "'갑각류'라는 점을 기억하세요.", NULL, 0, context);
             insertQuiz(db,"1", "오비스을 죽이면 나오는 자원이 아닌 것은?", "양고기", "생고기", "가죽", "털가죽", "2", R.drawable.ovis, "'양'은 '양'이죠.", NULL, 0, context);
             insertQuiz(db,"1", "마나가르마을 죽이면 나오는 자원이 아닌 것은?", "키틴", "케라틴", "가죽", "고품질 생고기", "1", R.drawable.managarma, "마나가르마는 곤충이 아니랍니다.", NULL, 0, context);
-            insertQuiz(db,"1", "물병벌래을 죽이면 나오는 자원이 아닌 것은?", "키틴", "생고기", "시멘트폴", "비단", "4", R.drawable.jugbug, "옷을 못 만듭니다.", NULL, 0, context);
+            insertQuiz(db,"1", "물병벌레을 죽이면 나오는 자원이 아닌 것은?", "키틴", "생고기", "시멘트폴", "비단", "4", R.drawable.jugbug, "옷을 못 만듭니다.", NULL, 0, context);
 //          보스 문제
-            insertQuiz(db,"1", "감마 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.boss_megapithecus, "이 건 너무 어려울 수도 있겠네요. 둘 이서 풀면 쉬울지도..", NULL, 0, context);
+            insertQuiz(db,"1", "감마 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.boss_megapithecus, "이 건 너무 어려울 수도 있겠네요. '둘' 이서 풀면 쉬울지도..", NULL, 0, context);
             insertQuiz(db,"1", "베타 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.boss_megapithecus, "감마랑 똑같습니다.", NULL, 0, context);
 //          키블 문제
             insertQuiz(db,"1", "기본 기블의 재료가 아닌 것은?", "딜로포사우르스 알", "아마르베리", "프테라노돈 알", "섬유", "3", R.drawable.basic_kibble, "제일 작은 알만 씁니다.", NULL, 0, context);

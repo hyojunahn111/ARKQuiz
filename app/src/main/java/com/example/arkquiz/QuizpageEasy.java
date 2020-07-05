@@ -144,8 +144,11 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
 //            mDBHelper.isQuizShown[(int)cursor.getLong(0)]=true;
             SQLiteDatabase db2;
             db2=mDBHelper.getWritableDatabase();
-            setQuiz(db2, cursor.getLong(0), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+            setQuiz(db, cursor.getLong(0), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
                     cursor.getString(7), cursor.getBlob(8), cursor.getString(9), cursor.getBlob(10));
+            Log.d("TAG", "현재 isShown: "+cursor.getInt(11));
+            mDBHelper.updateFalseToTrue(db2, (int)cursor.getLong(0));
+            Log.d("TAG", "updateFalseToTrue 아후 isShown: "+cursor.getInt(11));
         } catch (Exception e) {
             e.printStackTrace();
             Log.d("TAG", "Exception 발생");
@@ -257,10 +260,10 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         selectionInString[3]=selection4;
         quiz_answer=Integer.parseInt(answer);
         ImageView_quiz_image.setImageBitmap(getBitmapImage(image));
-        current_hint=hint;
-        current_hint_image=getBitmapImage(hint_image);
+        if(hint!=null)current_hint=hint;
+        else current_hint="";
+        if(hint_image!=null) current_hint_image=getBitmapImage(hint_image);
         Log.d("TAG", "setQuiz 호출 / 퀴즈 넘버: "+numberOfQuiz);
-        mDBHelper.updateFalseToTrue(db, (int)id);
     }
 
     public Bitmap getBitmapImage(byte[] b){
