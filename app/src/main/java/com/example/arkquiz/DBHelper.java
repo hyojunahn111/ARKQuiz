@@ -215,7 +215,10 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,"1", "삼엽충을 죽이면 나오는 자원이 아닌 것은?", "흑진주", "실리카 진주", "오일", "가죽", "4", R.drawable.trilobite, "'갑각류'라는 점을 기억하세요.", NULL, 0, context);
             insertQuiz(db,"1", "오비스을 죽이면 나오는 자원이 아닌 것은?", "양고기", "생고기", "가죽", "털가죽", "2", R.drawable.ovis, "'양'은 '양'이죠.", NULL, 0, context);
             insertQuiz(db,"1", "마나가르마을 죽이면 나오는 자원이 아닌 것은?", "키틴", "케라틴", "가죽", "고품질 생고기", "1", R.drawable.managarma, "마나가르마는 곤충이 아니랍니다.", NULL, 0, context);
-            insertQuiz(db,"1", "물병벌레을 죽이면 나오는 자원이 아닌 것은?", "키틴", "생고기", "시멘트폴", "비단", "4", R.drawable.jugbug, "옷을 못 만듭니다.", NULL, 0, context);
+
+            insertQuiz(db,"1", "물병벌래을 죽이면 나오는 자원이 아닌 것은?", "키틴", "생고기", "시멘트폴", "비단", "4", R.drawable.jugbug, "옷을 못 만듭니다.", NULL, 0, context);
+            insertQuiz(db,"1", "와이번을 기절시키면 나오는 우유의 갯 수는?", "4", "5", "6", "7", "2", R.drawable.wyvern_milk, "한 줄보다 하나 적죠.", NULL, 0, context);
+
 //          보스 문제
             insertQuiz(db,"1", "감마 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.boss_megapithecus, "이 건 너무 어려울 수도 있겠네요. '둘' 이서 풀면 쉬울지도..", NULL, 0, context);
             insertQuiz(db,"1", "베타 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", "2", R.drawable.boss_megapithecus, "감마랑 똑같습니다.", NULL, 0, context);
@@ -226,6 +229,35 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,"1", "우수한 키블의 재료가 아닌 것은?", "고품질 육포", "시트론", "섬유", "희귀꽃", "4", R.drawable.superior_kibble, "크리스탈, 비버댐, 라그나로크 블루오벨 근처에서 자주 보이죠.", NULL, 0, context);
             insertQuiz(db,"1", "특별한 키블의 재료가 아닌 것은?", "포칼 칠리", "차가운 카레", "섬유", "메조베리", "2", R.drawable.exceptional_kibble, "갈색이예요.", NULL, 0, context);
             insertQuiz(db,"1", "최상급 키블의 재료가 아닌 것은?", "벌꿀", "와이번 알", "나자로 차우더", "에너지 브루", "4", R.drawable.extraordinary_kibble, "여기서 힐을...?", NULL, 0, context);
+//          음식문제
+            insertQuiz(db,"1", "다음 중 베리가 아닌 것은?", "아마르베리", "아줄베리", "틴토베리", "포조베리", "4", R.drawable.ark_logo, "이런 열매는 없습니다.", NULL, 0, context);
+            insertQuiz(db,"1", "브루의 재료가 아닌 것은?", "틴토베리", "메조베리", "마취약", "물", "2",R.drawable.medical_brew, "초식 공룡이 제일 좋아하는 것입니다.", NULL, 0, context);
+//          부패시간 문제
+            insertQuiz(db,"1", "베리 1개의 부패 시간은?", "5분", "10분", "15분", "20분", "2", R.drawable.berries, "초 중 고등학생 쉬는시간정도..", NULL, 0, context);
+            insertQuiz(db,"1", "곡물 1개의 부패 시간은?", "5분", "10분", "15분", "20분", "1", R.drawable.citronal, "하루 반의 반의 반의 반의 반에서 9로 나눈 정도..", NULL, 0, context);
+            insertQuiz(db,"1", "생고기 1개의 부패 시간은?", "5분", "10분", "15분", "20분", "2", R.drawable.raw_meat, "초 중 고등학생 쉬는시간정도..", NULL, 0, context);
+            insertQuiz(db,"1", "생고기 1칸의 부패 시간은?", "5시간 10분", "5시간 40분", "6시간 10분", "6시간 40분", "4", R.drawable.raw_meat, "한 개의 부패 시간에 40을 곱하면 되죠!", NULL, 0, context);
+            insertQuiz(db,"1", "구운 고기 1개의 부패 시간은?", "5분", "10분", "15분", "20분", "4", R.drawable.cooked_meat, "생고기 부패 시간의 두배입니다.", NULL, 0, context);
+            insertQuiz(db,"1", "고기 육포 1개의 부패 시간은?", "12시간", "24시간", "36시간", "48시간", "4", R.drawable.cooked_meat_jerky, "육포는 생각보다 유통기한이 길답니다.", NULL, 0, context);
+            insertQuiz(db,"1", "고품질 생고기 1개의 부패 시간은?", "2분", "2분10초", "2분 20초", "2분 30초", "3", R.drawable.raw_prime_meat, "'140'", NULL, 0, context);
+            insertQuiz(db,"1", "고품질 고기 1개의 부패 시간은?", "40분", "42분", "44분", "46분", "4", R.drawable.cooked_prime_meat, "'2760'", NULL, 0, context);
+            insertQuiz(db,"1", "고품질 고기 육포 1개의 부패 시간은?", "12시간", "24시간", "36시간", "48시간", "4", R.drawable.prime_meat_jerky, "고기 육포 부패 시간이랑 똑같습니다.", NULL, 0, context);
+            insertQuiz(db,"1", "썩은 고기 1개의 부패 시간은?", "5분", "10분", "15분", "20분", "3", R.drawable.spoiled_meat, "생고기 1개 부패 시간과 구운고기 1개 부패 시간의 사이입니다.", NULL, 0, context);
+//          한 칸 문제
+            insertQuiz(db,"1", "한 칸에 들 수 있는 생고기의 양은?", "10개", "20개", "30개", "40개", "4", R.drawable.raw_meat, "고기를 10000개를 캤다면 250칸이 만들어집니다.", NULL, 0, context);
+            insertQuiz(db,"1", "한 칸에 들 수 있는 고품질 생고기의 양은?", "1개", "2개", "3개", "4개", "1", R.drawable.raw_prime_meat, "300개를 캐면 300칸을 채울 수 있습니다.", NULL, 0, context);
+            insertQuiz(db,"1", "한 칸에 들 수 있는 고품질 고기의 양은?", "10개", "20개", "30개", "40개", "3", R.drawable.cooked_prime_meat, "한 칸에 고품질 생고기의 30배를 들 수 있습니다.", NULL, 0, context);
+            insertQuiz(db,"1", "한 칸에 들 수 있는 와이번 우유의 양은?", "1개", "2개", "3개", "4개", "4", R.drawable.wyvern_milk, "고품질 생고기와 같습니다.", NULL, 0, context);
+            insertQuiz(db,"1", "한 칸에 들 수 있는 육포의 양은?", "10개", "20개", "30개", "40개", "2", R.drawable.cooked_meat_jerky, "생고기의 절 반 정도 들 수 있습니다.", NULL, 0, context);
+
+
+
+
+
+//          그림 힌트
+
+
+
 
 
 

@@ -91,7 +91,8 @@
         app:layout_constraintBottom_toTopOf="@id/button7"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextView_quiz"></ImageView>
+        app:layout_constraintTop_toBottomOf="@id/TextView_quiz">
+    </ImageView>
 
 
     <Button
