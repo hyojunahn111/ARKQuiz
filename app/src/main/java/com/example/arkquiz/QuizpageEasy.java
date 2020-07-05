@@ -38,7 +38,7 @@ import java.util.Scanner;
 
 public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdListener {
 
-    private TextView TextView_quiz, TextView_dino_egg;
+    private TextView TextView_quiz, TextView_dino_egg, TextView_numberOfQuiz;
     private ImageView ImageView_quiz_image;
     private Button[] btn_selection;
     private Button btn_hint_by_dino_egg, btn_hint_by_ad, btn_home;
@@ -127,6 +127,9 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         btn_hint_by_ad=findViewById(R.id.btn_hint_by_ad);
         btn_hint_by_dino_egg=findViewById(R.id.btn_hint_by_dinoegg);
         btn_home=findViewById(R.id.button5);
+        TextView_numberOfQuiz=findViewById(R.id.TextView_numberOfQuiz);
+
+        TextView_numberOfQuiz.setText(numberOfQuiz+"/10");
 
         mDBHelper=new DBHelper(this);
         db=mDBHelper.getReadableDatabase();
@@ -374,6 +377,29 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
                     }
                 });
         AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setMessage("메인 화면으로 나가시겠습니까?");
+        builder.setPositiveButton("나가기", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                Intent tempIntent=new Intent(QuizpageEasy.this, MainActivity.class);
+                tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tempIntent);            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog=builder.create();
         alertDialog.show();
     }
 
