@@ -4,6 +4,200 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2E2E2A"
     tools:context=".QuizpageTest">
+    <TextView
+        android:id="@+id/TextView_test_QuizText"
+        android:layout_width="35dp"
+        android:layout_height="9dp"
+        android:layout_marginTop="54dp"
+        android:gravity="center_horizontal"
+        android:text="Quiz"
+        android:textColor="#E8D3D3"
+        android:textSize="5sp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_test_home"
+        app:layout_constraintStart_toStartOf="@+id/btn_test_home"
+        app:layout_constraintTop_toTopOf="@+id/btn_test_home" />
 
+    <Button
+        android:id="@+id/btn_test_home"
+        android:layout_width="60dp"
+        android:layout_height="63dp"
+        android:background="@drawable/ark_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <TextView
+        android:id="@+id/TextView_test_numberOfQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/TextView_test_quiz"
+        android:textSize="30dp"
+        android:textColor="#FFFFFF"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/TextView_test_dino_egg"
+        android:layout_width="122dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:background="@drawable/stroke"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:gravity="center"
+        android:text="공룡알을 모은 수치"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/ImageView_test_dino_head"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginLeft="252dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018"
+        app:srcCompat="@drawable/dinohead" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="@id/TextView_test_quiz"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TextView_test_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:text="문제"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.147"
+        android:layout_marginHorizontal="20dp"/>
+
+    <ImageView
+        android:id="@+id/ImageView_test_quiz_image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_test_selection1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextView_test_quiz">
+    </ImageView>
+
+
+    <Button
+        android:id="@+id/btn_test_selection1"
+        android:layout_width="274dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/click"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:text="보기1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_test_selection2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_test_selection2"
+        android:layout_width="274dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/click"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:text="보기2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_test_selection3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_test_selection3"
+        android:layout_width="274dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/click"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:text="보기3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_test_selection4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_test_selection4"
+        android:layout_width="274dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/click"
+        android:fontFamily="@font/gmarketsansttfmedium"
+        android:text="보기4"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/adView_quiz_test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_test_selection4"
+        app:layout_constraintVertical_bias="0.202">
+
+        <Button
+            android:id="@+id/btn_test_hint_by_dinoegg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:text="Hint🔍 \n (Use dinobone)"></Button>
+
+        <Button
+            android:id="@+id/btn_test_hint_by_ad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:text="Hint 🎞 \n (Watch AD)"></Button>
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_quiz_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"></com.google.android.gms.ads.AdView>
 </androidx.constraintlayout.widget.ConstraintLayout>
