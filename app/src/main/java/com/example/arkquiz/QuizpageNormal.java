@@ -238,7 +238,9 @@ public class QuizpageNormal extends AppCompatActivity implements RewardedVideoAd
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                QuizpageNormal.super.onBackPressed();
+                Intent intent=new Intent(QuizpageNormal.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }

@@ -238,7 +238,9 @@ public class QuizpageHard extends AppCompatActivity implements RewardedVideoAdLi
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                QuizpageHard.super.onBackPressed();
+                Intent intent=new Intent(QuizpageHard.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }
