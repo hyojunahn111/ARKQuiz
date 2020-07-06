@@ -42,7 +42,7 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
     private TextView TextView_shop_dino_egg;
     private int current_dino_egg;
     private AdView mAdView;
-    private Button btn_ad, btn_home;
+    private Button btn_ad, btn_home, btn_dino_bone_100, btn_dino_bone_500, btn_dino_bone_1000;
     IInAppBillingService mService;
 
 //    IInAppBillingService mService;
@@ -73,6 +73,9 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
         TextView_shop_dino_egg = findViewById(R.id.TextView_shop_dino_egg);
         btn_ad=findViewById(R.id.button11);
         btn_home=findViewById(R.id.button20);
+        btn_dino_bone_100=findViewById(R.id.button13);
+        btn_dino_bone_500=findViewById(R.id.button18);
+        btn_dino_bone_1000=findViewById(R.id.button19);
 
         this.getSupportActionBar().hide();
 
@@ -90,23 +93,39 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        Button button20 = (Button)findViewById(R.id.button20);
-        button20.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
         mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+
+        btn_dino_bone_100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_dino_bone_500.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        btn_dino_bone_1000.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btn_ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (mRewardedVideoAd.isLoaded()) {
                     mRewardedVideoAd.show();
+                }
+                else{
+                    Toast.makeText(Shop.this, "광고 로드에 싫패하였습니다", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -210,12 +229,11 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
 
     @Override
     public void onRewardedVideoAdClosed() {
-
     }
 
     @Override
     public void onRewarded(RewardItem rewardItem) {
-        Toast.makeText(this, "공룡알 20개가 지급되었습니다!", Toast.LENGTH_SHORT);
+        Toast.makeText(this, "공룡 뼈 20개가 지급되었습니다!", Toast.LENGTH_SHORT);
         SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
         current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
         SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
@@ -229,7 +247,7 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
 
     @Override
     public void onRewardedVideoAdFailedToLoad(int i) {
-        Log.d("tag_ad", "보상형 광고 로드 실패 / 에러 코드: "+i);
+        Log.d("tag_ad", "Shop 보상형 광고 로드 실패 / 에러 코드: "+i);
     }
 
     @Override

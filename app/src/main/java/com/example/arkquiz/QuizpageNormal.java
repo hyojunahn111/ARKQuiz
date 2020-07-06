@@ -217,7 +217,7 @@ public class QuizpageNormal extends AppCompatActivity implements RewardedVideoAd
                     editor.putInt("dino_egg", current_dino_egg-20);
                     makeDialog_hint();
                 }
-                else Toast.makeText(QuizpageNormal.this, "공룡 알이 부족합니다.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(QuizpageNormal.this, "공룡 뼈이 부족합니다.", Toast.LENGTH_SHORT).show();
                 editor.commit();
             }
         });
@@ -238,7 +238,9 @@ public class QuizpageNormal extends AppCompatActivity implements RewardedVideoAd
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                QuizpageNormal.super.onBackPressed();
+                Intent intent=new Intent(QuizpageNormal.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
             }
         });
     }
