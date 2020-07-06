@@ -327,13 +327,17 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,"1", "횟불을 만들 수 있는 곳은?", "개인 인벤토리", "제작기", "대장간", "절구와 공이", "1", R.drawable.torch, "1렙에 만들 수 있습니다.", NULL, 0, context);
             insertQuiz(db,"2", "낚시할 때 제일 좋은 미끼는?", "거대 벌꿀", "거머리 혈액", "수액", "생고기", "2", R.drawable.fishing_rod, "제일 단 걸 좋아하죠.", NULL, 0, context);
             insertQuiz(db,"1", "작은 망원경을 배울 수 있는 레벨은?", "7", "10", "13", "15", "1", R.drawable.spyglass, "금방 배울 수 있습니다.", NULL, 0, context);
-            insertQuiz(db,"3", "테크 클로에 들어가는 자원은?", "원소", "흑진주", "폴리머", "가죽", "4", R.drawable.tek_claws, "질긴건 안들어가요 .", NULL, 0, context);
-            insertQuiz(db,"3", "테크 제작기에 들어가는 자원은?", "철 주괴 5000개", "원소 110개", "흑진주 150개", "크리스탈 600개", "2", R.drawable.tek_replicator, "정사각형인게 살짝 많네요.", NULL, 0, context);
+            insertQuiz(db,"3", "테크 클로에 들어가는 자원이 아닌 것은?", "원소", "흑진주", "폴리머", "가죽", "4", R.drawable.tek_claws, "질긴건 안들어가요 .", NULL, 0, context);
+            insertQuiz(db,"3", "테크 제작기에 들어가는 자원이 아닌 것은?", "철 주괴 5000개", "원소 110개", "흑진주 150개", "크리스탈 600개", "2", R.drawable.tek_replicator, "정사각형인게 살짝 많네요.", NULL, 0, context);
 
             //오벨리스크
             insertQuiz(db,"1", "아일랜드 블루 오벨리스크의 좌표는?", "13.1, 55.3", "35.4, 64.3", "25.5, 25.6", "39.2, 68.7", "3", R.drawable.obelisk, "왼쪽 위에 있습니다.", NULL, 0, context);
             insertQuiz(db,"1", "아일랜드 레드 오벨리스크의 좌표는?", "79.8, 17.4", "75.2, 13.8", "49.1, 82.0", "24.9, 86.4", "1", R.drawable.obelisk, "왼쪽 아래에 있습니다.", NULL, 0, context);
             insertQuiz(db,"1", "아일랜드 그린 오벨리스크의 좌표는?", "14.8, 76.0", "59.0, 72.3", "19.4, 28.6", "16.8, 71.3", "2", R.drawable.obelisk, "오른쪽 중간에 있습니다.", NULL, 0, context);
+
+            //
+            insertQuiz(db,"3", "ThsIsland 오비스 젠 지역이 아닌 것은?", "20.0, 30.0", "20.0, 50,0", "85.0, 83.0", "75.0, 65.0", "3", R.drawable.ovis, null, R.drawable.theisland_ovis_spawn, 0, context);
+            insertQuiz(db,"3", "한 구역의 포탑 개 수 제한은?", "50개", "100개", "150개", "200개", "2", R.drawable.heavy_auto_turret, "이순신 장군이 그려져 있는 동전과 같습니다.", NULL, 0, context);
 
 
 
