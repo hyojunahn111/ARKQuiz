@@ -34,7 +34,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String HINT="hint";
     public static final String HINT_IMAGE="hint_image";
     public static final String IS_SHOWN="is_shown";
-    public boolean[] isQuizShown;
+//    public boolean[] isQuizShown;
 
     private static final String createQuery="CREATE TABLE IF NOT EXISTS "+ TABLE_NAME
             +"("
@@ -60,10 +60,10 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(createQuery);
-        isQuizShown=new boolean[getRowCount(db)];
-        for(int i=0;i<getRowCount(db);i++){
-            isQuizShown[i]=false;
-        }
+//        isQuizShown=new boolean[getRowCount(db)];
+//        for(int i=0;i<getRowCount(db);i++){
+//            isQuizShown[i]=false;
+//        }
         Log.d("TAG", "createQuery="+createQuery);
     }
 
