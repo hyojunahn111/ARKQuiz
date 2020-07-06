@@ -87,7 +87,7 @@ public class QuizpageTest extends AppCompatActivity implements RewardedVideoAdLi
         isCorrect=false;
         current_hint="";
 
-        if(numberOfQuiz%3==0) {
+        if(numberOfQuiz%5==0) {
 //        전면 광고 삽입
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
@@ -216,7 +216,7 @@ public class QuizpageTest extends AppCompatActivity implements RewardedVideoAdLi
                     editor.putInt("dino_egg", current_dino_egg-20);
                     makeDialog_hint();
                 }
-                else Toast.makeText(QuizpageTest.this, "공룡 알이 부족합니다.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(QuizpageTest.this, "공룡 뼈이 부족합니다.", Toast.LENGTH_SHORT).show();
                 editor.commit();
             }
         });

@@ -93,7 +93,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
-
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
+                " WHERE "+QUIZ_LEVEL+"=1 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
 //        String selectQuery="";
 //        Random random = new Random();
         Cursor cursor=null;
@@ -112,9 +114,9 @@ public class DBHelper extends SQLiteOpenHelper {
 //            }
 //            Log.d("TAG", "cursor.getLong(0)="+cursor.getLong(0));
 //            Log.d("TAG", "cursor 값: "+cursor.getLong(0)+", "+cursor.getString(1)+", "+cursor.getString(2)+", "+cursor.getString(3)+","+ cursor.getString(4)+","+ cursor.getString(5)+","+ cursor.getString(6)+","+ cursor.getString(7));
-            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
-                    " WHERE "+QUIZ_LEVEL+"=1 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
+//            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+//                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
+//                    " WHERE "+QUIZ_LEVEL+"=1 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
             cursor=db.rawQuery(selectQuery, null);
             Log.d("TAG", "selectQuery="+selectQuery);
             db.setTransactionSuccessful();
@@ -130,20 +132,20 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor LoadSQLiteDBCursor_normal(){
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
-
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
+                " WHERE "+QUIZ_LEVEL+"=2 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
 //        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
 //                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+" FROM "+TABLE_NAME+
 //                " WHERE "+QUIZ_LEVEL+"=2 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{
-            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
-                    " WHERE "+QUIZ_LEVEL+"=2 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
             cursor=db.rawQuery(selectQuery, null);
             Log.d("TAG", "selectQuery="+selectQuery);
             db.setTransactionSuccessful();
         }catch(Exception e){
+            Log.d("tag", "LoadSQLiteDBCursor_normal() Exception 발생");
             e.printStackTrace();
         }finally{
             db.endTransaction();
@@ -154,16 +156,15 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor LoadSQLiteDBCursor_hard(){
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
-
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
+                " WHERE "+QUIZ_LEVEL+"=3 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
 //        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
 //                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE +" FROM "+TABLE_NAME+
 //                " WHERE "+QUIZ_LEVEL+"=3 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{
-            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
-                    " WHERE "+QUIZ_LEVEL+"=3 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
             cursor=db.rawQuery(selectQuery, null);
             Log.d("TAG", "selectQuery="+selectQuery);
             db.setTransactionSuccessful();
@@ -178,12 +179,12 @@ public class DBHelper extends SQLiteOpenHelper {
     public Cursor LoadSQLiteDBCursor_test(){
         SQLiteDatabase db=this.getReadableDatabase();
         db.beginTransaction();
+        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
+                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
+                " WHERE "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{
-            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
-                    " WHERE "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
             cursor=db.rawQuery(selectQuery, null);
             Log.d("TAG", "selectQuery="+selectQuery);
             db.setTransactionSuccessful();
@@ -224,7 +225,7 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "벌브독", "디폴로도쿠스", "오닉스", "파키리노사우르스", "3", R.drawable.onyc, "이 공룡은 동굴에서 생활하며 일정 확률로 광견병을 일으킵니다.", NULL, 0, context);
             insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "스피노", "메가네우라", "바리오닉스", "크나다리아", "1", R.drawable.spino, "이 공룡은 물에 닿으면 물 버프를 받습니다.", NULL, 0, context);
             insertQuiz(db,"1", "마나가르마의 공중 점프 할 수 있는 횟 수는?", "1번", "2번", "3번", "4번", "3", R.drawable.managarma, "점점점프...", NULL, 0, context);
-            insertQuiz(db,"1", "마나가르마의 데쉬 횟 수는?", "1번", "2번", "3번", "4번", "1", R.drawable.managarma, "마나가르마는 새가 아니랍니다.", NULL, 0, context);
+            insertQuiz(db,"1", "마나가르마의 대쉬 횟 수는?", "1번", "2번", "3번", "4번", "1", R.drawable.managarma, "마나가르마는 새가 아니랍니다.", NULL, 0, context);
 
 
 
