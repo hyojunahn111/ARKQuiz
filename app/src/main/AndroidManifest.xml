@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.arkquiz">
+    package="com.arkquiz.arkquiz">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="com.android.vending.BILLING" />
@@ -15,21 +15,21 @@
         >
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-3081286779348377~8715745269"/>
 
-        <activity android:name=".MainActivity"
+        <activity android:name="com.arkquiz.arkquiz.MainActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".Shop"
+        <activity android:name="com.arkquiz.arkquiz.Shop"
             android:screenOrientation="portrait"/>
-        <activity android:name=".QuizpageTest"
+        <activity android:name="com.arkquiz.arkquiz.QuizpageTest"
             android:screenOrientation="portrait"/>
-        <activity android:name=".QuizpageHard"
+        <activity android:name="com.arkquiz.arkquiz.QuizpageHard"
             android:screenOrientation="portrait"/>
-        <activity android:name=".QuizpageNormal"
+        <activity android:name="com.arkquiz.arkquiz.QuizpageNormal"
             android:screenOrientation="portrait"/>
-        <activity android:name=".QuizpageEasy"
+        <activity android:name="com.arkquiz.arkquiz.QuizpageEasy"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Splash"
+        <activity android:name="com.arkquiz.arkquiz.Splash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
