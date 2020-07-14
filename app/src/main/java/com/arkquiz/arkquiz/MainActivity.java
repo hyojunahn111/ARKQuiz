@@ -76,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             mDBHelper.LoadQuiz(db, this);
         }
 
+        mDBHelper.updateTruetoFalse(db);
+
         current_dino_egg=sharedPreferences_dino_egg.getInt("dino_egg", 0);
         TextView_main_dino_egg.setText(String.valueOf(current_dino_egg));
 
