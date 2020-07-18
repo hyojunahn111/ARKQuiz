@@ -99,22 +99,6 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor cursor=null;
 
         try{
-//            while(true){
-//                int random_number=random.nextInt(getRowCount(db));
-//
-//                selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-//                        +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+" FROM "+TABLE_NAME+
-//                        " WHERE "+QUIZ_LEVEL+"=1 AND "+ID+ "="+random_number+" ORDER BY RANDOM() LIMIT 1";
-//                cursor=db.rawQuery(selectQuery, null);
-//                Log.d("TAG", "selectQuery="+selectQuery);
-//                Log.d("TAG", (cursor.getLong(0)+1)+", "+isQuizShown[(int) (cursor.getLong(0)+1)]);
-//                if(cursor!=null&&isQuizShown[(int) (cursor.getLong(0)+1)]==false) break;
-//            }
-//            Log.d("TAG", "cursor.getLong(0)="+cursor.getLong(0));
-//            Log.d("TAG", "cursor 값: "+cursor.getLong(0)+", "+cursor.getString(1)+", "+cursor.getString(2)+", "+cursor.getString(3)+","+ cursor.getString(4)+","+ cursor.getString(5)+","+ cursor.getString(6)+","+ cursor.getString(7));
-//            String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-//                    +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
-//                    " WHERE "+QUIZ_LEVEL+"=1 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
             cursor=db.rawQuery(selectQuery, null);
             Log.d("TAG", "selectQuery="+selectQuery);
             db.setTransactionSuccessful();
@@ -133,9 +117,6 @@ public class DBHelper extends SQLiteOpenHelper {
         String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
                 +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+", "+IS_SHOWN+" FROM "+TABLE_NAME+
                 " WHERE "+QUIZ_LEVEL+"=2 AND "+IS_SHOWN+ "=0 ORDER BY RANDOM() LIMIT 1";
-//        String selectQuery="SELECT "+ID+", "+QUIZ_LEVEL+", "+QUIZ+", "+SELECTION_1+", "+SELECTION_2+", "+SELECTION_3+", "+SELECTION_4
-//                +", "+ANSWER+", "+IMAGE+ ", "+HINT+", "+HINT_IMAGE+" FROM "+TABLE_NAME+
-//                " WHERE "+QUIZ_LEVEL+"=2 ORDER BY RANDOM() LIMIT 1";
         Cursor cursor=null;
 
         try{

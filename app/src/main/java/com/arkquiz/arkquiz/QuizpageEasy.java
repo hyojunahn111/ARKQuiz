@@ -62,7 +62,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         selectionInString=new String[4];
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/5940218742");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -77,7 +77,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
 
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
-        mRewardedVideoAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
+        mRewardedVideoAd.loadAd("ca-app-pub-3081286779348377/4604291627", new AdRequest.Builder().build());
 
         final SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
 

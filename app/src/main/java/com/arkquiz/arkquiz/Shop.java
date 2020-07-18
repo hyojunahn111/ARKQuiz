@@ -1,7 +1,9 @@
 package com.arkquiz.arkquiz;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +13,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 // import com.android.vending.billing.IInAppBillingService;
+import com.android.billingclient.api.BillingClient;
+import com.android.billingclient.api.BillingClientStateListener;
+import com.android.billingclient.api.BillingFlowParams;
+import com.android.billingclient.api.BillingResult;
+import com.android.billingclient.api.Purchase;
+import com.android.billingclient.api.PurchasesUpdatedListener;
+import com.android.billingclient.api.SkuDetails;
+import com.android.billingclient.api.SkuDetailsParams;
+import com.android.billingclient.api.SkuDetailsResponseListener;
 import com.android.vending.billing.IInAppBillingService;
+//import com.anjlab.android.iab.v3.BillingProcessor;
+//import com.anjlab.android.iab.v3.SkuDetails;
+//import com.anjlab.android.iab.v3.TransactionDetails;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -21,17 +35,26 @@ import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
-public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Shop extends AppCompatActivity implements RewardedVideoAdListener, PurchasesUpdatedListener {
 
     private TextView TextView_shop_dino_egg;
     private int current_dino_egg;
     private AdView mAdView;
-    private Button btn_ad, btn_home, btn_dino_bone_100, btn_dino_bone_500, btn_dino_bone_1000;
+    private Button btn_ad, btn_home, btn_dino_bone_200, btn_dino_bone_2000, btn_dino_bone_1000;
     IInAppBillingService mService;
-
-//    IInAppBillingService mService;
     String dino_egg_100, dino_egg_500, dino_egg_1000;
     private RewardedVideoAd mRewardedVideoAd;
+
+//    private PurchaseHeartsAdapter skusAdapter;
+//    private BillingProcessor bp;
+    public static ArrayList<SkuDetails> skuDetailsList;
+    private String licenseKey="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjD+PhZ101elYRYcN9zfdZKLFy8DQYlLcqGnDEYqdhru8/ntjUE1oXC+nan9HbijEjfmYdTiR6MtwK0uo56P5zN7ii4UMWebvcySBgnIs2WlJ1DPFN1odbrj+xKtgK2090D0mLJzTgcuEKUSj+8/+mabf+2tTeSzsgao+G80xgtdAl4Ixq2dotfv+O52cNzftm83m8BjVNyaYrTKMemmBDn5M1W2zulfwWp1ftmLHTvUXM5ku+PfnVX7KSFRqRL/y6CC4yhjBttQvMhn8bXJDHC36aR4Zh68JcnDuzWr8enhhq3XNKbf9MjSp1VCQft058pv8T/iZL8gISf/d6gKYnQIDAQAB";
+//    private MaterialDialog purchaseDialog;
+    private BillingClient billingClient;
 
 
 /*
@@ -53,19 +76,63 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dino_egg);
 
-
         TextView_shop_dino_egg = findViewById(R.id.TextView_shop_dino_egg);
         btn_ad=findViewById(R.id.button11);
         btn_home=findViewById(R.id.button20);
-        btn_dino_bone_100=findViewById(R.id.button13);
-        btn_dino_bone_500=findViewById(R.id.button18);
-        btn_dino_bone_1000=findViewById(R.id.button19);
+        btn_dino_bone_200=findViewById(R.id.button13);
+        btn_dino_bone_1000=findViewById(R.id.button18);
+        btn_dino_bone_2000=findViewById(R.id.button19);
 
         this.getSupportActionBar().hide();
 
         final SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
         current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
         TextView_shop_dino_egg.setText(String.valueOf(current_dino_egg));
+
+        billingClient=BillingClient.newBuilder(this).setListener(this).enablePendingPurchases().build();
+        billingClient.startConnection(new BillingClientStateListener() {
+            @Override
+            public void onBillingSetupFinished(BillingResult billingResult) {
+                if(billingResult.getResponseCode()==BillingClient.BillingResponseCode.OK){
+                    Toast.makeText(Shop.this, "결제 서비스 연결에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(Shop.this, "결제에 서비스 연결에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                    Log.d("결제 오류", ""+billingResult);
+                }
+            }
+
+            @Override
+            public void onBillingServiceDisconnected() {
+                Toast.makeText(Shop.this, "결제 서바스와 연결에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        loadProduct();
+/*
+        bp=new BillingProcessor(this, licenseKey, null, new BillingProcessor.IBillingHandler() {
+            //     특정 ID를 가진 아이템의 구매 성공 시 호출
+            @Override
+            public void onProductPurchased(String productId, TransactionDetails details) {
+
+            }
+//    앱 내에서 구매를 했는지 안했는지 체크
+            @Override
+            public void onPurchaseHistoryRestored() {
+
+            }
+//    구매시 발생하는 에러
+// 구매자가 구매과정에서 그냥 취소해도 발생되는데, 이때의 errorCode는  Constants.BILLING_RESPONSE_RESULT_USER_CANCELED 라고한다.
+            @Override
+            public void onBillingError(int errorCode, Throwable error) {
+
+            }
+//            BillingProcessor가 초기화되고, 구매 준비가 되면 호출
+//   구매할 아이템들을 리스트로 구성해서 보여주는 코드를 구현하면 됨
+            @Override
+            public void onBillingInitialized() {
+
+            }
+        });*/
 
 //        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
@@ -81,24 +148,48 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
         mRewardedVideoAd.setRewardedVideoAdListener(this);
         mRewardedVideoAd.loadAd("ca-app-pub-3081286779348377/4604291627", new AdRequest.Builder().build());
 
-        btn_dino_bone_100.setOnClickListener(new View.OnClickListener() {
+        btn_dino_bone_200.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        btn_dino_bone_500.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
+//                bp.purchase(this, "dinobone200");
+                BillingFlowParams billingFlowParams=BillingFlowParams.newBuilder()
+                        .setSkuDetails(skuDetailsList.get(0)).build();
+                billingClient.launchBillingFlow(Shop.this, billingFlowParams);
+                SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
+                current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
+                SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
+                editor.putInt("dino_egg", current_dino_egg+200);
             }
         });
 
         btn_dino_bone_1000.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
+//                bp.purchase(this, "dinobone1000");
+                BillingFlowParams billingFlowParams=BillingFlowParams.newBuilder()
+                        .setSkuDetails(skuDetailsList.get(1)).build();
+                billingClient.launchBillingFlow(Shop.this, billingFlowParams);
+                SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
+                current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
+                SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
+                editor.putInt("dino_egg", current_dino_egg+1000);
+            }
+        });
+
+        btn_dino_bone_2000.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(Shop.this, "상품을 준비중입니다.", Toast.LENGTH_SHORT).show();
+//                bp.purchase(this, "dinobone2000");
+                BillingFlowParams billingFlowParams=BillingFlowParams.newBuilder()
+                        .setSkuDetails(skuDetailsList.get(2)).build();
+                billingClient.launchBillingFlow(Shop.this, billingFlowParams);
+                SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
+                current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
+                SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
+                editor.putInt("dino_egg", current_dino_egg+2000);
             }
         });
 
@@ -238,6 +329,78 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener{
     public void onRewardedVideoCompleted() {
 
     }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (!bp.handleActivityResult(requestCode, resultCode, data)) {
+//            super.onActivityResult(requestCode, resultCode, data);
+//        }
+//    }
+//
+//    @Override
+//    public void onDestroy() {
+//        if (bp != null) {
+//            bp.release();
+//        }
+//        super.onDestroy();
+//    }
+
+    @Override
+    public void onPurchasesUpdated(BillingResult billingResult, @Nullable List<Purchase> purchases) {
+
+    }
+
+    public void loadProduct(){
+        if(billingClient.isReady()){
+            SkuDetailsParams params= SkuDetailsParams.newBuilder()
+                    .setSkusList(Arrays.asList("dinobone200", "dinobone1000", "dinobone2000"))
+                    .setType(BillingClient.SkuType.INAPP)
+                    .build();
+
+            billingClient.querySkuDetailsAsync(params, new SkuDetailsResponseListener() {
+                @Override
+                public void onSkuDetailsResponse(BillingResult billingResult, List<com.android.billingclient.api.SkuDetails> skuDetailsList) {
+                     if(billingResult.getResponseCode()==BillingClient.BillingResponseCode.OK){
+
+                     }
+                     else{
+                         Toast.makeText(Shop.this, "상품 목록을 로드해오는 것을 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                     }
+                }
+            });
+        }
+        else{
+            Toast.makeText(Shop.this, "결제 클라이언트가 준비되지 않았습니다.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+////        특정 ID를 가진 아이템의 구매 성공 시 호출
+//    @Override
+//    public void onProductPurchased(String productId, TransactionDetails details) {
+//
+//    }
+//
+////    앱네에서 구매를 했는지 안했는지 체크크
+//   @Override
+//    public void onPurchaseHistoryRestored() {
+//
+//    }
+//
+////    구매시 발생하는 에러
+//// 구매자가 구매과정에서 그냥 취소해도 발생되는데, 이때의 errorCode는  Constants.BILLING_RESPONSE_RESULT_USER_CANCELED 라고한다.
+//// 에러 처리를 할때 errorCode가 Constants.BILLING_RESPONSE_RESULT_USER_CANCELED 가 아닌경우에만 에러 메세지를 띄울 수 있도록 하자.
+//    @Override
+//    public void onBillingError(int errorCode, Throwable error) {
+//
+//    }
+//
+////    BillingProcessor가 초기화되고, 구매 준비가 되면 호출
+////    구매할 아이템들을 리스트로 구성해서 보여주는 코드를 구현하면 됨
+//    @Override
+//    public void onBillingInitialized() {
+//        products=(ArrayList<SkuDetails>) bp.getPurchaseListingDetails(new );
+//    }
 /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

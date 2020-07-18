@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
         db=mDBHelper.getWritableDatabase();
         TextView_main_dino_egg=findViewById(R.id.TextView_main_dino_egg);
 
+        mDBHelper.updateTruetoFalse(db);
+
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
