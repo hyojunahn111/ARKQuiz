@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +30,13 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 
 public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdListener {
 
@@ -56,6 +64,9 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizpage_easy);
+
+        TranslateTask translateTask = new TranslateTask();
+        translateTask.execute();
 
         this.getSupportActionBar().hide();
 
@@ -217,7 +228,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
                     editor.putInt("dino_egg", current_dino_egg-20);
                     makeDialog_hint();
                 }
-                else Toast.makeText(QuizpageEasy.this, "공룡 뼈이 부족합니다.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(QuizpageEasy.this, "공룡 뼈가 부족합니다.", Toast.LENGTH_SHORT).show();
                 editor.commit();
             }
         });
@@ -242,6 +253,48 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
 
             }
         });
+    }
+
+    class TranslateTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... strings) {
+            String clientId = "wwEOQvan8Qd8Sv6r0__T";//애플리케이션 클라이언트 아이디값";
+            String clientSecret = "HqMcU9SiUQ";//애플리케이션 클라이언트 시크릿값";
+            try {
+                String text = URLEncoder.encode(null, "UTF-8");
+                String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
+                URL url = new URL(apiURL);
+                HttpURLConnection con = (HttpURLConnection)url.openConnection();
+                con.setRequestMethod("POST");
+                con.setRequestProperty("X-Naver-Client-Id", clientId);
+                con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
+                // post request
+                String postParams = "source=ko&target=en&text=" + text;
+                con.setDoOutput(true);
+                DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+                wr.writeBytes(postParams);
+                wr.flush();
+                wr.close();
+                int responseCode = con.getResponseCode();
+                BufferedReader br;
+                if(responseCode==200) { // 정상 호출
+                    br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                } else {  // 에러 발생
+                    br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+                }
+                String inputLine;
+                StringBuffer response = new StringBuffer();
+                while ((inputLine = br.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                br.close();
+                System.out.println(response.toString());
+                TextView_quiz.setText(response.toString());
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            return null;
+        }
     }
 
     public void setQuiz(SQLiteDatabase db, long id, String quiz, String selection1, String selection2, String selection3, String selection4,
