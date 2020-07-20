@@ -39,7 +39,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Shop extends AppCompatActivity implements RewardedVideoAdListener, PurchasesUpdatedListener {
+public class Shop extends AppCompatActivity implements PurchasesUpdatedListener {
 
     private TextView TextView_shop_dino_egg;
     private int current_dino_egg;
@@ -47,7 +47,6 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener, 
     private Button btn_ad, btn_home, btn_dino_bone_200, btn_dino_bone_2000, btn_dino_bone_1000;
     IInAppBillingService mService;
     String dino_egg_100, dino_egg_500, dino_egg_1000;
-    private RewardedVideoAd mRewardedVideoAd;
 
 //    private PurchaseHeartsAdapter skusAdapter;
 //    private BillingProcessor bp;
@@ -135,18 +134,6 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener, 
         });*/
 
 //        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        mAdView = findViewById(R.id.adView_shop);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-        mRewardedVideoAd.setRewardedVideoAdListener(this);
-        mRewardedVideoAd.loadAd("ca-app-pub-3081286779348377/4604291627", new AdRequest.Builder().build());
 
         btn_dino_bone_200.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,12 +183,7 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener, 
         btn_ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mRewardedVideoAd.isLoaded()) {
-                    mRewardedVideoAd.show();
-                }
-                else{
-                    Toast.makeText(Shop.this, "광고 로드에 싫패하였습니다", Toast.LENGTH_SHORT).show();
-                }
+
             }
         });
 
@@ -285,49 +267,6 @@ public class Shop extends AppCompatActivity implements RewardedVideoAdListener, 
         } catch (RemoteException e) {
             e.printStackTrace();
         }*/
-    }
-
-    @Override
-    public void onRewardedVideoAdLoaded() {
-        Log.d("tag_ad", "보상형 광고 로드");
-    }
-
-    @Override
-    public void onRewardedVideoAdOpened() {
-
-    }
-
-    @Override
-    public void onRewardedVideoStarted() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdClosed() {
-    }
-
-    @Override
-    public void onRewarded(RewardItem rewardItem) {
-        Toast.makeText(this, "공룡 뼈 20개가 지급되었습니다!", Toast.LENGTH_SHORT);
-        SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
-        current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
-        SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
-        editor.putInt("dino_egg", current_dino_egg+20);
-    }
-
-    @Override
-    public void onRewardedVideoAdLeftApplication() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdFailedToLoad(int i) {
-        Log.d("tag_ad", "Shop 보상형 광고 로드 실패 / 에러 코드: "+i);
-    }
-
-    @Override
-    public void onRewardedVideoCompleted() {
-
     }
 
 //    @Override

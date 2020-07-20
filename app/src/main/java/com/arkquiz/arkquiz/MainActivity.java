@@ -41,28 +41,6 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
 
         mDBHelper.updateTruetoFalse(db);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        mAdView = findViewById(R.id.adView_main);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        mAdView.setAdListener(new AdListener(){
-            @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-                Log.d("Tag_Ad", "광고 로드 완료");
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-                Log.d("Tag_Ad", "광고 로드 실패 / 에러코드:"+errorCode);
-            }
-        });
-
         SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
         SharedPreferences sharedPreferences=getSharedPreferences("IsFirst", MODE_PRIVATE);
         boolean isFirst = sharedPreferences.getBoolean("isFirst", false);
@@ -76,6 +54,24 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             editor2.commit();
 
             mDBHelper.LoadQuiz(db, this);
+        }
+
+        boolean isFirst2 = sharedPreferences.getBoolean("isFirst2", false);
+        if(!isFirst2){ //최초 실행시 true 저장 1.0.5 업데이트
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isFirst2", true);
+            editor.commit();
+
+            mDBHelper.loadQuiz2(db, this);
+        }
+
+        boolean isFirst3 = sharedPreferences.getBoolean("isFirst3", false);
+        if(!isFirst3){ //최초 실행시 true 저장 1.0.6 업데이트
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isFirst3", true);
+            editor.commit();
+
+            mDBHelper.loadQuiz3(db, this);
         }
 
         mDBHelper.updateTruetoFalse(db);

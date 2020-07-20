@@ -30,7 +30,7 @@ import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
-public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdListener {
+public class QuizpageEasy extends AppCompatActivity {
 
     private TextView TextView_quiz, TextView_dino_egg, TextView_numberOfQuiz;
     private ImageView ImageView_quiz_image;
@@ -46,9 +46,6 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
     private int correct_answer;
     private boolean isCorrect;
     private String current_hint;
-    private AdView mAdView;
-    private InterstitialAd mInterstitialAd;
-    private RewardedVideoAd mRewardedVideoAd;
     private String[] selectionInString;
     private Bitmap current_hint_image;
 
@@ -61,24 +58,6 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
 
         selectionInString=new String[4];
 
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3081286779348377/5940218742");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());//전면광고 로드
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        mAdView = findViewById(R.id.adView_quiz_easy);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-        mRewardedVideoAd.setRewardedVideoAdListener(this);
-        mRewardedVideoAd.loadAd("ca-app-pub-3081286779348377/4604291627", new AdRequest.Builder().build());
-
         final SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
 
         Intent gIntent=getIntent();
@@ -90,22 +69,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
 
         if(numberOfQuiz%3==0) {
 //        전면 광고 삽입
-            if (mInterstitialAd.isLoaded()) {
-                mInterstitialAd.show();
-            }
-            mInterstitialAd.setAdListener(new AdListener(){
-                @Override
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-                    Log.d("Tag_Ad", "전면 광고 로드 실패 / 에러코드:"+i);
-                }
 
-                @Override
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                    Log.d("Tag_Ad", "전면 광고 로드 완료");
-                }
-            });
         }
 
 
@@ -134,15 +98,15 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
 
 //        Random random = new Random();
 //        random_number=random.nextInt(mDBHelper.getRowCount(db));
-        final Cursor cursor = mDBHelper.LoadSQLiteDBCursor_easy();
+        final Cursor cursor = mDBHelper.LoadSQLiteDBCursor(1);
         try {
             Log.d("TAG", "cursor의 개수: "+cursor.getCount());
             cursor.moveToFirst();
 //            mDBHelper.isQuizShown[(int)cursor.getLong(0)]=true;
             SQLiteDatabase db2;
             db2=mDBHelper.getWritableDatabase();
-            setQuiz(db, cursor.getLong(0), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
-                    cursor.getString(7), cursor.getBlob(8), cursor.getString(9), cursor.getBlob(10));
+            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+                    cursor.getInt(7), cursor.getBlob(8), cursor.getString(9), cursor.getBlob(10));
             Log.d("TAG", "현재 isShown: "+cursor.getInt(11));
             mDBHelper.updateFalseToTrue(db2, (int)cursor.getLong(0));
             Log.d("TAG", "updateFalseToTrue 아후 isShown: "+cursor.getInt(11));
@@ -225,13 +189,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         btn_hint_by_ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mRewardedVideoAd.isLoaded()) {
-                    mRewardedVideoAd.show();
-                    makeDialog_hint();
-                }
-                else{
-                    Toast.makeText(QuizpageEasy.this, "광고 로드에 실패하였습니다.", Toast.LENGTH_SHORT).show();
-                }
+
             }
         });
 
@@ -244,8 +202,8 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         });
     }
 
-    public void setQuiz(SQLiteDatabase db, long id, String quiz, String selection1, String selection2, String selection3, String selection4,
-                        String answer, byte[] image, String hint, byte[] hint_image){
+    public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4,
+                        int answer, byte[] image, String hint, byte[] hint_image){
         TextView_quiz.setText(quiz);
 //        ImageView_quiz_image.setImageResource(image);
         btn_selection[0].setText(selection1);
@@ -256,7 +214,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         selectionInString[1]=selection2;
         selectionInString[2]=selection3;
         selectionInString[3]=selection4;
-        quiz_answer=Integer.parseInt(answer);
+        quiz_answer=answer;
         ImageView_quiz_image.setImageBitmap(getBitmapImage(image));
         if(hint!=null)current_hint=hint;
         else current_hint="";
@@ -399,60 +357,7 @@ public class QuizpageEasy extends AppCompatActivity implements RewardedVideoAdLi
         alertDialog.show();
     }
 
-    @Override
-    public void onRewardedVideoAdLoaded() {
-        Log.d("tag_ad", "보상형 광고 로드 성공!");
-    }
 
-    @Override
-    public void onRewardedVideoAdOpened() {
-
-    }
-
-    @Override
-    public void onRewardedVideoStarted() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdClosed() {
-
-    }
-
-    @Override
-    public void onRewarded(RewardItem rewardItem) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(QuizpageEasy.this);
-        builder.setTitle("힌트").setMessage(current_hint)
-                .setNeutralButton("취소", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                })
-                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
-
-    @Override
-    public void onRewardedVideoAdLeftApplication() {
-
-    }
-
-    @Override
-    public void onRewardedVideoAdFailedToLoad(int i) {
-        Log.d("tag_ad", "보상형 광고 로드 실패 / 에러 코드: "+i);
-    }
-
-    @Override
-    public void onRewardedVideoCompleted() {
-
-    }
 
 //    public void LoadQuiz(){
 //        Log.d("TAG", "loadQuiz 호출");
