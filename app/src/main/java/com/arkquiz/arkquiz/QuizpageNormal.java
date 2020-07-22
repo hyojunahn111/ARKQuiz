@@ -181,7 +181,7 @@ public class QuizpageNormal extends AppCompatActivity{
 //                    TextView_dino_egg.setText(sharedPreferences_dino_egg.getInt("dino_egg", 0));
                     makeDialog_hint();
                 }
-                else Toast.makeText(QuizpageNormal.this, "공룡 뼈이 부족합니다.", Toast.LENGTH_SHORT).show();
+                else Toast.makeText(QuizpageNormal.this, "공룡 뼈가 부족합니다.", Toast.LENGTH_SHORT).show();
                 editor.commit();
             }
         });
