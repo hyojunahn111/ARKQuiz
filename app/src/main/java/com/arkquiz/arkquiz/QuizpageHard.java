@@ -179,6 +179,7 @@ public class QuizpageHard extends AppCompatActivity{
                 SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
                 if(sharedPreferences_dino_egg.getInt("dino_egg", 0)>=20){
                     editor.putInt("dino_egg", current_dino_egg-20);
+//                    TextView_dino_egg.setText(sharedPreferences_dino_egg.getInt("dino_egg", 0));
                     makeDialog_hint();
                 }
                 else Toast.makeText(QuizpageHard.this, "공룡 뼈이 부족합니다.", Toast.LENGTH_SHORT).show();
