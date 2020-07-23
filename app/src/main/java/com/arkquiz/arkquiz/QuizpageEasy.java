@@ -187,7 +187,7 @@ public class QuizpageEasy extends AppCompatActivity {
 //                    TextView_dino_egg.setText(sharedPreferences_dino_egg.getInt("dino_egg", 0));
                     makeDialog_hint();
                 } else
-                    Toast.makeText(QuizpageEasy.this, "공룡 뼈가 부족합니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(QuizpageEasy.this, "There is no dinosaur bone.", Toast.LENGTH_SHORT).show();
                 editor.commit();
             }
         });
@@ -236,14 +236,14 @@ public class QuizpageEasy extends AppCompatActivity {
     public void makeDialog_correct() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String answerInString = selectionInString[quiz_answer - 1];
-        builder.setTitle("정답입니다!").setMessage("정답은 " + answerInString + "입니다.")
+        builder.setTitle("That is the correct answer!").setMessage("The correct answer is " + answerInString)
 //        .setNeutralButton("", new DialogInterface.OnClickListener() {
 //            @Override
 //            public void onClick(DialogInterface dialogInterface, int i) {
 //                dialogInterface.cancel();
 //            }
 //        })
-                .setPositiveButton("다음 문제로 넘어가기", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Go to the next question", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (numberOfQuiz >= 10) {
@@ -266,14 +266,14 @@ public class QuizpageEasy extends AppCompatActivity {
     public void makeDialog_wrong() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         String answerInString = selectionInString[quiz_answer - 1];
-        builder.setTitle("오답입니다!").setMessage("정답은 " + answerInString + "입니다.")
+        builder.setTitle("That is the wrong answer!").setMessage("The correct answer is " + answerInString)
 //                .setNeutralButton("", new DialogInterface.OnClickListener() {
 //                    @Override
 //                    public void onClick(DialogInterface dialogInterface, int i) {
 //                        dialogInterface.cancel();
 //                    }
 //                })
-                .setPositiveButton("다음 문제로 넘어가기", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Go to the next question", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (numberOfQuiz >= 10) {
@@ -295,9 +295,9 @@ public class QuizpageEasy extends AppCompatActivity {
 
     public void makeDialog_finish() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String quiz_result = "결과: " + correct_answer + "/10";
+        String quiz_result = "result: " + correct_answer + "/10";
         builder.setMessage(quiz_result)
-                .setPositiveButton("메인 페이지로 돌아가기", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Back to main page", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         finish();
@@ -320,14 +320,14 @@ public class QuizpageEasy extends AppCompatActivity {
         ImageView ImageView_dialog_hint = dialog_view.findViewById(R.id.ImageView_dialog_hint);
         ImageView_dialog_hint.setImageBitmap(current_hint_image);
 
-        builder.setTitle("힌트").setMessage(current_hint).setView(dialog_view)
-                .setNeutralButton("취소", new DialogInterface.OnClickListener() {
+        builder.setTitle("Hint").setMessage(current_hint).setView(dialog_view)
+                .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
                     }
                 })
-                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dialogInterface.cancel();
@@ -340,8 +340,8 @@ public class QuizpageEasy extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("메인 화면으로 나가시겠습니까?");
-        builder.setPositiveButton("나가기", new DialogInterface.OnClickListener() {
+        builder.setMessage("Would you like to go to the main page?");
+        builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 mDBHelper.updateTruetoFalse(db);
@@ -352,7 +352,7 @@ public class QuizpageEasy extends AppCompatActivity {
             }
         });
 
-        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();

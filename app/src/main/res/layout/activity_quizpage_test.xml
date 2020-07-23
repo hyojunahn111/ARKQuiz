@@ -52,7 +52,7 @@
         android:background="@drawable/stroke"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:gravity="center"
-        android:text="공룡알을 모은 수치"
+        android:text="DinoBoneCount"
         android:textColor="#FFFFFF"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"

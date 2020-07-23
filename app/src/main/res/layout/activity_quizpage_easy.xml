@@ -53,7 +53,7 @@
         android:background="@drawable/stroke"
         android:fontFamily="@font/gmarketsansttfmedium"
         android:gravity="center"
-        android:text="공룡알을 모은 수치"
+        android:text="DinoBoneCount"
         android:textColor="#FFFFFF"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,8 +99,8 @@
 
     <ImageView
         android:id="@+id/ImageView_quiz_image"
-        android:layout_width="255dp"
-        android:layout_height="246dp"
+        android:layout_width="249dp"
+        android:layout_height="235dp"
         app:layout_constraintBottom_toTopOf="@id/button7"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"
