@@ -319,7 +319,7 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute from the boss.", "Brontosaurus", "Spino", "Raptor", "Diplodocus", 3, R.drawable.ark_logo, "This dinosaur has two-legged jumping and catching skills..", NULL, 0, context);
             insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute from the boss.", "T-rex", "Titanoboa", "Woolly Rhino", "Ravager", 4, R.drawable.ark_logo, "This dinosaur is a quadruped and reduces weight.", NULL, 0, context);
 //          알파공룡 문제
-            insertQuiz(db,3, "Which of the following is not an alpha dinosaur?", "Alpha Leedsichthys", "Alpha Raptor", "Alpha Reaper king", "Alpha Carnotaurus", 4, R.drawable.ark_logo, "This dinosaur collects Cementing Paste, Wood, rare flowers, rare mushrooms, and silica pearls.", NULL, 0, context);
+            insertQuiz(db,3, "Which of the following is not an alpha dinosaur?", "Alpha Leedsichthys", "Alpha Raptor", "Alpha Reaper king", "Alpha Carnotaurus", 4, R.drawable.ark_logo, "This dinosaur collects Cementing Paste, Wood, rare flowers, rare mushrooms, and silica pearhyojuls.", NULL, 0, context);
             insertQuiz(db,3, "Which of the following is not an alpha dinosaur?", "Alpha Megalodon", "Alpha Mosasaur", "Alpha Megalania", "Alpha Tusoteuthis", 3, R.drawable.ark_logo, "There are no dinosaurs like this. Mainly living in the ceiling in the cave and there are many in Ragnarok", NULL, 0, context);
 
             insertQuiz(db,2, "What is not a resource that comes from killing Managarmr?", "Chitin", "Keratin", "Hide", "Raw prime Meat", 1, R.drawable.managarma, "Managamar is not an insect.", NULL, 0, context);
