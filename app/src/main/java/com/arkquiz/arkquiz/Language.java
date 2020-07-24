@@ -1,6 +1,5 @@
 package com.arkquiz.arkquiz;
 
-import android.app.AppComponentFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 

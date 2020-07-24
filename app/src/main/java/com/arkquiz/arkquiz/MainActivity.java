@@ -5,28 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.channels.AsynchronousChannel;
 
 public class MainActivity extends AppCompatActivity implements OnBackPressedListener{
 
@@ -58,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
 
         SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
         SharedPreferences sharedPreferences=getSharedPreferences("IsFirst", MODE_PRIVATE);
-        boolean isFirst = sharedPreferences.getBoolean("isFirst", false);
+        /*boolean isFirst = sharedPreferences.getBoolean("isFirst", false);
         if(!isFirst){ //최초 실행시 true 저장
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("isFirst", true);
@@ -68,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             editor2.putInt("dino_egg", 100);
             editor2.commit();
 
-            mDBHelper.LoadQuiz(db, this);
+            mDBHelper.loadQuiz(db, this);
         }
 
         boolean isFirst2 = sharedPreferences.getBoolean("isFirst2", false);
@@ -88,7 +73,17 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
 
             mDBHelper.loadQuiz3(db, this);
         }
-
+*/
+        boolean isFirst4 = sharedPreferences.getBoolean("isFirst4", false);
+        if(!isFirst4){ //최초 실행시 true 저장 1.0.6 업데이트
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isFirst4", true);
+            editor.commit();
+            mDBHelper.dbDeleteAll();
+            mDBHelper.loadQuiz(db, this);
+            mDBHelper.loadQuiz2(db, this);
+            mDBHelper.loadQuiz3(db, this);
+        }
         mDBHelper.updateTruetoFalse(db);
 
         current_dino_egg=sharedPreferences_dino_egg.getInt("dino_egg", 0);
@@ -216,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
 //    두 번 누르면 앱 종료
     @Override
     public void onBackPressed() {
-        Toast toast=Toast.makeText(MainActivity.this, "한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT);
+        Toast toast=Toast.makeText(MainActivity.this, "Press Back again to Exit", Toast.LENGTH_SHORT);
         if(System.currentTimeMillis() > backKeyPressedTime + 2000){
             backKeyPressedTime = System.currentTimeMillis();
             toast.show();

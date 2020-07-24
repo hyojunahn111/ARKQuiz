@@ -10,7 +10,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,24 +18,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.reward.RewardItem;
-import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.google.android.gms.ads.reward.RewardedVideoAdListener;
-
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
 
 
 public class QuizpageEasy extends AppCompatActivity {
@@ -195,7 +176,7 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_hint_by_ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(QuizpageEasy.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -243,7 +224,7 @@ public class QuizpageEasy extends AppCompatActivity {
 //                dialogInterface.cancel();
 //            }
 //        })
-                .setPositiveButton("Go to the next question", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Next", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (numberOfQuiz >= 10) {
@@ -273,7 +254,7 @@ public class QuizpageEasy extends AppCompatActivity {
 //                        dialogInterface.cancel();
 //                    }
 //                })
-                .setPositiveButton("Go to the next question", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Next", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (numberOfQuiz >= 10) {
@@ -295,7 +276,7 @@ public class QuizpageEasy extends AppCompatActivity {
 
     public void makeDialog_finish() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String quiz_result = "result: " + correct_answer + "/10";
+        String quiz_result = "Result: " + correct_answer + "/10";
         builder.setMessage(quiz_result)
                 .setPositiveButton("Back to main page", new DialogInterface.OnClickListener() {
                     @Override

@@ -175,11 +175,16 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public void dbDeleteAll(){
+        SQLiteDatabase db = getWritableDatabase(); // helper is object extends SQLiteOpenHelper
+        db.delete(TABLE_NAME, null, null);
+    }
+
     public void dbDelete(SQLiteDatabase db, Long dbId){
         db.execSQL("DELETE FROM "+TABLE_NAME+" WHERE "+ID+"="+dbId);
     }
 
-    public void LoadQuiz(SQLiteDatabase db, Context context){
+    public void loadQuiz(SQLiteDatabase db, Context context){
         Log.d("TAG", "loadQuiz 호출");
 
 //        db.beginTransaction();
@@ -191,59 +196,59 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,1, "What is the name of this dinosaur?", "T-Rex", "Diplodocus", "Parasaurolophus", "Pachy", 3, R.drawable.ark_parasaur, "This dinosaur has the ability to detect enemies.", NULL, 0, context);
             insertQuiz(db,1, "What is the name of this dinosaur?", "Griffin", "Parasaurolophus", "Ankylosaurus", "Quetzal", 3, R.drawable.ark_ankylosaurus, "This dinosaur digs metal well.", NULL, 0, context);
             insertQuiz(db,1, "What is the name of this dinosaur?", "Ankylosaurus", "Baryonyx", "Beelzebufo", "Direwolf", 2, R.drawable.ark_baryonyx, "This dinosaur does not have an oxygen gauge.", NULL, 0, context);
-            insertQuiz(db,1, "What is the name of this dinosaur?", "Bulbdog", "T-rex", "Woolly Rhino", "Unicorn", 3, R.drawable.woollyrhino, "This dinosaur can collect gauges.", NULL, 0, context);
-            insertQuiz(db,1, "What is the name of this dinosaur?", "Titanoboa", "Seeker", "Daeodon", "Giganotosaurus", 4, R.drawable.giganotosaurus, "This dinosaur has a wide gauge.", NULL, 0, context);
+            insertQuiz(db,1, "What is the name of this dinosaur?", "Bulbdog", "T-Rex", "Woolly Rhino", "Unicorn", 3, R.drawable.woollyrhino, "This dinosaur can accumulate attack gauges.", NULL, 0, context);
+            insertQuiz(db,1, "What is the name of this dinosaur?", "Titanoboa", "Seeker", "Daeodon", "Giganotosaurus", 4, R.drawable.giganotosaurus, "Its attacking range is very wide.", NULL, 0, context);
             insertQuiz(db,1, "What is the name of this dinosaur?", "Dung Beetle", "Oviraptor", "Pegomastax", "Allosaurus", 4, R.drawable.allosaurus, "This dinosaur has flock buff and bleeding damage.", NULL,0, context);
             insertQuiz(db,1, "What is the name of this dinosaur?", "Compy", "Morellatops", "Chalicotherium", "Gacha", 1, R.drawable.compy, "This dinosaur is small and has flock buffs.", NULL, 0, context);
-            insertQuiz(db,1, "What is the name of this dinosaur?", "Defense Unit", "Carnotaurus", "Magmasaur", "Kantrosaurus", 2, R.drawable.carnotaurus, "This dinosaur has short hands and two small horns on its head.", NULL, 0, context);
+            insertQuiz(db,1, "What is the name of this dinosaur?", "Defense Unit", "Carnotaurus", "Magmasaur", "Kentrosaurus", 2, R.drawable.carnotaurus, "This dinosaur has short arms and two small horns on its head.", NULL, 0, context);
             insertQuiz(db,1, "What is the name of this dinosaur?", "Spino", "Yeti", "Brontosaurus", "Yutyrannus", 3, R.drawable.brontosaurus, "This dinosaur is huge and attacks with its tail.", NULL, 0, context);
             insertQuiz(db,1, "What is the name of this dinosaur?", "Dilophosaur", "Thorny Dragon", "Terror Bird", "Stegosaurus", 1, R.drawable.dilophosaur, "When this dinosaur spits, the vision is obscured.", NULL, 0, context);
-            insertQuiz(db,1, "What is the name of this dinosaur?", "Argentavis", "Triceratops", "Purlovia", "Kaprosuchus", 1, R.drawable.argentavis, "This dinosaur cuts weight in half.", NULL, 0, context);
+            insertQuiz(db,1, "What is the name of this dinosaur?", "Argentavis", "Triceratops", "Purlovia", "Kaprosuchus", 1, R.drawable.argentavis, "This dinosaur reduces weight in half.", NULL, 0, context);
             insertQuiz(db,1, "What is the name of this dinosaur?", "Megalodon", "Direwolf", "gacha", "Phiomia", 4, R.drawable.phiomoa, "This dinosaur is used a lot when collecting poop.", NULL, 0, context);
-            insertQuiz(db,1, "What is the name of this dinosaur?", "Pulmonoscorpius", "Morellatops", "Doedicurus", "Iguanodon", 1, R.drawable.pulmonoscorpius, "If you hit this dinosaur, the paralysis will increase.", NULL, 0, context);
+            insertQuiz(db,1, "What is the name of this dinosaur?", "Pulmonoscorpius", "Morellatops", "Doedicurus", "Iguanodon", 1, R.drawable.pulmonoscorpius, "If it hits you, your paralysis figure will increase.", NULL, 0, context);
             insertQuiz(db,1, "What is the name of this dinosaur?", "Bulbdog", "Diplidicus", "Onyc", "Pachyrhinosaurus", 3, R.drawable.onyc, "This dinosaur lives in caves and has a chance of causing rabies.", NULL, 0, context);
-            insertQuiz(db,1, "What is the name of this dinosaur?", "Spino", "Meganeura", "Baryonyx", "Leech", 1, R.drawable.spino, "This dinosaur receives a water buff when it touches the water.", NULL, 0, context);
+            insertQuiz(db,1, "What is the name of this dinosaur?", "Spino", "Meganeura", "Baryonyx", "Leech", 1, R.drawable.spino, "This dinosaur gets a water buff when it touches the water.", NULL, 0, context);
             insertQuiz(db,1, "How many times can Managarmr jump in the air?", "1 Time", "2 Time", "3 Time", "4 Time", 3, R.drawable.managarma, "jujujump...", NULL, 0, context);
-            insertQuiz(db,1, "How many dashes are in front of Managarmr?", "1 Time", "2 Time", "3 Time", "4 Time", 1, R.drawable.managarma, "managarmr is not a bird", NULL, 0, context);
+            insertQuiz(db,1, "How many dashes can Managarmr use?", "1 Time", "2 Time", "3 Time", "4 Time", 1, R.drawable.managarma, "managarmr is not a bird", NULL, 0, context);
 
 
 //          자원문제
-            insertQuiz(db,1, "What is not Cartoroides collects?", "Wood", "Silica Pearls", "Rare Mushroom", "Straw", 4, R.drawable.castoroides, "It is yellow", NULL, 0, context);
-            insertQuiz(db,1, "What is not a resource from killing trilobites?", "Black Pearl", "Silica Pearls", "Oil", "Leather", 4, R.drawable.trilobite, "Remember that it is a'crustacean'.", NULL, 0, context);
-            insertQuiz(db,1, "What is not a resource that comes from killing Ovis?", "Lamb", "Raw meat", "Leather", "Fur", 2, R.drawable.ovis, "'Sheep' is'sheep'.", NULL, 0, context);
+            insertQuiz(db,1, "Which is not collected by Cartoroides?", "Wood", "Silica Pearls", "Rare Mushroom", "Straw", 4, R.drawable.castoroides, "It is yellow", NULL, 0, context);
+            insertQuiz(db,1, "Which is not collected by killing trilobites?", "Black Pearl", "Silica Pearls", "Oil", "Leather", 4, R.drawable.trilobite, "Remember that it is a'crustacean'.", NULL, 0, context);
+            insertQuiz(db,1, "Which is not collected by killing Ovis?", "Lamb", "Raw meat", "Leather", "Fur", 2, R.drawable.ovis, "'Ovis' is'sheep'.", NULL, 0, context);
 
-            insertQuiz(db,1, "What is not a resource that comes from killing water bugs?", "Chitin", "Raw meat", "Cementing Paste", "silks", 4, R.drawable.jugbug, "can't make clothes.", NULL, 0, context);
+            insertQuiz(db,1, "Which is not collected by killing water bugs?", "Chitin", "Raw meat", "Cementing Paste", "silks", 4, R.drawable.jugbug, "We can't make clothes with this resource.", NULL, 0, context);
 
 //          음식문제
             insertQuiz(db,1, "Which of these is not a berry?", "Amarberry", "Azulberry", "Tintoberry", "Pozoberry", 4, R.drawable.ark_logo, "There is no such berry.", NULL, 0, context);
 
             //부패시간 문제
-            insertQuiz(db,1, "What is the time of corruption for one berry?", "5 min", "10 min", "15 min", "20 min", 2, R.drawable.berries, "초 중 고등학생 쉬는시간정도..", NULL, 0, context);
-            insertQuiz(db,1, "What is the time for one grain of decay?", "5 min", "10 min", "15 min", "20 min", 1, R.drawable.citronal, "하루 반의 반의 반의 반의 반에서 9로 나눈 정도..", NULL, 0, context);
-            insertQuiz(db,1, "What is the decay time of one raw meat?", "5 min", "10 min", "15 min", "20 min", 2, R.drawable.raw_meat, "초 중 고등학생 쉬는시간정도..", NULL, 0, context);
-            insertQuiz(db,1, "What is the decay time of 1 square of raw meat?", "5 hour 10 min", "5 hour 40 min", "6 hour 10 min", "6 hour 40 min", 4, R.drawable.raw_meat, "Multiply one corruption time by 40!", NULL, 0, context);
-            insertQuiz(db,1, "What is the decay time for high quality raw meat?", "2 min", "2 min 10 sec", "2 min 20 sec", "2 min 30 sec", 3, R.drawable.raw_prime_meat, "'140'", NULL, 0, context);
-            insertQuiz(db,1, "What is the time to rot one carrion?", "5 min", "10 min", "15 min", "20 min", 3, R.drawable.spoiled_meat, "Between the time of decay of 1 raw meat and 1 decay of grilled meat.", NULL, 0, context);
+            insertQuiz(db,1, "How much time does it take for a berry to rot?", "5 mins", "10 mins", "15 mins", "20 mins", 2, R.drawable.berries, "Korean students have this much breaktime in school.", NULL, 0, context);
+            insertQuiz(db,1, "How much time does it take for a grain to decay?", "5 mins", "10 mins", "15 mins", "20 mins", 1, R.drawable.citronal, "Divide a day in half and half and half and half and half and then divde it into 9. ", NULL, 0, context);
+            insertQuiz(db,1, "WHow much time does it take for a raw meat to decay?", "5 mins", "10 mins", "15 mins", "20 mins", 2, R.drawable.raw_meat, "Korean students have this much breaktime in school.", NULL, 0, context);
+            insertQuiz(db,1, "How much time does it take for a item box of meat to decay?", "5 hours 10 mins", "5 hours 40 mins", "6 hours 10 mins", "6 hours 40 mins", 4, R.drawable.raw_meat, "Multiply one corruption time by 40!", NULL, 0, context);
+            insertQuiz(db,1, "How much time does it take for a raw prime meat to decay?", "2 mins", "2 mins 10 sec", "2 mins 20 sec", "2 mins 30 sec", 3, R.drawable.raw_prime_meat, "'140'", NULL, 0, context);
+            insertQuiz(db,1, "How much time does it take for a rotten meat to decay?", "5 mins", "10 mins", "15 mins", "20 mins", 3, R.drawable.spoiled_meat, "Between decay time of a raw meat and a decay time of grilled meat.", NULL, 0, context);
 
             //한 칸 문제
-            insertQuiz(db,1, "How much raw meat can you have in one square?"/*한 칸에 들 수 있는 생고기의 양은?*/, "10", "20", "30", "40", 4, R.drawable.raw_meat, "If you get 10000 meat, 250 squares are made.", NULL, 0, context);
-            insertQuiz(db,1, "How much high quality raw meat can you get in one box?"/*한 칸에 들 수 있는 고품질 생고기의 양은?*/, "1", "2", "3", "4", 1, R.drawable.raw_prime_meat, "If you dig 300, you can fill 300 squares.", NULL, 0, context);
-            insertQuiz(db,1, "How much high-quality meat can be in one box?", "10", "20", "30", "40", 3, R.drawable.cooked_prime_meat, "High quality raw meat X 30", NULL, 0, context);
-            insertQuiz(db,1, "What is the amount of Wyvern milk in one box?", "1", "2", "3", "4", 4, R.drawable.wyvern_milk, "Same as high quality raw meat.", NULL, 0, context);
+            insertQuiz(db,1, "How many raw meats can you have in an item square?"/*한 칸에 들 수 있는 생고기의 양은?*/, "10", "20", "30", "40", 4, R.drawable.raw_meat, "If you get 10000 meat, 250 squares are filled.", NULL, 0, context);
+            insertQuiz(db,1, "How many raw prime meats can you get in an item square?"/*한 칸에 들 수 있는 고품질 생고기의 양은?*/, "1", "2", "3", "4", 1, R.drawable.raw_prime_meat, "If you get 300 high quality raw meat, you can fill 300 squares.", NULL, 0, context);
+            insertQuiz(db,1, "How much cooked prime meats can be in an item square?", "10", "20", "30", "40", 3, R.drawable.cooked_prime_meat, "raw prime meat X 30", NULL, 0, context);
+            insertQuiz(db,1, "How many bottles of wyvern milk can you have in an item square?", "1", "2", "3", "4", 4, R.drawable.wyvern_milk, "Same as raw prime meat.", NULL, 0, context);
 
             //제작 문제
-            insertQuiz(db,1, "What is not an ingredient for making gunpowder?", "Flint", "Stone", "Thatch", "Charcoal", 3, R.drawable.gunpowder, "It is light yellow.", NULL, 0, context);
-            insertQuiz(db,3, "How many elements do you need to make a raw tech rifle?", "10", "20", "30", "40", 2, R.drawable.tek_rifle, "It takes as much as the elements that come out when you catch gamma Megapithecus.", NULL, 0, context);
+            insertQuiz(db,1, "What is not used when making gunpowder?", "Flint", "Stone", "Thatch", "Charcoal", 3, R.drawable.gunpowder, "It is light yellow.", NULL, 0, context);
+            insertQuiz(db,3, "How many elements do you need to make a raw tek rifle?", "10", "20", "30", "40", 2, R.drawable.tek_rifle, "It takes as much as the elements that come out when you catch gamma Megapithecus.", NULL, 0, context);
             //데미지
-            insertQuiz(db,1, "What does a raw bow do?", "50", "55", "60", "65", 2, R.drawable.bow, "체력 스텟 하나를 찍고 화살 한 발을 맞았을 경우에 반 피가답니다", NULL, 0, context);
+            insertQuiz(db,1, "What is a damage of a shot of bow?", "50", "55", "60", "65", 2, R.drawable.bow, "If you increase your hp once and then shot by a bow, your hp becomes half.", NULL, 0, context);
             //자원문제
-            insertQuiz(db,1, "What will come out when I pick up a stone with a pickaxe?", "Flint", "Stone", "Metal", "Stone powder", 2, R.drawable.metal_pick, "It's best to pick yellow and triangular things.", NULL, 0, context);
-            insertQuiz(db,1, "What is not a resource that can be obtained with an iron sickle?", "Fiber", "High quality raw fish meat", "Flint", "Thatch", 4, R.drawable.metal_sickle, "The tree cannot be touched.", NULL, 0, context);
-                insertQuiz(db,1, "Which of the examples is less digging with an axe?", "Leech blood", "leather", "AnglerGel", "Stone", 4, R.drawable.metal_hatchet, "It's all well, but it's hard to pick Hard.", NULL, 0, context);
-            insertQuiz(db,1, "What is not the material of a paint brush?", "Wood", "Leather", "Fiber", "Thatch", 3, R.drawable.paintbrush, "This comes out when you dig the grass.", NULL, 0, context);
-            insertQuiz(db,1, "What is not a parachute material?", "Thatch", "Leather", "Wood", "Fiber", 4, R.drawable.parachute, "This comes out when you dig the grass.", NULL, 0, context);
-            insertQuiz(db,1, "Where can make torchlight?", "Personal inventory", "Making machine", "Smithy", "Mortar and Pestle", 1, R.drawable.torch, "Can be made in 1 level.", NULL, 0, context);
-            insertQuiz(db,1, "what level can you learn a small telescope?", "7", "10", "13", "15", 1, R.drawable.spyglass, "You can learn right away.", NULL, 0, context);
+            insertQuiz(db,1, "What can you mostly get when you dig a stone with a pick?", "Flint", "Stone", "Metal", "Stone powder", 2, R.drawable.metal_pick, "It's best to pick yellow and triangular things.", NULL, 0, context);
+            insertQuiz(db,1, "Which is not obtained by using a metal sickle?", "Fiber", "Raw prime fish meat", "Flint", "Thatch", 4, R.drawable.metal_sickle, "We can't attack trees with a metal sickle.", NULL, 0, context);
+            insertQuiz(db,1, "Which is hardly got when using a hatchet?", "Leech blood", "Leather", "AnglerGel", "Stone", 4, R.drawable.metal_hatchet, "This resource is hard.", NULL, 0, context);
+            insertQuiz(db,1, "Which is not an ingredient of a paint brush?", "Wood", "Leather", "Fiber", "Thatch", 3, R.drawable.paintbrush, "This comes out when you dig the grass.", NULL, 0, context);
+            insertQuiz(db,1, "What is not an ingredient of parachute?", "Thatch", "Leather", "Wood", "Fiber", 4, R.drawable.parachute, "This can be got in grass.", NULL, 0, context);
+            insertQuiz(db,1, "Where can we make torchlight?", "Personal inventory", "Making machine", "Smithy", "Mortar and Pestle", 1, R.drawable.torch, "User whose level is 1 can make torch.", NULL, 0, context);
+            insertQuiz(db,1, "What level can you learn a small telescope?", "7", "10", "13", "15", 1, R.drawable.spyglass, "Newbies can easily learn it.", NULL, 0, context);
 
             //오벨리스크
             insertQuiz(db,1, "What is the coordinates of the Island Blue Obelisk?", "13.1, 55.3", "35.4, 64.3", "25.5, 25.6", "39.2, 68.7", 3, R.drawable.obelisk, "It's in the upper left.", NULL, 0, context);
@@ -273,21 +278,21 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void loadQuiz2(SQLiteDatabase db, Context context){
         try{
-            insertQuiz(db, 2, "Which dinosaur is best for digging iron?", "Ankylosaurus", "Megaloceros", "dodo", "Mosasaurus", 1, R.drawable.ark_metal, "This dinosaur looks hard.", NULL, 0, context);
-            insertQuiz(db, 2, "Which dinosaur is the best to picking straw?", "Pteranodon", "Ovis", "Allosaurus", "Megaloceros", 4, R.drawable.ark_thatch, "This may not be a dinosaur.", NULL, 0, context);
-            insertQuiz(db, 2, "Which dinosaur is the best to digging wood?", "Pachy", "Parasaur", "Mammoth", "Sabertooth", 3, R.drawable.ark_wood, "This is large in size.", NULL, 0, context);
-            insertQuiz(db, 2, "Which dinosaur is best for digging Rock?", "Doedicurus", "Triceratops", "Compy", "Quetzal", 1, R.drawable.ark_stone, "This dinosaur looks hard.", NULL, 0, context);
-            insertQuiz(db, 2, "Which dinosaur is best for picking berry?", "Purlovia", "Brontosaurus", "T-rex", "parasaur", 2, R.drawable.ark_berries, "This dinosaur has a really long neck.", NULL, 0, context);
-            insertQuiz(db, 2, "Which dinosaur is best for digging Hide?", "Therizinosaur", "Trilobite", "Quetzal", "Gigantopithecus", 1, R.drawable.ark_hide, "This dinosaur has long nails.", NULL, 0, context);
-            insertQuiz(db, 2, "Which dinosaur is best for digging flint?", "Dierwolf", "Ankylosaurus", "Raptor", "Manta", 2, R.drawable.ark_hide, "This dinosaur looks hard.", NULL, 0, context);
-            insertQuiz(db, 2, "What is the best tool for digging iron?", "Metal Hatchet", "Metal pick", "Metal sickle", "Sword", 2, R.drawable.ark_metal, "Think of the real use of the tools", NULL, 0, context);
-            insertQuiz(db, 2, "Which is the best tool for digging stones?", "Rock Hatchet", "Metal Hatchet", "Rock Pick", "Metal Pick", 2, R.drawable.ark_stone, "Hatchet are better at picking stones than pickaxes.", NULL, 0, context);
-            insertQuiz(db, 2, "Which tool is best for digging flint?", "Rock Hatchet", "Metal Hatchet", "Rock Pick", "Metal Pick", 4, R.drawable.ark_stone, "A pickaxe is more efficient at picking flint than an Hatchet.", NULL, 0, context);
-            insertQuiz(db, 2, "What is the best tool for digging wood?", "Rock Hatchet", "Metal Hatchet", "Rock Pick", "Metal Pick", 2, R.drawable.ark_wood, "곡괭이보다는 도끼가 목재 채집 효율이 더 좋습니다.", NULL, 0, context);
-            insertQuiz(db, 2, "Which of the following is the best tool for picking straw?", "Rock Hatchet", "Metal Hatchet", "Rock Pick", "Metal Pick", 4, R.drawable.ark_thatch, "도끼보다는 곡괭이가 짚 채집 효율이 더 좋습니다.", NULL, 0, context);
-            insertQuiz(db, 2, "Which of the following is the best tool for digging fiber?", "Metal sickle", "Whip", "Metal Hatchet", "Metal Pick", 1, R.drawable.ark_fiber, "This tool is used to cut something.", NULL, 0, context);
-            insertQuiz(db, 2, "What is the best tool for mining leather?", "Metal Hatchet", "Metal Pick", "Sword", "Metal sickle", 1, R.drawable.ark_hide, "This tool is also a good tool for collecting wood.", NULL, 0, context);
-            insertQuiz(db, 2, "Which of the following is the best tool for digging raw meat?", "Metal Hatchet", "Metal Pick", "Sword", "Metal sickle", 2, R.drawable.raw_meat, "This tool is also a good tool for picking iron.", NULL, 0, context);
+            insertQuiz(db, 2, "Which dinosaur is the best for getting metal?", "Ankylosaurus", "Megaloceros", "dodo", "Mosasaurus", 1, R.drawable.ark_metal, "This dinosaur looks hard.", NULL, 0, context);
+            insertQuiz(db, 2, "Which dinosaur is the best for getting straw?", "Pteranodon", "Ovis", "Allosaurus", "Megaloceros", 4, R.drawable.ark_thatch, "This may not be a dinosaur.", NULL, 0, context);
+            insertQuiz(db, 2, "Which dinosaur is the best to getting wood?", "Pachy", "Parasaur", "Mammoth", "Sabertooth", 3, R.drawable.ark_wood, "This is large in size.", NULL, 0, context);
+            insertQuiz(db, 2, "Which dinosaur is best for getting stone?", "Doedicurus", "Triceratops", "Compy", "Quetzal", 1, R.drawable.ark_stone, "This dinosaur looks hard.", NULL, 0, context);
+            insertQuiz(db, 2, "Which dinosaur is best for getting berry?", "Purlovia", "Brontosaurus", "T-rex", "parasaur", 2, R.drawable.ark_berries, "This dinosaur has a really long neck.", NULL, 0, context);
+            insertQuiz(db, 2, "Which dinosaur is best for getting hide?", "Therizinosaur", "Trilobite", "Quetzal", "Gigantopithecus", 1, R.drawable.ark_hide, "This dinosaur has long nails.", NULL, 0, context);
+            insertQuiz(db, 2, "Which dinosaur is best for getting flint?", "Dierwolf", "Ankylosaurus", "Raptor", "Manta", 2, R.drawable.ark_hide, "This dinosaur looks hard.", NULL, 0, context);
+            insertQuiz(db, 2, "What is the best tool for getting metal", "Metal Hatchet", "Metal pick", "Metal sickle", "Sword", 2, R.drawable.ark_metal, "Think of the real use of the tools", NULL, 0, context);
+            insertQuiz(db, 2, "Which is the best tool for getting stones?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 2, R.drawable.ark_stone, "Hatchet are better at picking stones than pickaxes.", NULL, 0, context);
+            insertQuiz(db, 2, "Which tool is best for getting flint?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 4, R.drawable.ark_stone, "A pickaxe is more efficient at picking flint than an Hatchet.", NULL, 0, context);
+            insertQuiz(db, 2, "What is the best tool for getting wood?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 2, R.drawable.ark_wood, "It is more efficient to use hatchet rather than pickaxe when getting wood.", NULL, 0, context);
+            insertQuiz(db, 2, "Which of the following is the best tool for picking straw?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 4, R.drawable.ark_thatch, "It is more efficient to use pickaxe rather than hatchet when getting thatch.", NULL, 0, context);
+            insertQuiz(db, 2, "Which of the following is the best tool for getting fiber?", "Metal sickle", "Whip", "Metal Hatchet", "Metal Pick", 1, R.drawable.ark_fiber, "This tool is used to cut something.", NULL, 0, context);
+            insertQuiz(db, 2, "What is the best tool for minsing leather?", "Metal Hatchet", "Metal Pick", "Sword", "Metal sickle", 1, R.drawable.ark_hide, "This tool is a good tool for getting wood.", NULL, 0, context);
+            insertQuiz(db, 2, "Which of the following is the best tool for getting raw meat?", "Metal Hatchet", "Metal Pick", "Sword", "Metal sickle", 2, R.drawable.raw_meat, "This tool is a good tool for getting metal.", NULL, 0, context);
             insertQuiz(db, 3, "Which of the following is not a dinosaur that reduces the weight of stones?", "Castoroides", "Equus", "Doedicurus", "Morellatops", 4, R.drawable.ark_stone, "This dinosaur is often seen in the desert.", NULL, 0, context);
             insertQuiz(db, 3, "Which of the following is not a dinosaur that reduces the weight of wood?", "Gacha", "Mammoth", "Equus", "Thorny Dragon", 3, R.drawable.ark_wood, "This dinosaur is often seen on large plains.", NULL, 0, context);
             insertQuiz(db, 3, "Which of the following is not a dinosaur that reduces the weight of iron?", "Magmasaur", "Wyvern", "Argentavis", "Ankylosaurus", 2, R.drawable.ark_metal, "This dinosaur can shoot breath.", NULL, 0, context);
@@ -313,58 +318,58 @@ public class DBHelper extends SQLiteOpenHelper {
             //insertQuiz(db,1, "다음중 브루드마더의 유물이 아닌 것은?", "현명함의 유물", "거대함의 유물", "사냥꾼의 유물", "하늘군주의 유물", 4, R.drawable.ark_logo, R.drawable.skylord, NULL, 0, context);
 
             //          보스 공물 문제
-            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute from the boss.", "Argentavis", "Sarco", "Megalania", "Procoptodon", 4, R.drawable.ark_logo, "This dinosaur jumps the highest.", NULL, 0, context);
-            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute from the boss.", "Carnotaurus", "Kairuku", "Giganotosaurus", "Megalodon", 2, R.drawable.ark_logo, "This dinosaur gives an organic polymer.", NULL, 0, context);
-            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute from the boss.", "Basilosaurus", "Thylacoleo", "Allosaurus", "Megatherium", 4, R.drawable.ark_logo, "This dinosaur gets a buff when it catches insects.", NULL, 0, context);
-            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute from the boss.", "Brontosaurus", "Spino", "Raptor", "Diplodocus", 3, R.drawable.ark_logo, "This dinosaur has two-legged jumping and catching skills..", NULL, 0, context);
-            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute from the boss.", "T-rex", "Titanoboa", "Woolly Rhino", "Ravager", 4, R.drawable.ark_logo, "This dinosaur is a quadruped and reduces weight.", NULL, 0, context);
+            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute of the boss.", "Argentavis", "Sarco", "Megalania", "Procoptodon", 4, R.drawable.ark_logo, "This dinosaur jumps high.", NULL, 0, context);
+            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute of the boss.", "Carnotaurus", "Kairuku", "Giganotosaurus", "Megalodon", 2, R.drawable.ark_logo, "This dinosaur gives an organic polymer.", NULL, 0, context);
+            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute of the boss.", "Basilosaurus", "Thylacoleo", "Allosaurus", "Megatherium", 4, R.drawable.ark_logo, "This dinosaur gets a buff when it kills insects.", NULL, 0, context);
+            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute of the boss.", "Brontosaurus", "Spino", "Raptor", "Diplodocus", 3, R.drawable.ark_logo, "This dinosaur has two-legged jumping and catching skills..", NULL, 0, context);
+            insertQuiz(db,2, "Choose a dinosaur that doesn't give a tribute of the boss.", "T-rex", "Titanoboa", "Woolly Rhino", "Ravager", 4, R.drawable.ark_logo, "This dinosaur is a quadruped and reduces weight.", NULL, 0, context);
 //          알파공룡 문제
             insertQuiz(db,3, "Which of the following is not an alpha dinosaur?", "Alpha Leedsichthys", "Alpha Raptor", "Alpha Reaper king", "Alpha Carnotaurus", 4, R.drawable.ark_logo, "This dinosaur collects Cementing Paste, Wood, rare flowers, rare mushrooms, and silica pearhyojuls.", NULL, 0, context);
             insertQuiz(db,3, "Which of the following is not an alpha dinosaur?", "Alpha Megalodon", "Alpha Mosasaur", "Alpha Megalania", "Alpha Tusoteuthis", 3, R.drawable.ark_logo, "There are no dinosaurs like this. Mainly living in the ceiling in the cave and there are many in Ragnarok", NULL, 0, context);
 
-            insertQuiz(db,2, "What is not a resource that comes from killing Managarmr?", "Chitin", "Keratin", "Hide", "Raw prime Meat", 1, R.drawable.managarma, "Managamar is not an insect.", NULL, 0, context);
-            insertQuiz(db,2, "What is the number of milk that comes out when you stun Wyvern?", "4", "5", "6", "7", 2, R.drawable.wyvern_milk, "Less than one line.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not obtained by killing Managarmr?", "Chitin", "Keratin", "Hide", "Raw prime Meat", 1, R.drawable.managarma, "Managamar is not an insect.", NULL, 0, context);
+            insertQuiz(db,2, "How many bottles of milk you can get when you stun Wyvern?", "4", "5", "6", "7", 2, R.drawable.wyvern_milk, "Less than a line.", NULL, 0, context);
 //          보스 문제
-            insertQuiz(db,2, "How much element does gamma megapithecus catch?", "10", "20", "30", "40", 2, R.drawable.boss_megapithecus, "이 건 너무 어려울 수도 있겠네요. '둘' 이서 풀면 쉬울지도..", NULL, 0, context);
+            insertQuiz(db,2, "How many elements does gamma megapithecus catch?", "10", "20", "30", "40", 2, R.drawable.boss_megapithecus, "This question may be difficult. Maybe '2' people can solve it.", NULL, 0, context);
             //insertQuiz(db,1, "베타 메가피테쿠스를 잡으면 주는 원소의 양은?", "10", "20", "30", "40", 2, R.drawable.boss_megapithecus, "감마랑 똑같습니다.", NULL, 0, context);
-            insertQuiz(db,2, "What is Gamma Rockwell's level limit?", "50Lv", "60Lv", "70Lv", "80Lv", 2, R.drawable.rockwell, "This is the level to learn Basilosaurus Saddle.", NULL, 0, context);
-            insertQuiz(db,2, "What is beta Rockwell's level limit?", "65Lv", "75Lv", "85Lv", "95Lv", 2, R.drawable.rockwell, "It is a level to learn the safe.", NULL, 0, context);
-            insertQuiz(db,3, "What is Alpha Rockwell's level limit?", "70Lv", "80Lv", "90Lv", "100Lv", 4, R.drawable.rockwell, "It is a level to learn the titanosaurus platform saddle.", NULL, 0, context);
+            insertQuiz(db,2, "What is Gamma Rockwell's level limit?", "Lv50", "Lv60", "Lv70", "Lv80", 2, R.drawable.rockwell, "When you reach this level, you can learn Basilosaurus Saddle.", NULL, 0, context);
+            insertQuiz(db,2, "What is beta Rockwell's level limit?", "Lv75", "Lv75", "Lv85", "Lv95", 2, R.drawable.rockwell, "When you reach this level, you can learn the vault.", NULL, 0, context);
+            insertQuiz(db,3, "What is Alpha Rockwell's level limit?", "Lv70", "Lv80", "Lv90", "Lv100", 4, R.drawable.rockwell, "When you reach this level, you can learn the titanosaurus platform saddle.", NULL, 0, context);
             insertQuiz(db,2, "What's not Manticore's boss tribute?", "Ice Talon", "Fire Talon", "Poison Talon", "Lightning Talon", 1, R.drawable.manticore, "There are no cold claws.", NULL, 0, context);
-            insertQuiz(db,2, "What's not the tech engram you get when you catch Gamma Manticore?", "Tek Gauntlets", "Tek Leggings", "Tek Ganerator", "Tek Helmet", 4, R.drawable.tek_replicator, "First body...", NULL, 0, context);
+            insertQuiz(db,2, "What's not the tek engram you get when you catch Gamma Manticore?", "Tek Gauntlets", "Tek Leggings", "Tek Ganerator", "Tek Helmet", 4, R.drawable.tek_replicator, "First body...", NULL, 0, context);
 //          키블 문제
-            insertQuiz(db,2, "What is not the Basic kibble material?", "Dilophosaur Egg ", "Amarberry", "Pteranodon Egg", "Thatch", 3, R.drawable.basic_kibble, "Use only the smallest eggs.", NULL, 0, context);
-            insertQuiz(db,2, "What is not the Simple kibble material?", "Raptor Egg", "Cooked meat", "Carrot", "Mejoberry", 2, R.drawable.simple_kibble, "It should be made of fish.", NULL, 0, context);
-            insertQuiz(db,2, "What is not the Regular kibble material?", "Dilophosaur Egg", "Ichthyornis Egg", "Potato", "Prime Meat jerky", 4, R.drawable.regular_kibble, "It takes the longest to get.", NULL, 0, context);
-            insertQuiz(db,2, "What is not the Superior kibble material?", "Prime Meat jerky", "Citronal", "Thatch", "Rare Flower", 4, R.drawable.superior_kibble, "Often seen near Crystal, Beaver Dam and Ragnarok Bluebell.", NULL, 0, context);
-            insertQuiz(db,2, "What is not the Exceptional kibble material?", "Focal chili", "Fria Curry", "Thatch", "Mejoberry", 2, R.drawable.exceptional_kibble, "It is brown.", NULL, 0, context);
-            insertQuiz(db,2, "What is not the ExtraOrdinary kibble material?", "Giant Bee Honey", "Wyvern Egg", "Lazarus chowder", "Energy Brew", 4, R.drawable.extraordinary_kibble, "Hill here...?", NULL, 0, context);
-            insertQuiz(db,2, "What is not Brew's ingredients?", "Tintoberry", "Mejoberry", "Narcotic", "Water", 2,R.drawable.medical_brew, "Herbivorous dinosaurs are my favorite.", NULL, 0, context);
-            insertQuiz(db,2, "What is not an Enduro Stew ingredient?", "Water", "Mejoberry 10", "Carrot 5", "Stimulant 1", 4, R.drawable.rockwell_recipes_enduro_stew, "+stimulant.", NULL, 0, context);
-            insertQuiz(db,2, "What is not a focal chili material?", "Mejoberry 10", "Citronal 5", "Cooked meat", "Prime Cooked meat", 4, R.drawable.rockwell_recipes_focal_chili, "There is no need to do high quality..", NULL, 0, context);
-            insertQuiz(db,2, "What is not Nazarus chowder material?", "Mejoberry 10", "Corn 5", "Stimulant 2", "Potato 5", 3, R.drawable.lazarus_chowder, "It's not stimberry or spark powder, but nacoberry and rotten meat.", NULL, 0, context);
-            insertQuiz(db,2, "What is not ingredients for Calien Soup?", "Citronal 5", "Amarberry 20", "Tintoberry 10", "Stimulant 2", 3, R.drawable.calien_soup, "10 is not enough..", NULL, 0, context);
-            insertQuiz(db,2, "What is not cold curry ingredients?", "Corn 5", "Carrot 5", "Azulberry 20", "Mejoberry 20", 4, R.drawable.fria_curry, "10 is enough for the berry that dinosaurs love..", NULL, 0, context);
-            insertQuiz(db,2, "What is not Shadow Steak Saute ingredients?", "Narcotic 10", "Rare Mushroom 2", "Potato 1", "Carrot 1", 1, R.drawable.ark_logo, "8  Rotten meat + 40 Nacoberries are enough.", NULL, 0, context);
-            insertQuiz(db,2, "Roasting time of one grilled meat?", "5 min", "10 min", "15 min", "20 min", 4, R.drawable.cooked_meat, "It's twice the time of raw meat decay..", NULL, 0, context);
-            insertQuiz(db,2, "What is the time of decay of one meat jerky?", "12 hour", "24 hour", "36 hour", "48 hour", 4, R.drawable.cooked_meat_jerky, "Beef jerky has a longer shelf life than expected.", NULL, 0, context);
-            insertQuiz(db,2, "What is the decay time for one high quality meat?", "40 min", "42 min", "44 min", "46 min", 4, R.drawable.cooked_prime_meat, "'2760'", NULL, 0, context);
-            insertQuiz(db,2, "High quality meat jerky One rot time?", "12 hour", "24 hour", "36 hour", "48 hour", 4, R.drawable.prime_meat_jerky, "Same as meat jerky decay time..", NULL, 0, context);
-            insertQuiz(db,2, "How much jerky can be in one square?", "10", "20", "30", "40", 2, R.drawable.cooked_meat_jerky, "Half of raw meat.", NULL, 0, context);
-            insertQuiz(db,2, "What can't be made in the making machine?", "Rocket Launcher", "Metal Cliff Platform", "Polymer", "Generator", 2, R.drawable.fabricator, "This is an engram that you can learn from Aberration.", NULL, 0, context);
-            insertQuiz(db,2, "What is not a scuba hydroponic material?", "hide", "Thatch", "Crystal", "Polymer", 4, R.drawable.scuba_mask, "A lot comes from penguins and mantis.", NULL, 0, context);
-            insertQuiz(db,3, "How many c4 to break the metal door?", "1", "2", "3", "4", 2, R.drawable.c4_charge, "A single c4 damage to iron is 3544.", NULL, 0, context);
-            insertQuiz(db,2, "How many grenades are there to break the stone foundation?", "9", "10", "11", "12", 1, R.drawable.grenade, "Grenade damage into stone is 1838.", NULL, 0, context);
-            insertQuiz(db,2, "How many cannons to break the tech ceiling?", "250", "300", "350", "400", 1, R.drawable.cannon, "One cannon damage that enters the tek ceiling is 40.", NULL, 0, context);
-            insertQuiz(db,2, "What is the damage of one bullet in an automatic turret?", "70", "80", "90", "100", 1, R.drawable.auto_turret, "5렙 기준 모두 체력을 찍었을 때 완벽하게 2방입니다.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Basic kibble?", "Dilophosaur Egg ", "Amarberry", "Pteranodon Egg", "Thatch", 3, R.drawable.basic_kibble, "Use only the smallest eggs.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Simple kibble?", "Raptor Egg", "Cooked meat", "Carrot", "Mejoberry", 2, R.drawable.simple_kibble, "It should be made of fish.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Regular kibble?", "Dilophosaur Egg", "Ichthyornis Egg", "Potato", "Prime Meat jerky", 4, R.drawable.regular_kibble, "It takes the longest to get.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Superior kibble?", "Prime Meat jerky", "Citronal", "Thatch", "Rare Flower", 4, R.drawable.superior_kibble, "Often seen near Crystal, Beaver Dam and Ragnarok Bluebell.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Exceptional kibble?", "Focal chili", "Fria Curry", "Thatch", "Mejoberry", 2, R.drawable.exceptional_kibble, "It is brown.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of ExtraOrdinary kibble?", "Giant Bee Honey", "Wyvern Egg", "Lazarus chowder", "Energy Brew", 4, R.drawable.extraordinary_kibble, "Hill here...?", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Brew?", "Tintoberry", "Mejoberry", "Narcotic", "Water", 2,R.drawable.medical_brew, "Herbivorous dinosaurs are my favorite.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Enduro Stew?", "Water", "Mejoberry × 10", "Carrot × 5", "Stimulant × 1", 4, R.drawable.rockwell_recipes_enduro_stew, "+stimulant.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of a focal chili?", "Mejoberry × 10", "Citronal 5", "Cooked meat", "Prime Cooked meat", 4, R.drawable.rockwell_recipes_focal_chili, "There is no need to use prime..", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Nazarus chowder?", "Mejoberry × 10", "Corn × 5", "Stimulant × 2", "Potato × 5", 3, R.drawable.lazarus_chowder, "It's not stimberry or spark powder, but nacoberry and rotten meat.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Calien Soup?", "Citronal × 5", "Amarberry × 20", "Tintoberry × 10", "Stimulant × 2", 3, R.drawable.calien_soup, "10 is not enough..", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of cold curry?", "Corn × 5", "Carrot × 5", "Azulberry × 20", "Mejoberry × 20", 4, R.drawable.fria_curry, "10 is enough for the berry that dinosaurs love..", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Shadow Steak Saute?", "Narcotic × 10", "Rare Mushroom × 2", "Potato × 1", "Carrot × 1", 1, R.drawable.ark_logo, "8  Rotten meat + 40 Nacoberries are enough.", NULL, 0, context);
+            insertQuiz(db,2, "Roasting time of one grilled meat?", "5 mins", "10 mins", "15 mins", "20 mins", 4, R.drawable.cooked_meat, "It's twice the time of raw meat decayed time..", NULL, 0, context);
+            insertQuiz(db,2, "How much time does it spend for a meat jerky to decay?", "12 hours", "24 hours", "36 hours", "48 hours", 4, R.drawable.cooked_meat_jerky, "Beef jerky has a longer shelf life than expected.", NULL, 0, context);
+            insertQuiz(db,2, "How much time does it spend for a raw prime meat to decay??", "40 mins", "42 mins", "44 mins", "46 mins", 4, R.drawable.cooked_prime_meat, "'2760'", NULL, 0, context);
+            insertQuiz(db,2, "How much time does it spend for a prime meat jerky to decay?", "12 hours", "24 hours", "36 hours", "48 hours", 4, R.drawable.prime_meat_jerky, "Same as meat jerky decayed time..", NULL, 0, context);
+            insertQuiz(db,2, "How many jerkies can be stored in an item square?", "10", "20", "30", "40", 2, R.drawable.cooked_meat_jerky, "Half of raw meat.", NULL, 0, context);
+            insertQuiz(db,2, "Which can't be made in the making machine?", "Rocket Launcher", "Metal Cliff Platform", "Polymer", "Generator", 2, R.drawable.fabricator, "This is an engram that you can learn from Aberration.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of scuba hydroponic?", "hide", "Thatch", "Crystal", "Polymer", 4, R.drawable.scuba_mask, "A lot comes from penguins and mantis.", NULL, 0, context);
+            insertQuiz(db,3, "How many c4 are used to break the metal door?", "1", "2", "3", "4", 2, R.drawable.c4_charge, "A single c4 damage to metal is 3544.", NULL, 0, context);
+            insertQuiz(db,2, "How many grenades are uesed to break the stone foundation?", "9", "10", "11", "12", 1, R.drawable.grenade, "Grenade damage into stone is 1838.", NULL, 0, context);
+            insertQuiz(db,2, "How many cannons are used to break the tek ceiling?", "250", "300", "350", "400", 1, R.drawable.cannon, "One cannon damage that enters the tek ceiling is 40.", NULL, 0, context);
+            insertQuiz(db,2, "What is the damage of a bullet in an automatic turret?", "70", "80", "90", "100", 1, R.drawable.auto_turret, "Although you increase your hp 5 times, you can die by an auto turret shot.", NULL, 0, context);
             insertQuiz(db,3, "How much damage does C4 take on wood?", "11320", "11813", "12591", "12677", 2, R.drawable.c4_charge, "There is no way to give a hint. The answer is 11813.", NULL, 0, context);
-            insertQuiz(db,2, "What is the numbness of kicking on one foot?", "220", "221", "222", "223", 2, R.drawable.tranquilizer_dart, "It is 33 shots based on paralysis number 7293..", NULL, 0, context);
-            insertQuiz(db,2, "What is the numbness of a shock paralysis?", "440", "442", "444", "446", 2, R.drawable.shocking_tranquilizer_dart, "It's twice as much as Paralysis dart.", NULL, 0, context);
-            insertQuiz(db,2, "What is the best bait for fishing?", "Giant Bee Honey", "Leech Blood", "sap", "Raw meat", 2, R.drawable.fishing_rod, "I like the sweetest thing.", NULL, 0, context);
-            insertQuiz(db,3, "What is not a resource to enter the tech claw?", "Element", "Black Pearl", "Polymer", "Hide", 4, R.drawable.tek_claws, "can't use a tough one.", NULL, 0, context);
-            insertQuiz(db,3, "What aren't the resources involved in creating a tech maker?", "Metal Ingot 5000", "Element 110", "Black Pearl 150", "Crystal 600", 2, R.drawable.tek_replicator, "There are many squares.", NULL, 0, context);
-                insertQuiz(db,3, "What is not the ThsIsland Obis Zen area?", "20.0, 30.0", "20.0, 50,0", "85.0, 83.0", "75.0, 65.0", 3, R.drawable.ovis, null, R.drawable.theisland_ovis_spawn, 0, context);
-            insertQuiz(db,3, "What is the limit on the number of turrets in a zone?", "50", "100", "150", "200", 2, R.drawable.heavy_auto_turret, "이순신 장군이 그려져 있는 동전과 같습니다.", NULL, 0, context);
+            insertQuiz(db,2, "How much torpor rate rises when you shoot tranquilizer dart?", "220", "221", "222", "223", 2, R.drawable.tranquilizer_dart, "It is 33 shots based on paralysis number 7293..", NULL, 0, context);
+            insertQuiz(db,2, "How much torpor rate rises when you shoot shocking tranquilizer dart?", "440", "442", "444", "446", 2, R.drawable.shocking_tranquilizer_dart, "It's twice as much as Paralysis dart.", NULL, 0, context);
+            insertQuiz(db,2, "Which is the best bait for fishing?", "Giant Bee Honey", "Leech Blood", "sap", "Raw meat", 2, R.drawable.fishing_rod, "I like the sweetest thing.", NULL, 0, context);
+            insertQuiz(db,3, "Which is not an ingredient of the tek claw?", "Element", "Black Pearl", "Polymer", "Hide", 4, R.drawable.tek_claws, "can't use a tough one.", NULL, 0, context);
+            insertQuiz(db,3, "Which is not an ingredient of a tek maker?", "Metal Ingot 5000", "Element 110", "Black Pearl 150", "Crystal 600", 2, R.drawable.tek_replicator, "There are many squares.", NULL, 0, context);
+            insertQuiz(db,3, "What is not the ThsIsland OVis spawn area?", "20.0, 30.0", "20.0, 50,0", "85.0, 83.0", "75.0, 65.0", 3, R.drawable.ovis, null, R.drawable.theisland_ovis_spawn, 0, context);
+            insertQuiz(db,3, "What is the limit on the number of turrets in a zone?", "50", "100", "150", "200", 2, R.drawable.heavy_auto_turret, "You will be happy when you get this much score in the exam.", NULL, 0, context);
         }catch (Exception e){
             e.printStackTrace();
         }
