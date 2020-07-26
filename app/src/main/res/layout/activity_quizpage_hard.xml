@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2E2E2A"
-    tools:context=".QuizpageHard">
+    tools:context=".QuizpageHard"
+    android:fontFamily="@font/goyangdeogyangb">
     <TextView
         android:id="@+id/TextView_hard_QuizText"
         android:layout_width="35dp"
@@ -50,7 +51,6 @@
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
         android:background="@drawable/stroke"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:gravity="center"
         android:text="DinoBoneCount"
         android:textColor="#FFFFFF"
@@ -58,7 +58,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.022"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <ImageView
         android:id="@+id/ImageView_hard_dino_head"
@@ -84,7 +85,6 @@
         android:id="@+id/TextView_hard_quiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="Question"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
@@ -94,7 +94,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.147"
         android:layout_marginHorizontal="20dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <ImageView
         android:id="@+id/ImageView_hard_quiz_image"
@@ -112,13 +113,13 @@
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/click"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="show 1"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_hard_selection2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
         android:id="@+id/btn_hard_selection2"
@@ -126,12 +127,12 @@
         android:layout_height="40dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/click"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="show 2"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_hard_selection3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
         android:id="@+id/btn_hard_selection3"
@@ -139,12 +140,12 @@
         android:layout_height="40dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/click"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="show 3"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_hard_selection4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
         android:id="@+id/btn_hard_selection4"
@@ -152,12 +153,12 @@
         android:layout_height="40dp"
         android:layout_marginBottom="90dp"
         android:background="@drawable/click"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="show 4"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <LinearLayout
         android:layout_width="match_parent"

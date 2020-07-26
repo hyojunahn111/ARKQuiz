@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#2E2E2A"
     tools:context=".MainActivity"
+    android:fontFamily="@font/goyangdeogyangb"
     >
 
     <ImageView
@@ -36,7 +37,8 @@
         android:textSize="13sp"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:fontFamily="@font/gmarketsansttfmedium"/>
+        android:fontFamily="@font/goyangdeogyangb"
+        />
 
     <ImageView
         android:id="@+id/imageView"
@@ -80,7 +82,6 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/button_background"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:selectAllOnFocus="true"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
@@ -92,7 +93,8 @@
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
         android:id="@+id/button2"
@@ -104,7 +106,6 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/button_background"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
@@ -113,7 +114,8 @@
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
         android:id="@+id/button3"
@@ -125,13 +127,14 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="13dp"
         android:background="@drawable/button_background"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="Advanced"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
         android:id="@+id/button4"
@@ -143,13 +146,13 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="72dp"
         android:background="@drawable/button_background"
-        android:fontFamily="@font/gmarketsansttfmedium"
         android:text="ARK Exam"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
         android:id="@+id/button6"
