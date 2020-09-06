@@ -20,10 +20,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+
+import com.google.android.gms.ads.AdRequest;
+
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -55,7 +59,6 @@ public class QuizpageEasy extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
     private AdView mAdView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,9 +73,9 @@ public class QuizpageEasy extends AppCompatActivity {
             }
         });
 
-        mAdView = findViewById(R.id.adView_quiz_easy);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        mAdView = findViewById(R.id.adView_quiz_easy);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.admob_front_id));
@@ -204,6 +207,7 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_hint_by_ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 //                Toast.makeText(QuizpageEasy.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
@@ -391,7 +395,56 @@ public class QuizpageEasy extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+    private void loadAd(){
+        this.rewardedAd=new RewardedAd(this, getString(R.string.admob_reward_id));
+        RewardedAdLoadCallback adLoadCallback =new RewardedAdLoadCallback(){
+            @Override
+            public void onRewardedAdLoaded() {
+                super.onRewardedAdLoaded();
+            }
 
+            @Override
+            public void onRewardedAdFailedToLoad(int i) {
+                super.onRewardedAdFailedToLoad(i);
+            }
+        };
+        this.rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
+
+    }
+
+    private void showAd(){
+        if(this.rewardedAd.isLoaded()){
+            RewardedAdCallback adCallback=new RewardedAdCallback() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+
+                }
+
+                @Override
+                public void onRewardedAdOpened() {
+                    super.onRewardedAdOpened();
+                }
+
+                @Override
+                public void onRewardedAdClosed() {
+                    super.onRewardedAdClosed();
+                }
+
+                @Override
+                public void onRewardedAdFailedToShow(int i) {
+                    super.onRewardedAdFailedToShow(i);
+                    Toast.makeText(QuizpageEasy.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
+                    Log.d("보상형 광고", "onRewardedAdFailedToShow+에러 코드:"+i);
+//                    Toast.makeText(Shop.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
+                }
+            };
+            this.rewardedAd.show(this, adCallback);
+        }
+        else{
+        }
+    }
+}
+/*
     private void loadAd(){
         this.rewardedAd=new RewardedAd(this, getString(R.string.admob_reward_id));
         RewardedAdLoadCallback adLoadCallback =new RewardedAdLoadCallback(){
@@ -450,6 +503,6 @@ public class QuizpageEasy extends AppCompatActivity {
             Log.d("보상형 광고", "Shop 보상형 광고 로드 실패 in showAd");
         }
     }
-}
+}*/
 
 

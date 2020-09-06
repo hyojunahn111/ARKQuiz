@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -52,6 +53,7 @@ public class QuizpageNormal extends AppCompatActivity{
     private RewardedAd rewardedAd;
     private InterstitialAd mInterstitialAd;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +73,7 @@ public class QuizpageNormal extends AppCompatActivity{
 
         loadAd();
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
 
         selectionInString=new String[4];
 
@@ -205,6 +208,7 @@ public class QuizpageNormal extends AppCompatActivity{
         btn_hint_by_ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 //                Toast.makeText(QuizpageNormal.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
@@ -400,13 +404,11 @@ public class QuizpageNormal extends AppCompatActivity{
             @Override
             public void onRewardedAdLoaded() {
                 super.onRewardedAdLoaded();
-                Log.d("보상형 광고", "Shop 보상형 광고 로드 완료");
             }
 
             @Override
             public void onRewardedAdFailedToLoad(int i) {
                 super.onRewardedAdFailedToLoad(i);
-                Log.d("보상형 광고", "Shop 보상형 광고 로드 실패 in loadAd 에러코드:"+i);
             }
         };
         this.rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
@@ -418,30 +420,23 @@ public class QuizpageNormal extends AppCompatActivity{
             RewardedAdCallback adCallback=new RewardedAdCallback() {
                 @Override
                 public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                    SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
-                    current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
-                    SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
-                    editor.putInt("dino_egg", current_dino_egg+100);
-                    editor.commit();
-                    Toast.makeText(QuizpageNormal.this, "공룡뼈 100개가 지급되었습니다!", Toast.LENGTH_SHORT).show();
+
                 }
 
                 @Override
                 public void onRewardedAdOpened() {
                     super.onRewardedAdOpened();
-                    Log.d("보상형 광고", "RewardedAdOpened");
                 }
 
                 @Override
                 public void onRewardedAdClosed() {
                     super.onRewardedAdClosed();
-                    Log.d("보상형 광고", "onRewardedAdClosed");
-                    loadAd();
                 }
 
                 @Override
                 public void onRewardedAdFailedToShow(int i) {
                     super.onRewardedAdFailedToShow(i);
+                    Toast.makeText(QuizpageNormal.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
                     Log.d("보상형 광고", "onRewardedAdFailedToShow+에러 코드:"+i);
 //                    Toast.makeText(Shop.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
                 }
@@ -449,8 +444,6 @@ public class QuizpageNormal extends AppCompatActivity{
             this.rewardedAd.show(this, adCallback);
         }
         else{
-            Log.d("보상형 광고", "Shop 보상형 광고 로드 실패 in showAd");
         }
     }
-
 }

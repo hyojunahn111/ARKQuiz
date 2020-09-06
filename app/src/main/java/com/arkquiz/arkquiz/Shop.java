@@ -114,13 +114,11 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
             @Override
             public void onRewardedAdLoaded() {
                 super.onRewardedAdLoaded();
-                Log.d("보상형 광고", "Shop 보상형 광고 로드 완료");
             }
 
             @Override
             public void onRewardedAdFailedToLoad(int i) {
                 super.onRewardedAdFailedToLoad(i);
-                Log.d("보상형 광고", "Shop 보상형 광고 로드 실패 in loadAd 에러코드:"+i);
             }
         };
         this.rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
@@ -138,18 +136,17 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
                     editor.putInt("dino_egg", current_dino_egg+100);
                     editor.commit();
                     Toast.makeText(Shop.this, "100 Dinobones are rewarded!", Toast.LENGTH_SHORT).show();
+
                 }
 
                 @Override
                 public void onRewardedAdOpened() {
                     super.onRewardedAdOpened();
-                    Log.d("보상형 광고", "RewardedAdOpened");
                 }
 
                 @Override
                 public void onRewardedAdClosed() {
                     super.onRewardedAdClosed();
-                    Log.d("보상형 광고", "onRewardedAdClosed");
                     loadAd();
                 }
 
@@ -163,7 +160,6 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
             this.rewardedAd.show(this, adCallback);
         }
         else{
-            Log.d("보상형 광고", "Shop 보상형 광고 로드 실패 in showAd");
         }
     }
 
@@ -296,13 +292,13 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
                          }
                      }
                      else{
-                         Toast.makeText(Shop.this, "Failed to load products.", Toast.LENGTH_SHORT).show();
+                         Toast.makeText(Shop.this, "Failed to load item list.", Toast.LENGTH_SHORT).show();
                      }
                 }
             });
         }
         else{
-            Toast.makeText(Shop.this, "Billing client is not ready.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Shop.this, "Billing Client is not prepared.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -322,7 +318,7 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
             }
         } else if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.USER_CANCELED) {
             // Handle an error caused by a user cancelling the purchase flow.
-            Toast.makeText(Shop.this, "Cancel billing", Toast.LENGTH_SHORT);
+            Toast.makeText(Shop.this, "Billing canceled.", Toast.LENGTH_SHORT);
         } else {
             // Handle any other error codes.
         }
