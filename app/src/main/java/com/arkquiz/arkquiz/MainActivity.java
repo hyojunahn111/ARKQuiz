@@ -90,10 +90,10 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             editor2.commit();
         }
 
-        boolean isFirst5 = sharedPreferences.getBoolean("isFirst5", false);
-        if(!isFirst5){ //최초 실행시 true 저장 1.0.6 업데이트
+        boolean isFirst6 = sharedPreferences.getBoolean("isFirst6", false);
+        if(!isFirst6){
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("isFirst5", true);
+            editor.putBoolean("isFirst6", true);
             editor.commit();
             mDBHelper.loadQuiz4(db, this);
         }

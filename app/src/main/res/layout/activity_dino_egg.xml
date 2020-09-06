@@ -106,8 +106,10 @@
 
     <Button
         android:id="@+id/Button_dinobone200"
-        android:layout_width="122dp"
-        android:layout_height="145dp"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         android:background="@drawable/dinohead_button_click"
         android:centerColor="#FFFFFF"
         android:endColor="#FFFFFF"
@@ -128,8 +130,8 @@
 
     <Button
         android:id="@+id/Button_dinobone1000"
-        android:layout_width="122dp"
-        android:layout_height="145dp"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
         android:background="@drawable/dinohead_button_click"
         android:centerColor="#FFFFFF"
         android:endColor="#FFFFFF"
@@ -150,8 +152,8 @@
 
     <Button
         android:id="@+id/Button_dinobone2000"
-        android:layout_width="122dp"
-        android:layout_height="145dp"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
         android:background="@drawable/dinohead_button_click"
         android:centerColor="#FFFFFF"
         android:endColor="#FFFFFF"

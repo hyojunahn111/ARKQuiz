@@ -153,8 +153,8 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
                 @Override
                 public void onRewardedAdFailedToShow(int i) {
                     super.onRewardedAdFailedToShow(i);
-                    Log.d("보상형 광고", "onRewardedAdFailedToShow+에러 코드:"+i);
-//                    Toast.makeText(Shop.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
+//                    Log.d("보상형 광고", "onRewardedAdFailedToShow+에러 코드:"+i);
+                    Toast.makeText(Shop.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
                 }
             };
             this.rewardedAd.show(this, adCallback);
