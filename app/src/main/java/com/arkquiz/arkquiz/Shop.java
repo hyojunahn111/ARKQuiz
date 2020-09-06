@@ -135,9 +135,9 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
                     SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
                     current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
                     SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
-                    editor.putInt("dino_egg", current_dino_egg+30);
+                    editor.putInt("dino_egg", current_dino_egg+100);
                     editor.commit();
-                    Toast.makeText(Shop.this, "공룡뼈 30개가 지급되었습니다!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Shop.this, "100 Dinobones are rewarded!", Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -186,15 +186,15 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
         SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
         if(purchase.getSku().equals("dinobone100")){
             editor.putInt("dino_egg", current_dino_egg+200);
-            Toast.makeText(Shop.this, "공룡뼈 200개가 추가되었습니다!", Toast.LENGTH_SHORT);
+            Toast.makeText(Shop.this, "200 dinobones are rewarded!", Toast.LENGTH_SHORT);
         }
         else if(purchase.getSku().equals("dinobone500")){
             editor.putInt("dino_egg", current_dino_egg+1000);
-            Toast.makeText(Shop.this, "공룡뼈 1000개가 추가되었습니다!", Toast.LENGTH_SHORT);
+            Toast.makeText(Shop.this, "1000 dinobones are rewarded!", Toast.LENGTH_SHORT);
         }
         else if(purchase.getSku().equals("dinobone1000")){
             editor.putInt("dino_egg", current_dino_egg+1000);
-            Toast.makeText(Shop.this, "공룡뼈 2000개가 추가되었습니다!", Toast.LENGTH_SHORT);
+            Toast.makeText(Shop.this, "2000 dinobones are rewarded!", Toast.LENGTH_SHORT);
         }
         editor.commit();
         TextView_shop_dino_egg.setText(sharedPreferences_dino_egg.getInt("dino_egg", 0));
@@ -228,14 +228,14 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
                     loadProduct();
                 }
                 else{
-                    Toast.makeText(Shop.this, "결제에 서비스 연결에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Shop.this, "Failed to connect with billing service.", Toast.LENGTH_SHORT).show();
                     Log.d("결제 오류", ""+billingResult);
                 }
             }
 
             @Override
             public void onBillingServiceDisconnected() {
-                Toast.makeText(Shop.this, "결제 서바스와 연결에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Shop.this, "Failed to connect with billing service.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -296,13 +296,13 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
                          }
                      }
                      else{
-                         Toast.makeText(Shop.this, "상품 목록을 로드해오는 것을 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                         Toast.makeText(Shop.this, "Failed to load products.", Toast.LENGTH_SHORT).show();
                      }
                 }
             });
         }
         else{
-            Toast.makeText(Shop.this, "결제 클라이언트가 준비되지 않았습니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Shop.this, "Billing client is not ready.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -322,7 +322,7 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
             }
         } else if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.USER_CANCELED) {
             // Handle an error caused by a user cancelling the purchase flow.
-            Toast.makeText(Shop.this, "결제를 취소하셨습니다.", Toast.LENGTH_SHORT);
+            Toast.makeText(Shop.this, "Cancel billing", Toast.LENGTH_SHORT);
         } else {
             // Handle any other error codes.
         }

@@ -83,7 +83,20 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             mDBHelper.loadQuiz(db, this);
             mDBHelper.loadQuiz2(db, this);
             mDBHelper.loadQuiz3(db, this);
+
+            SharedPreferences.Editor editor2=sharedPreferences_dino_egg.edit();
+            editor2.putInt("dino_egg", 500);
+            editor2.commit();
         }
+
+        boolean isFirst5 = sharedPreferences.getBoolean("isFirst5", false);
+        if(!isFirst5){ //최초 실행시 true 저장 1.0.6 업데이트
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isFirst5", true);
+            editor.commit();
+            mDBHelper.loadQuiz4(db, this);
+        }
+
         mDBHelper.updateTruetoFalse(db);
 
         current_dino_egg=sharedPreferences_dino_egg.getInt("dino_egg", 0);

@@ -1,5 +1,6 @@
 package com.arkquiz.arkquiz;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdCallback;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 
 public class QuizpageEasy extends AppCompatActivity {
@@ -38,6 +51,10 @@ public class QuizpageEasy extends AppCompatActivity {
     private String current_hint;
     private String[] selectionInString;
     private Bitmap current_hint_image;
+    private RewardedAd rewardedAd;
+    private InterstitialAd mInterstitialAd;
+    private AdView mAdView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +62,23 @@ public class QuizpageEasy extends AppCompatActivity {
         setContentView(R.layout.activity_quizpage_easy);
 
         this.getSupportActionBar().hide();
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        mAdView = findViewById(R.id.adView_quiz_easy);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.admob_front_id));
+
+        loadAd();
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         selectionInString = new String[4];
 
@@ -56,12 +90,6 @@ public class QuizpageEasy extends AppCompatActivity {
 
         isCorrect = false;
         current_hint = "";
-
-        if (numberOfQuiz % 3 == 0) {
-//        전면 광고 삽입
-
-        }
-
 
         btn_selection = new Button[4];
 
@@ -176,15 +204,34 @@ public class QuizpageEasy extends AppCompatActivity {
         btn_hint_by_ad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(QuizpageEasy.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(QuizpageEasy.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(QuizpageEasy.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                overridePendingTransition(0, 0); //애니메이션 제거
+            }
+        });
 
+        mInterstitialAd.setAdListener(new AdListener(){
+            @Override
+            public void onAdOpened() {
+                super.onAdOpened();
+                makeDialog_hint();
+            }
 
+            @Override
+            public void onAdClosed() {
+                super.onAdClosed();
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
             }
         });
     }
@@ -230,6 +277,7 @@ public class QuizpageEasy extends AppCompatActivity {
                         if (numberOfQuiz >= 10) {
 //            결과 페이지 로드
                             makeDialog_finish();
+//                            showAd();
                         } else {
                             Intent intent = new Intent(QuizpageEasy.this, QuizpageEasy.class);
                             intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
@@ -282,6 +330,7 @@ public class QuizpageEasy extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         finish();
+                        showAd();
                         Intent intent2 = new Intent(QuizpageEasy.this, MainActivity.class);
                         intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -342,204 +391,65 @@ public class QuizpageEasy extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
+    private void loadAd(){
+        this.rewardedAd=new RewardedAd(this, getString(R.string.admob_reward_id));
+        RewardedAdLoadCallback adLoadCallback =new RewardedAdLoadCallback(){
+            @Override
+            public void onRewardedAdLoaded() {
+                super.onRewardedAdLoaded();
+                Log.d("보상형 광고", "Shop 보상형 광고 로드 완료");
+            }
+
+            @Override
+            public void onRewardedAdFailedToLoad(int i) {
+                super.onRewardedAdFailedToLoad(i);
+                Log.d("보상형 광고", "Shop 보상형 광고 로드 실패 in loadAd 에러코드:"+i);
+            }
+        };
+        this.rewardedAd.loadAd(new AdRequest.Builder().build(), adLoadCallback);
+
+    }
+
+    private void showAd(){
+        if(this.rewardedAd.isLoaded()){
+            RewardedAdCallback adCallback=new RewardedAdCallback() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+                    SharedPreferences sharedPreferences_dino_egg = getSharedPreferences("Dino_egg", MODE_PRIVATE);
+                    current_dino_egg = sharedPreferences_dino_egg.getInt("dino_egg", 0);
+                    SharedPreferences.Editor editor=sharedPreferences_dino_egg.edit();
+                    editor.putInt("dino_egg", current_dino_egg+100);
+                    editor.commit();
+                    Toast.makeText(QuizpageEasy.this, "공룡뼈 100개가 지급되었습니다!", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onRewardedAdOpened() {
+                    super.onRewardedAdOpened();
+                    Log.d("보상형 광고", "RewardedAdOpened");
+                }
+
+                @Override
+                public void onRewardedAdClosed() {
+                    super.onRewardedAdClosed();
+                    Log.d("보상형 광고", "onRewardedAdClosed");
+                    loadAd();
+                }
+
+                @Override
+                public void onRewardedAdFailedToShow(int i) {
+                    super.onRewardedAdFailedToShow(i);
+                    Log.d("보상형 광고", "onRewardedAdFailedToShow+에러 코드:"+i);
+//                    Toast.makeText(Shop.this, "Failed to load ad.", Toast.LENGTH_SHORT).show();
+                }
+            };
+            this.rewardedAd.show(this, adCallback);
+        }
+        else{
+            Log.d("보상형 광고", "Shop 보상형 광고 로드 실패 in showAd");
+        }
+    }
 }
 
 
-
-//    public void LoadQuiz(){
-//        Log.d("TAG", "loadQuiz 호출");
-//        mDBHelper=new DBHelper(QuizpageEasy.this);
-//        db=mDBHelper.getWritableDatabase();
-//        mDBHelper.onCreate(db);
-//        db.beginTransaction();
-//
-//        try{
-//            db.execSQL("INSERT INTO "+mDBHelper.TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '렉스', '디폴로도쿠스', '파라사우롤로푸스', '파키', '3')");
-//            db.execSQL("INSERT INTO "+mDBHelper.TABLE_NAME+" VALUES(null, '1', '다음 공룡의 이름은 무엇일까요?', '아르젠타비스', '기가노토파우르스', '파키리노사우루스', '파키', '4')");
-//
-//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "렉스", "디폴로도쿠스", "파라사우롤로푸스", "파키", "3");
-//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "알로사우루스", "기가노토사우르스", "아카티나", "마나가르마", "1" );
-//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "그리핀", "파라사우롤로푸스", "안킬로사우르스", "케찰", "3");
-//            insertQuiz(db,"1", "다음 공룡의 이름은 무엇일까요?", "안킬로사우르스", "바리오닉스", "벨제부포", "검치호", "2");
-//        }catch(Exception e){
-//            e.printStackTrace();
-//        }finally{
-//            db.endTransaction();
-//        }
-//    }
-
-//    public void insertQuiz(SQLiteDatabase mdb, String quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, String answer){
-//        ContentValues contentValues=new ContentValues();
-//        contentValues.put(mDBHelper.QUIZ_LEVEL, quiz_level);
-//        contentValues.put(mDBHelper.QUIZ, quiz);
-////        contentValues.put(mDBHelper.IMAGE, image);
-//        contentValues.put(mDBHelper.SELECTION_1, selection1);
-//        contentValues.put(mDBHelper.SELECTION_2, selection2);
-//        contentValues.put(mDBHelper.SELECTION_3, selection3);
-//        contentValues.put(mDBHelper.SELECTION_4, selection4);
-//        contentValues.put(mDBHelper.ANSWER, answer);
-//        mdb.insert(DBHelper.TABLE_NAME, null, contentValues);
-//        Log.d("TAG", "insertQuiz 호출 / "+selection1);
-//    }
-
-
-/*
-        String[] Q = new String[5];
-        Q[1] = "다음 공룡의 이름은?";
-        Q[2] = "다음 소리를 내는 공룡의 이름은?";
-        Q[3] = "오벨리스크의 위치는?";
-        Q[4] = "다음 공룡이 나오는 맵은?"; //라그나로크, 더 아일랜드, 더 센터, 스코치드어스, 에버레이션, 익스팅션, 발게로, 제네시스, 크리스탈 아일랜드
-        Q[5] = "다음 동굴의 이름은?"; // 강함의 동굴, 하늘군주의 동굴, 사냥꾼의 동굴, 거대함의 동굴, 공백의 동굴, 교활함의 동굴, 그림자의 동굴, 깊이의 동굴, 면역의 동굴, 무리의 동굴, 바위의 동굴, 짐승의 동굴, 현명함의 동굴
-
-        String[] D1 = new String[5];
-        D1[1] = "파라사우롤로푸르스";
-        D1[2] = "프테라노돈";
-        D1[3] = "하이랜드 NE";
-        D1[4] = "익스팅션";
-        D1[5] = "교활함의 동굴";
-
-        String[] D2 = new String[5];
-        D2[1] = "파라케라테리움";
-        D2[2] = "아르젠타비스";
-        D2[3] = "하이랜드 E";
-        D2[4] = "에버레이션";
-        D2[5] = "강함의 동굴";
-
-        String[] D3 = new String[5];
-        D3[1] = "마나가르마";
-        D3[2] = "안칼로사우르스";
-        D3[3] = "정글 1";
-        D3[4] = "더 센터";
-        D3[5] = "공백의 동굴";
-
-        String[] D4 = new String[5];
-        D4[1] = "그리핀";
-        D4[2] = "케찰";
-        D4[3] = "정글 2";
-        D4[4] = "라그나로크";
-        D4[5] = "하늘군주의 동굴";
-
-        int[] ans = new int[3];
-        ans[0] = 3;
-        ans[1] = 2;
-        ans[2] = 1;
-
-        Random rd = new Random();
-
-        int ran = rd.nextInt(Q.length);
-        int answer = 0;
-        int DE = 0; //DinoEgg
-
-        //1
-
-        System.out.println(Q[ran]);
-        System.out.println("1" + D1[ran]);
-        System.out.println("2" + D2[ran]);
-        System.out.println("3" + D3[ran]);
-        System.out.println("4" + D4[ran]);
-        answer = ans[ran];
-
-        Scanner scan = new Scanner(System.in);
-        System.out.println("정답을 선택하세요");
-        String input = scan.nextLine();
-        int inputN = Integer.parseInt(input);
-
-        if(inputN == answer) {
-            System.out.println("정답입니다.");
-            DE = DE + 100;
-        }
-        else {
-            System.out.println("오답입니다.");
-        }
-        ran = rd.nextInt(ans.length);
-
-        // 2
-        System.out.println(Q[ran]);
-        System.out.println("1" + D1[ran]);
-        System.out.println("2" + D2[ran]);
-        System.out.println("3" + D3[ran]);
-        System.out.println("4" + D4[ran]);
-        answer = ans[ran];
-
-        scan = new Scanner(System.in);
-        System.out.println("정답을 선택하세요");
-        input = scan.nextLine();
-        inputN = Integer.parseInt(input);
-
-        if(inputN == answer) {
-            System.out.println("정답입니다.");
-            DE = DE + 100;
-        }
-        else {
-            System.out.println("오답입니다.");
-        }
-        ran = rd.nextInt(ans.length);
-
-        //3
-        System.out.println(Q[ran]);
-        System.out.println("1" + D1[ran]);
-        System.out.println("2" + D2[ran]);
-        System.out.println("3" + D3[ran]);
-        System.out.println("4" + D4[ran]);
-        answer = ans[ran];
-
-        scan = new Scanner(System.in);
-        System.out.println("정답을 선택하세요");
-        input = scan.nextLine();
-        inputN = Integer.parseInt(input);
-
-        if(inputN == answer) {
-            System.out.println("정답입니다.");
-            DE = DE + 100;
-        }
-        else {
-            System.out.println("오답입니다.");
-        }
-        ran = rd.nextInt(ans.length);
-
-        //4
-        System.out.println(Q[ran]);
-        System.out.println("1" + D1[ran]);
-        System.out.println("2" + D2[ran]);
-        System.out.println("3" + D3[ran]);
-        System.out.println("4" + D4[ran]);
-        answer = ans[ran];
-
-        scan = new Scanner(System.in);
-        System.out.println("정답을 선택하세요");
-        input = scan.nextLine();
-        inputN = Integer.parseInt(input);
-
-        if(inputN == answer) {
-            System.out.println("정답입니다.");
-            DE = DE + 100;
-        }
-        else {
-            System.out.println("오답입니다.");
-        }
-        ran = rd.nextInt(ans.length);
-
-        //5
-        System.out.println(Q[ran]);
-        System.out.println("1" + D1[ran]);
-        System.out.println("2" + D2[ran]);
-        System.out.println("3" + D3[ran]);
-        System.out.println("4" + D4[ran]);
-        answer = ans[ran];
-
-        scan = new Scanner(System.in);
-        System.out.println("정답을 선택하세요");
-        input = scan.nextLine();
-        inputN = Integer.parseInt(input);
-
-        if(inputN == answer) {
-            System.out.println("정답입니다.");
-            DE = DE + 100;
-        }
-        else {
-            System.out.println("오답입니다.");
-        }
-        ran = rd.nextInt(ans.length);
-
-        System.out.println("얻은 공룡알 : " + DE);
-*/
