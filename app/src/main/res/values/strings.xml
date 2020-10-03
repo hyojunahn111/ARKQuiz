@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">ARK Quiz</string>
     <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_reward_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="admob_front_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_app_id">ca-app-pub-3081286779348377~8715745269</string>
+    <string name="admob_reward_id">ca-app-pub-3081286779348377/4604291627</string>
+    <string name="admob_front_id">ca-app-pub-3081286779348377/5940218742</string>
 </resources>
 
 
