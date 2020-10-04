@@ -460,6 +460,30 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which dinosaur lower the weight of stone?", "Basilisk", "Doedicurus", "Thorny Dragon", "Argentavis", 2, R.drawable.ark_stone, "It is flying dinosaur.", NULL, 0, context);
         insertQuiz(db,1, "Which dinosaur lower the weight of thatch?", "Thorny Dragon", "Argentavis", "Ravager", "Castoroides", 3, R.drawable.ark_thatch, "It can carry a human and average-size dinosaurs with right-click.", NULL, 0, context);
         insertQuiz(db,1, "Which dinosaur lower the weight of wood?", "Roll Rat", "Mammoth", "Thorny Dragon", "Gacha", 3, R.drawable.ark_wood, "Its saddle has durability.", NULL, 0, context);
+
+        //(10.04)
+        //자원 이름
+        insertQuiz(db,1, "What is the name of this resource?", "Absorbent Substrate", "Allosaurus Brain", "Ambergris", "Angler Gel", 1, R.drawable.absorbent_substrate, "Dropped by Tusoteuthis.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Allosaurus Brain", "Ambergris", "Angler Gel", "Ammonite Bite", 1, R.drawable.allosaurus_brain, "Dropped by Allosaurus.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Ammonite Bile", "Ambergris", "Angler Gel", "Argentavis Talon", 2, R.drawable.ambergris, "Magmasaur food.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Basilosaurus Blubber", "Ammonite Bile", "Angler Gel", "Argentavis Talon", 2, R.drawable.ammonite_bile, "Dropped by Ammonite.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Bio Toxin", "Basilosaurus Blubber", "Angler Gel", "Argentavis Talon", 3, R.drawable.angler_gel, "Dropped by Angler.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Basilosaurus Blubber", "Berries", "Argentavis Talon", "Black Pearl", 3, R.drawable.argentavis_talon, "Dropped by argentavis.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Cementing Paste", "Cactus Sap", "Black Pearl", "Bio Toxin", 4, R.drawable.bio_toxin, "Dropped by Cnidaria.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Charcoal", "Cementing Paste", "Cactus Sap", "Black Pearl", 4, R.drawable.black_pearl, "Dropped by Ammonite, Deathworm, Eurypterid, Trilobite, Tusoteuthis.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Cactus Sap", "Cementing Paste", "Charcoal", "Chitin", 1, R.drawable.cactus_sap, "have water.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Chitin", "Charcoal", "Clay", "Corrupted Nodule", 2, R.drawable.charcoal, "Burnt wood.", NULL, 0, context);
+
+        //키블 색
+        insertQuiz(db,2, "베이직 키블의 색깔은?", "흰색", "파랑색", "노랑색", "하늘색", 1, R.drawable.basic_kibble, "눈 색깔이랑 같습니다.", NULL, 0, context);
+        insertQuiz(db,2, "심플 키블의 색깔은?", "빨강색", "초록색", "노랑색", "하양색", 2, R.drawable.simple_kibble, "여름 풀 색깔이랑 같습니다.", NULL, 0, context);
+        insertQuiz(db,2, "레귤러 키블의 색깔은?", "연두색", "하늘색", "노랑색", "파랑색", 4, R.drawable.regular_kibble, "낮 맑은 하늘 색과 같습니다.", NULL, 0, context);
+        insertQuiz(db,2, "슈페리어 키블의 색깔은?", "보라색", "검정색", "노랑색", "남색", 1, R.drawable.superior_kibble, "자두 색깔이랑 같습니다.", NULL, 0, context);
+        insertQuiz(db,2, "익셉셔널 키블의 색깔은?", "핑크색", "파랑색", "노랑색", "하늘색", 3, R.drawable.exceptional_kibble, "벌 색깔이랑 같습니다.", NULL, 0, context);
+        insertQuiz(db,2, "특별한 키블의 색깔은?", "연두색", "하늘색", "은색", "벽돌색", 2, R.drawable.extraordinary_kibble, "하늘 색.", NULL, 0, context);
+
+        //공룡 타입(비행, 지상 등등)
+        
     }
 
     public void insertQuiz(SQLiteDatabase mdb, int quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, int answer, int image, String hint, int hint_image, int is_shown, Context context){
