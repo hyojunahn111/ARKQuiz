@@ -483,7 +483,33 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "특별한 키블의 색깔은?", "연두색", "하늘색", "은색", "벽돌색", 2, R.drawable.extraordinary_kibble, "하늘 색.", NULL, 0, context);
 
         //공룡 타입(비행, 지상 등등)
-        
+        insertQuiz(db,2, "하늘을 나는 공룡이 아닌 것은?", "Argentavis", "Astrocetus", "Insect Swarm", "Angler", 4, R.drawable.ark_logo, null, R.drawable.angler, 0, context);
+        insertQuiz(db,2, "하늘을 나는 공룡이 아닌 것은?", "Desert Titan", "Dimorphodon", "Gasbags", "Basilosaurus", 4, R.drawable.ark_logo, null, R.drawable.basilosaurus, 0, context);
+        insertQuiz(db,2, "하늘을 나는 공룡이 아닌 것은?", "Lymantria", "Phoenix", "Ammonite", "Quetzal", 3, R.drawable.ark_logo, null, R.drawable.quetzal, 0, context);
+        insertQuiz(db,2, "하늘을 나는 공룡이 아닌 것은?", "Megameura", "Onyc", "Hesperornis", "Vulture", 3, R.drawable.ark_logo, null, R.drawable.hesperornis, 0, context);
+        insertQuiz(db,2, "하늘을 나는 공룡이 아닌 것은?", "Wyven", "Coelacanth", "Snow Owl", "Gasbags", 2, R.drawable.ark_logo, null, R.drawable.coelacanth, 0, context);
+        insertQuiz(db,2, "바다에 생존하는 공룡이 아닌 것은??", "Leedsichthys", "Alloasaurus", "Diplocauius", "Eurypterid", 2, R.drawable.ark_logo, null, R.drawable.allosaurus, 0, context);
+        insertQuiz(db,2, "바다에 생존하는 공룡이 아닌 것은??", "Basilisk", "Liopleurodon", "Mosasaurus", "Megalodon", 1, R.drawable.ark_logo, null, R.drawable.basilisk, 0, context);
+        insertQuiz(db,2, "바다에 생존하는 공룡이 아닌 것은??", "Beelzebufo", "Lamprey", "Otter", "Tusoteuthis", 1, R.drawable.ark_logo, null, R.drawable.beelzebufo, 0, context);
+        insertQuiz(db,2, "바다에 생존하는 공룡이 아닌 것은??", "Bulbdog", "Eurypterid", "Cnidaria", "Baryonyx", 1, R.drawable.ark_logo, null, R.drawable.bulbdog, 0, context);
+        insertQuiz(db,2, "바다에 생존하는 공룡이 아닌 것은??", "Electrophorus", "Arthropluera", "Dunkleosteus", "Ammonite", 2, R.drawable.ark_logo, null, R.drawable.arthropluera, 0, context);
+        insertQuiz(db,2, "보스가 아닌 것은?", "Attack Drone", "Broodmother Lysrix", "Yeti", "Corrupted Master Controller", 3, R.drawable.ark_logo, null, R.drawable.yeti, 0, context);
+        insertQuiz(db,2, "보스가 아닌 것은?", "Crystal Wyvern", "Deathworm", "Woolly Rhino", "Defense Unit", 3, R.drawable.ark_logo, null, R.drawable.woollyrhino, 0, context);
+        insertQuiz(db,2, "보스가 아닌 것은?", "Desert Titan", "Dragon", "Trilobite", "Forest Titan", 3, R.drawable.ark_logo, null, R.drawable.trilobite, 0, context);
+        insertQuiz(db,2, "보스가 아닌 것은?", "Ice Titan", "Thorny Dragon", "King Titan", "Manticore", 2, R.drawable.ark_logo, null, R.drawable.thornydragon, 0, context);
+        insertQuiz(db,2, "보스가 아닌 것은?", "Megapithecus", "Moeder", "Overseer", "Thylacoleo", 4, R.drawable.ark_logo, null, R.drawable.thylacoleo, 0, context);
+
+        //레벨당 배울 수 있는 엔그램 문제
+        insertQuiz(db,1, "1렙에 배워져 있는 앤그램이 아닌 것은?", "쪽지", "돌 곡괭이", "횃불", "돌 도끼", 4, R.drawable.ark_logo, "이것은 나무를 잘 베죠", NULL, 0, context);
+        insertQuiz(db,1, "4렙에 배울 수 있는 엔그램이 아닌 것은?", "짚 토대", "돌 토대", "짚 천장", "보관함", 2, R.drawable.ark_logo, "엔그램 배우는 순서는 짚 -> 돌이죠.", NULL, 0, context);
+
+        //스프 재료 문제
+
+        //염료 재료 문제
+
+        //하늘을 나는 공룡이 낚을 수 있는 것들이 아닌 것은?
+
+        //벽을 파괴 할 수 있는 공룡
     }
 
     public void insertQuiz(SQLiteDatabase mdb, int quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, int answer, int image, String hint, int hint_image, int is_shown, Context context){
