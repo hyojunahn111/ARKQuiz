@@ -500,10 +500,24 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "보스가 아닌 것은?", "Megapithecus", "Moeder", "Overseer", "Thylacoleo", 4, R.drawable.ark_logo, null, R.drawable.thylacoleo, 0, context);
 
         //레벨당 배울 수 있는 엔그램 문제
-        insertQuiz(db,1, "1렙에 배워져 있는 앤그램이 아닌 것은?", "쪽지", "돌 곡괭이", "횃불", "돌 도끼", 4, R.drawable.ark_logo, "이것은 나무를 잘 베죠", NULL, 0, context);
-        insertQuiz(db,1, "4렙에 배울 수 있는 엔그램이 아닌 것은?", "짚 토대", "돌 토대", "짚 천장", "보관함", 2, R.drawable.ark_logo, "엔그램 배우는 순서는 짚 -> 돌이죠.", NULL, 0, context);
+        insertQuiz(db,1, "What is not the engram learned at level 1?", "쪽지", "돌 곡괭이", "횃불", "돌 도끼", 4, R.drawable.ark_logo, "이것은 나무를 잘 베죠", NULL, 0, context);
+        insertQuiz(db,1, "What is not an engram that can be learned at level 4?", "짚 토대", "돌 토대", "짚 천장", "보관함", 2, R.drawable.ark_logo, "엔그램 배우는 순서는 짚 -> 돌이죠.", NULL, 0, context);
 
         //스프 재료 문제
+        insertQuiz(db,2, "What is not the material of the Mindwipe Tonic?", "Narcotics", "Stimulant", "Rare Flower", "Raw Prime meat", 4, R.drawable.ark_logo, "고기는 구워야죠.", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Broth of Enlightenment?", "Woolly Rhino Horn", "Rockarrot", "Longrass", "Narcotics", 4, R.drawable.broth_of_enlightenment, "이것을 먹으면 마비수치가 올라가죠.", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Calien Soup?", "Stimulant", "Citronal", "Rockarrot", "Tintoberry", 3, R.drawable.calien_soup, "말이 제일 좋아하는 음식", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Enduro Stew?", "Stimulant", "Savoroot", "Prime Cooked Meat", "Rockarrot", 3, R.drawable.rockwell_recipes_enduro_stew, "고급질까지야..", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Focal Chili?", "Cooked Meat", "Stimulant", "Citronal", "Azulberry", 2, R.drawable.rockwell_recipes_focal_chili, "스파크파우더랑 스팀베리로 만드는 것", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Sweet Vegetable Cake?", "Giant Bee Honey", "Narcotics", "Sap", "Stimulant", 2, R.drawable.sweet_vegetable_cake, "이것을 먹으면 마비수치가 올라갑니다.", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Cactus Broth?", "Cactus Sap", "Narcotics", "Mejoberry", "Azulberry", 2, R.drawable.cactus_broth, "이것을 먹으면 마비수치가 올라갑니다.", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Bug Repellant?", "Stimulant", "Pelt", "Citronal", "Rockarrot", 1, R.drawable.bug_repellant, "스파크파우더랑 스팀베리로 만드는 것", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Lesser Antidote?", "Stimulant", "Rare Flower", "Rare Mushroom", "Deathworm Horn, Rhino Horn, or Leech Blood", 1, R.drawable.lesser_antidote, "스파크파우더랑 스팀베리로 만드는 것", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Beer Liquid?", "Wood", "Thatch", "Berries", "Water", 1, R.drawable.beer_liquid, "보기 중 제일 단단한 것", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Re-Fertilizer?", "Rare Mushroom", "Rare Flower", "Fertilizer", "Rock", 4, R.drawable.re_fertilizer, "매우 단단한 것", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Mushroom Brew?", "Aggeravic Mushroom", "Aquatic Mushroom", "Sap", "rare Mushroom", 4, R.drawable.mushroom_brew, "희귀하진 않아요~", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Water Jar?", "Cementing Paste", "Water", "Hide", "Crystal", 2, R.drawable.water_jar, "병을 만든다고 생각해보세요. 필요 없는 것이 보일거예요.", NULL, 0, context);
+        insertQuiz(db,2, "What is not the material of the Canteen?", "Polymer", "Metal Ingot", "Thatch", "Cementing Paste", 3, R.drawable.canteen, "보기 중 제일 쉽게 구할 수 있는게 답입니다.", NULL, 0, context);
 
         //염료 재료 문제
 
