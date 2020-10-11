@@ -520,6 +520,21 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "What is not the material of the Canteen?", "Polymer", "Metal Ingot", "Thatch", "Cementing Paste", 3, R.drawable.canteen, "보기 중 제일 쉽게 구할 수 있는게 답입니다.", NULL, 0, context);
 
         //염료 재료 문제
+        insertQuiz(db,2, "What materials are not needed to make black dye?", "Narcoberry", "Water", "Charcoal", "Wood", 4, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Slate dye?", "Narcoberry", "Stimberry", "Sparkpowder", "Charcoal", 4, R.drawable.canteen, "탄 목재는 필요 없어요.", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Silver dye?", "Narcoberry", "Water", "Metal", "Gunpowder", 3, R.drawable.canteen, "보기 중에 제일 단단한것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make White dye?", "Stimberry", "Charcoal", "Thatch", "Water", 3, R.drawable.canteen, "이것은 노랑색입니다.", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Red dye?", "Tintoberry", "Blood", "Charcoal", "Water", 2, R.drawable.canteen, "이것이 없다면 사람은 죽습니다.", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Orange dye?", "Amarberry", "Gunpowder", "Tintoberry", "Charcoal", 2, R.drawable.canteen, "이것은 스파크파우더랑 숯으로 만듭니다.", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Cantaloupe dye?", "Azulberry", "Tintoberry", "Stimberry", "Sparkpowder", 1, R.drawable.canteen, "이것은 파랑색입니다.", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Yellow dye?", "Thatch", "Charcoal", "Amarberry", "Water", 1, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Green dye?", "Narcoberry", "Water", "Charcoal", "Wood", 4, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Cyan dye?", "Narcoberry", "Water", "Charcoal", "Wood", 4, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Purple dye?", "Narcoberry", "Water", "Charcoal", "Wood", 3, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Brick dye?", "Narcoberry", "Water", "Charcoal", "Wood", 3, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Tangerine dye?", "Narcoberry", "Water", "Charcoal", "Wood", 2, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Tan dye?", "Narcoberry", "Water", "Charcoal", "Wood", 2, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
+        insertQuiz(db,2, "What materials are not needed to make Parchment dye?", "Narcoberry", "Water", "Charcoal", "Wood", 1, R.drawable.canteen, "검은색이 아닌 것", NULL, 0, context);
 
         //하늘을 나는 공룡이 낚을 수 있는 것들이 아닌 것은?
 
