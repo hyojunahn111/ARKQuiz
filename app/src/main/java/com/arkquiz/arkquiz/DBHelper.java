@@ -251,9 +251,9 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,1, "What level can you learn a small telescope?", "7", "10", "13", "15", 1, R.drawable.spyglass, "Newbies can easily learn it.", NULL, 0, context);
 
             //오벨리스크
-            insertQuiz(db,1, "What is the coordinates of the Island Blue Obelisk?", "13.1, 55.3", "35.4, 64.3", "25.5, 25.6", "39.2, 68.7", 3, R.drawable.obelisk, "It's in the upper left.", NULL, 0, context);
-            insertQuiz(db,1, "What is the coordinates of the Island Red Obelisk?", "79.8, 17.4", "75.2, 13.8", "49.1, 82.0", "24.9, 86.4", 1, R.drawable.obelisk, "It's in the bottom left corner.", NULL, 0, context);
-            insertQuiz(db,1, "What is the coordinates of the Island Green Obelisk?", "14.8, 76.0", "59.0, 72.3", "19.4, 28.6", "16.8, 71.3", 2, R.drawable.obelisk, "It's in the middle right.", NULL, 0, context);
+            insertQuiz(db,1, "What is the coordinates of the Island Blue Obelisk?", "13.1, 55.3", "35.4, 64.3", "25.5, 25.6", "39.2, 68.7", 3, R.drawable.obelisk_1, "It's in the upper left.", NULL, 0, context);
+            insertQuiz(db,1, "What is the coordinates of the Island Red Obelisk?", "79.8, 17.4", "75.2, 13.8", "49.1, 82.0", "24.9, 86.4", 1, R.drawable.obelisk_1, "It's in the bottom left corner.", NULL, 0, context);
+            insertQuiz(db,1, "What is the coordinates of the Island Green Obelisk?", "14.8, 76.0", "59.0, 72.3", "19.4, 28.6", "16.8, 71.3", 2, R.drawable.obelisk_1, "It's in the middle right.", NULL, 0, context);
 
 
 

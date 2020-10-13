@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4B4B4B"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/TextView_ranking_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Ranking"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/goyangdeogyangb"></TextView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerView_ranking"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/TextView_ranking_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"></androidx.recyclerview.widget.RecyclerView>
+</androidx.constraintlayout.widget.ConstraintLayout>

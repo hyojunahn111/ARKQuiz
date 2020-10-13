@@ -13,13 +13,8 @@
         android:id="@+id/imageView2"
         android:layout_width="32dp"
         android:layout_height="29dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginLeft="252dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018"
+        app:layout_constraintTop_toTopOf="@id/TextView_main_dino_egg"
+        app:layout_constraintBottom_toBottomOf="@id/TextView_main_dino_egg"
         app:layout_constraintRight_toLeftOf="@id/TextView_main_dino_egg"
         app:srcCompat="@drawable/dinohead" />
 
@@ -27,15 +22,37 @@
         android:id="@+id/TextView_main_dino_egg"
         android:layout_width="122dp"
         android:layout_height="24dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
         android:background="@drawable/stroke"
         android:text="DinoBoneCount"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
-        app:layout_constraintLeft_toRightOf="@id/imageView2"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/goyangdeogyangb"
+        />
+
+    <ImageView
+        android:id="@+id/ImageView_main_rankingPoint"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:layout_constraintTop_toTopOf="@id/TextView_main_rankingPoint"
+        app:layout_constraintBottom_toBottomOf="@id/TextView_main_rankingPoint"
+        app:layout_constraintRight_toLeftOf="@id/TextView_main_rankingPoint"
+        app:srcCompat="@drawable/point_icon_2" />
+
+    <TextView
+        android:id="@+id/TextView_main_rankingPoint"
+        android:layout_width="122dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/stroke"
+        android:text="Ranking Point"
+        app:layout_constraintTop_toBottomOf="@id/TextView_main_dino_egg"
+        app:layout_constraintLeft_toLeftOf="@id/TextView_main_dino_egg"
+        app:layout_constraintRight_toRightOf="@id/TextView_main_dino_egg"
         android:textSize="13sp"
         android:gravity="center"
         android:textColor="#FFFFFF"
@@ -44,38 +61,19 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="329dp"
-        android:layout_height="317dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="100dp"
         android:adjustViewBounds="true"
+        android:background="@drawable/ark_quiz_main"
         android:scaleType="fitCenter"
-        android:background="@drawable/ark_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.149"/>
+        app:layout_constraintDimensionRatio="72:60"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="152dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="87dp"
-        android:layout_marginLeft="87dp"
-        android:layout_marginTop="257dp"
-        android:layout_marginEnd="90dp"
-        android:layout_marginRight="90dp"
-        android:layout_marginBottom="27dp"
-        android:gravity="center_horizontal"
-        android:text="Quiz"
-        android:textColor="#E8D3D3"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Button_main_play"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginStart="100dp"
@@ -91,17 +89,17 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:text="Beginner"
+        android:text="Play"
         android:textColor="#000000"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/Button_main_ranking"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Button_main_ranking"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginStart="100dp"
@@ -113,16 +111,16 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-        android:text="INTERMEDIATE"
+        android:text="Ranking"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/Button_main_shop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/Button_main_play"
         android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/Button_main_shop"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginStart="100dp"
@@ -131,17 +129,17 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="13dp"
         android:background="@drawable/button_background"
-        android:text="Advanced"
+        android:text="shop"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/Button_main_myPage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/Button_main_ranking"
         android:fontFamily="@font/goyangdeogyangb"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/Button_main_myPage"
         android:layout_width="300dp"
         android:layout_height="46dp"
         android:layout_marginStart="100dp"
@@ -150,25 +148,33 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="72dp"
         android:background="@drawable/button_background"
-        android:text="ARK Exam"
+        android:text="my page"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/Button_main_shop"
         android:fontFamily="@font/goyangdeogyangb"/>
 
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="40dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/shop"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="parent"
+    <ImageView
+        android:id="@+id/ImageView_main_flag"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083" />
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:layout_margin="20dp"
+        android:background="@drawable/ark_logo"></ImageView>
+    <TextView
+        android:id="@+id/TextView_main_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="닉네임"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="@id/ImageView_main_flag"
+        app:layout_constraintBottom_toBottomOf="@id/ImageView_main_flag"
+        app:layout_constraintLeft_toRightOf="@id/ImageView_main_flag"
+        android:layout_marginLeft="10dp"></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

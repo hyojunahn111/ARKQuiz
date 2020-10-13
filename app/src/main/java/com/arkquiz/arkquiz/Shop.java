@@ -329,6 +329,7 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
         Intent intent=new Intent(Shop.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        overridePendingTransition(0, 0);
     }
 
 }

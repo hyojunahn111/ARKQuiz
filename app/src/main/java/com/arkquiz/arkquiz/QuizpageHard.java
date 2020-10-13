@@ -302,6 +302,8 @@ public class QuizpageHard extends AppCompatActivity{
                     }
                 });
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
 
@@ -333,26 +335,47 @@ public class QuizpageHard extends AppCompatActivity{
                     }
                 });
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
 
     public void makeDialog_finish(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String quiz_result="Result: "+correct_answer+"/10";
-        builder.setMessage(quiz_result)
-                .setPositiveButton("Back to main page", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                        showAd();
-                        Intent intent2=new Intent(QuizpageHard.this, MainActivity.class);
-                        intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent2);
-                        mDBHelper.updateTruetoFalse(db);
-                    }
-                });
+        if(isCorrect) correct_answer++;
+        LayoutInflater factory = LayoutInflater.from(this);
+        final View dialog_view = factory.inflate(R.layout.activity_dialog_result_2, null);
+        TextView TextView_result=dialog_view.findViewById(R.id.TextView_dialog_result);
+        Button Button_ok=dialog_view.findViewById(R.id.Button_dialog_result_ok);
+        TextView_result.setText(correct_answer+"/10");
+        Button_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2=new Intent(QuizpageHard.this, MainActivity.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent2);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        builder.setView(dialog_view);
+//        String quiz_result="Result: "+correct_answer+"/10";
+//        builder.setMessage(quiz_result)
+//                .setPositiveButton("Back to main page", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        finish();
+//                        showAd();
+//                        Intent intent2=new Intent(QuizpageHard.this, MainActivity.class);
+//                        intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+//                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                        startActivity(intent2);
+//                        mDBHelper.updateTruetoFalse(db);
+//                    }
+//                });
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
 
@@ -365,12 +388,6 @@ public class QuizpageHard extends AppCompatActivity{
         ImageView_dialog_hint.setImageBitmap(current_hint_image);
 
         builder.setTitle("Hint").setMessage(current_hint).setView(dialog_view)
-                .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                })
                 .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -378,6 +395,8 @@ public class QuizpageHard extends AppCompatActivity{
                     }
                 });
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
 

@@ -31,9 +31,16 @@ import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdCallback;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class QuizpageTest extends AppCompatActivity{
-    private TextView TextView_quiz, TextView_dino_egg, TextView_numberOfQuiz;
+    private TextView TextView_quiz, TextView_dino_egg, TextView_numberOfQuiz, TextView_point;
     private ImageView ImageView_quiz_image;
     private Button[] btn_selection;
     private Button btn_hint_by_dino_egg, btn_hint_by_ad, btn_home;
@@ -43,14 +50,18 @@ public class QuizpageTest extends AppCompatActivity{
 
     private Integer quiz_answer=0;
     private int numberOfQuiz=1;
-    private int current_dino_egg;
-    private int correct_answer;
+    private int current_dino_egg, currentLevel, currentPoint, myPoint;
+    private int correct_answer, myScore;
     private boolean isCorrect;
     private String current_hint;
     private String[] selectionInString;
     private Bitmap current_hint_image;
     private RewardedAd rewardedAd;
     private InterstitialAd mInterstitialAd;
+    private FirebaseFirestore db_firestore;
+    private SharedPreferences sharedPreferences_Id;
+    private SharedPreferences.Editor editor_Id;
+    private final String TAG="QuizPageTest";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +90,7 @@ public class QuizpageTest extends AppCompatActivity{
         Intent gIntent=getIntent();
         numberOfQuiz=gIntent.getIntExtra("numberOfQuiz", 1);
         correct_answer=gIntent.getIntExtra("correctAnswer", 0);
+        myPoint=gIntent.getIntExtra("myPoint", 0);
 
         isCorrect=false;
         current_hint="";
@@ -102,11 +114,13 @@ public class QuizpageTest extends AppCompatActivity{
         btn_hint_by_dino_egg=findViewById(R.id.btn_test_hint_by_dinoegg);
         btn_home=findViewById(R.id.btn_test_home);
         TextView_numberOfQuiz=findViewById(R.id.TextView_test_numberOfQuiz);
+        TextView_point=findViewById(R.id.TextView_test_point);
 
-        TextView_numberOfQuiz.setText(numberOfQuiz+"/30");
+        TextView_numberOfQuiz.setText(numberOfQuiz+"/10");
 
         mDBHelper=new DBHelper(this);
         db=mDBHelper.getReadableDatabase();
+        db_firestore = FirebaseFirestore.getInstance();
 
         current_dino_egg=sharedPreferences_dino_egg.getInt("dino_egg", 0);
         TextView_dino_egg.setText(String.valueOf(current_dino_egg));
@@ -121,7 +135,7 @@ public class QuizpageTest extends AppCompatActivity{
 //            mDBHelper.isQuizShown[(int)cursor.getLong(0)]=true;
             SQLiteDatabase db2;
             db2=mDBHelper.getWritableDatabase();
-            setQuiz(cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
+            setQuiz(cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6),
                     cursor.getInt(7), cursor.getBlob(8), cursor.getString(9), cursor.getBlob(10));
             Log.d("TAG", "현재 isShown: "+cursor.getInt(11));
             mDBHelper.updateFalseToTrue(db2, (int)cursor.getLong(0));
@@ -239,8 +253,21 @@ public class QuizpageTest extends AppCompatActivity{
         });
     }
 
-    public void setQuiz(String quiz, String selection1, String selection2, String selection3, String selection4,
+    public void setQuiz(int level, String quiz, String selection1, String selection2, String selection3, String selection4,
                         int answer, byte[] image, String hint, byte[] hint_image){
+        currentLevel=level;
+        if(level==1) {
+            TextView_point.setText("2 pts");
+            currentPoint=2;
+        }
+        else if(level==2)   {
+            TextView_point.setText("3 pts");
+            currentPoint=3;
+        }
+        else {
+            TextView_point.setText("5 pts");
+            currentPoint=5;
+        }
         TextView_quiz.setText(quiz);
 //        ImageView_quiz_image.setImageResource(image);
         btn_selection[0].setText(selection1);
@@ -256,7 +283,7 @@ public class QuizpageTest extends AppCompatActivity{
         if(hint!=null)current_hint=hint;
         else current_hint="";
         if(hint_image!=null) current_hint_image=getBitmapImage(hint_image);
-        Log.d("TAG", "setQuiz 호출 / 퀴즈 넘버: "+numberOfQuiz);
+        Log.d("TAG", "setQuiz 호출 / 퀴즈 넘버: ");
     }
 
     public Bitmap getBitmapImage(byte[] b){
@@ -277,7 +304,7 @@ public class QuizpageTest extends AppCompatActivity{
                 .setPositiveButton("Next", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(numberOfQuiz>=30){
+                        if(numberOfQuiz>=10){
 //            결과 페이지 로드
                             makeDialog_finish();
                         }
@@ -285,13 +312,21 @@ public class QuizpageTest extends AppCompatActivity{
                             Intent intent=new Intent(QuizpageTest.this, QuizpageTest.class);
                             intent.putExtra("numberOfQuiz", numberOfQuiz+1);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                            if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
-                            else intent.putExtra("correctAnswer", correct_answer);
+                            if(isCorrect) {
+                                intent.putExtra("correctAnswer", correct_answer+1);
+                                intent.putExtra("myPoint", myPoint+currentPoint);
+                            }
+                            else {
+                                intent.putExtra("correctAnswer", correct_answer);
+                                intent.putExtra("myPoint", myPoint-currentPoint);
+                            }
                             startActivity(intent);
                         }
                     }
                 });
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
 
@@ -308,7 +343,7 @@ public class QuizpageTest extends AppCompatActivity{
                 .setPositiveButton("Next", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(numberOfQuiz>=30){
+                        if(numberOfQuiz>=10){
 //            결과 페이지 로드
                             makeDialog_finish();
                         }
@@ -316,33 +351,109 @@ public class QuizpageTest extends AppCompatActivity{
                             Intent intent=new Intent(QuizpageTest.this, QuizpageTest.class);
                             intent.putExtra("numberOfQuiz", numberOfQuiz+1);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                            if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
-                            else intent.putExtra("correctAnswer", correct_answer);
+                            if(isCorrect) {
+                                intent.putExtra("correctAnswer", correct_answer+1);
+                                intent.putExtra("myPoint", myPoint+currentPoint);
+                            }
+                            else {
+                                intent.putExtra("correctAnswer", correct_answer);
+                                intent.putExtra("myPoint", myPoint-currentPoint);
+                            }
                             startActivity(intent);
                         }
                     }
                 });
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
 
     public void makeDialog_finish(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String quiz_result="Result: "+correct_answer+"/30";
-        builder.setMessage(quiz_result)
-                .setPositiveButton("Back to main page", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                        showAd();
-                        Intent intent2=new Intent(QuizpageTest.this, MainActivity.class);
-                        intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent2);
-                        mDBHelper.updateTruetoFalse(db);
+        if(isCorrect) {
+            correct_answer++;
+            myPoint+=currentPoint;
+        }
+        else{
+            myPoint-=currentPoint;
+        }
+        sharedPreferences_Id=getSharedPreferences("ID", MODE_PRIVATE);
+        editor_Id=sharedPreferences_Id.edit();
+        final DocumentReference documentRef = db_firestore.collection("users").document(sharedPreferences_Id.getString("ID", ""));
+        documentRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        myScore=Integer.parseInt(document.get("score").toString());
+                        Log.d(TAG, "myScore: "+myScore);
+
+                        if(myScore+myPoint<0) myScore=0;
+                        else myScore+=myPoint;
+                        documentRef
+                                .update("score", myScore)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, e.toString());
+                                    }
+                                });
+                    } else {
+                        Log.d(TAG, "No such document");
                     }
-                });
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
+        LayoutInflater factory = LayoutInflater.from(QuizpageTest.this);
+        final View dialog_view = factory.inflate(R.layout.activity_dialog_result, null);
+
+        TextView TextView_result=dialog_view.findViewById(R.id.TextView_dialog_result);
+        TextView TextView_point=dialog_view.findViewById(R.id.TextView_dialog_point);
+        Button Button_ok=dialog_view.findViewById(R.id.Button_dialog_result_ok);
+        TextView_result.setText(correct_answer+"/10");
+        if(myPoint>=0)   TextView_point.setText("+"+myPoint+" pts");
+        else TextView_point.setText(myPoint+" pts");
+        Button_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2=new Intent(QuizpageTest.this, MainActivity.class);
+                intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent2);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        builder.setView(dialog_view);
+
+//        String quiz_result="Result: "+correct_answer+"/10";
+//        String point_result="Point: "+myPoint;
+//        builder.setMessage(quiz_result+"\n"+point_result)
+//                .setPositiveButton("Back to main page", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        finish();
+//                        Intent intent2=new Intent(QuizpageTest.this, MainActivity.class);
+//                        intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+//                        intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                        startActivity(intent2);
+//                        mDBHelper.updateTruetoFalse(db);
+//
+//                        showAd();
+//                    }
+//                });
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
 
@@ -355,12 +466,6 @@ public class QuizpageTest extends AppCompatActivity{
         ImageView_dialog_hint.setImageBitmap(current_hint_image);
 
         builder.setTitle("Hint").setMessage(current_hint).setView(dialog_view)
-                .setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                })
                 .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -368,21 +473,61 @@ public class QuizpageTest extends AppCompatActivity{
                     }
                 });
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
 
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setMessage("Would you like to go to the main page?");
+        builder.setMessage("You will lose 10 Ranking Points when you exit during Ranking Mode!\nAre you sure to quit?");
         builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
                 mDBHelper.updateTruetoFalse(db);
                 dialog.cancel();
                 Intent tempIntent=new Intent(QuizpageTest.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(tempIntent);            }
+                startActivity(tempIntent);
+
+                sharedPreferences_Id=getSharedPreferences("ID", MODE_PRIVATE);
+                editor_Id=sharedPreferences_Id.edit();
+                final DocumentReference documentRef = db_firestore.collection("users").document(sharedPreferences_Id.getString("ID", ""));
+                documentRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                myScore=Integer.parseInt(document.get("score").toString());
+                                if(myScore-10<0) myScore=0;
+                                else myScore-=10;
+                                documentRef
+                                        .update("score", myScore)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.d(TAG, "update success");
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.d("MainActivity", e.toString());
+                                            }
+                                        });
+                            } else {
+                                Log.d(TAG, "No such document");
+                            }
+                        } else {
+                            Log.d(TAG, "get failed with ", task.getException());
+                        }
+                    }
+                });
+
+            }
         });
 
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

@@ -176,28 +176,13 @@
         android:id="@+id/button20"
         android:layout_width="60dp"
         android:layout_height="63dp"
-        android:background="@drawable/ark_logo"
+        android:background="@drawable/ark_quiz_main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.007" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="35dp"
-        android:layout_height="9dp"
-        android:gravity="center_horizontal"
-        android:text="Quiz"
-        android:textColor="#E8D3D3"
-        android:textSize="5sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button20"
-        app:layout_constraintEnd_toEndOf="@+id/button20"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="@+id/button20"
-        app:layout_constraintTop_toTopOf="@+id/button20"
-        app:layout_constraintVertical_bias="1.0" />
 
 
 
