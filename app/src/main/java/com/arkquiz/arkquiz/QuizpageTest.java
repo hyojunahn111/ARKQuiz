@@ -462,17 +462,21 @@ public class QuizpageTest extends AppCompatActivity{
         LayoutInflater factory = LayoutInflater.from(QuizpageTest.this);
         final View dialog_view = factory.inflate(R.layout.dialog_hint, null);
 
-        ImageView ImageView_dialog_hint=dialog_view.findViewById(R.id.ImageView_dialog_hint);
-        ImageView_dialog_hint.setImageBitmap(current_hint_image);
+        ImageView ImageView_dialog_hint = dialog_view.findViewById(R.id.ImageView_dialog_hint);
+        TextView TextView_hint=dialog_view.findViewById(R.id.TextView_dialog_hint);
+        Button Button_ok=dialog_view.findViewById(R.id.Button_dialog_hint_OK);
 
-        builder.setTitle("Hint").setMessage(current_hint).setView(dialog_view)
-                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-        AlertDialog alertDialog = builder.create();
+        ImageView_dialog_hint.setImageBitmap(current_hint_image);
+        TextView_hint.setText(current_hint);
+
+        builder.setView(dialog_view);
+        final AlertDialog alertDialog = builder.create();
+        Button_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
+        });
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.setCancelable(false);
         alertDialog.show();
