@@ -464,7 +464,7 @@ public class DBHelper extends SQLiteOpenHelper {
         //(10.04)
         //자원 이름
         insertQuiz(db,1, "What is the name of this resource?", "Absorbent Substrate", "Allosaurus Brain", "Ambergris", "Angler Gel", 1, R.drawable.absorbent_substrate, "Dropped by Tusoteuthis.", NULL, 0, context);
-        insertQuiz(db,1, "What is the name of this resource?", "Allosaurus Brain", "Ambergris", "Angler Gel", "Ammonite Bite", 1, R.drawable.allosaurus_brain, "Dropped by Allosaurus.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Allosaurus Brain", "Ambergris", "Angler Gel", "Ammonite Bile", 1, R.drawable.allosaurus_brain, "Dropped by Allosaurus.", NULL, 0, context);
         insertQuiz(db,1, "What is the name of this resource?", "Ammonite Bile", "Ambergris", "Angler Gel", "Argentavis Talon", 2, R.drawable.ambergris, "Magmasaur food.", NULL, 0, context);
         insertQuiz(db,1, "What is the name of this resource?", "Basilosaurus Blubber", "Ammonite Bile", "Angler Gel", "Argentavis Talon", 2, R.drawable.ammonite_bile, "Dropped by Ammonite.", NULL, 0, context);
         insertQuiz(db,1, "What is the name of this resource?", "Bio Toxin", "Basilosaurus Blubber", "Angler Gel", "Argentavis Talon", 3, R.drawable.angler_gel, "Dropped by Angler.", NULL, 0, context);
@@ -475,12 +475,12 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,1, "What is the name of this resource?", "Chitin", "Charcoal", "Clay", "Corrupted Nodule", 2, R.drawable.charcoal, "Burnt wood.", NULL, 0, context);
 
         //키블 색
-        insertQuiz(db,2, "What is the color of Basic Kibble?", "White", "Blue", "Yellow", "Skyblue", 1, R.drawable.basic_kibble, "The color of snow", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Basic Kibble?", "White", "Blue", "Yellow", "Sky blue", 1, R.drawable.basic_kibble, "The color of snow", NULL, 0, context);
         insertQuiz(db,2, "What is the color of Simple Kibble?", "Red", "Green", "Yellow", "White", 2, R.drawable.simple_kibble, "The color of grass.", NULL, 0, context);
-        insertQuiz(db,2, "What is the color of Regular Kibble?", "Light Green", "Skyblue", "Yellow", "Blue", 4, R.drawable.regular_kibble, "The color of ocean.", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Regular Kibble?", "Light Green", "Sky blue", "Yellow", "Blue", 4, R.drawable.regular_kibble, "The color of ocean.", NULL, 0, context);
         insertQuiz(db,2, "What is the color of Superior Kibble?", "Purple", "Black", "Yellow", "Navy", 1, R.drawable.superior_kibble, "The color of grape.", NULL, 0, context);
-        insertQuiz(db,2, "What is the color of Exceptional Kibble?", "Pink", "Blue", "Yellow", "Skyblue", 3, R.drawable.exceptional_kibble, "The color of bananas.", NULL, 0, context);
-        insertQuiz(db,2, "What is the color of Extraordinary Kibble?", "Light Green", "Skyblue", "Silver", "Gold", 2, R.drawable.extraordinary_kibble, "The color of clear sky.", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Exceptional Kibble?", "Pink", "Blue", "Yellow", "Sky blue", 3, R.drawable.exceptional_kibble, "The color of bananas.", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Extraordinary Kibble?", "Light Green", "Sky blue", "Silver", "Gold", 2, R.drawable.extraordinary_kibble, "The color of clear sky.", NULL, 0, context);
 
         //공룡 타입(비행, 지상 등등)
         insertQuiz(db,1, "Which dinosaur can't fly?", "Argentavis", "Astrocetus", "Insect Swarm", "Angler", 4, R.drawable.ark_logo, null, R.drawable.angler, 0, context);
@@ -531,7 +531,7 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which is not the ingredient of Green dye?", "Amarberry", "Azulberry", "Charcoal", "Meat", 4, R.drawable.green_dye, "We can get this from animals.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the ingredient of Cyan dye?", "Amarberry", "Azulberry", "Sparkpowder", "Stimberry", 4, R.drawable.cyan_dye, "It is white.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the ingredient of Purple dye?", "Azulberry", "Tintoberry", "Amarberry", "Charcoal", 3, R.drawable.purple_dye, "It is blue.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the ingredient of Brick dye?", "Tintoberry", "Narcoberry", "Gunpowder", "Sparkpowder", 3, R.drawable.brick_dye, "it is made of sparkpowder and charcoal.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Brick dye?", "Tintoberry", "Narcoberry", "Gunpowder", "Sparkpowder", 3, R.drawable.brick_dye, "it is made of Sparkpowder and Charcoal.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the ingredient of Tangerine dye?", "Amarberry", "Sparkpowder", "Tintoberry", "Gunpowder", 2, R.drawable.tangerine_dye, "It is made of stone and flint.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the ingredient of Tan dye?", "Amarberry", "Sparkpowder", "Stimberry", "Gunpowder", 2, R.drawable.tan_dye, "It is made of stone and flint", NULL, 0, context);
         insertQuiz(db,2, "Which is not the ingredient of Parchment dye?", "Sparkpowder", "Stimberry", "Amarberry", "Gunpowder", 1, R.drawable.parchement_dye, "It is yellow.", NULL, 0, context);
