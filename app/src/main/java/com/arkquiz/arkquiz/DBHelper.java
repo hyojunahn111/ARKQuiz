@@ -363,8 +363,8 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,2, "How many cannons are used to break the tek ceiling?", "250", "300", "350", "400", 1, R.drawable.cannon, "One cannon damage that enters the tek ceiling is 40.", NULL, 0, context);
             insertQuiz(db,2, "What is the damage of a bullet in an automatic turret?", "70", "80", "90", "100", 1, R.drawable.auto_turret, "Although you increase your hp 5 times, you can die by an auto turret shot.", NULL, 0, context);
             insertQuiz(db,3, "How much damage does C4 take on wood?", "11320", "11813", "12591", "12677", 2, R.drawable.c4_charge, "There is no way to give a hint. The answer is 11813.", NULL, 0, context);
-            insertQuiz(db,2, "How much torpor rate rises when you shoot tranquilizer dart?", "220", "221", "222", "223", 2, R.drawable.tranquilizer_dart, "It is 33 shots based on paralysis number 7293..", NULL, 0, context);
-            insertQuiz(db,2, "How much torpor rate rises when you shoot shocking tranquilizer dart?", "440", "442", "444", "446", 2, R.drawable.shocking_tranquilizer_dart, "It's twice as much as Paralysis dart.", NULL, 0, context);
+            insertQuiz(db,2, "How much torpidity rises when you shoot tranquilizer dart?", "220", "221", "222", "223", 2, R.drawable.tranquilizer_dart, "It is 33 shots based on paralysis number 7293..", NULL, 0, context);
+            insertQuiz(db,2, "How much torpidity rises when you shoot shocking tranquilizer dart?", "440", "442", "444", "446", 2, R.drawable.shocking_tranquilizer_dart, "It's twice as much as Paralysis dart.", NULL, 0, context);
             insertQuiz(db,2, "Which is the best bait for fishing?", "Giant Bee Honey", "Leech Blood", "sap", "Raw meat", 2, R.drawable.fishing_rod, "I like the sweetest thing.", NULL, 0, context);
             insertQuiz(db,3, "Which is not an ingredient of the tek claw?", "Element", "Black Pearl", "Polymer", "Hide", 4, R.drawable.tek_claws, "can't use a tough one.", NULL, 0, context);
             insertQuiz(db,3, "Which is not an ingredient of a tek maker?", "Metal Ingot 5000", "Element 110", "Black Pearl 150", "Crystal 600", 2, R.drawable.tek_replicator, "There are many squares.", NULL, 0, context);
@@ -380,11 +380,11 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,1, "Which berry do dinosaurs prefer most?", "Amarberry", "Tintoberry", "Mejoberry", "Azulberry", 3, R.drawable.berries, "It's purple.", NULL, 0, context);
 
         //<공룡 크기 문제>
-        insertQuiz(db,1, "Which dinosaur can't be shut in by dino gate?", "Giganotosaurus", "Brontosaurus", "Argentavis", "Pteranodon", 4, R.drawable.stonedinosaurgateway, "It can fly and has a long beak.", NULL, 0, context);
-        insertQuiz(db,1, "Which dinosaur can't be shut in by dino gate?", "Managarma", "Paraceratherium", "Gasbags", "Diplodocus", 3, R.drawable.stonedinosaurgateway, "It can fill its body with gas.", NULL, 0, context);
-        insertQuiz(db,1, "Which dinosaur can't be shut in by dino gate?", "Tusotheuthis", "Griffin", "Dunkleosteus", "Mosasaurus", 1, R.drawable.stonedinosaurgateway, "It has many legs.", NULL, 0, context);
-        insertQuiz(db,1, "Which dinosaur can't be shut in by dino gate?", "Rex", "Spinosaurus", "Allosaurus", "Carnotaurus", 4, R.drawable.stonedinosaurgateway, "It has short arms and has two small horns.", NULL, 0, context);
-        insertQuiz(db,1, "Which dinosaur can't be shut in by dino gate?", "Yutyrannus", "Baryonyx", "Paraceratherium", "Rock Elemental", 2, R.drawable.stonedinosaurgateway, "It can stun other creatures in water.", NULL, 0, context);
+        insertQuiz(db,1, "Which dinosaur fits through dino gate?", "Giganotosaurus", "Brontosaurus", "Argentavis", "Pteranodon", 4, R.drawable.stonedinosaurgateway, "It can fly and has a long beak.", NULL, 0, context);
+        insertQuiz(db,1, "Which dinosaur fits through dino gate?", "Managarmr", "Paraceratherium", "Gasbags", "Diplodocus", 3, R.drawable.stonedinosaurgateway, "It can fill its body with gas.", NULL, 0, context);
+        insertQuiz(db,1, "Which dinosaur fits through dino gate?", "Tusotheuthis", "Griffin", "Dunkleosteus", "Mosasaurus", 1, R.drawable.stonedinosaurgateway, "It has many legs.", NULL, 0, context);
+        insertQuiz(db,1, "Which dinosaur fits through dino gate?", "Rex", "Spinosaurus", "Allosaurus", "Carnotaurus", 4, R.drawable.stonedinosaurgateway, "It has short arms and has two small horns.", NULL, 0, context);
+        insertQuiz(db,1, "Which dinosaur fits through dino gate?", "Yutyrannus", "Baryonyx", "Paraceratherium", "Rock Elemental", 2, R.drawable.stonedinosaurgateway, "It can stun other creatures in water.", NULL, 0, context);
 
         //<테이밍 문제>
         insertQuiz(db,3, "(Assuming Taming speed is 1) How many minutes will be spent when taming LV150 Beelzebufo with lamb?", "10 mins", "11 mins", "12 mins", "13 mins", 3, R.drawable.beelzebufo, "It is a multiple of 4.", NULL, 0, context);
@@ -402,13 +402,13 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "What can't we get when killing a Deathworm?", "Organic Polymer", "Deathwrom Horn", "AnglerGel", "Chitin", 4, R.drawable.deathworm, "Well..Deathworm may not be an insect~", NULL, 0, context);
 
         //<기절 떨어지는 속도 문제>
-        insertQuiz(db,1, "(According to DodoDex) How fast does Snow Owl's torpor rate decrease?", "Low", "Average", "Fast", "Very Fast", 1, R.drawable.snowowl, "Knoooooooooooooooooock Out", NULL, 0, context);
-        insertQuiz(db,1, "(According to DodoDex) How fast does Gasbags' torpor rate decrease?", "Low", "Average", "Fast", "Very Fast", 1, R.drawable.gasbags, "Knoooooooooooooooooock Out", NULL, 0, context);
-        insertQuiz(db,2, "(According to DodoDex) How fast does Giganotosaurus' torpor rate decrease?", "Low", "Average", "Fast", "Very Fast", 4, R.drawable.giganotosaurus, "As fast as a rocket.", NULL, 0, context);
-        insertQuiz(db,2, "(According to DodoDex) How fast does Doedicurus' torpor rate decrease?", "Low", "Average", "Fast", "Very Fast", 3, R.drawable.doedicurus, "As fast as a sport car.", NULL, 0, context);
-        insertQuiz(db,2, "(According to DodoDex) How fast does Ankylosaurus' torpor rate decrease?", "Low", "Average", "Fast", "Very Fast", 1, R.drawable.ankylosaurus, "Knoooooooooooooooooock Out", NULL, 0, context);
-        insertQuiz(db,2, "(According to DodoDex) How fast does Spinosaurus' torpor rate decrease?", "Low", "Average", "Fast", "Very Fast", 3, R.drawable.spino, "As fast as a sport car.", NULL, 0, context);
-        insertQuiz(db,2, "(According to DodoDex) How fast does Raptor's torpor rate decrease?", "Low", "Average", "Fast", "Very Fast", 1, R.drawable.raptor, "Knoooooooooooooooooock Out", NULL, 0, context);
+        insertQuiz(db,1, "(According to DodoDex) How fast does Snow Owl's torpidity decrease?", "Low", "Average", "Fast", "Very Fast", 1, R.drawable.snowowl, "Knoooooooooooooooooock Out", NULL, 0, context);
+        insertQuiz(db,1, "(According to DodoDex) How fast does Gasbags' torpidity decrease?", "Low", "Average", "Fast", "Very Fast", 1, R.drawable.gasbags, "Knoooooooooooooooooock Out", NULL, 0, context);
+        insertQuiz(db,2, "(According to DodoDex) How fast does Giganotosaurus' torpidity decrease?", "Low", "Average", "Fast", "Very Fast", 4, R.drawable.giganotosaurus, "As fast as a rocket.", NULL, 0, context);
+        insertQuiz(db,2, "(According to DodoDex) How fast does Doedicurus' torpidity decrease?", "Low", "Average", "Fast", "Very Fast", 3, R.drawable.doedicurus, "As fast as a sport car.", NULL, 0, context);
+        insertQuiz(db,2, "(According to DodoDex) How fast does Ankylosaurus' torpidity decrease?", "Low", "Average", "Fast", "Very Fast", 1, R.drawable.ankylosaurus, "Knoooooooooooooooooock Out", NULL, 0, context);
+        insertQuiz(db,2, "(According to DodoDex) How fast does Spinosaurus' torpidity decrease?", "Low", "Average", "Fast", "Very Fast", 3, R.drawable.spino, "As fast as a sport car.", NULL, 0, context);
+        insertQuiz(db,2, "(According to DodoDex) How fast does Raptor's torpidity decrease?", "Low", "Average", "Fast", "Very Fast", 1, R.drawable.raptor, "Knoooooooooooooooooock Out", NULL, 0, context);
 
         //<색깔 문제>
         insertQuiz(db,1, "What is the color of Mejoberry?", "White", "Red", "Green", "Purple", 4, R.drawable.berries, "The last color of rainbow.", NULL, 0, context);
@@ -430,8 +430,8 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which is best when gathering metal?", "Diplodocus", "Mantis", "Pheonix", "Magmasaur", 4, R.drawable.ark_metal, "We can see this dinosaur in Genesis?", NULL, 0, context);
         insertQuiz(db,1, "Which is best when gathering obsidian?", "Mantis", "Doedicurus", "Gacha", "Ankylosaurus", 2, R.drawable.obsidian, "It can hide inside its shell.", NULL, 0, context);
         insertQuiz(db,2, "Which is best when gathering oil?", "Dunkleosteus", "Tusotheuthis", "Dong Beetle", "Gaca", 4, R.drawable.oil, "You can easily get oil at home using this dinosaur.", NULL, 0, context);
-        insertQuiz(db,1, "Which is best when gathering organic polymer?", "Wooden Club", "ChainSaw", "Gacha", "Pelagornis", 1, R.drawable.organicpolymer, "If you attack someone with this, someone's torpor rate goes up.", NULL, 0, context);
-        insertQuiz(db,2, "Which is best when gathering rare flower?", "Therizinosaurus", "Moschops", "Managarma", "Megachelon", 4, R.drawable.rare_flower, "turtle...", NULL, 0, context);
+        insertQuiz(db,1, "Which is best when gathering organic polymer?", "Wooden Club", "ChainSaw", "Gacha", "Pelagornis", 1, R.drawable.organicpolymer, "If you attack someone with this, someone's torpidity goes up.", NULL, 0, context);
+        insertQuiz(db,2, "Which is best when gathering rare flower?", "Therizinosaurus", "Moschops", "Managarmr", "Megachelon", 4, R.drawable.rare_flower, "turtle...", NULL, 0, context);
         insertQuiz(db,2, "Which is best when gathering rare mushroom?", "Therizinosaurus", "Moschops", "Megachelon", "Iguanodon", 3, R.drawable.rare_mushroom, "turtle...", NULL, 0, context);
         insertQuiz(db,2, "Which is best when gathering raw fish meat?", "Metal Hatchet", "Mosasaurus", "Spinosaurus", "Baryonyx", 1, R.drawable.raw_fish_meat, "Humans are better than dinosaurs.", NULL, 0, context);
         insertQuiz(db,2, "Which is best when gathering raw prime fish meat?", "Mosasaurus", "Metal Sickle", "Megachelon", "Spinosaurus", 1, R.drawable.raw_prime_fish_meat, "It has a long neck.", NULL, 0, context);
@@ -471,124 +471,124 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,1, "What is the name of this resource?", "Basilosaurus Blubber", "Berries", "Argentavis Talon", "Black Pearl", 3, R.drawable.argentavis_talon, "Dropped by argentavis.", NULL, 0, context);
         insertQuiz(db,1, "What is the name of this resource?", "Cementing Paste", "Cactus Sap", "Black Pearl", "Bio Toxin", 4, R.drawable.bio_toxin, "Dropped by Cnidaria.", NULL, 0, context);
         insertQuiz(db,1, "What is the name of this resource?", "Charcoal", "Cementing Paste", "Cactus Sap", "Black Pearl", 4, R.drawable.black_pearl, "Dropped by Ammonite, Deathworm, Eurypterid, Trilobite, Tusoteuthis.", NULL, 0, context);
-        insertQuiz(db,1, "What is the name of this resource?", "Cactus Sap", "Cementing Paste", "Charcoal", "Chitin", 1, R.drawable.cactus_sap, "have water.", NULL, 0, context);
+        insertQuiz(db,1, "What is the name of this resource?", "Cactus Sap", "Cementing Paste", "Charcoal", "Chitin", 1, R.drawable.cactus_sap, "It has water.", NULL, 0, context);
         insertQuiz(db,1, "What is the name of this resource?", "Chitin", "Charcoal", "Clay", "Corrupted Nodule", 2, R.drawable.charcoal, "Burnt wood.", NULL, 0, context);
 
         //키블 색
-        insertQuiz(db,2, "베이직 키블의 색깔은?", "흰색", "파랑색", "노랑색", "하늘색", 1, R.drawable.basic_kibble, "눈 색깔이랑 같습니다.", NULL, 0, context);
-        insertQuiz(db,2, "심플 키블의 색깔은?", "빨강색", "초록색", "노랑색", "하양색", 2, R.drawable.simple_kibble, "여름 풀 색깔이랑 같습니다.", NULL, 0, context);
-        insertQuiz(db,2, "레귤러 키블의 색깔은?", "연두색", "하늘색", "노랑색", "파랑색", 4, R.drawable.regular_kibble, "낮 맑은 하늘 색과 같습니다.", NULL, 0, context);
-        insertQuiz(db,2, "슈페리어 키블의 색깔은?", "보라색", "검정색", "노랑색", "남색", 1, R.drawable.superior_kibble, "자두 색깔이랑 같습니다.", NULL, 0, context);
-        insertQuiz(db,2, "익셉셔널 키블의 색깔은?", "핑크색", "파랑색", "노랑색", "하늘색", 3, R.drawable.exceptional_kibble, "벌 색깔이랑 같습니다.", NULL, 0, context);
-        insertQuiz(db,2, "특별한 키블의 색깔은?", "연두색", "하늘색", "은색", "벽돌색", 2, R.drawable.extraordinary_kibble, "하늘 색.", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Basic Kibble?", "White", "Blue", "Yellow", "Skyblue", 1, R.drawable.basic_kibble, "The color of snow", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Simple Kibble?", "Red", "Green", "Yellow", "White", 2, R.drawable.simple_kibble, "The color of grass.", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Regular Kibble?", "Light Green", "Skyblue", "Yellow", "Blue", 4, R.drawable.regular_kibble, "The color of ocean.", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Superior Kibble?", "Purple", "Black", "Yellow", "Navy", 1, R.drawable.superior_kibble, "The color of grape.", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Exceptional Kibble?", "Pink", "Blue", "Yellow", "Skyblue", 3, R.drawable.exceptional_kibble, "The color of bananas.", NULL, 0, context);
+        insertQuiz(db,2, "What is the color of Extraordinary Kibble?", "Light Green", "Skyblue", "Silver", "Gold", 2, R.drawable.extraordinary_kibble, "The color of clear sky.", NULL, 0, context);
 
         //공룡 타입(비행, 지상 등등)
-        insertQuiz(db,1, "하늘을 나는 공룡이 아닌 것은?", "Argentavis", "Astrocetus", "Insect Swarm", "Angler", 4, R.drawable.ark_logo, null, R.drawable.angler, 0, context);
-        insertQuiz(db,1, "하늘을 나는 공룡이 아닌 것은?", "Desert Titan", "Dimorphodon", "Gasbags", "Basilosaurus", 4, R.drawable.ark_logo, null, R.drawable.basilosaurus, 0, context);
-        insertQuiz(db,1, "하늘을 나는 공룡이 아닌 것은?", "Lymantria", "Phoenix", "Ammonite", "Quetzal", 3, R.drawable.ark_logo, null, R.drawable.quetzal, 0, context);
-        insertQuiz(db,1, "하늘을 나는 공룡이 아닌 것은?", "Megameura", "Onyc", "Hesperornis", "Vulture", 3, R.drawable.ark_logo, null, R.drawable.hesperornis, 0, context);
-        insertQuiz(db,1, "하늘을 나는 공룡이 아닌 것은?", "Wyven", "Coelacanth", "Snow Owl", "Gasbags", 2, R.drawable.ark_logo, null, R.drawable.coelacanth, 0, context);
-        insertQuiz(db,1, "바다에 생존하는 공룡이 아닌 것은??", "Leedsichthys", "Alloasaurus", "Diplocauius", "Eurypterid", 2, R.drawable.ark_logo, null, R.drawable.allosaurus, 0, context);
-        insertQuiz(db,1, "바다에 생존하는 공룡이 아닌 것은??", "Basilisk", "Liopleurodon", "Mosasaurus", "Megalodon", 1, R.drawable.ark_logo, null, R.drawable.basilisk, 0, context);
-        insertQuiz(db,1, "바다에 생존하는 공룡이 아닌 것은??", "Beelzebufo", "Lamprey", "Otter", "Tusoteuthis", 1, R.drawable.ark_logo, null, R.drawable.beelzebufo, 0, context);
-        insertQuiz(db,1, "바다에 생존하는 공룡이 아닌 것은??", "Bulbdog", "Eurypterid", "Cnidaria", "Baryonyx", 1, R.drawable.ark_logo, null, R.drawable.bulbdog, 0, context);
-        insertQuiz(db,1, "바다에 생존하는 공룡이 아닌 것은??", "Electrophorus", "Arthropluera", "Dunkleosteus", "Ammonite", 2, R.drawable.ark_logo, null, R.drawable.arthropluera, 0, context);
-        insertQuiz(db,2, "보스가 아닌 것은?", "Attack Drone", "Broodmother Lysrix", "Yeti", "Corrupted Master Controller", 3, R.drawable.ark_logo, null, R.drawable.yeti, 0, context);
-        insertQuiz(db,2, "보스가 아닌 것은?", "Crystal Wyvern", "Deathworm", "Woolly Rhino", "Defense Unit", 3, R.drawable.ark_logo, null, R.drawable.woollyrhino, 0, context);
-        insertQuiz(db,2, "보스가 아닌 것은?", "Desert Titan", "Dragon", "Trilobite", "Forest Titan", 3, R.drawable.ark_logo, null, R.drawable.trilobite, 0, context);
-        insertQuiz(db,2, "보스가 아닌 것은?", "Ice Titan", "Thorny Dragon", "King Titan", "Manticore", 2, R.drawable.ark_logo, null, R.drawable.thornydragon, 0, context);
-        insertQuiz(db,2, "보스가 아닌 것은?", "Megapithecus", "Moeder", "Overseer", "Thylacoleo", 4, R.drawable.ark_logo, null, R.drawable.thylacoleo, 0, context);
+        insertQuiz(db,1, "Which dinosaur can't fly?", "Argentavis", "Astrocetus", "Insect Swarm", "Angler", 4, R.drawable.ark_logo, null, R.drawable.angler, 0, context);
+        insertQuiz(db,1, "Which dinosaur can't fly?", "Desert Titan", "Dimorphodon", "Gasbags", "Basilosaurus", 4, R.drawable.ark_logo, null, R.drawable.basilosaurus, 0, context);
+        insertQuiz(db,1, "Which dinosaur can't fly?", "Lymantria", "Phoenix", "Ammonite", "Quetzal", 3, R.drawable.ark_logo, null, R.drawable.quetzal, 0, context);
+        insertQuiz(db,1, "Which dinosaur can't fly?", "Megameura", "Onyc", "Hesperornis", "Vulture", 3, R.drawable.ark_logo, null, R.drawable.hesperornis, 0, context);
+        insertQuiz(db,1, "Which dinosaur can't fly?", "Wyven", "Coelacanth", "Snow Owl", "Gasbags", 2, R.drawable.ark_logo, null, R.drawable.coelacanth, 0, context);
+        insertQuiz(db,1, "Which dinosaur doesn't live in the water?", "Leedsichthys", "Alloasaurus", "Diplocauius", "Eurypterid", 2, R.drawable.ark_logo, null, R.drawable.allosaurus, 0, context);
+        insertQuiz(db,1, "Which dinosaur doesn't live in the water?", "Basilisk", "Liopleurodon", "Mosasaurus", "Megalodon", 1, R.drawable.ark_logo, null, R.drawable.basilisk, 0, context);
+        insertQuiz(db,1, "Which dinosaur doesn't live in the water?", "Beelzebufo", "Lamprey", "Otter", "Tusoteuthis", 1, R.drawable.ark_logo, null, R.drawable.beelzebufo, 0, context);
+        insertQuiz(db,1, "Which dinosaur doesn't live in the water?", "Bulbdog", "Eurypterid", "Cnidaria", "Baryonyx", 1, R.drawable.ark_logo, null, R.drawable.bulbdog, 0, context);
+        insertQuiz(db,1, "Which dinosaur doesn't live in the water?", "Electrophorus", "Arthropluera", "Dunkleosteus", "Ammonite", 2, R.drawable.ark_logo, null, R.drawable.arthropluera, 0, context);
+        insertQuiz(db,2, "Which is not a boss?", "Attack Drone", "Broodmother Lysrix", "Yeti", "Corrupted Master Controller", 3, R.drawable.ark_logo, null, R.drawable.yeti, 0, context);
+        insertQuiz(db,2, "Which is not a boss?", "Crystal Wyvern", "Deathworm", "Woolly Rhino", "Defense Unit", 3, R.drawable.ark_logo, null, R.drawable.woollyrhino, 0, context);
+        insertQuiz(db,2, "Which is not a boss?", "Desert Titan", "Dragon", "Trilobite", "Forest Titan", 3, R.drawable.ark_logo, null, R.drawable.trilobite, 0, context);
+        insertQuiz(db,2, "Which is not a boss?", "Ice Titan", "Thorny Dragon", "King Titan", "Manticore", 2, R.drawable.ark_logo, null, R.drawable.thornydragon, 0, context);
+        insertQuiz(db,2, "Which is not a boss?", "Megapithecus", "Moeder", "Overseer", "Thylacoleo", 4, R.drawable.ark_logo, null, R.drawable.thylacoleo, 0, context);
 
         //레벨당 배울 수 있는 엔그램 문제
-        insertQuiz(db,1, "What is not the engram learned at level 1?", "쪽지", "돌 곡괭이", "횃불", "돌 도끼", 4, R.drawable.ark_logo, "이것은 나무를 잘 베죠", NULL, 0, context);
-        insertQuiz(db,1, "What is not an engram that can be learned at level 4?", "짚 토대", "돌 토대", "짚 천장", "보관함", 2, R.drawable.ark_logo, "엔그램 배우는 순서는 짚 -> 돌이죠.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the engram learned at level 1?", "Note", "Stone Pick", "Torch", "Stone Hatchet", 4, R.drawable.ark_logo, "We usually use it when cutting woods.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not an engram that can be learned at level 4?", "Thatch Foundation", "Stone Foundation", "Thatch Ceiling", "Storage Box", 2, R.drawable.ark_logo, "We learn thatch items first, and then stone items.", NULL, 0, context);
 
         //스프 재료 문제
-        insertQuiz(db,2, "What is not the material of the Mindwipe Tonic?", "Narcotics", "Stimulant", "Rare Flower", "Raw Prime meat", 4, R.drawable.ark_logo, "고기는 구워야죠.", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Broth of Enlightenment?", "Woolly Rhino Horn", "Rockarrot", "Longrass", "Narcotics", 4, R.drawable.broth_of_enlightenment, "이것을 먹으면 마비수치가 올라가죠.", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Calien Soup?", "Stimulant", "Citronal", "Rockarrot", "Tintoberry", 3, R.drawable.calien_soup, "말이 제일 좋아하는 음식", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Enduro Stew?", "Stimulant", "Savoroot", "Prime Cooked Meat", "Rockarrot", 3, R.drawable.rockwell_recipes_enduro_stew, "고급질까지야..", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Focal Chili?", "Cooked Meat", "Stimulant", "Citronal", "Azulberry", 2, R.drawable.rockwell_recipes_focal_chili, "스파크파우더랑 스팀베리로 만드는 것", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Sweet Vegetable Cake?", "Giant Bee Honey", "Narcotics", "Sap", "Stimulant", 2, R.drawable.sweet_vegetable_cake, "이것을 먹으면 마비수치가 올라갑니다.", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Cactus Broth?", "Cactus Sap", "Narcotics", "Mejoberry", "Azulberry", 2, R.drawable.cactus_broth, "이것을 먹으면 마비수치가 올라갑니다.", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Bug Repellant?", "Stimulant", "Pelt", "Citronal", "Rockarrot", 1, R.drawable.bug_repellant, "스파크파우더랑 스팀베리로 만드는 것", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Lesser Antidote?", "Stimulant", "Rare Flower", "Rare Mushroom", "Deathworm Horn, Rhino Horn, or Leech Blood", 1, R.drawable.lesser_antidote, "스파크파우더랑 스팀베리로 만드는 것", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Beer Liquid?", "Wood", "Thatch", "Berries", "Water", 1, R.drawable.beer_liquid, "보기 중 제일 단단한 것", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Re-Fertilizer?", "Rare Mushroom", "Rare Flower", "Fertilizer", "Rock", 4, R.drawable.re_fertilizer, "매우 단단한 것", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Mushroom Brew?", "Aggeravic Mushroom", "Aquatic Mushroom", "Sap", "rare Mushroom", 4, R.drawable.mushroom_brew, "희귀하진 않아요~", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Water Jar?", "Cementing Paste", "Water", "Hide", "Crystal", 2, R.drawable.water_jar, "병을 만든다고 생각해보세요. 필요 없는 것이 보일거예요.", NULL, 0, context);
-        insertQuiz(db,2, "What is not the material of the Canteen?", "Polymer", "Metal Ingot", "Thatch", "Cementing Paste", 3, R.drawable.canteen, "보기 중 제일 쉽게 구할 수 있는게 답입니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Mindwipe Tonic?", "Narcotics", "Stimulant", "Rare Flower", "Raw Prime meat", 4, R.drawable.ark_logo, "Meats should be cooked.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Broth of Enlightenment?", "Woolly Rhino Horn", "Rockarrot", "Longrass", "Narcotics", 4, R.drawable.broth_of_enlightenment, "If someone eats it, his(her) torpidity goes up.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Calien Soup?", "Stimulant", "Citronal", "Rockarrot", "Tintoberry", 3, R.drawable.calien_soup, "Usually horses like this food.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Enduro Stew?", "Stimulant", "Savoroot", "Prime Cooked Meat", "Rockarrot", 3, R.drawable.rockwell_recipes_enduro_stew, "We don't have to use high quality food.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Focal Chili?", "Cooked Meat", "Stimulant", "Citronal", "Azulberry", 2, R.drawable.rockwell_recipes_focal_chili, "It is made of Sparkpowder and Stimberries.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Sweet Vegetable Cake?", "Giant Bee Honey", "Narcotics", "Sap", "Stimulant", 2, R.drawable.sweet_vegetable_cake, "If someone eats it, his(her) torpidity goes up.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Cactus Broth?", "Cactus Sap", "Narcotics", "Mejoberry", "Azulberry", 2, R.drawable.cactus_broth, "If someone eats it, his(her) torpidity goes up.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Bug Repellant?", "Stimulant", "Pelt", "Citronal", "Rockarrot", 1, R.drawable.bug_repellant, "It is made of Sparkpowder and Stimberries.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Lesser Antidote?", "Stimulant", "Rare Flower", "Rare Mushroom", "Deathworm Horn, Rhino Horn, or Leech Blood", 1, R.drawable.lesser_antidote, "It is made of Sparkpowder and Stimberries.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Beer Liquid?", "Wood", "Thatch", "Berries", "Water", 1, R.drawable.beer_liquid, "The hardest one among the examples.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Re-Fertilizer?", "Rare Mushroom", "Rare Flower", "Fertilizer", "Rock", 4, R.drawable.re_fertilizer, "It is very hard", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Mushroom Brew?", "Aggeravic Mushroom", "Aquatic Mushroom", "Sap", "rare Mushroom", 4, R.drawable.mushroom_brew, "Not rare~", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Water Jar?", "Cementing Paste", "Water", "Hide", "Crystal", 2, R.drawable.water_jar, "Imagine you are making a real bottle. What will not be used?", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Canteen?", "Polymer", "Metal Ingot", "Thatch", "Cementing Paste", 3, R.drawable.canteen, "The most common items among the examples.", NULL, 0, context);
 
         //염료 재료 문제
-        insertQuiz(db,2, "What materials are not needed to make black dye?", "Narcoberry", "Water", "Charcoal", "Wood", 4, R.drawable.black_dye ,"검은색이 아닌 것", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Slate dye?", "Narcoberry", "Stimberry", "Sparkpowder", "Charcoal", 4, R.drawable.slate_dye, "탄 목재는 필요 없어요.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Silver dye?", "Narcoberry", "Water", "Metal", "Gunpowder", 3, R.drawable.silver_dye, "보기 중에 제일 단단한것", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make White dye?", "Stimberry", "Charcoal", "Thatch", "Water", 3, R.drawable.white_dye, "이것은 노랑색입니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Red dye?", "Tintoberry", "Blood", "Charcoal", "Water", 2, R.drawable.red_dye, "이것이 없다면 사람은 죽습니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Orange dye?", "Amarberry", "Gunpowder", "Tintoberry", "Charcoal", 2, R.drawable.orange_dye, "이것은 스파크파우더랑 숯으로 만듭니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Cantaloupe dye?", "Azulberry", "Tintoberry", "Stimberry", "Sparkpowder", 1, R.drawable.cantaloupe_dye, "이것은 파랑색입니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Yellow dye?", "Thatch", "Charcoal", "Amarberry", "Water", 1, R.drawable.yellow_dye, "약한 나무", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Green dye?", "Amarberry", "Azulberry", "Charcoal", "Meat", 4, R.drawable.green_dye, "육류는 팔요 없습니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Cyan dye?", "Amarberry", "Azulberry", "Sparkpowder", "Stimberry", 4, R.drawable.cyan_dye, "이것은 흰색입니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Purple dye?", "Azulberry", "Tintoberry", "Amarberry", "Charcoal", 3, R.drawable.purple_dye, "이것은 파랑색입니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Brick dye?", "Tintoberry", "Narcoberry", "Gunpowder", "Sparkpowder", 3, R.drawable.brick_dye, "이것은 스파크파우더랑 숯을 사용해서 만듭니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Tangerine dye?", "Amarberry", "Sparkpowder", "Tintoberry", "Gunpowder", 2, R.drawable.tangerine_dye, "이것은 돌과 부싯돌로 만듭니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Tan dye?", "Amarberry", "Sparkpowder", "Stimberry", "Gunpowder", 2, R.drawable.tan_dye, "이것은 돌과 부싯돌로 만듭니다.", NULL, 0, context);
-        insertQuiz(db,2, "What materials are not needed to make Parchment dye?", "Sparkpowder", "Stimberry", "Amarberry", "Gunpowder", 1, R.drawable.parchement_dye, "이것은 노랑색입니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of black dye?", "Narcoberry", "Water", "Charcoal", "Wood", 4, R.drawable.black_dye ,"Not black.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Slate dye?", "Narcoberry", "Stimberry", "Sparkpowder", "Charcoal", 4, R.drawable.slate_dye, "We don't need burnt woods.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Silver dye?", "Narcoberry", "Water", "Metal", "Gunpowder", 3, R.drawable.silver_dye, "The hardest among examples.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of White dye?", "Stimberry", "Charcoal", "Thatch", "Water", 3, R.drawable.white_dye, "It is yellow.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Red dye?", "Tintoberry", "Blood", "Charcoal", "Water", 2, R.drawable.red_dye, "Without it, humans will die.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Orange dye?", "Amarberry", "Gunpowder", "Tintoberry", "Charcoal", 2, R.drawable.orange_dye, "It is made of sparkpowder and charcoal.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Cantaloupe dye?", "Azulberry", "Tintoberry", "Stimberry", "Sparkpowder", 1, R.drawable.cantaloupe_dye, "It is blue.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Yellow dye?", "Thatch", "Charcoal", "Amarberry", "Water", 1, R.drawable.yellow_dye, "Weak tree.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Green dye?", "Amarberry", "Azulberry", "Charcoal", "Meat", 4, R.drawable.green_dye, "We can get this from animals.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Cyan dye?", "Amarberry", "Azulberry", "Sparkpowder", "Stimberry", 4, R.drawable.cyan_dye, "It is white.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Purple dye?", "Azulberry", "Tintoberry", "Amarberry", "Charcoal", 3, R.drawable.purple_dye, "It is blue.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Brick dye?", "Tintoberry", "Narcoberry", "Gunpowder", "Sparkpowder", 3, R.drawable.brick_dye, "it is made of sparkpowder and charcoal.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Tangerine dye?", "Amarberry", "Sparkpowder", "Tintoberry", "Gunpowder", 2, R.drawable.tangerine_dye, "It is made of stone and flint.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Tan dye?", "Amarberry", "Sparkpowder", "Stimberry", "Gunpowder", 2, R.drawable.tan_dye, "It is made of stone and flint", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the ingredient of Parchment dye?", "Sparkpowder", "Stimberry", "Amarberry", "Gunpowder", 1, R.drawable.parchement_dye, "It is yellow.", NULL, 0, context);
 
         //하늘을 나는 공룡이 낚을 수 있는 것들이 아닌 것은?
-        insertQuiz(db,2, "타페자라가 낚을 수 없는 것은?", "페록스", "하이애나돈", "샤이니혼", "오비스", 4, R.drawable.tapejara, "이것을 죽여서 고기를 얻어 테이밍하면 다른 고기들 보다 테이밍 속도가 빠릅니다.", NULL, 0, context);
-        insertQuiz(db,2, "프테라가 낚을 수 없는 것은?", "벌브독", "카이쿠루", "콤피", "아카티나", 4, R.drawable.pteranodon, "이 공룡의 똥은 시멘트폴입니다.", NULL, 0, context);
-        insertQuiz(db,2, "트로페고나터스가 낚을 수 없는 것은?", "삼엽충", "도도", "오비랍토르", "사람", 3, R.drawable.tropeognathus, "이 공룡은 수류탄을 던질 수 있습니다.", NULL, 0, context);
-        insertQuiz(db,2, "그리핀으로 낚을 수 없는 것은?", "수달", "미크랍토르", "샤이니혼", "글로우테일", 3, R.drawable.griffin, "이 공룡은 빛이 납니다.", NULL, 0, context);
-        insertQuiz(db,2, "아르젠으로 낚을 수 없는 것은?", "가시드레곤", "카르노", "검치호", "다애오돈", 2, R.drawable.argentavis, "이 공룡한테 맞으면 일정 확률로 출혈이 일어납니다.", NULL, 0, context);
-        insertQuiz(db,2, "크리스탈 와이번으로 낚을 수 없는 것은?", "메가테리움", "블러드스토커", "가스백", "사마귀", 2, R.drawable.crystalwyvern, "소금쟁이", NULL, 0, context);
-        insertQuiz(db,2, "와이번으로 낚을 수 없는 것은?", "다이어베어", "펄로비아", "사르코", "예티", 1,R.drawable.wyvern, "유기폴리머 꽃을 캘 수 있습니다.", NULL, 0, context);
-        insertQuiz(db,2, "케찰로 낚을 수 없는 것은?", "블러드스토커", "테리지노", "알로사우르스", "레비져", 4,R.drawable.quetzal, "걸어다니는 아르젠", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Tapejara?", "Ferox", "Hyaenodon", "Shinehorn", "Ovis", 4, R.drawable.tapejara, "Its meat is good at taming other creatures.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Pteanodon?", "Blubdog", "Kairuku", "Compy", "Achatina", 4, R.drawable.pteranodon, "It creates cementing paste.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Tropeognathus?", "Trilobite", "Dodo", "Oviraptor", "Human", 3, R.drawable.tropeognathus, "It helps other creatures lay eggs.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Griffin?", "Otter", "Microraptor", "Shinehorn", "Glowtail", 3, R.drawable.griffin, "It shines.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Argentavis?", "Thorny Dragon", "Carnotaurus", "Sabertooth", "Daeodon", 2, R.drawable.argentavis, "Its attack has a bleeding effect at constant probability.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Crystal Wyvern?", "Megatherium", "Bloodstalker", "Gasbags", "Mantis", 2, R.drawable.crystalwyvern, "It looks like a spider.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Wyvern?", "Direbear", "Purlovia", "Sarco", "Yeti", 1,R.drawable.wyvern, "On Aberration, by harvesting the plants on the way down to the Rock Drake nests, it can gather organic polymers.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Quetzal?", "Bloodstalker", "Therizinosaurus", "Allosaurus", "Ravager", 4,R.drawable.quetzal, "Walking Argentavis.", NULL, 0, context);
         //땅,바다에 있는 공룡이 낚을 수 있는 것이 아닌것
-        insertQuiz(db,2, "투소으로 낚을 수 없는 것은?", "이크티오", "수달", "사르코", "예티", 2,R.drawable.tusoteuthis, "이 공룡은 목에 맬 수 있습니다.", NULL, 0, context);
-        insertQuiz(db,2, "카르키노로 낚을 수 없는 것은?", "안킬로사우르스", "수달", "여왕벌", "독수리", 4,R.drawable.karkinos, "이 공룡을 죽이고 나서 캐면 썩은 고기가 나옵니다.", NULL, 0, context);
-        insertQuiz(db,2, "메갈로사우르스로 낚을 수 없는 것은?", "피라냐", "다에오돈", "펄로비아", "아르젠타비스", 3,R.drawable.megalosaurus, "이 공룡을 죽이고 나서 캐면 썩은 고기가 나옵니다.", NULL, 0, context);
-        insertQuiz(db,2, "야생 카프로쿠스가 낚을 수 없는 것은?", "수달", "이크티오사우르스", "페록스", "아라네오", 1,R.drawable.kaprosuchus, "이 공룡은 목에 멜 수 있습니다.", NULL, 0, context);
-        insertQuiz(db,2, "프로톱토돈 주머니에 넣을 수 없는 것은?", "검치호", "다애오돈", "예티", "메갈로케로스", 4,R.drawable.procoptodon, "이 공룡은 머리에 멋진 뿔이 두 개 있습니다.", NULL, 0, context);
-        insertQuiz(db,2, "사람 손으로 주울 수 없는 공룡은?", "시조새", "카이쿠루", "오비랍토르", "아카티나", 3,R.drawable.ark_logo, "이 공룡은 알 낳는 것을 도와줍니다.", NULL, 0, context);
-        insertQuiz(db,2, "예티가 주울 수 있는 것은?", "도도", "카이쿠루", "시조새", "아카티나", 1, R.drawable.yeti, "이 공룡은 머리에 멋진 뿔이 두 개 있습니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Tusoteuthis?", "Ichthyosaurus", "Otter", "Sarco", "Yeti", 2,R.drawable.tusoteuthis, "You can hang it around your neck.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Karkinos?", "Ankylosaurus", "Otter", "Giant Bee", "Vulture", 4,R.drawable.karkinos, "It drops spoiled meat.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Megalosaurus?", "Piranha", "Daeodon", "Purlovia", "Argentavis", 3,R.drawable.megalosaurus, "It drops spoiled meat.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Kaprosuchus?", "Otter", "Ichthyosaurus", "Ferox", "Araneo", 1,R.drawable.kaprosuchus, "You can hang it around your neck.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Procoptodon?", "Sabertooth", "Daeodon", "Yeti", "Megaloceros", 4,R.drawable.procoptodon, "It has a fancy antler on its head.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by human?", "Archaeopteryx", "Kairuku", "Oviraptor", "Achatina", 3,R.drawable.ark_logo, "It helps other creatures lay eggs.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is not carryable by Yeti?", "Dodo", "Kairuku", "Arrchaeoteryx", "Achatina", 4, R.drawable.yeti, "It creates cementing paste.", NULL, 0, context);
 
         //벽을 파괴 할 수 있는 공룡
-        insertQuiz(db,2, "아트로시터스가 부술 수 없는 재질은?", "짚", "나무", "돌", "철", 4,R.drawable.astrocetus, "보기 중 제일 단단한 것", NULL, 0, context);
-        insertQuiz(db,2, "리드시크가 부술 수 없는 재질은?", "짚", "점토", "돌", "철", 2,R.drawable.leedsichthys, "다 부술 거 같지만 스코치드 어스에서 배울 수 있는 엔그램 재질은 못 부숩니다.", NULL, 0, context);
-        insertQuiz(db,2, "칼리코테리움이 부술 수 없는 재질은?", "짚", "나무", "점토", "돌", 4,R.drawable.chalicotherium, "스코치드 어스에서 배울 수 있는 엔그램 재질은 못 부숩니다.", NULL, 0, context);
-        insertQuiz(db,2, "테리지노가 부술 수 없는 재질은?", "나무", "점토", "돌", "철", 4,R.drawable.therizinosaurus, "보기 중 제일 단단한 것. 이거 부수다가 테리지노 손톱 다 부셔져요..", NULL, 0, context);
-        insertQuiz(db,1, "아트로틀레우라가 부술 수 없는 재질은?", "돌", "철", "테크", "없다.", 4,R.drawable.arthropluera, "지네의 독은 어마무시하죠", NULL, 0, context);
-        insertQuiz(db,2, "티타노사우루스가 부술 수 없는 재질은?", "돌", "없다", "철", "점토", 2,R.drawable.titanosaur, "이 공룡은 모든걸 부셔버립니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not damaged by Astrocetus?", "Thatch", "Wood", "Stone", "Metal", 4,R.drawable.astrocetus, "The hardest among the examples.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not damaged by Leedsichthys?", "Thatch", "Adobe", "Stone", "Metal", 2,R.drawable.leedsichthys, "Leedsichthys seems to be able to break everything, but it can't break one thing that can be learn in Scorched Earth.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not damaged by Chalicotherium?", "Thatch", "Wood", "Adobe", "Stone", 4,R.drawable.chalicotherium, "Chalicotheium can't break one thing that can be learn in Scorched Earth.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not damaged by Therizinosaurus?", "Wood", "Adobe", "Stone", "Metal", 4,R.drawable.therizinosaurus, "The hardest one among examples.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not damaged by Arthropluera?", "Stone", "Metal", "Tek", "None", 4,R.drawable.arthropluera, "Arthropluera's poision is very toxic.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not damaged by Titanosaur?", "Stone", "None", "Metal", "Adobe", 2,R.drawable.titanosaur, "This dinosaur can break everything.", NULL, 0, context);
         //볼라에 맞는 공룡은?
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "에쿠스", "갈리미무스", "그리핀", "아르젠타비스", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "프테라노돈", "틸라콜레오", "마나가르마", "눈올빼미", 1,R.drawable.bola, "C를 쓰면 회전을 할 수 있습니다.", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "메갈로사우르스", "랩터", "벨로나사우루스", "울리라이노", 2,R.drawable.bola, "이 공룡은 사람을 찝을 수 있습니다.", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "테리지노사우르스", "레비져", "데이노쿠스", "바실리스크", 2,R.drawable.bola, "이 공룡은 무게를 덜어줍니다.", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "티타노보아", "와이번", "바리오닉스", "마그마사우르스", 3,R.drawable.bola, "물 속에서 꼬리치기를 맞으면 기절합니다.", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "가챠", "렉스", "이구아나돈", "메머드", 3,R.drawable.bola, "열매에서 씨앗을 비빌 수 있습니다.", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "메가테리움", "가시 드래곤", "모렐라톱스", "벨제부포", 4,R.drawable.bola, "개굴개굴...", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "스테고사우르스", "스피노", "유티라누스", "글로우테일", 4,R.drawable.bola, "이 공룡은 몸에서 빛이 납니다.", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "매미나방", "카르키노사우르스", "칼리코테리움", "케찰", 1,R.drawable.bola, "곤충입니다.", NULL, 0, context);
-        insertQuiz(db,2, "볼라에 맞는 공룡은?", "엔포서", "펄로비아", "파라케리움", "트리케라톱스", 1,R.drawable.bola, "기계입니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Equus", "Gallimimus", "Griffin", "Argentavis", 1,R.drawable.bola, "You can tame this creature with carrots.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Pteranodon", "Thlyacoleo", "Managarmr", "Mammoth", 1,R.drawable.bola, "When you press C key, you can use special skill.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Megalosaurus", "Raptor", "Velonasaur", "Woolly Rhino", 2,R.drawable.bola, "This dinosaur can carry a human.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Therizinosaurus", "Ravager", "Deinoychus", "Basilisk", 2,R.drawable.bola, "This dinosaur decreases items' weight.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Titanoboa", "Wyvern", "Baryonyx", "Magmasaur", 3,R.drawable.bola, "Its tail attack can stun creatures.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Gatcha", "Rex", "Iguanodon", "Mammoth", 3,R.drawable.bola, "It can pick seeds out of the fruits.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Megatherium", "Thorny Dragon", "Morellatops", "Beelzebufo", 4,R.drawable.bola, "croak croak..", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Stegosaurus", "Spino", "Yutyrannus", "Glowtail", 4,R.drawable.bola, "Its body shines.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Lymantria", "Karkinos", "Chalicotherium", "Qeutzal", 1,R.drawable.bola, "It is an insect.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by bola?", "Enforcer", "Purlovia", "Paraceratherium", "Triceratops", 1,R.drawable.bola, "It is a machine.", NULL, 0, context);
 
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "에쿠스", "검치호", "다이어울프", "랩터", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "타페자라", "프테라노돈", "펄모노스콜피온", "메갈로캐로스", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "피오미아", "도도", "토로오돈", "벨제부포", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "아르젠타비스", "랩터", "페고메다틱스", "파키", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "틸라콜레오", "오비스", "래비져", "아르젠타비스", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "디몰포돈", "매미나방", "바리오닉스", "미크랍토르", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "오비랍토르", "펠라고르니스", "티타노보아", "다애오돈", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "딜로포사우르스", "쇠똥구리", "엔포서", "벌브독", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "페록스", "카르트로이데이스", "와이번", "크리스탈 와이번", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "마나가르마", "알로사우르스", "가챠", "마그마사우르스", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "매머드", "눈올빼미", "메가테리움", "스테고사우르스", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "아트로플레우라", "메갈로사우르스", "펄로비아", "케찰", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "아카티나", "카이쿠루", "벨로나사우르스", "콤피", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "기가노토사우르스", "가스백", "울리라이노", "피닉스", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "예티", "프로콥토돈", "블러드스토커", "데이노쿠스", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Y종을 밟으면 걸리는 공룡은(도도덱스 기준)?", "피라냐", "사마귀", "롤렛", "갈리미무스", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Equus", "Sabertooth", "Direwolf", "Raptor", 1,R.drawable.bola, "You can tame this creature with carrots.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Tapejara", "Pteranodon", "Pulmonoscorpius", "Megaloceros", 2,R.drawable.bola, "When you press C key, you can use special skill.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Phiomia", "Dodo", "Troodon", "Beelzebufo", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아르젠타비스", "랩터", "페고메다틱스", "파키", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "틸라콜레오", "오비스", "래비져", "아르젠타비스", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "디몰포돈", "매미나방", "바리오닉스", "미크랍토르", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "오비랍토르", "펠라고르니스", "티타노보아", "다애오돈", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "딜로포사우르스", "쇠똥구리", "엔포서", "벌브독", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "페록스", "카르트로이데이스", "와이번", "크리스탈 와이번", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "마나가르마", "알로사우르스", "가챠", "마그마사우르스", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "매머드", "눈올빼미", "메가테리움", "스테고사우르스", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아트로플레우라", "메갈로사우르스", "펄로비아", "케찰", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아카티나", "카이쿠루", "벨로나사우르스", "콤피", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "기가노토사우르스", "가스백", "울리라이노", "피닉스", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "예티", "프로콥토돈", "블러드스토커", "데이노쿠스", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "피라냐", "사마귀", "롤렛", "갈리미무스", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
 
     }
 
