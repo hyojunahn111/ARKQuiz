@@ -573,22 +573,22 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which dinosaur is affected by bola?", "Lymantria", "Karkinos", "Chalicotherium", "Qeutzal", 1,R.drawable.bola, "It is an insect.", NULL, 0, context);
         insertQuiz(db,2, "Which dinosaur is affected by bola?", "Enforcer", "Purlovia", "Paraceratherium", "Triceratops", 1,R.drawable.bola, "It is a machine.", NULL, 0, context);
 
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Equus", "Sabertooth", "Direwolf", "Raptor", 1,R.drawable.bola, "You can tame this creature with carrots.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Tapejara", "Pteranodon", "Pulmonoscorpius", "Megaloceros", 2,R.drawable.bola, "When you press C key, you can use special skill.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Phiomia", "Dodo", "Troodon", "Beelzebufo", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아르젠타비스", "랩터", "페고메다틱스", "파키", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "틸라콜레오", "오비스", "래비져", "아르젠타비스", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "디몰포돈", "매미나방", "바리오닉스", "미크랍토르", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "오비랍토르", "펠라고르니스", "티타노보아", "다애오돈", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "딜로포사우르스", "쇠똥구리", "엔포서", "벌브독", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "페록스", "카르트로이데이스", "와이번", "크리스탈 와이번", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "마나가르마", "알로사우르스", "가챠", "마그마사우르스", 1,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "매머드", "눈올빼미", "메가테리움", "스테고사우르스", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아트로플레우라", "메갈로사우르스", "펄로비아", "케찰", 2,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아카티나", "카이쿠루", "벨로나사우르스", "콤피", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "기가노토사우르스", "가스백", "울리라이노", "피닉스", 3,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "예티", "프로콥토돈", "블러드스토커", "데이노쿠스", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
-        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "피라냐", "사마귀", "롤렛", "갈리미무스", 4,R.drawable.bola, "이 공룡은 당근으로 테이밍이 가능합니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Equus", "Sabertooth", "Direwolf", "Raptor", 1,R.drawable.plant_y_trap, "You can tame this creature with carrots.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Tapejara", "Pteranodon", "Pulmonoscorpius", "Megaloceros", 1,R.drawable.plant_y_trap, "이 공룡은 테크 안장을 장착할 수 있습니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Phiomia", "Dodo", "Troodon", "Beelzebufo", 2,R.drawable.plant_y_trap, "이 공룡은 아크세계관에서 제일 약한 공룡입니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아르젠타비스", "독수리", "페고메다틱스", "파키", 2,R.drawable.plant_y_trap, "이 공룡을 죽여서 시체를 캐면 썩은고기가 나옵니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "틸라콜레오", "오비스", "래비져", "아르젠타비스", 3,R.drawable.plant_y_trap, "이 공룡에 짐을 실으면 무게를 줄여줍니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "디몰포돈", "매미나방", "바리오닉스", "미크랍토르", 3,R.drawable.plant_y_trap, "Its tail attack can stun creatures.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "오비랍토르", "펠라고르니스", "티타노보아", "다애오돈", 4,R.drawable.plant_y_trap, "이 공룡으로 체력을 회복할 수 있습니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "딜로포사우르스", "쇠똥구리", "엔포서", "벌브독", 4,R.drawable.plant_y_trap, "이 공룡 빛을 냅니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "페록스", "카르트로이데이스", "와이번", "크리스탈 와이번", 1,R.drawable.plant_y_trap, "원소를 먹이면 덩치가 커집니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "마나가르마", "알로사우르스", "가챠", "마그마사우르스", 1,R.drawable.plant_y_trap, "점프를 3번 할 수 있고 앞 데쉬를 1번 할 수 있습니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "매머드", "눈올빼미", "메가테리움", "스테고사우르스", 2,R.drawable.plant_y_trap, "이 공룡을 열을 탐지 할 수 있습니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아트로플레우라", "메갈로사우르스", "펄로비아", "케찰", 2,R.drawable.plant_y_trap, "이 공룡은 멋진 뿔이 두 개 있습니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "아카티나", "카이쿠루", "벨로나사우르스", "콤피", 3,R.drawable.plant_y_trap, "날탈이 이 공룡한테 맞게 되면 기력이 떨어집니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "기가노토사우르스", "가스백", "울리라이노", "피닉스", 3,R.drawable.plant_y_trap, "이 공룡을 게이지를 모아서 때릴 수록 데미지가 강해집니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "예티", "프로콥토돈", "블러드스토커", "데이노쿠스", 4,R.drawable.plant_y_trap, "공룡에 붙어서 공격 할 수 있습니다.", NULL, 0, context);
+        insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "피라냐", "사마귀", "롤렛", "갈리미무스", 4,R.drawable.plant_y_trap, "이 공룡의 안장에는 2명이 탈 수 있습니다.", NULL, 0, context);
 
     }
 
