@@ -130,21 +130,33 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("isFirst4", true);
             editor.commit();
-            mDBHelper.dbDeleteAll();
-            mDBHelper.loadQuiz(db, this);
-            mDBHelper.loadQuiz2(db, this);
-            mDBHelper.loadQuiz3(db, this);
+//            mDBHelper.dbDeleteAll();
+//            mDBHelper.loadQuiz(db, this);
+//            mDBHelper.loadQuiz2(db, this);
+//            mDBHelper.loadQuiz3(db, this);
 
             SharedPreferences.Editor editor2=sharedPreferences_dino_egg.edit();
             editor2.putInt("dino_egg", 500);
             editor2.commit();
         }
 
-        boolean isFirst6 = sharedPreferences.getBoolean("isFirst6", false);
-        if(!isFirst6){
+//        boolean isFirst6 = sharedPreferences.getBoolean("isFirst6", false);
+//        if(!isFirst6){
+//            SharedPreferences.Editor editor = sharedPreferences.edit();
+//            editor.putBoolean("isFirst6", true);
+//            editor.commit();
+//            mDBHelper.loadQuiz4(db, this);
+//        }
+
+        boolean isFirst7=sharedPreferences.getBoolean("isFirst7", false);
+        if(!isFirst7){
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("isFirst6", true);
+            editor.putBoolean("isFirst7", true);
             editor.commit();
+            mDBHelper.dbDeleteAll();
+            mDBHelper.loadQuiz(db, this);
+            mDBHelper.loadQuiz2(db, this);
+            mDBHelper.loadQuiz3(db, this);
             mDBHelper.loadQuiz4(db, this);
         }
 

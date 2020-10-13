@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 
 import com.google.android.gms.ads.AdRequest;
@@ -53,6 +54,7 @@ public class QuizpageHard extends AppCompatActivity{
     private String[] selectionInString;
     private Bitmap current_hint_image;
     private RewardedAd rewardedAd;
+    private AdView mAdView;
 
     private InterstitialAd mInterstitialAd;
 
@@ -70,6 +72,10 @@ public class QuizpageHard extends AppCompatActivity{
 
             }
         });
+
+        mAdView = findViewById(R.id.adView_quiz_hard);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         mInterstitialAd = new InterstitialAd(this);
@@ -276,32 +282,39 @@ public class QuizpageHard extends AppCompatActivity{
 
     public void makeDialog_correct(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String answerInString=selectionInString[quiz_answer-1];
-        builder.setTitle("That is the correct answer!").setMessage("The correct answer is "+answerInString)
-//        .setNeutralButton("", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int i) {
-//                dialogInterface.cancel();
-//            }
-//        })
-                .setPositiveButton("Next", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        if(numberOfQuiz>=10){
-//            결과 페이지 로드
-                            makeDialog_finish();
-                        }
-                        else{
-                            Intent intent=new Intent(QuizpageHard.this, QuizpageHard.class);
-                            intent.putExtra("numberOfQuiz", numberOfQuiz+1);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                            if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
-                            else intent.putExtra("correctAnswer", correct_answer);
-                            startActivity(intent);
-                        }
-                    }
-                });
+        String answerInString = selectionInString[quiz_answer - 1];
+
+        LayoutInflater factory = LayoutInflater.from(QuizpageHard.this);
+        final View dialog_view = factory.inflate(R.layout.activity_dialog_correct, null);
+
+        TextView TextView_title=dialog_view.findViewById(R.id.TextView_dialog_correct_title);
+        TextView TextView_text=dialog_view.findViewById(R.id.TextView_dialog_correct_text);
+        Button Button_next=dialog_view.findViewById(R.id.Button_dialog_correct_next);
+
+        TextView_title.setText("Correct !");
+        TextView_text.setText("The correct answer is " + answerInString);
+
+        builder.setView(dialog_view);
         AlertDialog alertDialog = builder.create();
+
+        Button_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (numberOfQuiz >=10) {
+//            결과 페이지 로드
+                    makeDialog_finish();
+//                            showAd();
+                } else {
+                    Intent intent = new Intent(QuizpageHard.this, QuizpageHard.class);
+                    intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    if (isCorrect) intent.putExtra("correctAnswer", correct_answer + 1);
+                    else intent.putExtra("correctAnswer", correct_answer);
+                    startActivity(intent);
+                }
+            }
+        });
+
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.setCancelable(false);
         alertDialog.show();
@@ -309,32 +322,39 @@ public class QuizpageHard extends AppCompatActivity{
 
     public void makeDialog_wrong(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        String answerInString=selectionInString[quiz_answer-1];
-        builder.setTitle("That is the wrong answer!").setMessage("The correct answer is "+answerInString)
-//                .setNeutralButton("", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        dialogInterface.cancel();
-//                    }
-//                })
-                .setPositiveButton("Next", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        if(numberOfQuiz>=10){
-//            결과 페이지 로드
-                            makeDialog_finish();
-                        }
-                        else{
-                            Intent intent=new Intent(QuizpageHard.this, QuizpageHard.class);
-                            intent.putExtra("numberOfQuiz", numberOfQuiz+1);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                            if(isCorrect) intent.putExtra("correctAnswer", correct_answer+1);
-                            else intent.putExtra("correctAnswer", correct_answer);
-                            startActivity(intent);
-                        }
-                    }
-                });
+        String answerInString = selectionInString[quiz_answer - 1];
+
+        LayoutInflater factory = LayoutInflater.from(QuizpageHard.this);
+        final View dialog_view = factory.inflate(R.layout.activity_dialog_correct, null);
+
+        TextView TextView_title=dialog_view.findViewById(R.id.TextView_dialog_correct_title);
+        TextView TextView_text=dialog_view.findViewById(R.id.TextView_dialog_correct_text);
+        Button Button_next=dialog_view.findViewById(R.id.Button_dialog_correct_next);
+
+        TextView_title.setText("Wrong !");
+        TextView_text.setText("The correct answer is " + answerInString);
+
+        builder.setView(dialog_view);
         AlertDialog alertDialog = builder.create();
+
+        Button_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (numberOfQuiz >=10) {
+//            결과 페이지 로드
+                    makeDialog_finish();
+//                            showAd();
+                } else {
+                    Intent intent = new Intent(QuizpageHard.this, QuizpageHard.class);
+                    intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    if (isCorrect) intent.putExtra("correctAnswer", correct_answer + 1);
+                    else intent.putExtra("correctAnswer", correct_answer);
+                    startActivity(intent);
+                }
+            }
+        });
+
         alertDialog.setCanceledOnTouchOutside(false);
         alertDialog.setCancelable(false);
         alertDialog.show();

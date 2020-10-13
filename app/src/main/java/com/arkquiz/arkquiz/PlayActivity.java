@@ -73,7 +73,7 @@ public class PlayActivity extends AppCompatActivity {
 //        final View dialog_view = factory.inflate(R.layout.activity_dialog_result, null);
         builder.setTitle("Help")
                 .setMessage("In Ranking Mode, you can get Ranking Points or lose Ranking Points.\n" +
-                        "With Ranking Points, you can compete your ARK knowledge with users all over the world!")
+                        "With Ranking Points, you can compete your ARK knowledge with users all over the world!\n")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
