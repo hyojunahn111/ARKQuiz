@@ -1,3 +1,11 @@
+<!--<resources>-->
+<!--    <string name="app_name">ARK Quiz</string>-->
+<!--    <string name="admob_banner_id">ca-app-pub-3081286779348377/9928754580</string>-->
+<!--    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>-->
+<!--    <string name="admob_reward_id">ca-app-pub-3081286779348377/4604291627</string>-->
+<!--    <string name="admob_front_id">ca-app-pub-3081286779348377/5940218742</string>-->
+<!--</resources>-->
+
 <resources>
     <string name="app_name">ARK Quiz</string>
     <string name="admob_banner_id">ca-app-pub-3081286779348377/9928754580</string>
@@ -15,3 +23,5 @@
     <!--배포용 전면 광고 아이디: ca-app-pub-3081286779348377/5940218742-->
     <!--test용 리워드 광고 아이디: ca-app-pub-3940256099942544~3347511713-->
     <!--배포용 리워드 광고 아이디: ca-app-pub-3081286779348377/4604291627-->
+
+

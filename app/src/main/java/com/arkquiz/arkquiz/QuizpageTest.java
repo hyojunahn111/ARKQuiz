@@ -101,11 +101,6 @@ public class QuizpageTest extends AppCompatActivity{
         isCorrect=false;
         current_hint="";
 
-        if(numberOfQuiz%5==0) {
-//        전면 광고 삽입
-
-        }
-
 
         btn_selection=new Button[4];
 
@@ -326,9 +321,15 @@ public class QuizpageTest extends AppCompatActivity{
                 } else {
                     Intent intent = new Intent(QuizpageTest.this, QuizpageTest.class);
                     intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                    if (isCorrect) intent.putExtra("correctAnswer", correct_answer + 1);
-                    else intent.putExtra("correctAnswer", correct_answer);
+                    if (isCorrect) {
+                        intent.putExtra("correctAnswer", correct_answer + 1);
+                        intent.putExtra("myPoint", myPoint+currentPoint);
+                    }
+
+                    else {
+                        intent.putExtra("correctAnswer", correct_answer);
+                        intent.putExtra("myPoint", myPoint-currentPoint);
+                    }
                     startActivity(intent);
                 }
             }
@@ -368,9 +369,14 @@ public class QuizpageTest extends AppCompatActivity{
                 } else {
                     Intent intent = new Intent(QuizpageTest.this, QuizpageTest.class);
                     intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                    if (isCorrect) intent.putExtra("correctAnswer", correct_answer + 1);
-                    else intent.putExtra("correctAnswer", correct_answer);
+                    if (isCorrect) {
+                        intent.putExtra("correctAnswer", correct_answer + 1);
+                        intent.putExtra("myPoint", myPoint+currentPoint);
+                    }
+                    else {
+                        intent.putExtra("correctAnswer", correct_answer);
+                        intent.putExtra("myPoint", myPoint-currentPoint);
+                    }
                     startActivity(intent);
                 }
             }

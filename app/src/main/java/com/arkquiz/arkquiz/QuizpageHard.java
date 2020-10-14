@@ -307,7 +307,6 @@ public class QuizpageHard extends AppCompatActivity{
                 } else {
                     Intent intent = new Intent(QuizpageHard.this, QuizpageHard.class);
                     intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     if (isCorrect) intent.putExtra("correctAnswer", correct_answer + 1);
                     else intent.putExtra("correctAnswer", correct_answer);
                     startActivity(intent);
@@ -347,7 +346,6 @@ public class QuizpageHard extends AppCompatActivity{
                 } else {
                     Intent intent = new Intent(QuizpageHard.this, QuizpageHard.class);
                     intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     if (isCorrect) intent.putExtra("correctAnswer", correct_answer + 1);
                     else intent.putExtra("correctAnswer", correct_answer);
                     startActivity(intent);

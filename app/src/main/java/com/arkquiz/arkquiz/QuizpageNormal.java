@@ -300,7 +300,6 @@ public class QuizpageNormal extends AppCompatActivity{
                 } else {
                     Intent intent = new Intent(QuizpageNormal.this, QuizpageNormal.class);
                     intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     if (isCorrect) intent.putExtra("correctAnswer", correct_answer + 1);
                     else intent.putExtra("correctAnswer", correct_answer);
                     startActivity(intent);
@@ -340,7 +339,6 @@ public class QuizpageNormal extends AppCompatActivity{
                 } else {
                     Intent intent = new Intent(QuizpageNormal.this, QuizpageNormal.class);
                     intent.putExtra("numberOfQuiz", numberOfQuiz + 1);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     if (isCorrect) intent.putExtra("correctAnswer", correct_answer + 1);
                     else intent.putExtra("correctAnswer", correct_answer);
                     startActivity(intent);
