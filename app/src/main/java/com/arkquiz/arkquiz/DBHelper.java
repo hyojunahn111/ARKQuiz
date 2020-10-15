@@ -512,7 +512,7 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which is not the material of the Sweet Vegetable Cake?", "Giant Bee Honey", "Narcotics", "Sap", "Stimulant", 2, R.drawable.sweet_vegetable_cake, "If someone eats it, his(her) torpidity goes up.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the material of the Cactus Broth?", "Cactus Sap", "Narcotics", "Mejoberry", "Azulberry", 2, R.drawable.cactus_broth, "If someone eats it, his(her) torpidity goes up.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the material of the Bug Repellant?", "Stimulant", "Pelt", "Citronal", "Rockarrot", 1, R.drawable.bug_repellant, "It is made of Sparkpowder and Stimberries.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of the Lesser Antidote?", "Stimulant", "Rare Flower", "Rare Mushroom", "Deathworm Horn, Rhino Horn, or Leech Blood", 1, R.drawable.lesser_antidote, "It is made of Sparkpowder and Stimberries.", NULL, 0, context);
+        insertQuiz(db,2, "Which is not the material of the Lesser Antidote?", "Stimulant", "Rare Flower", "Rare Mushroom", "Deathworm Horn", 1, R.drawable.lesser_antidote, "It is made of Sparkpowder and Stimberries.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the material of the Beer Liquid?", "Wood", "Thatch", "Berries", "Water", 1, R.drawable.beer_liquid, "The hardest one among the examples.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the material of the Re-Fertilizer?", "Rare Mushroom", "Rare Flower", "Fertilizer", "Rock", 4, R.drawable.re_fertilizer, "It is very hard", NULL, 0, context);
         insertQuiz(db,2, "Which is not the material of the Mushroom Brew?", "Aggeravic Mushroom", "Aquatic Mushroom", "Sap", "rare Mushroom", 4, R.drawable.mushroom_brew, "Not rare~", NULL, 0, context);
@@ -589,6 +589,17 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Giganotosaurus", "Gasbags", "Wooly Rhino", "Phoenix", 3,R.drawable.plant_y_trap, "The more gauge it gets, the more powerful attack is possible.", NULL, 0, context);
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Yeti", "Procoptodon", "Bloodstalker", "Deinoychus", 4,R.drawable.plant_y_trap, "It can attack other creatures while sticking to them.", NULL, 0, context);
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Piranha", "Mantis", "Roll Rat", "Gallimimus", 4,R.drawable.plant_y_trap, "Two humans can ride on its saddle.", NULL, 0, context);
+
+        //4-1차 문제 추가
+        insertQuiz(db,1, "(공식 기준)체력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "할로인 데이가 있는 달", NULL, 0, context);
+        insertQuiz(db,1, "(공식 기준)기력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "할로인 데이가 있는 달", NULL, 0, context);
+        insertQuiz(db,1, "(공식 기준)산소 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 4 ,R.drawable.ark_logo, "100의 1/5", NULL, 0, context);
+        insertQuiz(db,1, "(공식 기준)음식 스텟을 한 번 찍으면 올라가는 량은?", "10%", "20%", "30%", "40%", 1 ,R.drawable.ark_logo, "카운트 다운 할 때 시작하는 숫자", NULL, 0, context);
+        insertQuiz(db,1, "(공식 기준)물 스텟을 한 번 찍으면 올라가는 량은?", "10%", "15%", "20%", "25%", 1 ,R.drawable.ark_logo, "카운트 다운 할 때 시작하는 숫자", NULL, 0, context);
+        insertQuiz(db,1, "(공식 기준)무게 스텟을 한 번 찍으면 올라가는 량은?", "2%", "5%", "7%", "10%", 4 ,R.drawable.ark_logo, "양손 손가락 개 수", NULL, 0, context);
+        insertQuiz(db,1, "(공식 기준)근접 공격력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 1 ,R.drawable.ark_logo, "오른할(왼발) 발가락 개 수", NULL, 0, context);
+        insertQuiz(db,1, "(공식 기준)속도 스텟을 한 번 찍으면 올라가는 량은?", "0.5%", "1%", "1.5%", "2%", 3 ,R.drawable.ark_logo, "보기 중 100.0 을 만들 수 없는 숫자", NULL, 0, context);
+        insertQuiz(db,1, "(공식 기준)제작기술 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "양손 손가락 개 수", NULL, 0, context);
 
     }
 
