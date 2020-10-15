@@ -15,7 +15,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/EditText_profile_username"
-        android:src="@drawable/south_korera_2"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"></ImageView>
     <TextView
@@ -26,20 +25,21 @@
         android:text="Username"
         android:textColor="#969696"
         android:textSize="25sp"></TextView>
+
     <EditText
         android:id="@+id/EditText_profile_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="nickname"
+        android:layout_marginHorizontal="20dp"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/ImageView_profile_flag"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/Spinner_profile_country"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/Spinner_profile_country"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"
-        android:layout_marginHorizontal="20dp"/>
+        app:layout_constraintTop_toBottomOf="@id/ImageView_profile_flag" />
+
     <Button
         android:id="@+id/Button_profile_check"
         android:layout_width="100dp"

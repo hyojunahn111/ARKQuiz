@@ -9,6 +9,7 @@ import android.content.res.TypedArray;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
     private SQLiteDatabase db, db_user_info;
     private DBHelper mDBHelper;
     private TextView TextView_main_dino_egg, TextView_username, TextView_rankingPoints;
-    private int current_dino_egg;
+    private int current_dino_egg, maxWidth;
     private AdView mAdView;
     private long backKeyPressedTime;
     private Button Button_play, Button_ranking, Button_shop, Button_myPage;
@@ -70,15 +71,16 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
         SharedPreferences sharedPreferences_setAccount=getSharedPreferences("setAccount", MODE_PRIVATE);
         boolean isAccount=sharedPreferences_setAccount.getBoolean("setAccount", false);
         if(!isAccount){
-            SharedPreferences.Editor editor=sharedPreferences_setAccount.edit();
-            editor.putBoolean("setAccount", true);
-            editor.commit();
+            final SharedPreferences.Editor editor=sharedPreferences_setAccount.edit();
             dialog=new Dialog_first(MainActivity.this, new CustomDialogClickListener() {
                 @Override
                 public void onPositiveClick(String ID) {
                     SharedPreferences.Editor editor_id=sharedPreferences_Id.edit();
                     editor_id.putString("ID", ID);
                     editor_id.commit();
+                    editor.putBoolean("setAccount", true);
+                    editor.commit();
+
                     Intent intent=new Intent(MainActivity.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
@@ -164,6 +166,11 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
 
         current_dino_egg=sharedPreferences_dino_egg.getInt("dino_egg", 0);
         TextView_main_dino_egg.setText(String.valueOf(current_dino_egg));
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        maxWidth=displayMetrics.widthPixels-240;
+        TextView_username.setMaxWidth(maxWidth);
 
         Button.OnClickListener onClickListener= new Button.OnClickListener() {
             @Override

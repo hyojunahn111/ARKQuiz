@@ -167,14 +167,18 @@
         android:background="@drawable/ark_logo"></ImageView>
     <TextView
         android:id="@+id/TextView_main_nickname"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="닉네임"
         android:textSize="30sp"
         android:textColor="#FFFFFF"
         app:layout_constraintTop_toTopOf="@id/ImageView_main_flag"
         app:layout_constraintBottom_toBottomOf="@id/ImageView_main_flag"
         app:layout_constraintLeft_toRightOf="@id/ImageView_main_flag"
-        android:layout_marginLeft="10dp"></TextView>
+        app:layout_constraintRight_toLeftOf="@id/ImageView_main_rankingPoint"
+        android:layout_marginLeft="10dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textAlignment="textStart"
+        android:gravity="start"></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
