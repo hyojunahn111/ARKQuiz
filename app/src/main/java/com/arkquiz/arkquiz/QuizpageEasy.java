@@ -80,7 +80,7 @@ public class QuizpageEasy extends AppCompatActivity {
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.admob_front_id));
 
-        loadAd();
+//        loadAd();
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         selectionInString = new String[4];

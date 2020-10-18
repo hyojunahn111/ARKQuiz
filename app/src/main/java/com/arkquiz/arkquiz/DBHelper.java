@@ -284,10 +284,10 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db, 2, "Which dinosaur is best for getting stone?", "Doedicurus", "Triceratops", "Compy", "Quetzal", 1, R.drawable.ark_stone, "This dinosaur looks hard.", NULL, 0, context);
             insertQuiz(db, 2, "Which dinosaur is best for getting berry?", "Purlovia", "Brontosaurus", "Rex", "Rarasaur", 2, R.drawable.ark_berries, "This dinosaur has a really long neck.", NULL, 0, context);
             insertQuiz(db, 2, "Which dinosaur is best for getting hide?", "Therizinosaur", "Trilobite", "Quetzal", "Gigantopithecus", 1, R.drawable.ark_hide, "This dinosaur has long nails.", NULL, 0, context);
-            insertQuiz(db, 2, "Which dinosaur is best for getting flint?", "Dierwolf", "Ankylosaurus", "Raptor", "Manta", 2, R.drawable.ark_hide, "This dinosaur looks hard.", NULL, 0, context);
+            insertQuiz(db, 2, "Which dinosaur is best for getting flint?", "Dierwolf", "Ankylosaurus", "Raptor", "Manta", 2, R.drawable.ark_flint, "This dinosaur looks hard.", NULL, 0, context);
             insertQuiz(db, 2, "What is the best tool for getting metal", "Metal Hatchet", "Metal pick", "Metal sickle", "Sword", 2, R.drawable.ark_metal, "Think of the real use of the tools", NULL, 0, context);
             insertQuiz(db, 2, "Which is the best tool for getting stone?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 2, R.drawable.ark_stone, "Hatchet are better at gathering stones than picks.", NULL, 0, context);
-            insertQuiz(db, 2, "Which tool is best for getting flint?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 4, R.drawable.ark_stone, "A pick is more efficient at gathering flint than an Hatchet.", NULL, 0, context);
+            insertQuiz(db, 2, "Which tool is best for getting flint?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 4, R.drawable.ark_flint, "A pick is more efficient at gathering flint than an Hatchet.", NULL, 0, context);
             insertQuiz(db, 2, "What is the best tool for getting wood?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 2, R.drawable.ark_wood, "It is more efficient to use hatchet rather than pick when getting wood.", NULL, 0, context);
             insertQuiz(db, 2, "Which of the following is the best tool for gathering thatch?", "Stone Hatchet", "Metal Hatchet", "Stone Pick", "Metal Pick", 4, R.drawable.ark_thatch, "It is more efficient to use pick rather than hatchet when getting thatch.", NULL, 0, context);
             insertQuiz(db, 2, "Which of the following is the best tool for getting fiber?", "Metal sickle", "Whip", "Metal Hatchet", "Metal Pick", 1, R.drawable.ark_fiber, "This tool is used to cut something.", NULL, 0, context);
@@ -344,12 +344,12 @@ public class DBHelper extends SQLiteOpenHelper {
             insertQuiz(db,2, "Which is not an ingredient of Superior kibble?", "Prime Meat jerky", "Citronal", "Fiber", "Rare Flower", 4, R.drawable.superior_kibble, "You can find it at the Giant Beaver Dam or near Ragnarok Blue Obelisk.", NULL, 0, context);
             insertQuiz(db,2, "Which is not an ingredient of Exceptional kibble?", "Focal chili", "Fria Curry", "Fiber", "Mejoberry", 2, R.drawable.exceptional_kibble, "It is brown.", NULL, 0, context);
             insertQuiz(db,2, "Which is not an ingredient of ExtraOrdinary kibble?", "Giant Bee Honey", "Wyvern Egg", "Lazarus chowder", "Energy Brew", 4, R.drawable.extraordinary_kibble, "It fills our stamina.", NULL, 0, context);
-            insertQuiz(db,2, "Which is not an ingredient of Brew?", "Tintoberry", "Mejoberry", "Narcotic", "Water", 2,R.drawable.medical_brew, "Herbivorous dinosaurs are my favorite.", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Brew?", "Tintoberry", "Mejoberry", "Narcotic", "Water", 2,R.drawable.medical_brew, "Herbivorous dinosaurs' favorite berry.", NULL, 0, context);
             insertQuiz(db,2, "Which is not an ingredient of Enduro Stew?", "Water", "Mejoberry × 10", "Rockarrot × 5", "Stimulant × 1", 4, R.drawable.rockwell_recipes_enduro_stew, "+stimulant.", NULL, 0, context);
             insertQuiz(db,2, "Which is not an ingredient of a focal chili?", "Mejoberry × 10", "Citronal 5", "Cooked meat", "Prime Cooked meat", 4, R.drawable.rockwell_recipes_focal_chili, "There is no need to use prime..", NULL, 0, context);
             insertQuiz(db,2, "Which is not an ingredient of Lazarus chowder?", "Mejoberry × 10", "Longrass × 5", "Stimulant × 2", "Savoroot × 5", 3, R.drawable.lazarus_chowder, "Lazarus chowder doesn't need stimberry or spark powder, but needs nacoberry and spoiled meat.", NULL, 0, context);
             insertQuiz(db,2, "Which is not an ingredient of Calien Soup?", "Citronal × 5", "Amarberry × 20", "Tintoberry × 10", "Stimulant × 2", 3, R.drawable.calien_soup, "10 is not enough..", NULL, 0, context);
-            insertQuiz(db,2, "Which is not an ingredient of Fria Curry?", "Longrass × 5", "Rockarrot × 5", "Azulberry × 20", "Mejoberry × 20", 4, R.drawable.fria_curry, "10 is enough for the berry that dinosaurs love..", NULL, 0, context);
+            insertQuiz(db,2, "Which is not an ingredient of Fria Curry?", "Longrass × 5", "Rockarrot × 5", "Azulberry × 20", "Mejoberry × 10", 4, R.drawable.fria_curry, "10 is enough for the berry that dinosaurs love..", NULL, 0, context);
             insertQuiz(db,2, "Which is not an ingredient of Shadow Steak Saute?", "Narcotic × 10", "Rare Mushroom × 2", "Savoroot × 1", "Rockarrot × 1", 1, R.drawable.ark_logo, "8  spoiled meat + 40 Nacoberries are enough.", NULL, 0, context);
             insertQuiz(db,2, "Roasting time of one cooked meat?", "5 mins", "10 mins", "15 mins", "20 mins", 4, R.drawable.cooked_meat, "It's twice the time of raw meat decay time..", NULL, 0, context);
             insertQuiz(db,2, "How much time does it spend for a meat jerky to spoil?", "12 hours", "24 hours", "36 hours", "48 hours", 4, R.drawable.cooked_meat_jerky, "Beef jerky has a longer shelf life than expected.", NULL, 0, context);
@@ -590,7 +590,7 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Yeti", "Procoptodon", "Bloodstalker", "Deinoychus", 4,R.drawable.plant_y_trap, "It can attack other creatures while sticking to them.", NULL, 0, context);
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Piranha", "Mantis", "Roll Rat", "Gallimimus", 4,R.drawable.plant_y_trap, "Two humans can ride on its saddle.", NULL, 0, context);
 
-        //4-1차 문제 추가
+      /*  //4-1차 문제 추가
         insertQuiz(db,1, "(공식 기준)체력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "할로인 데이가 있는 달", NULL, 0, context);
         insertQuiz(db,1, "(공식 기준)기력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "할로인 데이가 있는 달", NULL, 0, context);
         insertQuiz(db,1, "(공식 기준)산소 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 4 ,R.drawable.ark_logo, "100의 1/5", NULL, 0, context);
@@ -600,7 +600,7 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,1, "(공식 기준)근접 공격력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 1 ,R.drawable.ark_logo, "오른할(왼발) 발가락 개 수", NULL, 0, context);
         insertQuiz(db,1, "(공식 기준)속도 스텟을 한 번 찍으면 올라가는 량은?", "0.5%", "1%", "1.5%", "2%", 3 ,R.drawable.ark_logo, "보기 중 100.0 을 만들 수 없는 숫자", NULL, 0, context);
         insertQuiz(db,1, "(공식 기준)제작기술 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "양손 손가락 개 수", NULL, 0, context);
-
+*/
     }
 
     public void insertQuiz(SQLiteDatabase mdb, int quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, int answer, int image, String hint, int hint_image, int is_shown, Context context){

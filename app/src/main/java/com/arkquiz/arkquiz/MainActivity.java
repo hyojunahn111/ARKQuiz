@@ -98,7 +98,6 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             window.setAttributes(params);
         }
         else{
-            Log.d(TAG, "ㅎㅇㅎㅇ");
             DocumentReference docRef = db_firestore.collection("users").document(sharedPreferences_Id.getString("ID", ""));
             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -106,19 +105,15 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         if (document.exists()) {
-                            Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                             currentUsername=document.get("nickname").toString();
                             myScore=document.get("score").toString()+" pts";
-                            Log.d(TAG, "myScore:"+myScore);
                             drawable=typedArray.getDrawable(Integer.parseInt(document.get("countryCode").toString()));
                             ImageView_flag.setImageDrawable(drawable);
                             TextView_username.setText(currentUsername);
                             TextView_rankingPoints.setText(myScore);
                         } else {
-                            Log.d(TAG, "No such document");
                         }
                     } else {
-                        Log.d(TAG, "get failed with ", task.getException());
                     }
                 }
             });

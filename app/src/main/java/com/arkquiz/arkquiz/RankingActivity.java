@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
@@ -30,6 +32,7 @@ public class RankingActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private CollectionReference users;
     private int currentRank=1;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +40,15 @@ public class RankingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ranking);
 
         this.getSupportActionBar().hide();
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.admob_front_id));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }else{
+            Log.d("광고", "광고 로드 실패");
+        }
 
         recyclerView=findViewById(R.id.RecyclerView_ranking);
         db = FirebaseFirestore.getInstance();
