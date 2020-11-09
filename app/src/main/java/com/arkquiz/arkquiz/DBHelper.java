@@ -590,7 +590,7 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Yeti", "Procoptodon", "Bloodstalker", "Deinoychus", 4,R.drawable.plant_y_trap, "It can attack other creatures while sticking to them.", NULL, 0, context);
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Piranha", "Mantis", "Roll Rat", "Gallimimus", 4,R.drawable.plant_y_trap, "Two humans can ride on its saddle.", NULL, 0, context);
 
-      /*  //4-1차 문제 추가
+        //4-1차 문제 추가
         insertQuiz(db,1, "(공식 기준)체력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "할로인 데이가 있는 달", NULL, 0, context);
         insertQuiz(db,1, "(공식 기준)기력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "할로인 데이가 있는 달", NULL, 0, context);
         insertQuiz(db,1, "(공식 기준)산소 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 4 ,R.drawable.ark_logo, "100의 1/5", NULL, 0, context);
@@ -600,7 +600,72 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,1, "(공식 기준)근접 공격력 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 1 ,R.drawable.ark_logo, "오른할(왼발) 발가락 개 수", NULL, 0, context);
         insertQuiz(db,1, "(공식 기준)속도 스텟을 한 번 찍으면 올라가는 량은?", "0.5%", "1%", "1.5%", "2%", 3 ,R.drawable.ark_logo, "보기 중 100.0 을 만들 수 없는 숫자", NULL, 0, context);
         insertQuiz(db,1, "(공식 기준)제작기술 스텟을 한 번 찍으면 올라가는 량은?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "양손 손가락 개 수", NULL, 0, context);
-*/
+        insertQuiz(db,1, "(공식 기준)만렙은?", "100", "105", "110", "115", 2 ,R.drawable.ark_logo, "100에 5", NULL, 0, context);
+
+        //4-2차 문제 추가
+        insertQuiz(db,1, "익스팅션 엔그렘이 아닌 것은?", "소형 박제 받침대", "박제도구", "배달 상자", "발광봉", 4 ,R.drawable.ark_logo, "빛이 납니다.", NULL, 0, context);
+        insertQuiz(db,1, "익스팅션 엔그렘이 아닌 것은?", "중형 박제 받침대", "디노 리쉬", "벨로나사우르스 안장", "통발", 4 ,R.drawable.ark_logo, "물고기를 잡을 수 있습니다.", NULL, 0, context);
+        insertQuiz(db,1, "익스팅션 엔그렘이 아닌 것은?", "대형 박제 받침대", "가챠 안장", "휴대용 밧줄 사다리", "가스백 안장", 3 ,R.drawable.ark_logo, "타고 올라갈 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "익스팅션 엔그렘이 아닌 것은?", "불안정한 원소", "불안정한 원소 파편", "털 양탄자", "눈올빼미 안장", 3 ,R.drawable.ark_logo, "오비스를 잡아서 나오는 걸로 만들 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "익스팅션 엔그렘이 아닌 것은?", "마나가르마 안장", "소형 목제 승강기 플렛폼", "테크 다리", "테크 중력 수류탄", 2 ,R.drawable.ark_logo, "높은 곳을 쉽게 운반 할 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "익스팅션 엔그렘이 아닌 것은?", "미조립된 맥", "대형 목제 승강기 플렛폼", "M.D.S.M.", "로켓 포드", 2 ,R.drawable.ark_logo, "높은 곳을 쉽게 운반 할 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "익스팅션 엔그렘이 아닌 것은?", "집라인 앵커", "M.R.L.M.", "M.S.C.M.", "포탄", 1 ,R.drawable.ark_logo, "레비져는 이것을 타고 움직일 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "등반용 곡괭이", "보관용 소금", "점토", "텐트", 1 ,R.drawable.ark_logo, "이것을 통해 벽을 기어 올라갈 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "부메랑", "모렐라톱스 안장", "항아리", "석재 절벽 토대", 4 ,R.drawable.ark_logo, "이것을 통해 절벽에 집을 지을 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "우물", "점토 토대", "점토벽", "철제 절벽 토대", 4 ,R.drawable.ark_logo, "이것을 통해 절벽에 집을 지을 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "점토 사다리", "채찍", "가스 추출기", "추진제", 3 ,R.drawable.ark_logo, "가스를 추출해서 얻을 수 있습니다.", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "사막용 상의", "거울", "펜치", "점토 공룡문", 3 ,R.drawable.ark_logo, "도구", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "매미나방 안장", "레비져 안장", "가시 드레곤 안장", "사마귀 안장", 2 ,R.drawable.ark_logo, "무게를 줄여주는 공룡의 안장입니다.", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "풍력 발전기", "글라이더 슈트", "사슬톱", "오일 펌프", 2 ,R.drawable.ark_logo, "이것을 입으면 하늘을 날아다닐 수 있습니다.", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "카르키노스 안장", "바위골렘 안장", "화면 방사기 탄약", "화염 방사기", 1 ,R.drawable.ark_logo, "악어", NULL, 0, context);
+        insertQuiz(db,1, "스코치드 어스 엔그램이 아닌 것은?", "방호복 장갑", "클러스터 수류탄", "로켓 유도 미사일", "우물", 1 ,R.drawable.ark_logo, "이것을 입으면 방사능에 면역이 됩니다.", NULL, 0, context);
+        insertQuiz(db,1, "에버레이션 엔그램인 것은?", "피오미아 안장", "혈액 추출 주사기", "단순한 침대", "충전 베터리", 4 ,R.drawable.ark_logo, "포탑을 설치할 때 발전기 없이 작동시킬 수 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "에버레이션 엔그램인 것은?", "돌 화살", "페인트 봇", "입식 횟불", "락 드레이크 안장", 4 ,R.drawable.ark_logo, "이 공룡은 테크 안장이 있습니다", NULL, 0, context);
+        insertQuiz(db,1, "에버레이션 엔그램인 것은?", "목재 방패", "화약", "충전 렌턴", "조명탄", 3 ,R.drawable.ark_logo, "어두운 곳을 계속 밝혀줍니다", NULL, 0, context);
+        insertQuiz(db,1, "에버레이션 엔그램인 것은?", "낙하산", "벽걸이형 트로피", "바실리스크 안장", "캔버스", 3 ,R.drawable.ark_logo, "뱀", NULL, 0, context);
+        insertQuiz(db,1, "에버레이션 엔그램인 것은?", "맥주통", "방호복 모자", "수류탄", "프테라노돈 안장", 2 ,R.drawable.ark_logo, "이것을 입으면 방사능에 면역이 됩니다.", NULL, 0, context);
+        insertQuiz(db,1, "에버레이션 엔그램인 것은?", "마취탄", "방호복 바지", "샷건", "복원 비료", 2 ,R.drawable.ark_logo, "이것을 입으면 방사능에 먼역이 됩니다.", NULL, 0, context);
+        insertQuiz(db,1, "에버레이션 엔그램인 것은?", "방호복 상의", "벨제부포 안장", "온실 벽", "전기 발전기", 1 ,R.drawable.ark_logo, "이것을 입으면 방사능에 먼역이 됩니다.", NULL, 0, context);
+        insertQuiz(db,1, "에버레이션 엔그램인 것은?", "방호복 장화", "타페자라 안장", "GPS", "메가테리움 안장", 1 ,R.drawable.ark_logo, "이것을 입으면 방사능에 먼역이 됩니다.", NULL, 0, context);
+
+        //4-3 문제 추가
+        insertQuiz(db,1, "원시 캔디가 주는 속도는?", "1%", "3%", "5%", "7%", 3 ,R.drawable.ark_logo, "대표적으로 시계를 보면 생각납니다.", NULL, 0, context);
+        insertQuiz(db,1, "대가 캔디가 주는 속도는?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "학교 쉬는 시간 정도", NULL, 0, context);
+        insertQuiz(db,1, "우월 캔디가 주는 속도는?", "5%", "10%", "15%", "20%", 3 ,R.drawable.ark_logo, "중2", NULL, 0, context);
+        insertQuiz(db,1, "발렌타이데이 캔디 모양은?", "알", "하트 초콜릿", "세모난 사탕", "양쪽이 묶인 캔디", 2 ,R.drawable.ark_logo, "사랑", NULL, 0, context);
+
+        insertQuiz(db,1, "아무 보스도 깨지 않은 캐릭터 만렙은 몇인가요?", "100", "105", "110", "115", 2 ,R.drawable.ark_logo, "수능 올 만점 평균에 5을 더하면 되요.", NULL, 0, context);
+
+        insertQuiz(db,1, "유기 폴리머를 사람이 먹으면 받는 데미지는?", "200", "300", "400", "500", 4 ,R.drawable.ark_logo, "오우..백...", NULL, 0, context);
+
+        insertQuiz(db,1, "(공식서버 기준)야생 공룡 만렙은 몇인가요?", "100", "150", "200", "250", 2 ,R.drawable.ark_logo, "사람 만렙에 45를 더하면 됩니다.", NULL, 0, context);
+
+        insertQuiz(db,1, "짚 토대의 재료가 아닌 것은?", "목재", "짚", "섬유", "돌", 4 ,R.drawable.ark_logo, "보기 중 제일 단단한 것", NULL, 0, context);
+        insertQuiz(db,1, "목재 표시판의 재료가 아닌 것은?", "목재", "짚", "섬유", "돌", 4 ,R.drawable.ark_logo, "보기 중 제일 단단한 것", NULL, 0, context);
+        insertQuiz(db,1, "작은 망원경의 재료가 아닌 것은?", "크리스탈", "가죽", "부싯돌", "목재", 3 ,R.drawable.ark_logo, "돌을 갈면 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "볼라의 재료가 아닌 것은?", "가죽", "돌", "부싯돌", "짚", 3 ,R.drawable.ark_logo, "노란색 입니다.", NULL, 0, context);
+        insertQuiz(db,1, "목재 토대의 재료가 아닌 것은?", "목재", "부싯돌", "섬유", "짚", 2 ,R.drawable.ark_logo, "돌을 갈면 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "목재 땟목의 재료가 아닌 것은?", "목재", "짚", "가죽", "섬유", 2 ,R.drawable.ark_logo, "나무를 갈면 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "배달 상자의 재료가 아닌 것은?", "돌", "가스백 주머니", "목재", "짚", 1 ,R.drawable.ark_logo, "가스백을 죽이면 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "하급 해독제의 재료가 아닌 것은?", "알로사우르스 뇌", "마취약", "울리 뿔", "희귀 버섯", 1 ,R.drawable.ark_logo, "무리 버프가 있는 공룡한테서 나오는 아이템은 필요없습니다.", NULL, 0, context);
+        insertQuiz(db,1, "재련용 화로의 재료가 아닌 것은?", "돌", "가죽", "부싯돌", "짚", 4 ,R.drawable.ark_logo, "나무를 갈면 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "대장간의 재료가 아닌 것은?", "철 주괴", "가죽", "돌", "짚", 4 ,R.drawable.ark_logo, "나무를 갈면 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "캔버스의 재료가 아닌 것은?", "목재", "섬유", "짚", "가죽", 3 ,R.drawable.ark_logo, "곡괭이로 나무를 캐면 많이 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "석재 토대의 재료가 아닌 것은?", "돌", "목재", "섬유", "짚", 3 ,R.drawable.ark_logo, "낫으로 캐면 많이 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "물병의 재료가 아닌 것은?", "가죽", "철 주괴", "시멘트 폴", "크리스탈", 2 ,R.drawable.ark_logo, "철을 구우면 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "수갑의 재료가 아닌 것은?", "시멘트 폴", "크리스탈", "철 주괴", "흑요석", 2 ,R.drawable.ark_logo, "이런 이름을 가진 와이번도 있죠", NULL, 0, context);
+        insertQuiz(db,1, "철제 가시벽의 재료가 아닌 것은?", "목재", "가죽", "철 주괴", "섬유", 1 ,R.drawable.ark_logo, "나무를 캐면 나옵니다", NULL, 0, context);
+        insertQuiz(db,1, "목재 나무 플랫폼의 재료가 아닌 것은?", "목재", "짚", "섬유", "철 주괴", 1 ,R.drawable.ark_logo, "나무를 갈면 나옵니다", NULL, 0, context);
+
+
+
+
+
+
+
+        
+
+
     }
 
     public void insertQuiz(SQLiteDatabase mdb, int quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, int answer, int image, String hint, int hint_image, int is_shown, Context context){
