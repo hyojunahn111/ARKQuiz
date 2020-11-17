@@ -61,7 +61,7 @@ public class QuizpageNormal extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizpage_normal);
 
-        this.getSupportActionBar().hide();
+//        this.getSupportActionBar().hide();
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override

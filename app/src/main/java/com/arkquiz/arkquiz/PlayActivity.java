@@ -21,7 +21,7 @@ public class PlayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play);
 
-        this.getSupportActionBar().hide();
+//        this.getSupportActionBar().hide();
 
         ImageButton_beginner=findViewById(R.id.ImageButton_play_beginner);
         ImageButton_intermediate=findViewById(R.id.ImageButton_play_intermediate);

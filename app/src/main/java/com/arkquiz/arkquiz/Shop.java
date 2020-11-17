@@ -75,7 +75,7 @@ public class Shop extends AppCompatActivity implements PurchasesUpdatedListener 
         btn_dino_bone_1000=findViewById(R.id.Button_dinobone1000);
         btn_dino_bone_2000=findViewById(R.id.Button_dinobone2000);
 
-        this.getSupportActionBar().hide();
+//        this.getSupportActionBar().hide();
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override

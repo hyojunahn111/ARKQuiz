@@ -53,7 +53,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        this.getSupportActionBar().hide();
+//        this.getSupportActionBar().hide();
 
         EditText_username=findViewById(R.id.EditText_profile_username);
         Spinner_country=findViewById(R.id.Spinner_profile_country);

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.getSupportActionBar().hide();
+//        this.getSupportActionBar().hide();
 
         mDBHelper=new DBHelper(this);
         db=mDBHelper.getWritableDatabase();

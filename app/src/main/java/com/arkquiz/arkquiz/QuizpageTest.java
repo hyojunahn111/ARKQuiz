@@ -70,7 +70,7 @@ public class QuizpageTest extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizpage_test);
 
-        this.getSupportActionBar().hide();
+//        this.getSupportActionBar().hide();
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -231,10 +231,68 @@ public class QuizpageTest extends AppCompatActivity{
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(QuizpageTest.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                overridePendingTransition(0, 0); //애니메이션 제거
+//                Intent intent=new Intent(QuizpageTest.this, MainActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//                overridePendingTransition(0, 0); //애니메이션 제거
+                AlertDialog.Builder builder=new AlertDialog.Builder(QuizpageTest.this);
+                builder.setMessage("You will lose 10 Ranking Points when you exit during Ranking Mode!\nAre you sure to quit?");
+                builder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        mDBHelper.updateTruetoFalse(db);
+                        dialog.cancel();
+                        Intent tempIntent=new Intent(QuizpageTest.this, MainActivity.class);
+                        tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(tempIntent);
+
+                        sharedPreferences_Id=getSharedPreferences("ID", MODE_PRIVATE);
+                        editor_Id=sharedPreferences_Id.edit();
+                        final DocumentReference documentRef = db_firestore.collection("users").document(sharedPreferences_Id.getString("ID", ""));
+                        documentRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (task.isSuccessful()) {
+                                    DocumentSnapshot document = task.getResult();
+                                    if (document.exists()) {
+                                        myScore=Integer.parseInt(document.get("score").toString());
+                                        if(myScore-10<0) myScore=0;
+                                        else myScore-=10;
+                                        documentRef
+                                                .update("score", myScore)
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        Log.d(TAG, "update success");
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Log.d("MainActivity", e.toString());
+                                                    }
+                                                });
+                                    } else {
+                                        Log.d(TAG, "No such document");
+                                    }
+                                } else {
+                                    Log.d(TAG, "get failed with ", task.getException());
+                                }
+                            }
+                        });
+
+                    }
+                });
+
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog alertDialog=builder.create();
+                alertDialog.show();
 
             }
         });
