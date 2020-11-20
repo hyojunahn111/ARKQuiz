@@ -590,6 +590,9 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Yeti", "Procoptodon", "Bloodstalker", "Deinoychus", 4,R.drawable.plant_y_trap, "It can attack other creatures while sticking to them.", NULL, 0, context);
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Piranha", "Mantis", "Roll Rat", "Gallimimus", 4,R.drawable.plant_y_trap, "Two humans can ride on its saddle.", NULL, 0, context);
 
+    }
+
+    public void loadQuiz5(SQLiteDatabase db, Context context){
         //4-1차 문제 추가
         insertQuiz(db,1, "(In Official Server) How much Health stat increase when you level your Health stat up?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "The month of Halloween.", NULL, 0, context);
         insertQuiz(db,1, "(In Official Server) How much Stamina stat increase when you level your Stamina stat up?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "The month of Halloween.", NULL, 0, context);
@@ -641,31 +644,22 @@ public class DBHelper extends SQLiteOpenHelper {
 
         insertQuiz(db,1, "(In Official Server) What is the maximum level of wild dinosaur?", "100", "150", "200", "250", 2 ,R.drawable.ark_logo, "human's maximum level+45", NULL, 0, context);
 
-        insertQuiz(db,1, "Which is not the material of Thatch Foundation?", "wood", "thatch", "fiber", "stone", 4 ,R.drawable.thatch_foundation, "The hardest among the choices.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Wooden Sign?", "wood", "thatch", "fiber", "stone", 4 ,R.drawable.wooden_sign, "The hardest among the choices.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Spyglass?", "crystal", "Hide", "flint", "wood", 3 ,R.drawable.spyglass, "You can get this by sharpening stones.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Bola?", "Hide", "stone", "flint", "thatch", 3 ,R.drawable.bola, "It is yellow.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Wooden Foundation?", "wood", "flint", "fiber", "thatch", 2 ,R.drawable.wooden_foundation, "You can get this by sharpening stones.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Wooden Raft?", "wood", "thatch", "Hide", "fiber", 2 ,R.drawable.wooden_raft, "You can get this by sharpening woods.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Delivery Crate?", "stone", "Gasbags bladder", "wood", "thatch", 1 ,R.drawable.delivery_crate, "You can get this item from Gasbags.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Lesser Antidote?", "Allosaurus Brain", "narcotic", "Woolly Rhino Horn", "Rare Mushroom", 1 ,R.drawable.lesser_antidote, "You can get this item from this dinosaurs which have pack buffs.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Refining Forge?", "stone", "Hide", "flint", "thatch", 4 ,R.drawable.refining_forge, "You can get this by sharpening woods.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Smithy?", "metal ingot", "Hide", "stone", "thatch", 4 ,R.drawable.smithy, "You can get this by sharpening woods.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Paining Canvas?", "wood", "fiber", "thatch", "Hide", 3 ,R.drawable.painting_canvas, "By hitting wood with pick, you can get this well.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of stone Foundation?", "stone", "wood", "fiber", "thatch", 3 ,R.drawable.stone_foundation, "You can easily get this by Metal Sickle.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Water Jar?", "Hide", "metal ingot", "cementing paste", "crystal", 2 ,R.drawable.water_jar, "You can get this by smelting metal.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Handcuffs?", "cementing paste", "crystal", "metal ingot", "흑요석", 2 ,R.drawable.handcuffs, "There is a wyvern with this name.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Metal Spike Wall?", "wood", "Hide", "metal ingot", "fiber", 1 ,R.drawable.metal_spike_wall, "You can get this by wood.", NULL, 0, context);
-        insertQuiz(db,1, "Which is not the material of Wooden Tree Platform?", "wood", "thatch", "fiber", "metal ingot", 1 ,R.drawable.wooden_tree_platform, "You can get this by sharpening woods.", NULL, 0, context);
-
-
-
-
-
-
-
-        
-
+        insertQuiz(db,1, "Which is not the material of Thatch Foundation?", "Wood", "Thatch", "Fiber", "Stone", 4 ,R.drawable.thatch_foundation, "The hardest among the choices.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Wooden Sign?", "Wood", "Thatch", "Fiber", "Stone", 4 ,R.drawable.wooden_sign, "The hardest among the choices.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Spyglass?", "Crystal", "Hide", "Flint", "Wood", 3 ,R.drawable.spyglass, "You can get this by sharpening stones.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Bola?", "Hide", "Stone", "Flint", "Thatch", 3 ,R.drawable.bola, "It is yellow.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Wooden Foundation?", "Wood", "Flint", "Fiber", "Thatch", 2 ,R.drawable.wooden_foundation, "You can get this by sharpening stones.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Wooden Raft?", "Wood", "Thatch", "Hide", "Fiber", 2 ,R.drawable.wooden_raft, "You can get this by sharpening woods.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Delivery Crate?", "Stone", "Gasbags Bladder", "Wood", "Thatch", 1 ,R.drawable.delivery_crate, "You can get this item from Gasbags.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Lesser Antidote?", "Allosaurus Brain", "Narcotic", "Woolly Rhino Horn", "Rare Mushroom", 1 ,R.drawable.lesser_antidote, "You can get this item from this dinosaurs which have pack buffs.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Refining Forge?", "Stone", "Hide", "Flint", "Thatch", 4 ,R.drawable.refining_forge, "You can get this by sharpening woods.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Smithy?", "Metal Ingot", "Hide", "Stone", "Thatch", 4 ,R.drawable.smithy, "You can get this by sharpening woods.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Paining Canvas?", "Wood", "Fiber", "Thatch", "Hide", 3 ,R.drawable.painting_canvas, "By hitting wood with pick, you can get this well.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of stone Foundation?", "Stone", "Wood", "Fiber", "Thatch", 3 ,R.drawable.stone_foundation, "You can easily get this by Metal Sickle.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Water Jar?", "Hide", "Metal Ingot", "Cementing paste", "Crystal", 2 ,R.drawable.water_jar, "You can get this by smelting metal.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Handcuffs?", "Cementing Paste", "Crystal", "Metal Ingot", "Obsidian", 2 ,R.drawable.handcuffs, "There is a wyvern with this name.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Metal Spike Wall?", "Wood", "Hide", "Metal Ingot", "Fiber", 1 ,R.drawable.metal_spike_wall, "You can get this by wood.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Wooden Tree Platform?", "Wood", "Thatch", "Fiber", "Metal Ingot", 1 ,R.drawable.wooden_tree_platform, "You can get this by sharpening woods.", NULL, 0, context);
 
     }
 
