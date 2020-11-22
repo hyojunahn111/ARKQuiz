@@ -590,6 +590,9 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Yeti", "Procoptodon", "Bloodstalker", "Deinoychus", 4,R.drawable.plant_y_trap, "It can attack other creatures while sticking to them.", NULL, 0, context);
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Piranha", "Mantis", "Roll Rat", "Gallimimus", 4,R.drawable.plant_y_trap, "Two humans can ride on its saddle.", NULL, 0, context);
 
+    }
+
+    public void loadQuiz5(SQLiteDatabase db, Context context){
         //4-1차 문제 추가
         insertQuiz(db,1, "(In Official Server) How much Health stat increase when you level your Health stat up?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "The month of Halloween.", NULL, 0, context);
         insertQuiz(db,1, "(In Official Server) How much Stamina stat increase when you level your Stamina stat up?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "The month of Halloween.", NULL, 0, context);
@@ -603,30 +606,30 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,1, "(In Official Server) What is the maximum level?", "100", "105", "110", "115", 2 ,R.drawable.ark_logo, "100+5", NULL, 0, context);
 
         //4-2차 문제 추가
-        insertQuiz(db,2, "Which is not an Extinction Engram?", "Small Taxidermy Base", "Taxidermy Tool", "Delivery Crate", "Glow stick", 4 ,R.drawable.ark_extinction, "It glows.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not an Extinction Engram?", "Medium Taxidermy Base", "Dino Leash", "Velonasaur saddle", "Fish Net", 4 ,R.drawable.ark_extinction, "By using it, you can catch the fish.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not an Extinction Engram?", "Large Taxidermy Base", "Gacha saddle", "Portable Rope Ladder", "Gasbag saddle", 3 ,R.drawable.ark_extinction, "You cam climb it.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not an Extinction Engram?", "Unstable Element", "Unstable Element Shard", "Shag Rug", "Snow Owl saddle", 3 ,R.drawable.ark_extinction, "You can get its ingredients by killing Ovis.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not an Extinction Engram?", "Managarmr saddle", "Small Wood Elevator Platform", "Tek Bridge", "Tek Gravity Grenade", 2 ,R.drawable.ark_extinction, "It is helpful when carrying some stuffs.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not an Extinction Engram?", "Unassembled Mek", "large Wood Elevator Platform", "M.D.S.M.", "rocket pod", 2 ,R.drawable.ark_extinction, "It is helpful when carrying some stuffs.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not an Extinction Engram?", "Zip-Line Anchor", "M.R.L.M.", "M.S.C.M.", "Rocket", 1 ,R.drawable.ark_extinction, "Ravager can move by using it.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "Climbing Pick", "Preserving Salt", "Clay", "tent", 1 ,R.drawable.ark_scorched_earth, "You can climb walls by using it.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "boomerang", "Morellatops saddle", "Oil Jar", "Stone Cliff Platform", 4 ,R.drawable.ark_scorched_earth, "If you have it, you can build things on cliffs.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "Water Well", "Clay Foundation", "Clay Wall", "Metal Cliff Platform", 4 ,R.drawable.ark_scorched_earth, "If you have it, you can build things on cliffs.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "Clay ladder", "wipe", "Gas Collector", "Propellant", 3 ,R.drawable.ark_scorched_earth, "It extracts gas.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "Desert Cloth Shirt", "mirror", "pliers", "Clay dinogate", 3 ,R.drawable.ark_scorched_earth, "Tool.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "Lymantria saddle", "Ravager saddle", "Thorny Dragon saddle", "Mantis saddle", 2 ,R.drawable.ark_scorched_earth, "It is a saddle of the dinosaur which reduces the weight.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "Wind Turbine", "Glider Suit Skin", "Chainsaw", "Oil Pump", 2 ,R.drawable.ark_scorched_earth, "If you have it, you can fly.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "Karkinos saddle", "Rock Golem saddle", "Flamethrower Ammo", "Flamethrower", 1 ,R.drawable.ark_scorched_earth, "Crocodile.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not a Scorched Earth Engram?", "Hazard Suit Gloves", "Cluster Grenade", "Rocket Homing Missile", "Water Well", 1 ,R.drawable.ark_scorched_earth, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
-        insertQuiz(db,2, "Which is a Abberation Engram?", "Phiomia saddle", "Blood Extraction Syringe", "simple bed", "Charge Battery", 4 ,R.drawable.ark_aberration, "With this item, you can use turret without Electrical Generator.", NULL, 0, context);
-        insertQuiz(db,2, "Which is a Abberation Engram?", "stone arrow", "Paintbrush", "Standing torch", "Rock Drake saddle", 4 ,R.drawable.ark_aberration, "This dinosaur has a tek saddle.", NULL, 0, context);
-        insertQuiz(db,2, "Which is a Abberation Engram?", "wood shield", "gunpowder", "Charge Lantern", "Flare Gun", 3 ,R.drawable.ark_aberration, "The surroundings light up.", NULL, 0, context);
-        insertQuiz(db,2, "Which is a Abberation Engram?", "parachute", "Trophy Wall-Mount", "Basilisk saddle", "Painting Canvas", 3 ,R.drawable.ark_aberration, "Snake.", NULL, 0, context);
-        insertQuiz(db,2, "Which is a Abberation Engram?", "Beer Barrel", "Hazard Suit Hat", "grenade", "Pteranodon saddle", 2 ,R.drawable.ark_aberration, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
-        insertQuiz(db,2, "Which is a Abberation Engram?", "Poison Grenade", "Hazard Suit Pants", "Shotgun", "Re-Fertilizer", 2 ,R.drawable.ark_aberration, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
-        insertQuiz(db,2, "Which is a Abberation Engram?", "Hazard Suit Shirt", "Beelzebufo saddle", "Greenhouse Wall", "Electrical Generator", 1 ,R.drawable.ark_aberration, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
-        insertQuiz(db,2, "Which is a Abberation Engram?", "Hazard Suit Boots", "Tapejara saddle", "GPS", "Megatherium saddle", 1 ,R.drawable.ark_aberration, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not an Extinction Engram?", "Small Taxidermy Base", "Taxidermy Tool", "Delivery Crate", "Glow stick", 4 ,R.drawable.ark_extinction, "It glows.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not an Extinction Engram?", "Medium Taxidermy Base", "Dino Leash", "Velonasaur saddle", "Fish Net", 4 ,R.drawable.ark_extinction, "By using it, you can catch the fish.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not an Extinction Engram?", "Large Taxidermy Base", "Gacha saddle", "Portable Rope Ladder", "Gasbag saddle", 3 ,R.drawable.ark_extinction, "You cam climb it.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not an Extinction Engram?", "Unstable Element", "Unstable Element Shard", "Shag Rug", "Snow Owl saddle", 3 ,R.drawable.ark_extinction, "You can get its ingredients by killing Ovis.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not an Extinction Engram?", "Managarmr saddle", "Small Wood Elevator Platform", "Tek Bridge", "Tek Gravity Grenade", 2 ,R.drawable.ark_extinction, "It is helpful when carrying some stuffs.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not an Extinction Engram?", "Unassembled Mek", "large Wood Elevator Platform", "M.D.S.M.", "rocket pod", 2 ,R.drawable.ark_extinction, "It is helpful when carrying some stuffs.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not an Extinction Engram?", "Zip-Line Anchor", "M.R.L.M.", "M.S.C.M.", "Rocket", 1 ,R.drawable.ark_extinction, "Ravager can move by using it.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "Climbing Pick", "Preserving Salt", "Clay", "tent", 1 ,R.drawable.ark_scorched_earth, "You can climb walls by using it.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "boomerang", "Morellatops saddle", "Oil Jar", "Stone Cliff Platform", 4 ,R.drawable.ark_scorched_earth, "If you have it, you can build things on cliffs.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "Water Well", "Clay Foundation", "Clay Wall", "Metal Cliff Platform", 4 ,R.drawable.ark_scorched_earth, "If you have it, you can build things on cliffs.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "Clay ladder", "wipe", "Gas Collector", "Propellant", 3 ,R.drawable.ark_scorched_earth, "It extracts gas.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "Desert Cloth Shirt", "mirror", "pliers", "Clay dinogate", 3 ,R.drawable.ark_scorched_earth, "Tool.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "Lymantria saddle", "Ravager saddle", "Thorny Dragon saddle", "Mantis saddle", 2 ,R.drawable.ark_scorched_earth, "It is a saddle of the dinosaur which reduces the weight.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "Wind Turbine", "Glider Suit Skin", "Chainsaw", "Oil Pump", 2 ,R.drawable.ark_scorched_earth, "If you have it, you can fly.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "Karkinos saddle", "Rock Golem saddle", "Flamethrower Ammo", "Flamethrower", 1 ,R.drawable.ark_scorched_earth, "Crocodile.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not a Scorched Earth Engram?", "Hazard Suit Gloves", "Cluster Grenade", "Rocket Homing Missile", "Water Well", 1 ,R.drawable.ark_scorched_earth, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
+        insertQuiz(db,1, "Which is a Abberation Engram?", "Phiomia saddle", "Blood Extraction Syringe", "simple bed", "Charge Battery", 4 ,R.drawable.ark_aberration, "With this item, you can use turret without Electrical Generator.", NULL, 0, context);
+        insertQuiz(db,1, "Which is a Abberation Engram?", "stone arrow", "Paintbrush", "Standing torch", "Rock Drake saddle", 4 ,R.drawable.ark_aberration, "This dinosaur has a tek saddle.", NULL, 0, context);
+        insertQuiz(db,1, "Which is a Abberation Engram?", "wood shield", "gunpowder", "Charge Lantern", "Flare Gun", 3 ,R.drawable.ark_aberration, "The surroundings light up.", NULL, 0, context);
+        insertQuiz(db,1, "Which is a Abberation Engram?", "parachute", "Trophy Wall-Mount", "Basilisk saddle", "Painting Canvas", 3 ,R.drawable.ark_aberration, "Snake.", NULL, 0, context);
+        insertQuiz(db,1, "Which is a Abberation Engram?", "Beer Barrel", "Hazard Suit Hat", "grenade", "Pteranodon saddle", 2 ,R.drawable.ark_aberration, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
+        insertQuiz(db,1, "Which is a Abberation Engram?", "Poison Grenade", "Hazard Suit Pants", "Shotgun", "Re-Fertilizer", 2 ,R.drawable.ark_aberration, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
+        insertQuiz(db,1, "Which is a Abberation Engram?", "Hazard Suit Shirt", "Beelzebufo saddle", "Greenhouse Wall", "Electrical Generator", 1 ,R.drawable.ark_aberration, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
+        insertQuiz(db,1, "Which is a Abberation Engram?", "Hazard Suit Boots", "Tapejara saddle", "GPS", "Megatherium saddle", 1 ,R.drawable.ark_aberration, "With this item, you can protect your body from radioactivity.", NULL, 0, context);
 
 //        캔디는 어떤 캔디는 얘기하는지 모르겠어서 일단 주석처리함
         //4-3 문제 추가
@@ -641,33 +644,27 @@ public class DBHelper extends SQLiteOpenHelper {
 
         insertQuiz(db,1, "(In Official Server) What is the maximum level of wild dinosaur?", "100", "150", "200", "250", 2 ,R.drawable.ark_logo, "human's maximum level+45", NULL, 0, context);
 
-        insertQuiz(db,2, "Which is not the material of Thatch Foundation?", "wood", "thatch", "fiber", "stone", 4 ,R.drawable.thatch_foundation, "The hardest among the choices.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Wooden Sign?", "wood", "thatch", "fiber", "stone", 4 ,R.drawable.wooden_sign, "The hardest among the choices.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Spyglass?", "crystal", "Hide", "flint", "wood", 3 ,R.drawable.spyglass, "You can get this by sharpening stones.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Bola?", "Hide", "stone", "flint", "thatch", 3 ,R.drawable.bola, "It is yellow.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Wooden Foundation?", "wood", "flint", "fiber", "thatch", 2 ,R.drawable.wooden_foundation, "You can get this by sharpening stones.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Wooden Raft?", "wood", "thatch", "Hide", "fiber", 2 ,R.drawable.wooden_raft, "You can get this by sharpening woods.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Delivery Crate?", "stone", "Gasbags bladder", "wood", "thatch", 1 ,R.drawable.delivery_crate, "You can get this item from Gasbags.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Lesser Antidote?", "Allosaurus Brain", "narcotic", "Woolly Rhino Horn", "Rare Mushroom", 1 ,R.drawable.lesser_antidote, "You can get this item from this dinosaurs which have pack buffs.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Refining Forge?", "stone", "Hide", "flint", "thatch", 4 ,R.drawable.refining_forge, "You can get this by sharpening woods.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Smithy?", "metal ingot", "Hide", "stone", "thatch", 4 ,R.drawable.smithy, "You can get this by sharpening woods.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Paining Canvas?", "wood", "fiber", "thatch", "Hide", 3 ,R.drawable.painting_canvas, "By hitting wood with pick, you can get this well.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of stone Foundation?", "stone", "wood", "fiber", "thatch", 3 ,R.drawable.stone_foundation, "You can easily get this by Metal Sickle.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Water Jar?", "Hide", "metal ingot", "cementing paste", "crystal", 2 ,R.drawable.water_jar, "You can get this by smelting metal.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Handcuffs?", "cementing paste", "crystal", "metal ingot", "흑요석", 2 ,R.drawable.handcuffs, "There is a wyvern with this name.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Metal Spike Wall?", "wood", "Hide", "metal ingot", "fiber", 1 ,R.drawable.metal_spike_wall, "You can get this by wood.", NULL, 0, context);
-        insertQuiz(db,2, "Which is not the material of Wooden Tree Platform?", "wood", "thatch", "fiber", "metal ingot", 1 ,R.drawable.wooden_tree_platform, "You can get this by sharpening woods.", NULL, 0, context);
+
+        insertQuiz(db,1, "Which is not the material of Thatch Foundation?", "wood", "thatch", "fiber", "stone", 4 ,R.drawable.thatch_foundation, "The hardest among the choices.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Wooden Sign?", "wood", "thatch", "fiber", "stone", 4 ,R.drawable.wooden_sign, "The hardest among the choices.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Spyglass?", "crystal", "Hide", "flint", "wood", 3 ,R.drawable.spyglass, "You can get this by sharpening stones.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Bola?", "Hide", "stone", "flint", "thatch", 3 ,R.drawable.bola, "It is yellow.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Wooden Foundation?", "wood", "flint", "fiber", "thatch", 2 ,R.drawable.wooden_foundation, "You can get this by sharpening stones.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Wooden Raft?", "wood", "thatch", "Hide", "fiber", 2 ,R.drawable.wooden_raft, "You can get this by sharpening woods.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Delivery Crate?", "stone", "Gasbags bladder", "wood", "thatch", 1 ,R.drawable.delivery_crate, "You can get this item from Gasbags.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Lesser Antidote?", "Allosaurus Brain", "narcotic", "Woolly Rhino Horn", "Rare Mushroom", 1 ,R.drawable.lesser_antidote, "You can get this item from this dinosaurs which have pack buffs.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Refining Forge?", "stone", "Hide", "flint", "thatch", 4 ,R.drawable.refining_forge, "You can get this by sharpening woods.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Smithy?", "metal ingot", "Hide", "stone", "thatch", 4 ,R.drawable.smithy, "You can get this by sharpening woods.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Paining Canvas?", "wood", "fiber", "thatch", "Hide", 3 ,R.drawable.painting_canvas, "By hitting wood with pick, you can get this well.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of stone Foundation?", "stone", "wood", "fiber", "thatch", 3 ,R.drawable.stone_foundation, "You can easily get this by Metal Sickle.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Water Jar?", "Hide", "metal ingot", "cementing paste", "crystal", 2 ,R.drawable.water_jar, "You can get this by smelting metal.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Handcuffs?", "cementing paste", "crystal", "metal ingot", "흑요석", 2 ,R.drawable.handcuffs, "There is a wyvern with this name.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Metal Spike Wall?", "wood", "Hide", "metal ingot", "fiber", 1 ,R.drawable.metal_spike_wall, "You can get this by wood.", NULL, 0, context);
+        insertQuiz(db,1, "Which is not the material of Wooden Tree Platform?", "wood", "thatch", "fiber", "metal ingot", 1 ,R.drawable.wooden_tree_platform, "You can get this by sharpening woods.", NULL, 0, context);
 
         //안장 그림 보여주고 맞추기
 
-
-
-
-
-
-
         
-
 
     }
 
