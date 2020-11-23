@@ -30,7 +30,7 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements OnBackPressedListener{
 
-    private SQLiteDatabase db, db_user_info;
+    private SQLiteDatabase db;
     private DBHelper mDBHelper;
     private TextView TextView_main_dino_egg, TextView_username, TextView_rankingPoints;
     private int current_dino_egg, maxWidth;
@@ -137,14 +137,6 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             editor2.commit();
         }
 
-//        boolean isFirst6 = sharedPreferences.getBoolean("isFirst6", false);
-//        if(!isFirst6){
-//            SharedPreferences.Editor editor = sharedPreferences.edit();
-//            editor.putBoolean("isFirst6", true);
-//            editor.commit();
-//            mDBHelper.loadQuiz4(db, this);
-//        }
-
         boolean isFirst7=sharedPreferences.getBoolean("isFirst7", false);
         if(!isFirst7){
             SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -155,6 +147,14 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
             mDBHelper.loadQuiz2(db, this);
             mDBHelper.loadQuiz3(db, this);
             mDBHelper.loadQuiz4(db, this);
+        }
+
+        boolean isFirst8=sharedPreferences.getBoolean("isFirst8", false);
+        if(!isFirst8){
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("isFirst8", true);
+            editor.commit();
+            mDBHelper.loadQuiz5(db, this);
         }
 
         mDBHelper.updateTruetoFalse(db);

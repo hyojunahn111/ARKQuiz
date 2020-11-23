@@ -1,3 +1,4 @@
+<!--test용-->
 <!--<resources>-->
 <!--    <string name="app_name">ARK Quiz</string>-->
 <!--    <string name="admob_banner_id">ca-app-pub-3940256099942544/6300978111</string>-->
@@ -6,6 +7,7 @@
 <!--    <string name="admob_front_id">ca-app-pub-3940256099942544/1033173712</string>-->
 <!--</resources>-->
 
+<!--배포용-->
 <resources>
     <string name="app_name">ARK Quiz</string>
     <string name="admob_banner_id">ca-app-pub-3081286779348377/9928754580</string>

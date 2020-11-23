@@ -279,6 +279,9 @@ public class QuizpageTest extends AppCompatActivity{
                                 } else {
                                     Log.d(TAG, "get failed with ", task.getException());
                                 }
+                                if (mInterstitialAd.isLoaded()) {
+                                    mInterstitialAd.show();
+                                }
                             }
                         });
 
@@ -603,6 +606,9 @@ public class QuizpageTest extends AppCompatActivity{
                             }
                         } else {
                             Log.d(TAG, "get failed with ", task.getException());
+                        }
+                        if (mInterstitialAd.isLoaded()) {
+                            mInterstitialAd.show();
                         }
                     }
                 });

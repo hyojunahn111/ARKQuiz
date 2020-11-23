@@ -229,7 +229,9 @@ public class QuizpageNormal extends AppCompatActivity{
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 overridePendingTransition(0, 0); //애니메이션 제거
-
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
             }
         });
 
@@ -426,7 +428,11 @@ public class QuizpageNormal extends AppCompatActivity{
                 dialog.cancel();
                 Intent tempIntent=new Intent(QuizpageNormal.this, MainActivity.class);
                 tempIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(tempIntent);            }
+                startActivity(tempIntent);
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                }
+            }
         });
 
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

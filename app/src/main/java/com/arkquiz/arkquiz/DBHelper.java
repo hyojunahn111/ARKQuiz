@@ -590,9 +590,9 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Yeti", "Procoptodon", "Bloodstalker", "Deinoychus", 4,R.drawable.plant_y_trap, "It can attack other creatures while sticking to them.", NULL, 0, context);
         insertQuiz(db,2, "Which dinosaur is affected by Plant Species Y Trap?", "Piranha", "Mantis", "Roll Rat", "Gallimimus", 4,R.drawable.plant_y_trap, "Two humans can ride on its saddle.", NULL, 0, context);
 
+    }
 
-
-
+    public void loadQuiz5(SQLiteDatabase db, Context context){
         //4-1차 문제 추가
         insertQuiz(db,1, "(In Official Server) How much Health stat increase when you level your Health stat up?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "The month of Halloween.", NULL, 0, context);
         insertQuiz(db,1, "(In Official Server) How much Stamina stat increase when you level your Stamina stat up?", "5%", "10%", "15%", "20%", 2 ,R.drawable.ark_logo, "The month of Halloween.", NULL, 0, context);
@@ -663,9 +663,6 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which is not the material of Wooden Tree Platform?", "wood", "thatch", "fiber", "metal ingot", 1 ,R.drawable.wooden_tree_platform, "You can get this by sharpening woods.", NULL, 0, context);
 
         //안장 그림 보여주고 맞추기
-
-
-
     }
 
     public void insertQuiz(SQLiteDatabase mdb, int quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, int answer, int image, String hint, int hint_image, int is_shown, Context context){
