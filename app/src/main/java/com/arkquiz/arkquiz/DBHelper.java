@@ -662,7 +662,116 @@ public class DBHelper extends SQLiteOpenHelper {
         insertQuiz(db,2, "Which is not the material of Metal Spike Wall?", "wood", "Hide", "metal ingot", "fiber", 1 ,R.drawable.metal_spike_wall, "You can get this by wood.", NULL, 0, context);
         insertQuiz(db,2, "Which is not the material of Wooden Tree Platform?", "wood", "thatch", "fiber", "metal ingot", 1 ,R.drawable.wooden_tree_platform, "You can get this by sharpening woods.", NULL, 0, context);
 
-        //안장 그림 보여주고 맞추기
+        //안장 그림 보여주고 맞추기(2단계)
+        //5차
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Astrocetus", "Mammoth", "Megalodon", "Mosasaur", 1 ,R.drawable.astrocetus_tek_saddle, "제네시스 고래.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Megalodon", "Mosasaur", "Rex", "Rock Drake", 1 ,R.drawable.megalodon_tek_saddle, "출혈 데미지를 주는 효과를 가지고 있음", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Rex", "Mosasaur", "Tapejara", "Dodo", 2 ,R.drawable.mosasaur_tek_saddle, "물에 사는 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Basilosaurus", "Rex", "Snow Owl", "Castoroides", 2 ,R.drawable.rex_tek_saddle, "우 클릭으로 날탈 기수를 떨어뜨릴 수 있음.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Plesiosaur", "Bronto", "Rock Drake", "Argentavis", 3 ,R.drawable.rock_drake_tek_saddle, "은신 기술을 가지고 있음.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Karkinos", "Tropeognathus", "Tapejara", "Managarmr", 3 ,R.drawable.tapejara_tek_saddle, "C X으로 위 아래 조종이 가능하다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Titanosaur", "Quetz", "Giganotosaurus", "Phiomia", 4 ,R.drawable.phiomia_saddle, "스팀베리를 먹이면 똥을 잘 싸는 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Tusoteuthis", "Mosasaur", "Magmasaur", "parasaur", 4 ,R.drawable.parasaur_saddle, "적을 감지하는 능력을 가지고 있는 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Carbonemys", "Basilisk", "Plesiosaur", "Bronto", 1 ,R.drawable.carbonemys_saddle, "보기 중 제일 느린 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Morellatops", "Yutyrannus", "Mosasaur", "Quetz", 1 ,R.drawable.morellatops_saddle, "물을 채울 수 있다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Megalania", "Ichthyosaurus", "Rex", "Rock Drake", 2 ,R.drawable.ichthyosaurus_saddle, "돌고래.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Spino", "Pachy", "Rock Golem", "Theriziniosaurus", 2 ,R.drawable.pachy_saddle, "머리가 단단하다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Tropeognathus", "Managarmr", "Trike", "Allosaurus", 3 ,R.drawable.trike_saddle, "총을 뺄 때 주로 사용한다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Karkinos", "Plesiosaur", "Raptor", "Bronto", 3 ,R.drawable.raptor_saddle, "잡기 기술이 있다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Snow Owl", "Castoroides", "Argentavis", "Hyaenodon", 4 ,R.drawable.hyaenodon_meatpack, "무리지어 있을 땐 강하고 혼자 있을 땐 도망가는 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Daeodon", "Roll Rat", "Megalosaurus", "Equus", 4 ,R.drawable.equus_saddle, "당근으로 테이밍이 가능한 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Pulmonoscorpius", "Tapejara", "Arthropluera", "Woolly Rhino", 1 ,R.drawable.pulmonoscorpius_saddle, "전갈.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Procoptodon", "Megatherium", "Thylacoleo", "Paracer", 1 ,R.drawable.procoptodon_saddle, "깡총깡총.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Ravager", "Stego", "Baryonyx", "Megalodon", 2 ,R.drawable.stego_saddle, "출혈 효과를 가지고 있고 방어테세가 가능하다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Ravager", "Velonasaur", "Dire Bear", "Megachelon", 2 ,R.drawable.velonasaur_saddle, "가시를 쏠 수 있다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Pelagornis", "Dunkleosteus", "Pachyrhinosaurus", "Mantis", 3 ,R.drawable.pachyrhinosaurus_saddle, "트리케 친척.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Gasbags", "Chalicotherium", "Manta", "Paracer", 3 ,R.drawable.manta_saddle, "바실로사우르스 주변에 주로 있다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Beelzebufo", "Araneo", "Thorny Dragon", "Gallimimus", 4 ,R.drawable.gallimimus_saddle, "초식공룡이며 보기 중 속도가 제일 빠른 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Gacha", "Pteranodon", "Kaprosuchus", "Iguanodon", 4 ,R.drawable.iguanodon_saddle, "씨앗을 비빌 수 있다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Megaloceros", "Sabertooth", "Ankylo", "Lymantria", 1 ,R.drawable.megaloceros_saddle, "멋진 뿔을 가지고 있다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Deinonychus", "Sarco", "Doedicurus", "Terror Bird", 1 ,R.drawable.deinonychus_saddle, "출혈효과를 가지고 있고 큰 공룡에 붙어서 공격할 수 있다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Phiomia", "Diplodocus", "Parasaur", "Carbonenmys", 2 ,R.drawable.diplodocus_saddle, "공격기능이 없고 밀기만 할 수 있다.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Pachy", "Terror Bird", "Ichthyosaurus", "Morellatops", 2 ,R.drawable.terror_bird_saddle, "푸드닭푸드닭.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Trike", "Raptor", "Doedicurus", "Equus", 3 ,R.drawable.doedicurus_saddle, "돌 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "What kind of dinosaur saddle is it?", "Manta", "Stego", "Ankylo", "Pulmonoscorpius", 3 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+
+
+        //그림 일부만 보여주고 무슨 공룡인짐 맞추기(3단계)
+
+
+        //알 보여주고 무슨 알인지 맞추기(3단계)
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Dodo", "Angler", "Araneo", "Arthropluera", 1 ,R.drawable.dodo_egg, "제일 약한 초식 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Featherlight", "Wyvern", "Yutyrannus", "Beelzebufo", 1 ,R.drawable.featherlight_egg, "빛 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Kairuku", "Therizino", "Rex", "Quetzal", 1 ,R.drawable.kairuku_egg, "추운곳에 산다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Lystro", "Megachelon", "Quetzal", "Rex", 1 ,R.drawable.lystro_egg, "보기중 유일하게 자연테이밍 공룡이다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Giga", "Parasaur", "Bronto", "Basilisk", 2 ,R.drawable.parasaur_egg, "근처에 적이 있으면 감지할 수 있는 능력을 가지고 있다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Tapejara", "Tek parsaur", "Titanoboa", "Tropeoganathus", 2 ,R.drawable.tek_parasaur_egg, "테크.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Spino", "Vulture", "Snow Owl", "Moschops", 2 ,R.drawable.vulture_egg, "썩은고기로 테이밍이 가능하다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Argentavis", "Archaeopteryx", "Megalania", "Megalosaurus", 2 ,R.drawable.archaeopteryx_egg, "낙하산 역할을 한다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Allosaurus", "Velonasaur", "Camelsaurus", "Turtle", 3 ,R.drawable.camelsaurus_egg, "이 공룡에 물 보관 가능.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Terror Bird", "Thorny Dradon", "Compy", "Troodon", 3 ,R.drawable.compy_egg, "작은 공룡이며 무리 버프를 가지고 있다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Sarco", "Pelagornis", "Dimorph", "Pachyrhino", 3 ,R.drawable.dimorph_egg, "기수를 때리는 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Iguanodon", "Kaprosuchus", "Gallimimus", "Kentro", 3 ,R.drawable.gallimimus_egg, "안장에 두 명이 탈 수 있으며 속도가 빠르다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Ichthyornis", "Diplo", "Dimetrodon", "Glowtail", 4 ,R.drawable.glowtail_egg, "빛 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Carno", "Baryonix", "Ankylo", "Hesperornis", 4 ,R.drawable.hesperornis_egg, "황금 알을 낳을 수도 있다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Trike", "Raptor", "Pteranodon", "Microraptor", 4 ,R.drawable.microraptor_egg, "기수에세 스턴을 넣는다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "pegomastax", "pachycephalosaurus", "Miroraptor", "Oviraptor", 4 ,R.drawable.oviraptor_egg, "브리딩할 때에 꼭 필요한 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Pachycephalosaurus", "Hesperornis", "Glowtail", "Gallimimus", 1 ,R.drawable.pachycephalosaurus_egg, "박치기.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "pegomastax", "Dimorph", "Compy", "Camelsaurus", 1 ,R.drawable.pegomastax_egg, "생선살로 테이밍이 가능하다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Pteranodon", "Archaeopteryx", "Vulture", "Parasaur", 1 ,R.drawable.pteranodon_egg, "찝기가 가능하고 C키로 회전이 가능한 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Raptor", "Lystro", "Kairuku", "Featherlight", 1 ,R.drawable.raptor_egg, "사람을 집을 수 있다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Tek Trike", "Tek Raptor", "Tek parsaur", "Tek_stego", 2 ,R.drawable.tek_raptor_egg, "사람을 집을 수 있다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Tek Raptor", "Tek Trike", "Tek parsaur", "Tek_stego", 2 ,R.drawable.tek_trike_egg, "제네시스 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Dodo", "Ankylo", "Dilo", "Featherlight", 2 ,R.drawable.ankylo_egg, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Allosaurus", "Baryonyx", "Angler", "Ankylo", 2 ,R.drawable.baryonyx_egg, "물에서 만나면 스턴에 걸려 헤어나오기 힘들다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Araneo", "Archaeopteryx", "Carno", "Baryonyx", 3 ,R.drawable.carno_egg, "출혈 데미지가 있다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Compy", "Carno", "Dimetrodon", "Bronto", 3 ,R.drawable.dimetrodon_egg, "에어컨 역할을 하는 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Dilo", "Dimetrodon", "Diplo", "Dimorph", 3 ,R.drawable.diplo_egg, "공격기능이 없고 밀 수만 있는 공룡.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Lystro", "Dodo", "Ichthyornis", "Diplocaulus", 3 ,R.drawable.ichthyornis_egg, "돌고래.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Pegomastax", "Pteranodon", "Quetzal", "Kaprosuchus", 4 ,R.drawable.kaprosuchus_egg, "늪지에서 자주 발견되며 운이 좋지 않다면 이 공룡에게 찝혀간다.", NULL, 0, context);
+        insertQuiz(db,3, "Which dinosaur egg is it?", "Troodon", "Trike", "Rex", "Kentro", 4 ,R.drawable.kentro_egg, "가시 갑옷.", NULL, 0, context);
+
+
+        //1배 기준 각인 몇 퍼 차는지 맞추기(2단계)
+
+
+        //처치시 얻는 경험치(3단계)
+
+
+        //공룡의 이름은 몇 글자 인지 맞추기(1단계)
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+
+        //위에 있는 캔디 문제도 넣어주셈
     }
 
     public void insertQuiz(SQLiteDatabase mdb, int quiz_level, String quiz, String selection1, String selection2, String selection3, String selection4, int answer, int image, String hint, int hint_image, int is_shown, Context context){
