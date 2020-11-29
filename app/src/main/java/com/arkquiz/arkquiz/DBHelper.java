@@ -733,43 +733,47 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         //1배 기준 각인 몇 퍼 차는지 맞추기(2단계)
+        //일단 예시만 들어놨음
+        insertQuiz(db,3, "다음 공룡은 각인 한 번에 몇 퍼가 찹니까?(1배 기준)", "3", "4", "5", "6", 2 ,R.drawable.giganotosaurus, "3배 기준 12입니다.", NULL, 0, context);
 
 
         //처치시 얻는 경험치(3단계)
+        //일단 예시만 들어놨음
+        insertQuiz(db,3, "누가 더 경험치를 많이 줍니까?", "기가노토사우르스", "크리스탈 와이번", "마그마사우르스", "와이번", 1 ,R.drawable.ark_logo, "최고의 지상 공룡", NULL, 0, context);
 
 
         //공룡의 이름은 몇 글자 인지 맞추기(1단계)
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
-        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", "ㅇㅇ", 1 ,R.drawable.ankylo_saddle, "철 캐는데 유용한 공룡.", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "7", "8", "9", "10", 4 ,R.drawable.allosaurus, "allosaurus", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "10", "11", "12", "13", 4,R.drawable.archaeopteryx, "archaeopteryx", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "7", "8", "9", "10", 4 ,R.drawable.argentavis, "argentavis", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "7", "8", "9", "10", 4 ,R.drawable.astrocetus, "astrocetus", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "10", "11", "12", "13", 4 ,R.drawable.crystalwyvern, "crystalwyvern", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "5", "6", "7", "8", 3 ,R.drawable.griffin, "griffin", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "5", "6", "7", "8", 3 ,R.drawable.gasbags, "gasbags", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "2", "3", "4", "5", 3 ,R.drawable.onyc, "onyc", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "5", "6", "7", "8", 3 ,R.drawable.phoenix, "phoenix", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "5", "6", "7", "8", 3 ,R.drawable.snowowl, "snowowl", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "6", "7", "8", "9", 2 ,R.drawable.quetzal, "quetzal", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "7", "8", "9", "10", 2 ,R.drawable.tapejara, "tapejara", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "6", "7", "8", "9", 2 ,R.drawable.vulture, "vulture", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "10", "11", "12", "13", 2 ,R.drawable.castoroides, "castoroides", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "8", "9", "10", "11", 2 ,R.drawable.megalodon, "megalodon", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "5", "6", "7", "8", 1 ,R.drawable.otter, "otter", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "8", "9", "10", "11", 1 ,R.drawable.basilisk, "basilisk", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "12", "13", "14", "15", 1 ,R.drawable.basilosaurus, "basilosaurus", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "10", "11", "12", "13", 1 ,R.drawable.beelzebufo, "beelzebufo", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "5", "6", "7", "8", 1 ,R.drawable.compy, "compy", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "8", "9", "10", "11", 4 ,R.drawable.dilophosaur, "dilophosaur", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "2", "3", "4", "5", 4 ,R.drawable.ferox, "ferox", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "9", "10", "11", "12", 4 ,R.drawable.megalosaurus, "megalosaurus", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "1", "2", "3", "4", 4 ,R.drawable.ovis, "ovis", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "7", "8", "9", "10", 4 ,R.drawable.titanosaur, "titanosaur", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "9", "10", "11", "12", 3 ,R.drawable.procoptodon, "procoptodon", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "4", "5", "6", "7", 3 ,R.drawable.seeker, "seeker", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "4", "5", "6", "7", 3 ,R.drawable.raptor, "raptor", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "7", "8", "9", "10", 3 ,R.drawable.shinehorn, "shinehorn", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "5", "6", "7", "8", 3 ,R.drawable.rollrat, "rollrat", NULL, 0, context);
+        insertQuiz(db,1, "How many letters is the name of the this dinosaur?", "6", "7", "8", "9", 2 ,R.drawable.unicorn, "unicorn", NULL, 0, context);
 
         //위에 있는 캔디 문제도 넣어주셈
     }
