@@ -122,40 +122,45 @@ public class MainActivity extends AppCompatActivity implements OnBackPressedList
         SharedPreferences sharedPreferences_dino_egg=getSharedPreferences("Dino_egg", MODE_PRIVATE);
         SharedPreferences sharedPreferences=getSharedPreferences("IsFirst", MODE_PRIVATE);
 
-        boolean isFirst4 = sharedPreferences.getBoolean("isFirst4", false);
-        if(!isFirst4){ //최초 실행시 true 저장 1.0.6 업데이트
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("isFirst4", true);
-            editor.commit();
+//        boolean isFirst4 = sharedPreferences.getBoolean("isFirst4", false);
+//        if(!isFirst4){ //최초 실행시 true 저장 1.0.6 업데이트
+//            SharedPreferences.Editor editor = sharedPreferences.edit();
+//            editor.putBoolean("isFirst4", true);
+//            editor.commit();
+//            Log.d(TAG, "isFirst4 실행");
+////            mDBHelper.dbDeleteAll();
+////            mDBHelper.loadQuiz(db, this);
+////            mDBHelper.loadQuiz2(db, this);
+////            mDBHelper.loadQuiz3(db, this);
+//
+//            SharedPreferences.Editor editor2=sharedPreferences_dino_egg.edit();
+//            editor2.putInt("dino_egg", 500);
+//            editor2.commit();
+//        }
+//
+//        boolean isFirst7=sharedPreferences.getBoolean("isFirst7", false);
+//        if(!isFirst7){
+//            SharedPreferences.Editor editor = sharedPreferences.edit();
+//            editor.putBoolean("isFirst7", true);
+//            editor.commit();
 //            mDBHelper.dbDeleteAll();
 //            mDBHelper.loadQuiz(db, this);
 //            mDBHelper.loadQuiz2(db, this);
 //            mDBHelper.loadQuiz3(db, this);
-
-            SharedPreferences.Editor editor2=sharedPreferences_dino_egg.edit();
-            editor2.putInt("dino_egg", 500);
-            editor2.commit();
-        }
-
-        boolean isFirst7=sharedPreferences.getBoolean("isFirst7", false);
-        if(!isFirst7){
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("isFirst7", true);
-            editor.commit();
-            mDBHelper.dbDeleteAll();
-            mDBHelper.loadQuiz(db, this);
-            mDBHelper.loadQuiz2(db, this);
-            mDBHelper.loadQuiz3(db, this);
-            mDBHelper.loadQuiz4(db, this);
-        }
-
-        boolean isFirst8=sharedPreferences.getBoolean("isFirst8", false);
-        if(!isFirst8){
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("isFirst8", true);
-            editor.commit();
-            mDBHelper.loadQuiz5(db, this);
-        }
+//            mDBHelper.loadQuiz4(db, this);
+//            Log.d(TAG, "isFirst7 실행");
+//
+//        }
+//
+//        boolean isFirst8=sharedPreferences.getBoolean("isFirst8", false);
+//        if(!isFirst8){
+//            SharedPreferences.Editor editor = sharedPreferences.edit();
+//            editor.putBoolean("isFirst8", true);
+//            editor.commit();
+//            mDBHelper.loadQuiz5(db, this);
+//            Log.d(TAG, "isFirst8 실행");
+//
+//        }
 
         mDBHelper.updateTruetoFalse(db);
 

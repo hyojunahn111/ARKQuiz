@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/229078356/ARK_Quiz.iml" filepath="$PROJECT_DIR$/.idea/modules/229078356/ARK_Quiz.iml" group="ARK_Quiz" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="ARK Quiz/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/229078356/ARK_Quiz.iml" filepath="$PROJECT_DIR$/.idea/modules/229078356/ARK_Quiz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ARK_Quiz.app.iml" filepath="$PROJECT_DIR$/.idea/modules/ARK_Quiz.app.iml" />
     </modules>
   </component>
 </project>

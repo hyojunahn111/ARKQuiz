@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="Ranking"
         android:textSize="40sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_top"
         android:textColor="#FFFFFF"
         android:fontFamily="@font/goyangdeogyangb"></TextView>
     <androidx.recyclerview.widget.RecyclerView
