@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "759473132400",
+    "firebase_url": "https://ark-quiz.firebaseio.com",
+    "project_id": "ark-quiz",
+    "storage_bucket": "ark-quiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759473132400:android:efbe430bd2b7ab9dba35b5",
+        "android_client_info": {
+          "package_name": "com.arkquiz.arkquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759473132400-luse55rjvsoo5v3jnn5msjgcur917s9g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaA0TPHtEFERGUqjb9q3SvVz2un0m-IyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759473132400-luse55rjvsoo5v3jnn5msjgcur917s9g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

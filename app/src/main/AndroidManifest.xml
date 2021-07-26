@@ -1,27 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.arkquiz">
+    package="com.arkquiz.arkquiz">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/arkquiz_logo_5"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/arkquiz_logo_5"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".DinoEgg"></activity>
-        <activity android:name=".Shop" />
-        <activity android:name=".QuizpageTest" />
-        <activity android:name=".QuizpageHard" />
-        <activity android:name=".QuizpageNormal" />
-        <activity android:name=".QuizpageEasy" />
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+        <activity android:name=".PlayActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".RankingActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ProfileActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Shop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuizpageTest"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuizpageHard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuizpageNormal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuizpageEasy"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Splash"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id" />
     </application>
 
 </manifest>

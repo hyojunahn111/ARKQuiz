@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#2E2E2A"
+    android:fontFamily="@font/goyangdeogyangb">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/EditText_dialog_nickname"
+        app:layout_constraintBottom_toTopOf="@id/EditText_dialog_nickname"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"></TextView>
+    <EditText
+        android:id="@+id/EditText_dialog_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Spinner_dialog_country"
+        android:layout_marginVertical="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="#FFFFFF"></EditText>
+
+    <Button
+        android:id="@+id/Button_check"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="1:1"
+        android:text="Check"
+        android:background="@drawable/button_background"
+        app:layout_constraintTop_toTopOf="@id/EditText_dialog_nickname"
+        app:layout_constraintBottom_toBottomOf="@id/EditText_dialog_nickname"
+        app:layout_constraintRight_toRightOf="@id/EditText_dialog_nickname"
+        ></Button>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Country"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="@id/Spinner_dialog_country"
+        app:layout_constraintBottom_toTopOf="@id/Spinner_dialog_country"
+        android:textColor="#FFFFFF"></TextView>
+    <Spinner
+        android:id="@+id/Spinner_dialog_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/Button_save"
+        app:layout_constraintTop_toBottomOf="@id/EditText_dialog_nickname"
+        android:entries="@array/나라"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="30dp"
+        android:textColor="#FFFFFF"></Spinner>
+    <Button
+        android:id="@+id/Button_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="create account"
+        android:textSize="20sp"
+        android:background="@drawable/button_background"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>

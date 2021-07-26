@@ -4,6 +4,185 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuizpageHard">
+    android:background="#2E2E2A"
+    tools:context=".QuizpageEasy"
+    android:fontFamily="@font/goyangdeogyangb">
+
+    <Button
+        android:id="@+id/btn_hard_home"
+        android:layout_width="60dp"
+        android:layout_height="63dp"
+        android:background="@drawable/ark_quiz_main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <TextView
+        android:id="@+id/TextView_hard_numberOfQuiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ImageView_hard_dino_head"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="30dp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:text="1/10"
+        ></TextView>
+
+    <ImageView
+        android:id="@+id/ImageView_hard_dino_head"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        app:layout_constraintTop_toTopOf="@id/TextView_hard_dino_egg"
+        app:layout_constraintBottom_toBottomOf="@id/TextView_hard_dino_egg"
+        app:layout_constraintRight_toLeftOf="@id/TextView_hard_dino_egg"
+        app:srcCompat="@drawable/dinohead" />
+
+    <TextView
+        android:id="@+id/TextView_hard_dino_egg"
+        android:layout_width="80dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/stroke"
+        android:text="DinoBoneCount"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/goyangdeogyangb"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toRightOf="@id/TextView_hard_quiz"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/TextView_hard_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="Question"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextView_hard_numberOfQuiz"
+        app:layout_constraintBottom_toTopOf="@id/ImageView_hard_quiz_image"
+        android:gravity="center"
+        android:fontFamily="@font/goyangdeogyangb"/>
+
+    <ImageView
+        android:id="@+id/ImageView_hard_quiz_image"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/LinearLayout_hard_examples"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextView_hard_quiz"></ImageView>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_hard_examples"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ImageView_hard_quiz_image"
+        app:layout_constraintBottom_toTopOf="@id/LinearLayout_hard_hint"
+        android:orientation="vertical"
+        android:weightSum="4">
+        <Button
+            android:id="@+id/btn_hard_selection1"
+            android:layout_width="274dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/click"
+            android:text="Show 1"
+            android:textSize="20sp"
+            android:fontFamily="@font/goyangdeogyangb"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_hard_selection2"
+            android:layout_width="274dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/click"
+            android:text="Show 2"
+            android:textSize="20sp"
+            android:fontFamily="@font/goyangdeogyangb"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_hard_selection3"
+            android:layout_width="274dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/click"
+            android:text="Show 3"
+            android:textSize="20sp"
+            android:fontFamily="@font/goyangdeogyangb"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_hard_selection4"
+            android:layout_width="274dp"
+            android:layout_height="40dp"
+            android:background="@drawable/click"
+            android:text="Show 4"
+            android:textSize="20sp"
+            android:fontFamily="@font/goyangdeogyangb"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout_hard_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@id/adView_quiz_hard"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <Button
+            android:id="@+id/btn_hard_hint_by_dinoegg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:text="Hint🔍 \n (Use dinobone)"></Button>
+
+        <Button
+            android:id="@+id/btn_hard_hint_by_ad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="1"
+            android:text="Hint 🎞 \n (Watch AD)"></Button>
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_quiz_hard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintLeft_toLeftOf="parent"
+        ads:layout_constraintRight_toRightOf="parent"></com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
